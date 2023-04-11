@@ -1,16 +1,29 @@
 package modelo;
 
+import java.util.ArrayList;
+
 public class Livro {
 
-	private int isbn;
+	private Long isbn;
 	private String titulo;
 	private String editora;
+	private int nrEdicao;
+	private int anoLancamento;
+	private ArrayList<Autor> autores;
 
-	public int getIsbn() {
+	public ArrayList<Autor> getAutores() {
+		return autores;
+	}
+
+	public void setAutores(ArrayList<Autor> autores) {
+		this.autores = autores;
+	}
+
+	public Long getIsbn() {
 		return isbn;
 	}
 
-	public void setIsbn(int isbn) {
+	public void setIsbn(Long isbn) {
 		this.isbn = isbn;
 	}
 
@@ -28,6 +41,22 @@ public class Livro {
 
 	public void setEditora(String editora) {
 		this.editora = editora;
+	}
+
+	public int getNrEdicao() {
+		return nrEdicao;
+	}
+
+	public void setNrEdicao(int nrEdicao) {
+		this.nrEdicao = nrEdicao;
+	}
+
+	public int getAnoLancamento() {
+		return anoLancamento;
+	}
+
+	public void setAnoLancamento(int anoLancamento) {
+		this.anoLancamento = anoLancamento;
 	}
 
 }
