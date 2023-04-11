@@ -55,7 +55,9 @@ public class PessoaDAO implements IPessoaDAO {
 		return false;
 	}
 
-	@Override
+
+	
+	/// Pendente descobrir como usar listagem com interface grafica
 	public ArrayList<Pessoa> listarPessoas() {
 		if (!tabelaUsuarios.isEmpty()) {
 			for (Pessoa pessoa : tabelaUsuarios) {
