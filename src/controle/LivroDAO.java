@@ -63,12 +63,7 @@ public class LivroDAO implements ILivroDAO {
 	
 	/// Pendente descobrir como usar listagem com interface grafica
 	public ArrayList<Livro> listarLivros() {
-		if (!tabelaLivros.isEmpty()) {
-			for (Livro livro : tabelaLivros) {
-
-			}
-		}
-		return null;
+		return this.tabelaLivros;
 	}
 
 }
