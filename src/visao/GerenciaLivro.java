@@ -8,6 +8,7 @@ public class GerenciaLivro extends JPanel {
 	 * Create the panel.
 	 */
 	public GerenciaLivro() {
+		setLayout(null);
 
 	}
 
