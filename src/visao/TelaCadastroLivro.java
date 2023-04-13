@@ -10,6 +10,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class TelaCadastroLivro extends JFrame {
 
@@ -106,6 +108,16 @@ public class TelaCadastroLivro extends JFrame {
 		txtAnoLancamento.setColumns(10);
 		
 		JButton btnCadastrarLivro = new JButton("Cadastrar");
+		btnCadastrarLivro.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+			
+		});
+		
+		
 		btnCadastrarLivro.setForeground(new Color(255, 255, 255));
 		btnCadastrarLivro.setFont(new Font("Times New Roman", Font.BOLD, 12));
 		btnCadastrarLivro.setBackground(new Color(64, 128, 128));
