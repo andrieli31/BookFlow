@@ -116,5 +116,9 @@ public class TelaLogin extends JFrame {
 		textField.setBounds(310, 82, 86, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
+		
+		JButton btnCadastro = new JButton("Cadastro");
+		btnCadastro.setBounds(181, 123, 89, 23);
+		contentPane.add(btnCadastro);
 	}
 }

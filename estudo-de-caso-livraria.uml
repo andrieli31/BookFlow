@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_cT4UQNnnEe2qH4Q_xXK0iA" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_cT7XkNnnEe2qH4Q_xXK0iA" source="codegen">
         <details xmi:id="_cT7XkdnnEe2qH4Q_xXK0iA" key="codegenDirectory" value="/estudo-de-caso-livraria/src"/>
-        <details xmi:id="_ch6JMNnnEe2qH4Q_xXK0iA" key="AssociatedSourceCode" value="/estudo-de-caso-livraria/src/controle/LivroDAO.java;1690683712/1;/estudo-de-caso-livraria/src/controle/PessoaDAO.java;640848633/1;/estudo-de-caso-livraria/src/modelo/Autor.java;3874392682/1;/estudo-de-caso-livraria/src/modelo/Emprestimo.java;2743901588/1;/estudo-de-caso-livraria/src/modelo/ILivroDAO.java;1270556928/1;/estudo-de-caso-livraria/src/modelo/IPessoaDAO.java;23367194/1;/estudo-de-caso-livraria/src/modelo/Livro.java;2756444795/1;/estudo-de-caso-livraria/src/modelo/Pessoa.java;2098968596/1;/estudo-de-caso-livraria/src/modelo/Usuario.java;17058106/1;/estudo-de-caso-livraria/src/visao/TelaGerenciaLivro.java;2367208831/1;/estudo-de-caso-livraria/src/visao/TelaLogin.java;1359888184/1;"/>
+        <details xmi:id="_ch6JMNnnEe2qH4Q_xXK0iA" key="AssociatedSourceCode" value="/estudo-de-caso-livraria/src/controle/LivroDAO.java;1690683712/1;/estudo-de-caso-livraria/src/controle/PessoaDAO.java;640848633/1;/estudo-de-caso-livraria/src/modelo/Autor.java;3874392682/1;/estudo-de-caso-livraria/src/modelo/Emprestimo.java;2743901588/1;/estudo-de-caso-livraria/src/modelo/ILivroDAO.java;1270556928/1;/estudo-de-caso-livraria/src/modelo/IPessoaDAO.java;23367194/1;/estudo-de-caso-livraria/src/modelo/Livro.java;2756444795/1;/estudo-de-caso-livraria/src/modelo/Pessoa.java;2098968596/1;/estudo-de-caso-livraria/src/modelo/Usuario.java;17058106/1;/estudo-de-caso-livraria/src/visao/TelaGerenciaLivro.java;2367208831/1;/estudo-de-caso-livraria/src/visao/TelaLogin.java;2184695758/1;"/>
       </contents>
     </eAnnotations>
     <elementImport xmi:id="_cbQuoNnnEe2qH4Q_xXK0iA">
@@ -494,7 +494,9 @@
 	</body>
         </ownedBehavior>
         <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ce2OINnnEe2qH4Q_xXK0iA" name="TelaLogin" specification="_ccihAdnnEe2qH4Q_xXK0iA">
-          <ownedParameter xmi:id="_ce2OIdnnEe2qH4Q_xXK0iA" type="_ccgr0NnnEe2qH4Q_xXK0iA" direction="return"/>
+          <ownedParameter xmi:id="_ce2OIdnnEe2qH4Q_xXK0iA" type="_ccgr0NnnEe2qH4Q_xXK0iA" direction="return">
+            <name xsi:nil="true"/>
+          </ownedParameter>
           <language>java</language>
           <body>setBackground(new Color(189, 183, 107));&#xD;
 		setResizable(false);&#xD;
@@ -568,10 +570,14 @@
 		textField.setBounds(310, 82, 86, 20);&#xD;
 		contentPane.add(textField);&#xD;
 		textField.setColumns(10);&#xD;
+		&#xD;
+		JButton btnCadastro = new JButton(&quot;Cadastro&quot;);&#xD;
+		btnCadastro.setBounds(181, 123, 89, 23);&#xD;
+		contentPane.add(btnCadastro);&#xD;
 	</body>
         </ownedBehavior>
         <ownedOperation xmi:id="_cch58NnnEe2qH4Q_xXK0iA" name="main" isStatic="true" method="_ce1nFdnnEe2qH4Q_xXK0iA">
-          <ownedComment xmi:id="_ce4DUNnnEe2qH4Q_xXK0iA">
+          <ownedComment xmi:id="_NStwQNnpEe2qH4Q_xXK0iA">
             <body>Launch the application.</body>
           </ownedComment>
           <ownedParameter xmi:id="_cch58dnnEe2qH4Q_xXK0iA" name="args">
@@ -583,7 +589,7 @@
           <eAnnotations xmi:id="_ccihAtnnEe2qH4Q_xXK0iA" source="http://www.eclipse.org/uml2/2.0.0/UML">
             <details xmi:id="_ccihA9nnEe2qH4Q_xXK0iA" key="create"/>
           </eAnnotations>
-          <ownedComment xmi:id="_ce4DUdnnEe2qH4Q_xXK0iA">
+          <ownedComment xmi:id="_NSuXUNnpEe2qH4Q_xXK0iA">
             <body>Create the frame.</body>
           </ownedComment>
           <ownedParameter xmi:id="_ccihBNnnEe2qH4Q_xXK0iA" type="_ccgr0NnnEe2qH4Q_xXK0iA" direction="return"/>

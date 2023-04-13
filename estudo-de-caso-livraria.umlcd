@@ -180,8 +180,6 @@
       <cardinality xmi:id="_cj8JgdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_cj6UUdnnEe2qH4Q_xXK0iA" targetItem="_cj9-1dnnEe2qH4Q_xXK0iA" sourceItem="_cj6UUNnnEe2qH4Q_xXK0iA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_cj67YNnnEe2qH4Q_xXK0iA" targetItem="_cj9-29nnEe2qH4Q_xXK0iA" sourceItem="_cj6UUtnnEe2qH4Q_xXK0iA"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_cj8wkNnnEe2qH4Q_xXK0iA" source="_cj9-udnnEe2qH4Q_xXK0iA">
     <modelElement href="estudo-de-caso-livraria.uml#_ce8UxNnnEe2qH4Q_xXK0iA"/>
     <stereotypes xmi:id="_cj8wkdnnEe2qH4Q_xXK0iA" name="Reference">
@@ -250,17 +248,13 @@
       <cardinality xmi:id="_cj9-uNnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_NS7ysNnpEe2qH4Q_xXK0iA" targetItem="_cj9-1dnnEe2qH4Q_xXK0iA" sourceItem="_NS4IUNnpEe2qH4Q_xXK0iA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_NS-2ANnpEe2qH4Q_xXK0iA" targetItem="_cj9-29nnEe2qH4Q_xXK0iA" sourceItem="_NS-O8NnpEe2qH4Q_xXK0iA"/>
   <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_cj1b0NnnEe2qH4Q_xXK0iA" sourceConnectionVisual="_cj1b0dnnEe2qH4Q_xXK0iA" text="Launch the application." item="_cj34ENnnEe2qH4Q_xXK0iA">
     <modelElement href="estudo-de-caso-livraria.uml#_ce3cQdnnEe2qH4Q_xXK0iA"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_cj2C4NnnEe2qH4Q_xXK0iA" sourceConnectionVisual="_cj2C4dnnEe2qH4Q_xXK0iA" text="Create the frame." item="_cj34FtnnEe2qH4Q_xXK0iA">
     <modelElement href="estudo-de-caso-livraria.uml#_ce3cQtnnEe2qH4Q_xXK0iA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_cj6UUNnnEe2qH4Q_xXK0iA" sourceConnectionVisual="_cj6UUdnnEe2qH4Q_xXK0iA" text="Launch the application." item="_cj9-1dnnEe2qH4Q_xXK0iA">
-    <modelElement href="estudo-de-caso-livraria.uml#_ce4DUNnnEe2qH4Q_xXK0iA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_cj6UUtnnEe2qH4Q_xXK0iA" sourceConnectionVisual="_cj67YNnnEe2qH4Q_xXK0iA" text="Create the frame." item="_cj9-29nnEe2qH4Q_xXK0iA">
-    <modelElement href="estudo-de-caso-livraria.uml#_ce4DUdnnEe2qH4Q_xXK0iA"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_ciIyudnnEe2qH4Q_xXK0iA" name="PessoaDAO" associationsIn="_ciAP0NnnEe2qH4Q_xXK0iA" associationsOut="_ciAP0NnnEe2qH4Q_xXK0iA _ciIysNnnEe2qH4Q_xXK0iA" generalizations="_cjjH8NnnEe2qH4Q_xXK0iA">
     <modelElement href="estudo-de-caso-livraria.uml#_ccI4YNnnEe2qH4Q_xXK0iA"/>
@@ -865,7 +859,7 @@
         <modelElement href="estudo-de-caso-livraria.uml#_cePxMdnnEe2qH4Q_xXK0iA"/>
       </type>
     </attributes>
-    <operations xmi:id="_cj9-1dnnEe2qH4Q_xXK0iA" comments="_cj6UUNnnEe2qH4Q_xXK0iA" targetConnectionVisual="_cj6UUdnnEe2qH4Q_xXK0iA" name="main" staticOperation="true">
+    <operations xmi:id="_cj9-1dnnEe2qH4Q_xXK0iA" comments="_NS4IUNnpEe2qH4Q_xXK0iA" targetConnectionVisual="_NS7ysNnpEe2qH4Q_xXK0iA" name="main" staticOperation="true">
       <modelElement href="estudo-de-caso-livraria.uml#_cch58NnnEe2qH4Q_xXK0iA"/>
       <visibility xmi:id="_cj9-1tnnEe2qH4Q_xXK0iA" label="+"/>
       <cardinality xmi:id="_cj9-19nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
@@ -877,7 +871,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_cj9-29nnEe2qH4Q_xXK0iA" comments="_cj6UUtnnEe2qH4Q_xXK0iA" targetConnectionVisual="_cj67YNnnEe2qH4Q_xXK0iA" name="TelaLogin">
+    <operations xmi:id="_cj9-29nnEe2qH4Q_xXK0iA" comments="_NS-O8NnpEe2qH4Q_xXK0iA" targetConnectionVisual="_NS-2ANnpEe2qH4Q_xXK0iA" name="TelaLogin">
       <modelElement href="estudo-de-caso-livraria.uml#_ccihAdnnEe2qH4Q_xXK0iA"/>
       <keywords xmi:id="_cj9-3NnnEe2qH4Q_xXK0iA" keyword="create"/>
       <visibility xmi:id="_cj9-3dnnEe2qH4Q_xXK0iA" label="+"/>
@@ -1050,5 +1044,11 @@
         </type>
       </parameters>
     </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_NS4IUNnpEe2qH4Q_xXK0iA" sourceConnectionVisual="_NS7ysNnpEe2qH4Q_xXK0iA" text="Launch the application." item="_cj9-1dnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_NStwQNnpEe2qH4Q_xXK0iA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_NS-O8NnpEe2qH4Q_xXK0iA" sourceConnectionVisual="_NS-2ANnpEe2qH4Q_xXK0iA" text="Create the frame." item="_cj9-29nnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_NSuXUNnpEe2qH4Q_xXK0iA"/>
   </nodes>
 </com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
