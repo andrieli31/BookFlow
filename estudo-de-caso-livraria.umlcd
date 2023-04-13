@@ -1,0 +1,1054 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.diagrams="http://ns.yatta-solutions.com/umllab/diagrams/1.1.0" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_cNFvwNnnEe2qH4Q_xXK0iA">
+  <modelElement href="estudo-de-caso-livraria.uml#_cJCWMNnnEe2qH4Q_xXK0iA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ciAP0NnnEe2qH4Q_xXK0iA" sourceAnchor="139.0,0.0" targetAnchor="0.0,78.0" target="_ciIyudnnEe2qH4Q_xXK0iA" source="_ciIyudnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ce7GoNnnEe2qH4Q_xXK0iA"/>
+    <bendpoints xmi:id="_cqO-wNnnEe2qH4Q_xXK0iA" sourceY="-91" targetX="139" targetY="-169"/>
+    <bendpoints xmi:id="_cqQM4NnnEe2qH4Q_xXK0iA" sourceX="-247" sourceY="-91" targetX="-108" targetY="-169"/>
+    <bendpoints xmi:id="_cqQM4dnnEe2qH4Q_xXK0iA" sourceX="-247" sourceY="78" targetX="-108"/>
+    <stereotypes xmi:id="_ciGWcNnnEe2qH4Q_xXK0iA" name="Reference">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce7GotnnEe2qH4Q_xXK0iA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ciFIUNnnEe2qH4Q_xXK0iA" text="">
+      <visualProperties xmi:id="_cqQz8tnnEe2qH4Q_xXK0iA" position="187.0,-8.5"/>
+    </nameVisual>
+    <sourceRole xmi:id="_ciFvYNnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce7GodnnEe2qH4Q_xXK0iA"/>
+      <visualProperties xmi:id="_cqQz8dnnEe2qH4Q_xXK0iA" position="-20.5,-50.0"/>
+      <visibility xmi:id="_ciGWctnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_ciGWcdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ciFvYdnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="instancia" navigable="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceisINnnEe2qH4Q_xXK0iA"/>
+      <visualProperties xmi:id="_cqRbANnnEe2qH4Q_xXK0iA" position="-67.0,3.499999999999943"/>
+      <visibility xmi:id="_ciG9gNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_ciGWc9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ciIysNnnEe2qH4Q_xXK0iA" source="_ciIyudnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ce6fkdnnEe2qH4Q_xXK0iA"/>
+    <stereotypes xmi:id="_ciIysdnnEe2qH4Q_xXK0iA" name="Reference">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce6fk9nnEe2qH4Q_xXK0iA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_ciIystnnEe2qH4Q_xXK0iA" text=""/>
+    <sourceRole xmi:id="_ciIys9nnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce6fktnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_ciIytNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_ciIytdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_ciIyttnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="tabelaUsuarios" navigable="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceheANnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_ciIyt9nnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_ciIyuNnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_cjMioNnnEe2qH4Q_xXK0iA" sourceAnchor="326.0,0.0" targetAnchor="0.0,78.0" target="_cjQNANnnEe2qH4Q_xXK0iA" source="_cjQNANnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ce54g9nnEe2qH4Q_xXK0iA"/>
+    <bendpoints xmi:id="_cqQM49nnEe2qH4Q_xXK0iA" sourceY="-91" targetX="326" targetY="-169"/>
+    <bendpoints xmi:id="_cqQM5NnnEe2qH4Q_xXK0iA" sourceX="-442" sourceY="-91" targetX="-116" targetY="-169"/>
+    <bendpoints xmi:id="_cqQM5dnnEe2qH4Q_xXK0iA" sourceX="-442" sourceY="78" targetX="-116"/>
+    <stereotypes xmi:id="_cjOX09nnEe2qH4Q_xXK0iA" name="Reference">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce6fkNnnEe2qH4Q_xXK0iA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_cjOX0NnnEe2qH4Q_xXK0iA" text="">
+      <visualProperties xmi:id="_cqSCENnnEe2qH4Q_xXK0iA" position="382.0,-8.5"/>
+    </nameVisual>
+    <sourceRole xmi:id="_cjOX0dnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce54hNnnEe2qH4Q_xXK0iA"/>
+      <visualProperties xmi:id="_cqRbAdnnEe2qH4Q_xXK0iA" position="-20.5,-50.0"/>
+      <visibility xmi:id="_cjO-4dnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjO-4NnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_cjOX0tnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="instancia" navigable="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_cegP4NnnEe2qH4Q_xXK0iA"/>
+      <visualProperties xmi:id="_cqSCEdnnEe2qH4Q_xXK0iA" position="-66.5,3.499999999999943"/>
+      <visibility xmi:id="_cjO-49nnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjO-4tnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_cjMiodnnEe2qH4Q_xXK0iA" source="_cjQNANnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ce54gNnnEe2qH4Q_xXK0iA"/>
+    <stereotypes xmi:id="_cjOX19nnEe2qH4Q_xXK0iA" name="Reference">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce54gtnnEe2qH4Q_xXK0iA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_cjOX1NnnEe2qH4Q_xXK0iA" text=""/>
+    <sourceRole xmi:id="_cjOX1dnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce54gdnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjPl8dnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjPl8NnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_cjOX1tnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="tabelaLivros" navigable="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_cefBwNnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjPl89nnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_cjPl8tnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_cjcaQNnnEe2qH4Q_xXK0iA" sourceAnchor="356.0,0.0" targetAnchor="0.0,64.0" dashed="true" superClass="_cjePcNnnEe2qH4Q_xXK0iA" subClass="_cjQNANnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_cd-rcNnnEe2qH4Q_xXK0iA"/>
+    <bendpoints xmi:id="_cqQM5tnnEe2qH4Q_xXK0iA" sourceY="-169" targetX="-380"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_cjjH8NnnEe2qH4Q_xXK0iA" sourceAnchor="278.0,38.0" targetAnchor="139.0,128.0" dashed="true" superClass="_cjk9INnnEe2qH4Q_xXK0iA" subClass="_ciIyudnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ceBuwNnnEe2qH4Q_xXK0iA"/>
+    <bendpoints xmi:id="_cqQM4tnnEe2qH4Q_xXK0iA" sourceX="2003" targetY="142"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_cjoAcNnnEe2qH4Q_xXK0iA" source="_cjp1otnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ce7tsNnnEe2qH4Q_xXK0iA"/>
+    <stereotypes xmi:id="_cjpOk9nnEe2qH4Q_xXK0iA" name="Reference">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce7tstnnEe2qH4Q_xXK0iA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_cjpOkNnnEe2qH4Q_xXK0iA" text=""/>
+    <sourceRole xmi:id="_cjpOkdnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce7tsdnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjpOldnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjpOlNnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_cjpOktnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="autores" navigable="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_cemWgdnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjp1oNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjpOltnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_cjv8QNnnEe2qH4Q_xXK0iA" sourceAnchor="0.0,39.0" targetAnchor="81.0,73.0" target="_cjxxdNnnEe2qH4Q_xXK0iA" source="_cjtgANnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ce21MNnnEe2qH4Q_xXK0iA"/>
+    <bendpoints xmi:id="_cqQz8NnnEe2qH4Q_xXK0iA" sourceX="-156" targetY="94"/>
+    <nameVisual xmi:id="_cjwjUNnnEe2qH4Q_xXK0iA" text="">
+      <visualProperties xmi:id="_cqSpIdnnEe2qH4Q_xXK0iA" position="68.54346539745097,-4.8431982868927435"/>
+    </nameVisual>
+    <sourceRole xmi:id="_cjwjUdnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="pessoa" navigable="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_cej6QtnnEe2qH4Q_xXK0iA"/>
+      <visualProperties xmi:id="_cqSpINnnEe2qH4Q_xXK0iA" position="-81.71672907517996,-14.664393264733945"/>
+      <visibility xmi:id="_cjxKYdnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjxKYNnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_cjwjUtnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce3cQNnnEe2qH4Q_xXK0iA"/>
+      <visualProperties xmi:id="_cqSpItnnEe2qH4Q_xXK0iA" position="45.66985790077183,79.7711825030481"/>
+      <visibility xmi:id="_cjxKY9nnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjxKYtnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_cjwjU9nnEe2qH4Q_xXK0iA" source="_cjxxdNnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ce7Go9nnEe2qH4Q_xXK0iA"/>
+    <stereotypes xmi:id="_cjxKZ9nnEe2qH4Q_xXK0iA" name="Reference">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce7GpdnnEe2qH4Q_xXK0iA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_cjxKZNnnEe2qH4Q_xXK0iA" text=""/>
+    <sourceRole xmi:id="_cjxKZdnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce7GpNnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjxxcNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjxKaNnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_cjxKZtnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="livros" navigable="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_cekhUNnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjxxctnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjxxcdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_cj1b0dnnEe2qH4Q_xXK0iA" targetItem="_cj34ENnnEe2qH4Q_xXK0iA" sourceItem="_cj1b0NnnEe2qH4Q_xXK0iA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_cj2C4dnnEe2qH4Q_xXK0iA" targetItem="_cj34FtnnEe2qH4Q_xXK0iA" sourceItem="_cj2C4NnnEe2qH4Q_xXK0iA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_cj3RANnnEe2qH4Q_xXK0iA" source="_cj3RCdnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ce7ts9nnEe2qH4Q_xXK0iA"/>
+    <stereotypes xmi:id="_cj3RAdnnEe2qH4Q_xXK0iA" name="Reference">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce8UwNnnEe2qH4Q_xXK0iA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_cj3RAtnnEe2qH4Q_xXK0iA" text=""/>
+    <sourceRole xmi:id="_cj3RA9nnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce7ttNnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cj3RBNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cj3RBdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_cj3RBtnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="contentPane" navigable="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceoLsdnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cj3RB9nnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_cj3RCNnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_cj5tQNnnEe2qH4Q_xXK0iA" source="_cj9-udnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ce8UwdnnEe2qH4Q_xXK0iA"/>
+    <stereotypes xmi:id="_cj7ic9nnEe2qH4Q_xXK0iA" name="Reference">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce8Uw9nnEe2qH4Q_xXK0iA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_cj7icNnnEe2qH4Q_xXK0iA" text=""/>
+    <sourceRole xmi:id="_cj7icdnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce8UwtnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cj8JgNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cj7idNnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_cj7ictnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="contentPane" navigable="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceoywdnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cj8JgtnnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_cj8JgdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_cj6UUdnnEe2qH4Q_xXK0iA" targetItem="_cj9-1dnnEe2qH4Q_xXK0iA" sourceItem="_cj6UUNnnEe2qH4Q_xXK0iA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_cj67YNnnEe2qH4Q_xXK0iA" targetItem="_cj9-29nnEe2qH4Q_xXK0iA" sourceItem="_cj6UUtnnEe2qH4Q_xXK0iA"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_cj8wkNnnEe2qH4Q_xXK0iA" source="_cj9-udnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ce8UxNnnEe2qH4Q_xXK0iA"/>
+    <stereotypes xmi:id="_cj8wkdnnEe2qH4Q_xXK0iA" name="Reference">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce8UxtnnEe2qH4Q_xXK0iA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_cj8wktnnEe2qH4Q_xXK0iA" text=""/>
+    <sourceRole xmi:id="_cj8wk9nnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce8UxdnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cj8wlNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cj8wldnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_cj8wltnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="txtUser" navigable="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceoyw9nnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cj8wl9nnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_cj8wmNnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_cj8wmdnnEe2qH4Q_xXK0iA" source="_cj9-udnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ce870NnnEe2qH4Q_xXK0iA"/>
+    <stereotypes xmi:id="_cj8wmtnnEe2qH4Q_xXK0iA" name="Reference">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce870tnnEe2qH4Q_xXK0iA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_cj8wm9nnEe2qH4Q_xXK0iA" text=""/>
+    <sourceRole xmi:id="_cj8wnNnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce870dnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cj8wndnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cj8wntnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_cj8wn9nnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="txtSenha" navigable="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_cepZ0dnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cj8woNnnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_cj8wodnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_cj9XoNnnEe2qH4Q_xXK0iA" source="_cj9-udnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ce8709nnEe2qH4Q_xXK0iA"/>
+    <stereotypes xmi:id="_cj9XodnnEe2qH4Q_xXK0iA" name="Reference">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce871dnnEe2qH4Q_xXK0iA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_cj9XotnnEe2qH4Q_xXK0iA" text=""/>
+    <sourceRole xmi:id="_cj9Xo9nnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce871NnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cj9XpNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cj9XpdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_cj9XptnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="txtNome" navigable="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_cepZ09nnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cj9Xp9nnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_cj9XqNnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_cj9-sNnnEe2qH4Q_xXK0iA" source="_cj9-udnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ce9i4NnnEe2qH4Q_xXK0iA"/>
+    <stereotypes xmi:id="_cj9-sdnnEe2qH4Q_xXK0iA" name="Reference">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce9i4tnnEe2qH4Q_xXK0iA"/>
+    </stereotypes>
+    <nameVisual xmi:id="_cj9-stnnEe2qH4Q_xXK0iA" text=""/>
+    <sourceRole xmi:id="_cj9-s9nnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="">
+      <modelElement href="estudo-de-caso-livraria.uml#_ce9i4dnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cj9-tNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cj9-tdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_cj9-ttnnEe2qH4Q_xXK0iA" aggregationKind="NONE" name="textField" navigable="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceqA4dnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cj9-t9nnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_cj9-uNnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_cj1b0NnnEe2qH4Q_xXK0iA" sourceConnectionVisual="_cj1b0dnnEe2qH4Q_xXK0iA" text="Launch the application." item="_cj34ENnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ce3cQdnnEe2qH4Q_xXK0iA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_cj2C4NnnEe2qH4Q_xXK0iA" sourceConnectionVisual="_cj2C4dnnEe2qH4Q_xXK0iA" text="Create the frame." item="_cj34FtnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ce3cQtnnEe2qH4Q_xXK0iA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_cj6UUNnnEe2qH4Q_xXK0iA" sourceConnectionVisual="_cj6UUdnnEe2qH4Q_xXK0iA" text="Launch the application." item="_cj9-1dnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ce4DUNnnEe2qH4Q_xXK0iA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_cj6UUtnnEe2qH4Q_xXK0iA" sourceConnectionVisual="_cj67YNnnEe2qH4Q_xXK0iA" text="Create the frame." item="_cj9-29nnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ce4DUdnnEe2qH4Q_xXK0iA"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_ciIyudnnEe2qH4Q_xXK0iA" name="PessoaDAO" associationsIn="_ciAP0NnnEe2qH4Q_xXK0iA" associationsOut="_ciAP0NnnEe2qH4Q_xXK0iA _ciIysNnnEe2qH4Q_xXK0iA" generalizations="_cjjH8NnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ccI4YNnnEe2qH4Q_xXK0iA"/>
+    <visualProperties xmi:id="_ciIyutnnEe2qH4Q_xXK0iA" position="30.0,30.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_ciIyu9nnEe2qH4Q_xXK0iA" label="+"/>
+    <attributes xmi:id="_ciIyvNnnEe2qH4Q_xXK0iA" name="tabelaUsuarios" staticAttribute="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceheANnnEe2qH4Q_xXK0iA"/>
+      <stereotypes xmi:id="_ciIyvdnnEe2qH4Q_xXK0iA" name="Generics">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceiFENnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_ciIyvtnnEe2qH4Q_xXK0iA" name="LegacyStyledElement">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceiFEdnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_ciIyv9nnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_ciIywNnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_ciIywdnnEe2qH4Q_xXK0iA" name="ArrayList">
+        <modelElement href="estudo-de-caso-livraria.uml#_cd5y8NnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_ciIywtnnEe2qH4Q_xXK0iA" name="instancia" staticAttribute="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceisINnnEe2qH4Q_xXK0iA"/>
+      <stereotypes xmi:id="_ciIyw9nnEe2qH4Q_xXK0iA" name="LegacyStyledElement">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceisIdnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_ciIyxNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_ciIyxdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_ciIyxtnnEe2qH4Q_xXK0iA" name="PessoaDAO">
+        <modelElement href="estudo-de-caso-livraria.uml#_ccI4YNnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_ciIyx9nnEe2qH4Q_xXK0iA" name="PessoaDAO">
+      <modelElement href="estudo-de-caso-livraria.uml#_ccJfcNnnEe2qH4Q_xXK0iA"/>
+      <keywords xmi:id="_ciIyyNnnEe2qH4Q_xXK0iA" keyword="create"/>
+      <stereotypes xmi:id="_ciIyydnnEe2qH4Q_xXK0iA" name="LegacyStyledElement">
+        <modelElement href="estudo-de-caso-livraria.uml#_ccJfc9nnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_ciIyytnnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_ciIyy9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_ciIyzNnnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ccJfdNnnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_ciIyzdnnEe2qH4Q_xXK0iA" name="PessoaDAO">
+          <modelElement href="estudo-de-caso-livraria.uml#_ccI4YNnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_ciIyztnnEe2qH4Q_xXK0iA" name="listarPessoas">
+      <modelElement href="estudo-de-caso-livraria.uml#_ccKGgNnnEe2qH4Q_xXK0iA"/>
+      <stereotypes xmi:id="_ciIyz9nnEe2qH4Q_xXK0iA" name="Generics">
+        <modelElement href="estudo-de-caso-livraria.uml#_ccKtkNnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_ciIy0NnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_ciIy0dnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_ciIy0tnnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceYUE9nnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_ciIy09nnEe2qH4Q_xXK0iA" name="ArrayList">
+          <modelElement href="estudo-de-caso-livraria.uml#_cd5y8NnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_ciIy1NnnEe2qH4Q_xXK0iA" name="cadastrarPessoa">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceCV0NnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_ciIy1dnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_ciIy1tnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_ciIy19nnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceCV0tnnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_ciIy2NnnEe2qH4Q_xXK0iA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_ciIy2dnnEe2qH4Q_xXK0iA" name="p">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceCV0dnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_ciIy2tnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_ciIy29nnEe2qH4Q_xXK0iA" name="Pessoa">
+          <modelElement href="estudo-de-caso-livraria.uml#_ccZ-INnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ciIy3NnnEe2qH4Q_xXK0iA" name="alterar">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceXF8NnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_ciIy3dnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_ciIy3tnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_ciIy39nnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceXtAtnnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_ciIy4NnnEe2qH4Q_xXK0iA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_ciIy4dnnEe2qH4Q_xXK0iA" name="p">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceXtANnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_ciIy4tnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_ciIy49nnEe2qH4Q_xXK0iA" name="Pessoa">
+          <modelElement href="estudo-de-caso-livraria.uml#_ccZ-INnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ciIy5NnnEe2qH4Q_xXK0iA" name="cpf">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceXtAdnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_ciIy5dnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_ciIy5tnnEe2qH4Q_xXK0iA" name="Long">
+          <modelElement href="estudo-de-caso-livraria.uml#_ceVQwNnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_ciIy59nnEe2qH4Q_xXK0iA" name="deletar">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceXtA9nnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_ciIy6NnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_ciIy6dnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_ciIy6tnnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceYUEtnnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_ciIy69nnEe2qH4Q_xXK0iA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_ciIy7NnnEe2qH4Q_xXK0iA" name="p">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceYUENnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_ciIy7dnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_ciIy7tnnEe2qH4Q_xXK0iA" name="Pessoa">
+          <modelElement href="estudo-de-caso-livraria.uml#_ccZ-INnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_ciIy79nnEe2qH4Q_xXK0iA" name="cpf">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceYUEdnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_ciIy8NnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_ciIy8dnnEe2qH4Q_xXK0iA" name="Long">
+          <modelElement href="estudo-de-caso-livraria.uml#_ceVQwNnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_cjXhwNnnEe2qH4Q_xXK0iA" name="Usuario">
+    <modelElement href="estudo-de-caso-livraria.uml#_ccbzUNnnEe2qH4Q_xXK0iA"/>
+    <visualProperties xmi:id="_cjXhwdnnEe2qH4Q_xXK0iA" position="766.0,-65.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_cjXhwtnnEe2qH4Q_xXK0iA" label="+"/>
+    <attributes xmi:id="_cjXhw9nnEe2qH4Q_xXK0iA" name="id">
+      <modelElement href="estudo-de-caso-livraria.uml#_cenkodnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjXhxNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjXhxdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjXhxtnnEe2qH4Q_xXK0iA" name="Long">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceVQwNnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cjXhx9nnEe2qH4Q_xXK0iA" name="login">
+      <modelElement href="estudo-de-caso-livraria.uml#_cenkotnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjXhyNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjXhydnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjXhytnnEe2qH4Q_xXK0iA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cjXhy9nnEe2qH4Q_xXK0iA" name="senha">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceoLsNnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjXhzNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjXhzdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjXhztnnEe2qH4Q_xXK0iA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_cjZ-ANnnEe2qH4Q_xXK0iA" name="Autor">
+    <modelElement href="estudo-de-caso-livraria.uml#_ccNJ0NnnEe2qH4Q_xXK0iA"/>
+    <visualProperties xmi:id="_cjZ-AdnnEe2qH4Q_xXK0iA" position="1417.0,-129.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_cjZ-AtnnEe2qH4Q_xXK0iA" label="+"/>
+    <attributes xmi:id="_cjZ-A9nnEe2qH4Q_xXK0iA" name="id">
+      <modelElement href="estudo-de-caso-livraria.uml#_cejTMdnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjZ-BNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjZ-BdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjZ-BtnnEe2qH4Q_xXK0iA" name="Long">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceVQwNnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cjZ-B9nnEe2qH4Q_xXK0iA" name="nome">
+      <modelElement href="estudo-de-caso-livraria.uml#_cejTMtnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjZ-CNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjZ-CdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjZ-CtnnEe2qH4Q_xXK0iA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cjZ-C9nnEe2qH4Q_xXK0iA" name="sobrenome">
+      <modelElement href="estudo-de-caso-livraria.uml#_cej6QNnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjZ-DNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjZ-DdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjZ-DtnnEe2qH4Q_xXK0iA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_cjePcNnnEe2qH4Q_xXK0iA" name="ILivroDAO" subclassedBy="_cjcaQNnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ccQNINnnEe2qH4Q_xXK0iA"/>
+    <visualProperties xmi:id="_cjePcdnnEe2qH4Q_xXK0iA" position="1529.0,83.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_cjePctnnEe2qH4Q_xXK0iA" label="+"/>
+    <operations xmi:id="_cjePc9nnEe2qH4Q_xXK0iA" name="listarLivros">
+      <modelElement href="estudo-de-caso-livraria.uml#_ccRbQNnnEe2qH4Q_xXK0iA"/>
+      <stereotypes xmi:id="_cjePdNnnEe2qH4Q_xXK0iA" name="Generics">
+        <modelElement href="estudo-de-caso-livraria.uml#_ccSpYNnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_cjePddnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjePdtnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_cjePd9nnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceawUNnnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_cjePeNnnEe2qH4Q_xXK0iA" name="ArrayList">
+          <modelElement href="estudo-de-caso-livraria.uml#_cd5y8NnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_cjePednnEe2qH4Q_xXK0iA" name="cadastrarLivro">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceEyENnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjePetnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjePe9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_cjePfNnnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceEyEtnnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_cjePfdnnEe2qH4Q_xXK0iA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_cjePftnnEe2qH4Q_xXK0iA" name="l">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceEyEdnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjePf9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjePgNnnEe2qH4Q_xXK0iA" name="Livro">
+          <modelElement href="estudo-de-caso-livraria.uml#_ccYI8NnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_cjePgdnnEe2qH4Q_xXK0iA" name="alterarLivro">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceZiMNnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjePgtnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjePg9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_cjePhNnnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceaJQNnnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_cjePhdnnEe2qH4Q_xXK0iA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_cjePhtnnEe2qH4Q_xXK0iA" name="l">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceZiMdnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjePh9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjePiNnnEe2qH4Q_xXK0iA" name="Livro">
+          <modelElement href="estudo-de-caso-livraria.uml#_ccYI8NnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_cjePidnnEe2qH4Q_xXK0iA" name="isbn">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceZiMtnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjePitnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjePi9nnEe2qH4Q_xXK0iA" name="Long">
+          <modelElement href="estudo-de-caso-livraria.uml#_ceVQwNnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_cjePjNnnEe2qH4Q_xXK0iA" name="titulo">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceZiM9nnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjePjdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjePjtnnEe2qH4Q_xXK0iA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_cjePj9nnEe2qH4Q_xXK0iA" name="editora">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceZiNNnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjePkNnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjePkdnnEe2qH4Q_xXK0iA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_cjePktnnEe2qH4Q_xXK0iA" name="nrEdicao">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceZiNdnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjePk9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjePlNnnEe2qH4Q_xXK0iA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_cjePldnnEe2qH4Q_xXK0iA" name="anoLancamento">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceZiNtnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjePltnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjePl9nnEe2qH4Q_xXK0iA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_cjePmNnnEe2qH4Q_xXK0iA" name="deletarLivro">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceaJQdnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjePmdnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjePmtnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_cjePm9nnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceaJRNnnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_cjePnNnnEe2qH4Q_xXK0iA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_cjePndnnEe2qH4Q_xXK0iA" name="l">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceaJQtnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjePntnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjePn9nnEe2qH4Q_xXK0iA" name="Livro">
+          <modelElement href="estudo-de-caso-livraria.uml#_ccYI8NnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_cjePoNnnEe2qH4Q_xXK0iA" name="isbn">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceaJQ9nnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjePodnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjePotnnEe2qH4Q_xXK0iA" name="Long">
+          <modelElement href="estudo-de-caso-livraria.uml#_ceVQwNnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_cjk9INnnEe2qH4Q_xXK0iA" name="IPessoaDAO" subclassedBy="_cjjH8NnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ccT3gNnnEe2qH4Q_xXK0iA"/>
+    <visualProperties xmi:id="_cjk9IdnnEe2qH4Q_xXK0iA" position="2172.0,-202.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_cjk9ItnnEe2qH4Q_xXK0iA" label="+"/>
+    <operations xmi:id="_cjk9I9nnEe2qH4Q_xXK0iA" name="listarPessoas">
+      <modelElement href="estudo-de-caso-livraria.uml#_ccVFoNnnEe2qH4Q_xXK0iA"/>
+      <stereotypes xmi:id="_cjk9JNnnEe2qH4Q_xXK0iA" name="Generics">
+        <modelElement href="estudo-de-caso-livraria.uml#_ccWTwNnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_cjk9JdnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjk9JtnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_cjk9J9nnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceb-cdnnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_cjk9KNnnEe2qH4Q_xXK0iA" name="ArrayList">
+          <modelElement href="estudo-de-caso-livraria.uml#_cd5y8NnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_cjk9KdnnEe2qH4Q_xXK0iA" name="cadastrarPessoa">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceGAMNnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjk9KtnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjk9K9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_cjk9LNnnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceGAMtnnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_cjk9LdnnEe2qH4Q_xXK0iA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_cjk9LtnnEe2qH4Q_xXK0iA" name="p">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceGAMdnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjk9L9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjk9MNnnEe2qH4Q_xXK0iA" name="Pessoa">
+          <modelElement href="estudo-de-caso-livraria.uml#_ccZ-INnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_cjk9MdnnEe2qH4Q_xXK0iA" name="alterar">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceawUdnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjk9MtnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjk9M9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_cjk9NNnnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceawVNnnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_cjk9NdnnEe2qH4Q_xXK0iA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_cjk9NtnnEe2qH4Q_xXK0iA" name="p">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceawUtnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjk9N9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjk9ONnnEe2qH4Q_xXK0iA" name="Pessoa">
+          <modelElement href="estudo-de-caso-livraria.uml#_ccZ-INnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_cjk9OdnnEe2qH4Q_xXK0iA" name="cpf">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceawU9nnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjk9OtnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjk9O9nnEe2qH4Q_xXK0iA" name="Long">
+          <modelElement href="estudo-de-caso-livraria.uml#_ceVQwNnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_cjk9PNnnEe2qH4Q_xXK0iA" name="deletar">
+      <modelElement href="estudo-de-caso-livraria.uml#_cebXYNnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjk9PdnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjk9PtnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_cjk9P9nnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceb-cNnnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_cjk9QNnnEe2qH4Q_xXK0iA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_cjk9QdnnEe2qH4Q_xXK0iA" name="p">
+        <modelElement href="estudo-de-caso-livraria.uml#_cebXYdnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjk9QtnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjk9Q9nnEe2qH4Q_xXK0iA" name="Pessoa">
+          <modelElement href="estudo-de-caso-livraria.uml#_ccZ-INnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_cjk9RNnnEe2qH4Q_xXK0iA" name="cpf">
+        <modelElement href="estudo-de-caso-livraria.uml#_cebXYtnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjk9RdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjk9RtnnEe2qH4Q_xXK0iA" name="Long">
+          <modelElement href="estudo-de-caso-livraria.uml#_ceVQwNnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_cjp1otnnEe2qH4Q_xXK0iA" name="Livro" associationsOut="_cjoAcNnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ccYI8NnnEe2qH4Q_xXK0iA"/>
+    <visualProperties xmi:id="_cjp1o9nnEe2qH4Q_xXK0iA" position="539.0,-240.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_cjp1pNnnEe2qH4Q_xXK0iA" label="+"/>
+    <attributes xmi:id="_cjp1pdnnEe2qH4Q_xXK0iA" name="isbn">
+      <modelElement href="estudo-de-caso-livraria.uml#_celIYdnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjp1ptnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjp1p9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjp1qNnnEe2qH4Q_xXK0iA" name="Long">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceVQwNnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cjp1qdnnEe2qH4Q_xXK0iA" name="titulo">
+      <modelElement href="estudo-de-caso-livraria.uml#_celvcNnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjp1qtnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjp1q9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjp1rNnnEe2qH4Q_xXK0iA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cjp1rdnnEe2qH4Q_xXK0iA" name="editora">
+      <modelElement href="estudo-de-caso-livraria.uml#_celvcdnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjp1rtnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjp1r9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjp1sNnnEe2qH4Q_xXK0iA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cjp1sdnnEe2qH4Q_xXK0iA" name="nrEdicao">
+      <modelElement href="estudo-de-caso-livraria.uml#_celvctnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjp1stnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjp1s9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjp1tNnnEe2qH4Q_xXK0iA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cjp1tdnnEe2qH4Q_xXK0iA" name="anoLancamento">
+      <modelElement href="estudo-de-caso-livraria.uml#_cemWgNnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjp1ttnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjp1t9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjp1uNnnEe2qH4Q_xXK0iA" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cjp1udnnEe2qH4Q_xXK0iA" name="autores">
+      <modelElement href="estudo-de-caso-livraria.uml#_cemWgdnnEe2qH4Q_xXK0iA"/>
+      <stereotypes xmi:id="_cjp1utnnEe2qH4Q_xXK0iA" name="Generics">
+        <modelElement href="estudo-de-caso-livraria.uml#_cem9kNnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_cjp1u9nnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjp1vNnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjp1vdnnEe2qH4Q_xXK0iA" name="ArrayList">
+        <modelElement href="estudo-de-caso-livraria.uml#_cd5y8NnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_cjtgANnnEe2qH4Q_xXK0iA" name="Pessoa" associationsOut="_cjv8QNnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ccZ-INnnEe2qH4Q_xXK0iA"/>
+    <visualProperties xmi:id="_cjtgAdnnEe2qH4Q_xXK0iA" position="1645.0,-183.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_cjtgAtnnEe2qH4Q_xXK0iA" label="+"/>
+    <attributes xmi:id="_cjtgA9nnEe2qH4Q_xXK0iA" name="cpf">
+      <modelElement href="estudo-de-caso-livraria.uml#_cem9kdnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjtgBNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjtgBdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjtgBtnnEe2qH4Q_xXK0iA" name="Long">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceVQwNnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cjtgB9nnEe2qH4Q_xXK0iA" name="nome">
+      <modelElement href="estudo-de-caso-livraria.uml#_cem9ktnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjtgCNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjtgCdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjtgCtnnEe2qH4Q_xXK0iA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cjtgC9nnEe2qH4Q_xXK0iA" name="sobrenome">
+      <modelElement href="estudo-de-caso-livraria.uml#_cenkoNnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjtgDNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjtgDdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjtgDtnnEe2qH4Q_xXK0iA" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_cjxxdNnnEe2qH4Q_xXK0iA" name="Emprestimo" associationsIn="_cjv8QNnnEe2qH4Q_xXK0iA" associationsOut="_cjwjU9nnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ccOX8NnnEe2qH4Q_xXK0iA"/>
+    <visualProperties xmi:id="_cjxxddnnEe2qH4Q_xXK0iA" position="1408.0,-311.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_cjxxdtnnEe2qH4Q_xXK0iA" label="+"/>
+    <attributes xmi:id="_cjxxd9nnEe2qH4Q_xXK0iA" name="id">
+      <modelElement href="estudo-de-caso-livraria.uml#_cej6QdnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjxxeNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjxxednnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjxxetnnEe2qH4Q_xXK0iA" name="Long">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceVQwNnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cjxxe9nnEe2qH4Q_xXK0iA" name="pessoa">
+      <modelElement href="estudo-de-caso-livraria.uml#_cej6QtnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjxxfNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjxxfdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjxxftnnEe2qH4Q_xXK0iA" name="Pessoa">
+        <modelElement href="estudo-de-caso-livraria.uml#_ccZ-INnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cjxxf9nnEe2qH4Q_xXK0iA" name="livros">
+      <modelElement href="estudo-de-caso-livraria.uml#_cekhUNnnEe2qH4Q_xXK0iA"/>
+      <stereotypes xmi:id="_cjxxgNnnEe2qH4Q_xXK0iA" name="Generics">
+        <modelElement href="estudo-de-caso-livraria.uml#_celIYNnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_cjxxgdnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjxxgtnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjxxg9nnEe2qH4Q_xXK0iA" name="ArrayList">
+        <modelElement href="estudo-de-caso-livraria.uml#_cd5y8NnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_cj3RCdnnEe2qH4Q_xXK0iA" name="TelaGerenciaLivro" associationsOut="_cj3RANnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ccdogNnnEe2qH4Q_xXK0iA"/>
+    <visualProperties xmi:id="_cj3RCtnnEe2qH4Q_xXK0iA" position="186.0,-190.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_cj3RC9nnEe2qH4Q_xXK0iA" label="+"/>
+    <attributes xmi:id="_cj3RDNnnEe2qH4Q_xXK0iA" name="contentPane">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceoLsdnnEe2qH4Q_xXK0iA"/>
+      <stereotypes xmi:id="_cj3RDdnnEe2qH4Q_xXK0iA" name="LegacyStyledElement">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceoywNnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_cj3RDtnnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_cj3RD9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cj3RENnnEe2qH4Q_xXK0iA" name="JPanel">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceKRodnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_cj34ENnnEe2qH4Q_xXK0iA" comments="_cj1b0NnnEe2qH4Q_xXK0iA" targetConnectionVisual="_cj1b0dnnEe2qH4Q_xXK0iA" name="main" staticOperation="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_cce2oNnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cj34EdnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cj34EtnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_cj34E9nnEe2qH4Q_xXK0iA" name="args">
+        <modelElement href="estudo-de-caso-livraria.uml#_cce2odnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cj34FNnnEe2qH4Q_xXK0iA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_cj34FdnnEe2qH4Q_xXK0iA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_cj34FtnnEe2qH4Q_xXK0iA" comments="_cj2C4NnnEe2qH4Q_xXK0iA" targetConnectionVisual="_cj2C4dnnEe2qH4Q_xXK0iA" name="TelaGerenciaLivro">
+      <modelElement href="estudo-de-caso-livraria.uml#_ccgEwNnnEe2qH4Q_xXK0iA"/>
+      <keywords xmi:id="_cj34F9nnEe2qH4Q_xXK0iA" keyword="create"/>
+      <visibility xmi:id="_cj34GNnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cj34GdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_cj34GtnnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ccgEw9nnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_cj34G9nnEe2qH4Q_xXK0iA" name="TelaGerenciaLivro">
+          <modelElement href="estudo-de-caso-livraria.uml#_ccdogNnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_cj9-udnnEe2qH4Q_xXK0iA" name="TelaLogin" associationsOut="_cj5tQNnnEe2qH4Q_xXK0iA _cj8wkNnnEe2qH4Q_xXK0iA _cj8wmdnnEe2qH4Q_xXK0iA _cj9XoNnnEe2qH4Q_xXK0iA _cj9-sNnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_ccgr0NnnEe2qH4Q_xXK0iA"/>
+    <visualProperties xmi:id="_cj9-utnnEe2qH4Q_xXK0iA" position="1892.0,-266.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_cj9-u9nnEe2qH4Q_xXK0iA" label="+"/>
+    <attributes xmi:id="_cj9-vNnnEe2qH4Q_xXK0iA" name="contentPane">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceoywdnnEe2qH4Q_xXK0iA"/>
+      <stereotypes xmi:id="_cj9-vdnnEe2qH4Q_xXK0iA" name="LegacyStyledElement">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceoywtnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_cj9-vtnnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_cj9-v9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cj9-wNnnEe2qH4Q_xXK0iA" name="JPanel">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceKRodnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cj9-wdnnEe2qH4Q_xXK0iA" name="txtUser">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceoyw9nnEe2qH4Q_xXK0iA"/>
+      <stereotypes xmi:id="_cj9-wtnnEe2qH4Q_xXK0iA" name="LegacyStyledElement">
+        <modelElement href="estudo-de-caso-livraria.uml#_cepZ0NnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_cj9-w9nnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_cj9-xNnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cj9-xdnnEe2qH4Q_xXK0iA" name="JTextField">
+        <modelElement href="estudo-de-caso-livraria.uml#_cePxMdnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cj9-xtnnEe2qH4Q_xXK0iA" name="txtSenha">
+      <modelElement href="estudo-de-caso-livraria.uml#_cepZ0dnnEe2qH4Q_xXK0iA"/>
+      <stereotypes xmi:id="_cj9-x9nnEe2qH4Q_xXK0iA" name="LegacyStyledElement">
+        <modelElement href="estudo-de-caso-livraria.uml#_cepZ0tnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_cj9-yNnnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_cj9-ydnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cj9-ytnnEe2qH4Q_xXK0iA" name="JTextField">
+        <modelElement href="estudo-de-caso-livraria.uml#_cePxMdnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cj9-y9nnEe2qH4Q_xXK0iA" name="txtNome">
+      <modelElement href="estudo-de-caso-livraria.uml#_cepZ09nnEe2qH4Q_xXK0iA"/>
+      <stereotypes xmi:id="_cj9-zNnnEe2qH4Q_xXK0iA" name="LegacyStyledElement">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceqA4NnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_cj9-zdnnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_cj9-ztnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cj9-z9nnEe2qH4Q_xXK0iA" name="JTextField">
+        <modelElement href="estudo-de-caso-livraria.uml#_cePxMdnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cj9-0NnnEe2qH4Q_xXK0iA" name="textField">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceqA4dnnEe2qH4Q_xXK0iA"/>
+      <stereotypes xmi:id="_cj9-0dnnEe2qH4Q_xXK0iA" name="LegacyStyledElement">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceqA4tnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_cj9-0tnnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_cj9-09nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cj9-1NnnEe2qH4Q_xXK0iA" name="JTextField">
+        <modelElement href="estudo-de-caso-livraria.uml#_cePxMdnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_cj9-1dnnEe2qH4Q_xXK0iA" comments="_cj6UUNnnEe2qH4Q_xXK0iA" targetConnectionVisual="_cj6UUdnnEe2qH4Q_xXK0iA" name="main" staticOperation="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_cch58NnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cj9-1tnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cj9-19nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <parameters xmi:id="_cj9-2NnnEe2qH4Q_xXK0iA" name="args">
+        <modelElement href="estudo-de-caso-livraria.uml#_cch58dnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cj9-2dnnEe2qH4Q_xXK0iA" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_cj9-2tnnEe2qH4Q_xXK0iA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_cj9-29nnEe2qH4Q_xXK0iA" comments="_cj6UUtnnEe2qH4Q_xXK0iA" targetConnectionVisual="_cj67YNnnEe2qH4Q_xXK0iA" name="TelaLogin">
+      <modelElement href="estudo-de-caso-livraria.uml#_ccihAdnnEe2qH4Q_xXK0iA"/>
+      <keywords xmi:id="_cj9-3NnnEe2qH4Q_xXK0iA" keyword="create"/>
+      <visibility xmi:id="_cj9-3dnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cj9-3tnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_cj9-39nnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ccihBNnnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_cj9-4NnnEe2qH4Q_xXK0iA" name="TelaLogin">
+          <modelElement href="estudo-de-caso-livraria.uml#_ccgr0NnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_cjQNANnnEe2qH4Q_xXK0iA" name="LivroDAO" associationsIn="_cjMioNnnEe2qH4Q_xXK0iA" associationsOut="_cjMioNnnEe2qH4Q_xXK0iA _cjMiodnnEe2qH4Q_xXK0iA" generalizations="_cjcaQNnnEe2qH4Q_xXK0iA">
+    <modelElement href="estudo-de-caso-livraria.uml#_cb_ucNnnEe2qH4Q_xXK0iA"/>
+    <visualProperties xmi:id="_cjQNAdnnEe2qH4Q_xXK0iA" position="793.0,316.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_cjQNAtnnEe2qH4Q_xXK0iA" label="+"/>
+    <attributes xmi:id="_cjQNA9nnEe2qH4Q_xXK0iA" name="tabelaLivros" staticAttribute="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_cefBwNnnEe2qH4Q_xXK0iA"/>
+      <stereotypes xmi:id="_cjQNBNnnEe2qH4Q_xXK0iA" name="Generics">
+        <modelElement href="estudo-de-caso-livraria.uml#_cefo0NnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_cjQNBdnnEe2qH4Q_xXK0iA" name="LegacyStyledElement">
+        <modelElement href="estudo-de-caso-livraria.uml#_cefo0dnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_cjQNBtnnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_cjQNB9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjQNCNnnEe2qH4Q_xXK0iA" name="ArrayList">
+        <modelElement href="estudo-de-caso-livraria.uml#_cd5y8NnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_cjQNCdnnEe2qH4Q_xXK0iA" name="instancia" staticAttribute="true">
+      <modelElement href="estudo-de-caso-livraria.uml#_cegP4NnnEe2qH4Q_xXK0iA"/>
+      <stereotypes xmi:id="_cjQNCtnnEe2qH4Q_xXK0iA" name="LegacyStyledElement">
+        <modelElement href="estudo-de-caso-livraria.uml#_cegP4dnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_cjQNC9nnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjQNDNnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <type xmi:id="_cjQNDdnnEe2qH4Q_xXK0iA" name="LivroDAO">
+        <modelElement href="estudo-de-caso-livraria.uml#_cb_ucNnnEe2qH4Q_xXK0iA"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_cjQNDtnnEe2qH4Q_xXK0iA" name="LivroDAO">
+      <modelElement href="estudo-de-caso-livraria.uml#_ccCKsNnnEe2qH4Q_xXK0iA"/>
+      <keywords xmi:id="_cjQND9nnEe2qH4Q_xXK0iA" keyword="create"/>
+      <stereotypes xmi:id="_cjQNENnnEe2qH4Q_xXK0iA" name="LegacyStyledElement">
+        <modelElement href="estudo-de-caso-livraria.uml#_ccCxwNnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_cjQNEdnnEe2qH4Q_xXK0iA" label="-"/>
+      <cardinality xmi:id="_cjQNEtnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_cjQNE9nnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ccD_4NnnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_cjQNFNnnEe2qH4Q_xXK0iA" name="LivroDAO">
+          <modelElement href="estudo-de-caso-livraria.uml#_cb_ucNnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_cjQNFdnnEe2qH4Q_xXK0iA" name="listarLivros">
+      <modelElement href="estudo-de-caso-livraria.uml#_ccFOANnnEe2qH4Q_xXK0iA"/>
+      <stereotypes xmi:id="_cjQNFtnnEe2qH4Q_xXK0iA" name="Generics">
+        <modelElement href="estudo-de-caso-livraria.uml#_ccF1ENnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_cjQNF9nnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjQNGNnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_cjQNGdnnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceWe5NnnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_cjQNGtnnEe2qH4Q_xXK0iA" name="ArrayList">
+          <modelElement href="estudo-de-caso-livraria.uml#_cd5y8NnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_cjQNG9nnEe2qH4Q_xXK0iA" name="cadastrarLivro">
+      <modelElement href="estudo-de-caso-livraria.uml#_cd_SgNnnEe2qH4Q_xXK0iA"/>
+      <stereotypes xmi:id="_cjQNHNnnEe2qH4Q_xXK0iA" name="LegacyStyledElement">
+        <modelElement href="estudo-de-caso-livraria.uml#_cd_5kdnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_cjQNHdnnEe2qH4Q_xXK0iA" name="Annotations">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceAgoNnnEe2qH4Q_xXK0iA"/>
+      </stereotypes>
+      <visibility xmi:id="_cjQNHtnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjQNH9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_cjQNINnnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_cd_5kNnnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_cjQNIdnnEe2qH4Q_xXK0iA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_cjQNItnnEe2qH4Q_xXK0iA" name="l">
+        <modelElement href="estudo-de-caso-livraria.uml#_cd_SgdnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjQNI9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjQNJNnnEe2qH4Q_xXK0iA" name="Livro">
+          <modelElement href="estudo-de-caso-livraria.uml#_ccYI8NnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_cjQNJdnnEe2qH4Q_xXK0iA" name="alterarLivro">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceVQwtnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjQNJtnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjQNJ9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_cjQNKNnnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceV31tnnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_cjQNKdnnEe2qH4Q_xXK0iA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_cjQNKtnnEe2qH4Q_xXK0iA" name="l">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceV30NnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjQNK9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjQNLNnnEe2qH4Q_xXK0iA" name="Livro">
+          <modelElement href="estudo-de-caso-livraria.uml#_ccYI8NnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_cjQNLdnnEe2qH4Q_xXK0iA" name="isbn">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceV30dnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjQNLtnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjQNL9nnEe2qH4Q_xXK0iA" name="Long">
+          <modelElement href="estudo-de-caso-livraria.uml#_ceVQwNnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_cjQNMNnnEe2qH4Q_xXK0iA" name="titulo">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceV30tnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjQNMdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjQNMtnnEe2qH4Q_xXK0iA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_cjQNM9nnEe2qH4Q_xXK0iA" name="editora">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceV309nnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjQNNNnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjQNNdnnEe2qH4Q_xXK0iA" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_cjQNNtnnEe2qH4Q_xXK0iA" name="nrEdicao">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceV31NnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjQNN9nnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjQNONnnEe2qH4Q_xXK0iA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_cjQNOdnnEe2qH4Q_xXK0iA" name="anoLancamento">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceV31dnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjQNOtnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjQNO9nnEe2qH4Q_xXK0iA" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_cjQNPNnnEe2qH4Q_xXK0iA" name="deletarLivro">
+      <modelElement href="estudo-de-caso-livraria.uml#_ceWe4NnnEe2qH4Q_xXK0iA"/>
+      <visibility xmi:id="_cjQNPdnnEe2qH4Q_xXK0iA" label="+"/>
+      <cardinality xmi:id="_cjQNPtnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_cjQNP9nnEe2qH4Q_xXK0iA">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceWe49nnEe2qH4Q_xXK0iA"/>
+        <type xmi:id="_cjQNQNnnEe2qH4Q_xXK0iA" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_cjQNQdnnEe2qH4Q_xXK0iA" name="l">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceWe4dnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjQNQtnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjQNQ9nnEe2qH4Q_xXK0iA" name="Livro">
+          <modelElement href="estudo-de-caso-livraria.uml#_ccYI8NnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_cjQNRNnnEe2qH4Q_xXK0iA" name="isbn">
+        <modelElement href="estudo-de-caso-livraria.uml#_ceWe4tnnEe2qH4Q_xXK0iA"/>
+        <cardinality xmi:id="_cjQNRdnnEe2qH4Q_xXK0iA" label="1" max="1" min="1"/>
+        <type xmi:id="_cjQNRtnnEe2qH4Q_xXK0iA" name="Long">
+          <modelElement href="estudo-de-caso-livraria.uml#_ceVQwNnnEe2qH4Q_xXK0iA"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
