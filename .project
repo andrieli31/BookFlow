@@ -14,16 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>miglayout-src.zip</name>
-			<type>1</type>
-			<locationURI>PARENT-4-PROJECT_LOC/Downloads/miglayout-src.zip</locationURI>
-		</link>
-		<link>
-			<name>miglayout15-swing.jar</name>
-			<type>1</type>
-			<locationURI>PARENT-4-PROJECT_LOC/Downloads/miglayout15-swing.jar</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>
