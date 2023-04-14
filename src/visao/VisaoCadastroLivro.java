@@ -1,27 +1,25 @@
 package visao;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 import controle.LivroDAO;
 import modelo.Livro;
-
-import java.awt.BorderLayout;
 import net.miginfocom.swing.MigLayout;
-import java.awt.Color;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.awt.event.ActionEvent;
 
 public class VisaoCadastroLivro extends JFrame {
 
@@ -133,7 +131,7 @@ public class VisaoCadastroLivro extends JFrame {
 				txtISBN.setText(null);
 
 				dao.cadastrarLivro(livro);
-				atualiza();
+				
 			}
 
 		});
