@@ -10,6 +10,7 @@ public class PessoaDAO implements IPessoaDAO {
 	private static ArrayList<Pessoa> tabelaUsuarios;
 	private static PessoaDAO instancia;
 
+	/// Construtor
 	private PessoaDAO() {
 
 	}
@@ -34,10 +35,12 @@ public class PessoaDAO implements IPessoaDAO {
 
 	/// alterando apenas o cpf do usuario, verificar para alteração dos outros dados
 	/// pendentes
-	public boolean alterar(Pessoa p, Long cpf) {
+	public boolean alterarPessoa(Pessoa p, Long cpf, String nome, String sobrenome) {
 		for (Pessoa pessoa : tabelaUsuarios) {
 			if (pessoa.getCpf().equals(cpf)) {
 				pessoa.setCpf(cpf);
+				pessoa.setNome(nome);
+				pessoa.setSobrenome(sobrenome);
 				return true;
 			}
 		}
@@ -45,7 +48,7 @@ public class PessoaDAO implements IPessoaDAO {
 	}
 
 	/// Deletar pessoa com base no cpf digitado
-	public boolean deletar(Pessoa p, Long cpf) {
+	public boolean deletarPessoa(Pessoa p, Long cpf) {
 		for (Pessoa pessoa : tabelaUsuarios) {
 			if (pessoa.getCpf().equals(cpf)) {
 				tabelaUsuarios.remove(pessoa);

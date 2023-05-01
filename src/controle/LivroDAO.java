@@ -61,7 +61,6 @@ public class LivroDAO implements ILivroDAO {
 	}
 
 	
-	/// Pendente descobrir como usar listagem com interface grafica
 	public ArrayList<Livro> listarLivros() {
 		return this.tabelaLivros;
 	}
