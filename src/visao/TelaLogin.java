@@ -59,19 +59,19 @@ public class TelaLogin extends JFrame {
 		JLabel lblNewLabel = new JLabel("Nome:");
 		lblNewLabel.setFont(new Font("Ubuntu", Font.BOLD, 14));
 		lblNewLabel.setForeground(SystemColor.desktop);
-		lblNewLabel.setBounds(230, 51, 86, 20);
+		lblNewLabel.setBounds(69, 37, 86, 20);
 		contentPane.add(lblNewLabel);
 
 		JLabel lblSenha = new JLabel("Senha:");
 		lblSenha.setForeground(Color.RED);
 		lblSenha.setFont(new Font("Ubuntu", Font.BOLD, 14));
-		lblSenha.setBounds(230, 84, 70, 15);
+		lblSenha.setBounds(69, 84, 70, 15);
 		contentPane.add(lblSenha);
 
 		txtNome = new JTextField();
 		txtNome.setFont(new Font("Ubuntu", Font.BOLD, 14));
 		txtNome.setForeground(SystemColor.desktop);
-		txtNome.setBounds(312, 52, 114, 19);
+		txtNome.setBounds(132, 38, 114, 19);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 
