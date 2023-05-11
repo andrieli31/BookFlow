@@ -15,14 +15,15 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import net.miginfocom.swing.MigLayout;
 
 public class TelaLogin extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtUser;
-	private JTextField txtSenha;
 	private JTextField txtNome;
-	private JTextField textField;
+	private JTextField txtUsuario;
+	private JTextField txtSenha;
 
 	/**
 	 * Launch the application.
@@ -44,81 +45,50 @@ public class TelaLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaLogin() {
-		setBackground(new Color(189, 183, 107));
+		setBackground(new Color(64, 128, 128));
 		setResizable(false);
-		setTitle("Cadastro de Clientes - Acesso");
+		setTitle("Cadastro de Clientes");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 452, 205);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setBackground(new Color(64, 128, 128));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		this.setLocationRelativeTo(null);
-
-		JLabel lblNewLabel = new JLabel("Nome:");
-		lblNewLabel.setFont(new Font("Ubuntu", Font.BOLD, 14));
-		lblNewLabel.setForeground(SystemColor.desktop);
-		lblNewLabel.setBounds(69, 37, 86, 20);
-		contentPane.add(lblNewLabel);
-
-		JLabel lblSenha = new JLabel("Senha:");
-		lblSenha.setForeground(Color.RED);
-		lblSenha.setFont(new Font("Ubuntu", Font.BOLD, 14));
-		lblSenha.setBounds(69, 84, 70, 15);
-		contentPane.add(lblSenha);
-
-		txtNome = new JTextField();
-		txtNome.setFont(new Font("Ubuntu", Font.BOLD, 14));
-		txtNome.setForeground(SystemColor.desktop);
-		txtNome.setBounds(132, 38, 114, 19);
-		contentPane.add(txtNome);
-		txtNome.setColumns(10);
-
-		txtSenha = new JPasswordField();
-		txtSenha.addKeyListener(new KeyAdapter() {
-			// Programa evento ao pressionar tecla determinada;
-		
-		});
-		txtSenha.setBounds(312, 83, 114, 19);
-		contentPane.add(txtSenha);
-
-		JButton btnEntrar = new JButton("Entrar");
-		btnEntrar.addKeyListener(new KeyAdapter() {
-			
-		});
-		btnEntrar.setForeground(new Color(0, 128, 0));
-		btnEntrar.setFont(new Font("Arial Black", Font.PLAIN, 12));
-		btnEntrar.requestFocus();
-		btnEntrar.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-		});
-		btnEntrar.setBounds(312, 121, 95, 25);
-		contentPane.add(btnEntrar);
+		contentPane.setLayout(new MigLayout("", "[][128px][grow][]", "[36px][][][][][]"));
 
 		JLabel lblNewLabel_1 = new JLabel("");
-		//lblNewLabel_1.setIcon(new ImageIcon(LoginCadastro.class.getResource("/img/KeyChainAccess_37052.png")));
-		lblNewLabel_1.setBounds(47, 27, 128, 119);
-		contentPane.add(lblNewLabel_1);
+		contentPane.add(lblNewLabel_1, "cell 1 0,grow");
 		
-		txtNome = new JTextField();
-		txtNome.setBounds(312, 53, 86, 20);
-		contentPane.add(txtNome);
-		txtNome.setColumns(10);
+		JLabel lblUsuario = new JLabel("Usuário:");
+		lblUsuario.setForeground(new Color(255, 255, 255));
+		lblUsuario.setFont(new Font("Times New Roman", Font.BOLD, 14));
+		contentPane.add(lblUsuario, "cell 1 1,alignx center,aligny center");
 		
-		textField = new JTextField();
-		textField.setBounds(310, 82, 86, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		txtUsuario = new JTextField();
+		txtUsuario.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		contentPane.add(txtUsuario, "cell 2 1,growx,aligny center");
+		txtUsuario.setColumns(10);
 		
-		JButton btnCadastro = new JButton("Cadastro");
-		btnCadastro.setBounds(181, 123, 89, 23);
-		contentPane.add(btnCadastro);
+		JLabel lblSenha = new JLabel("Senha:");
+		lblSenha.setForeground(new Color(255, 255, 255));
+		lblSenha.setFont(new Font("Times New Roman", Font.BOLD, 14));
+		contentPane.add(lblSenha, "cell 1 3,alignx center,aligny center");
+		
+		txtSenha = new JTextField();
+		contentPane.add(txtSenha, "cell 2 3,growx,aligny center");
+		txtSenha.setColumns(10);
+		
+		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.setBackground(new Color(64, 128, 128));
+		btnCadastrar.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		btnCadastrar.setForeground(new Color(64, 128, 128));
+		contentPane.add(btnCadastrar, "cell 1 5,alignx center,aligny center");
+		
+		JButton btnLogin = new JButton("Entrar");
+		btnLogin.setForeground(new Color(64, 128, 128));
+		btnLogin.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		btnLogin.setBackground(new Color(64, 128, 128));
+		contentPane.add(btnLogin, "cell 2 5,alignx center,aligny center");
 	}
 }

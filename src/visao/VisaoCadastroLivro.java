@@ -53,6 +53,7 @@ public class VisaoCadastroLivro extends JFrame {
 	 * Create the frame.
 	 */
 	public VisaoCadastroLivro() {
+		setTitle("Cadastro de Livro");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setExtendedState(MAXIMIZED_BOTH);
 		setBounds(100, 100, 2000, 1050);
