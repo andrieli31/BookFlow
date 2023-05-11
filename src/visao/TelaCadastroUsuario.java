@@ -46,56 +46,56 @@ public class TelaCadastroUsuario extends JFrame {
 		setExtendedState(MAXIMIZED_BOTH);
 		setBounds(100, 100, 450, 300);
 		telaCadUsuario = new JPanel();
+		telaCadUsuario.setBorder(new EmptyBorder(5, 5, 5, 5));
 		telaCadUsuario.setBackground(new Color(85, 170, 170));
 		telaCadUsuario.setForeground(new Color(85, 170, 170));
-		telaCadUsuario.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(telaCadUsuario);
-		telaCadUsuario.setLayout(new MigLayout("", "[][][][][grow][][grow][grow]", "[][][][][][][][][][]"));
+		telaCadUsuario.setLayout(new MigLayout("", "[64px][136px]", "[19px][19px][19px][19px][][19px]"));
 		
 		JLabel lblNome = new JLabel("Nome:");
 		lblNome.setForeground(new Color(255, 255, 255));
 		lblNome.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		telaCadUsuario.add(lblNome, "cell 1 1");
+		telaCadUsuario.add(lblNome, "cell 0 0,alignx left,aligny center");
 		
 		txtNome = new JTextField();
-		telaCadUsuario.add(txtNome, "cell 4 1,growx");
+		telaCadUsuario.add(txtNome, "cell 1 0,growx,aligny top");
 		txtNome.setColumns(10);
 		
 		JLabel lblSobrenome = new JLabel("Sobrenome:");
 		lblSobrenome.setForeground(new Color(255, 255, 255));
 		lblSobrenome.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		telaCadUsuario.add(lblSobrenome, "cell 1 3");
+		telaCadUsuario.add(lblSobrenome, "cell 0 1,alignx left,aligny center");
 		
 		txtSobrenome = new JTextField();
-		telaCadUsuario.add(txtSobrenome, "cell 4 3,growx");
+		telaCadUsuario.add(txtSobrenome, "cell 1 1,growx,aligny top");
 		txtSobrenome.setColumns(10);
 		
 		JLabel lblCpf = new JLabel("Cpf:");
 		lblCpf.setForeground(new Color(255, 255, 255));
 		lblCpf.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		telaCadUsuario.add(lblCpf, "cell 1 5");
+		telaCadUsuario.add(lblCpf, "cell 0 2,alignx left,aligny center");
 		
 		txtCpf = new JTextField();
-		telaCadUsuario.add(txtCpf, "cell 4 5,growx");
+		telaCadUsuario.add(txtCpf, "cell 1 2,growx,aligny top");
 		txtCpf.setColumns(10);
 		
 		JLabel lblEmail = new JLabel("Email:");
 		lblEmail.setFont(new Font("Times New Roman", Font.BOLD, 13));
 		lblEmail.setForeground(new Color(255, 255, 255));
-		telaCadUsuario.add(lblEmail, "cell 1 7");
+		telaCadUsuario.add(lblEmail, "cell 0 3,alignx left,aligny center");
 		
 		txtEmail = new JTextField();
-		telaCadUsuario.add(txtEmail, "cell 4 7,growx");
+		telaCadUsuario.add(txtEmail, "cell 1 3,growx,aligny top");
 		txtEmail.setColumns(10);
 		
 		JLabel lblSenha = new JLabel("Senha: ");
 		lblSenha.setFont(new Font("Times New Roman", Font.BOLD, 13));
 		lblSenha.setForeground(new Color(255, 255, 255));
-		telaCadUsuario.add(lblSenha, "cell 1 9");
+		telaCadUsuario.add(lblSenha, "cell 0 4,alignx left,aligny center");
 		
 		txtSenha = new JTextField();
-		telaCadUsuario.add(txtSenha, "cell 4 9,growx");
+		telaCadUsuario.add(txtSenha, "cell 1 4,growx,aligny top");
 		txtSenha.setColumns(10);
 	}
 
