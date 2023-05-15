@@ -32,6 +32,7 @@ public class VisaoCadastroUsuario extends JFrame {
 				try {
 					VisaoCadastroUsuario frame = new VisaoCadastroUsuario();
 					frame.setVisible(true);
+					frame.setExtendedState(MAXIMIZED_BOTH);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -46,7 +47,6 @@ public class VisaoCadastroUsuario extends JFrame {
 		setTitle("Cadastro e listagem de usuários");
 		setBackground(new Color(64, 128, 128));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setBounds(100, 100, 1069, 923);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 0, 0));

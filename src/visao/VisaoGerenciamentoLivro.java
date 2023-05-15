@@ -28,6 +28,7 @@ public class VisaoGerenciamentoLivro extends JFrame {
 				try {
 					VisaoGerenciamentoLivro frame = new VisaoGerenciamentoLivro();
 					frame.setVisible(true);
+					frame.setExtendedState(MAXIMIZED_BOTH);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -42,7 +43,6 @@ public class VisaoGerenciamentoLivro extends JFrame {
 		setBackground(new Color(0, 0, 0));
 		setTitle("Gerenciamento de Livros");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setBounds(100, 100, 930, 897);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 0, 0));

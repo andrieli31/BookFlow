@@ -44,6 +44,7 @@ public class VisaoCadastroLivro extends JFrame {
 				try {
 					VisaoCadastroLivro frame = new VisaoCadastroLivro();
 					frame.setVisible(true);
+					frame.setExtendedState(MAXIMIZED_BOTH);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -57,7 +58,6 @@ public class VisaoCadastroLivro extends JFrame {
 	public VisaoCadastroLivro() {
 		setTitle("Cadastro e listagem de livros");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
 		setBounds(100, 100, 2000, 1050);
 		contentPane = new JPanel();

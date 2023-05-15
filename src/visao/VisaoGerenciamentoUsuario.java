@@ -26,6 +26,7 @@ public class VisaoGerenciamentoUsuario extends JFrame {
 				try {
 					VisaoGerenciamentoUsuario frame = new VisaoGerenciamentoUsuario();
 					frame.setVisible(true);
+					frame.setExtendedState(MAXIMIZED_BOTH);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -40,8 +41,7 @@ public class VisaoGerenciamentoUsuario extends JFrame {
 		setBackground(new Color(0, 0, 0));
 		setTitle("Gerenciamento de Usuários");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setExtendedState(MAXIMIZED_BOTH);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 943, 724);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 0, 0));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
