@@ -20,6 +20,7 @@ import javax.swing.table.DefaultTableModel;
 import controle.LivroDAO;
 import modelo.Livro;
 import net.miginfocom.swing.MigLayout;
+import java.awt.Font;
 
 public class VisaoCadastroLivro extends JFrame {
 
@@ -67,46 +68,56 @@ public class VisaoCadastroLivro extends JFrame {
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(64, 128, 128));
 		panel.add(panel_1, BorderLayout.CENTER);
-		panel_1.setLayout(new MigLayout("",
-				"[20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow]",
-				"[20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow]"));
+		panel_1.setLayout(new MigLayout("", "[20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow]", "[20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow]"));
 
 		JLabel lblTitulo = new JLabel("Título:");
-		panel_1.add(lblTitulo, "cell 3 1");
+		lblTitulo.setForeground(new Color(255, 255, 255));
+		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 13));
+		panel_1.add(lblTitulo, "cell 3 1,alignx center,aligny center");
 
 		txtTitulo = new JTextField();
-		panel_1.add(txtTitulo, "cell 7 1,growx");
+		panel_1.add(txtTitulo, "cell 6 1 2 1,growx");
 		txtTitulo.setColumns(10);
 
 		JLabel lblEditora = new JLabel("Editora:");
-		panel_1.add(lblEditora, "cell 3 2");
+		lblEditora.setForeground(new Color(255, 255, 255));
+		lblEditora.setFont(new Font("Tahoma", Font.BOLD, 13));
+		panel_1.add(lblEditora, "cell 3 2,alignx center,aligny center");
 
 		txtEditora = new JTextField();
-		panel_1.add(txtEditora, "cell 7 2,growx");
+		panel_1.add(txtEditora, "cell 6 2 2 1,growx");
 		txtEditora.setColumns(10);
 
 		JLabel lblNumEdicao = new JLabel("Número da edição:");
-		panel_1.add(lblNumEdicao, "cell 3 3");
+		lblNumEdicao.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNumEdicao.setForeground(new Color(255, 255, 255));
+		panel_1.add(lblNumEdicao, "cell 3 3,alignx center,aligny center");
 
 		txtNumEdicao = new JTextField();
-		panel_1.add(txtNumEdicao, "cell 7 3,growx");
+		panel_1.add(txtNumEdicao, "cell 6 3 2 1,growx");
 		txtNumEdicao.setColumns(10);
 
 		JLabel lblISBN = new JLabel("ISBN:");
-		panel_1.add(lblISBN, "cell 3 4");
+		lblISBN.setForeground(new Color(255, 255, 255));
+		lblISBN.setFont(new Font("Tahoma", Font.BOLD, 13));
+		panel_1.add(lblISBN, "cell 3 4,alignx center,aligny center");
 
 		txtISBN = new JTextField();
-		panel_1.add(txtISBN, "cell 7 4,growx");
+		panel_1.add(txtISBN, "cell 6 4 2 1,growx");
 		txtISBN.setColumns(10);
 
 		JLabel lblAno = new JLabel("Ano de lançamento:");
-		panel_1.add(lblAno, "cell 3 5");
+		lblAno.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblAno.setForeground(new Color(255, 255, 255));
+		panel_1.add(lblAno, "cell 3 5,alignx center,aligny center");
 
 		txtAno = new JTextField();
-		panel_1.add(txtAno, "cell 7 5,growx");
+		panel_1.add(txtAno, "cell 6 5 2 1,growx");
 		txtAno.setColumns(10);
 
 		JButton btnCadastro = new JButton("Cadastrar");
+		btnCadastro.setForeground(new Color(64, 128, 128));
+		btnCadastro.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnCadastro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Livro livro = new Livro();
@@ -136,20 +147,22 @@ public class VisaoCadastroLivro extends JFrame {
 			}
 
 		});
-		panel_1.add(btnCadastro, "cell 3 6");
+		panel_1.add(btnCadastro, "cell 3 6,alignx center,aligny center");
 
 		JButton btnListagem = new JButton("Listar");
+		btnListagem.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnListagem.setForeground(new Color(64, 128, 128));
 		btnListagem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				atualiza();
 
 			}
 		});
-		panel_1.add(btnListagem, "cell 7 6");
+		panel_1.add(btnListagem, "cell 6 6 2 1,alignx center,aligny center");
 
 		JScrollPane scrollPane = new JScrollPane();
 
-		panel_1.add(scrollPane, "cell 3 8 6 8,grow");
+		panel_1.add(scrollPane, "cell 2 8 8 8,grow");
 		modelo = new DefaultTableModel();
 		table = new JTable();
 

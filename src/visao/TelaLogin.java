@@ -49,6 +49,7 @@ public class TelaLogin extends JFrame {
 		setResizable(false);
 		setTitle("Cadastro de Clientes");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setExtendedState(MAXIMIZED_BOTH);
 		setBounds(100, 100, 452, 205);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(64, 128, 128));
@@ -80,7 +81,7 @@ public class TelaLogin extends JFrame {
 		txtSenha.setColumns(10);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
-		btnCadastrar.setBackground(new Color(64, 128, 128));
+		btnCadastrar.setBackground(new Color(255, 255, 255));
 		btnCadastrar.setFont(new Font("Times New Roman", Font.BOLD, 12));
 		btnCadastrar.setForeground(new Color(64, 128, 128));
 		contentPane.add(btnCadastrar, "cell 1 5,alignx center,aligny center");
@@ -88,7 +89,7 @@ public class TelaLogin extends JFrame {
 		JButton btnLogin = new JButton("Entrar");
 		btnLogin.setForeground(new Color(64, 128, 128));
 		btnLogin.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		btnLogin.setBackground(new Color(64, 128, 128));
+		btnLogin.setBackground(new Color(255, 255, 255));
 		contentPane.add(btnLogin, "cell 2 5,alignx center,aligny center");
 	}
 }

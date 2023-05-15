@@ -55,7 +55,7 @@ public class VisaoGerenciamentoLivro extends JFrame {
 		contentPane.add(lblEscolherOpcao, "cell 3 1,alignx center,aligny center");
 		
 		JButton btnCadEList = new JButton("Cadastro e listagem");
-		btnCadEList.setBackground(new Color(64, 128, 128));
+		btnCadEList.setBackground(new Color(255, 255, 255));
 		btnCadEList.setForeground(new Color(64, 128, 128));
 		btnCadEList.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		contentPane.add(btnCadEList, "cell 3 3,alignx center,aligny center");
@@ -65,19 +65,19 @@ public class VisaoGerenciamentoLivro extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnAtualizacao.setBackground(new Color(64, 128, 128));
+		btnAtualizacao.setBackground(new Color(255, 255, 255));
 		btnAtualizacao.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		btnAtualizacao.setForeground(new Color(64, 128, 128));
 		contentPane.add(btnAtualizacao, "cell 3 4,alignx center,aligny center");
 		
 		JButton btnExclusao = new JButton("Exclusão");
-		btnExclusao.setBackground(new Color(64, 128, 128));
+		btnExclusao.setBackground(new Color(255, 255, 255));
 		btnExclusao.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		btnExclusao.setForeground(new Color(64, 128, 128));
 		contentPane.add(btnExclusao, "cell 3 5,alignx center,aligny center");
 		
 		JButton btnSair = new JButton("Voltar à tela inicial");
-		btnSair.setBackground(new Color(64, 128, 128));
+		btnSair.setBackground(new Color(255, 255, 255));
 		btnSair.setForeground(new Color(128, 128, 128));
 		btnSair.setFont(new Font("Times New Roman", Font.BOLD, 12));
 		contentPane.add(btnSair, "cell 3 8,alignx center,aligny center");

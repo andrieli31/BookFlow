@@ -58,19 +58,19 @@ public class VisaoTelaInicial extends JFrame {
 		contentPane.add(lblEscolherOpcao, "cell 0 2 2 1,alignx center,aligny center");
 		
 		JButton btnGerenciaLivro = new JButton("Gerenciamento de livros");
-		btnGerenciaLivro.setBackground(new Color(64, 128, 128));
+		btnGerenciaLivro.setBackground(new Color(255, 255, 255));
 		btnGerenciaLivro.setForeground(new Color(64, 128, 128));
 		btnGerenciaLivro.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		contentPane.add(btnGerenciaLivro, "cell 0 4,alignx left,aligny top");
 		
 		JButton btnGerenciaUsuario = new JButton("Gerenciamento de livros");
-		btnGerenciaUsuario.setBackground(new Color(64, 128, 128));
+		btnGerenciaUsuario.setBackground(new Color(255, 255, 255));
 		btnGerenciaUsuario.setForeground(new Color(64, 128, 128));
 		btnGerenciaUsuario.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		contentPane.add(btnGerenciaUsuario, "cell 1 4,alignx left,aligny top");
 		
 		JButton btnSair = new JButton("Finalizar");
-		btnSair.setBackground(new Color(64, 128, 128));
+		btnSair.setBackground(new Color(255, 255, 255));
 		btnSair.setForeground(new Color(128, 128, 128));
 		btnSair.setFont(new Font("Times New Roman", Font.BOLD, 12));
 		contentPane.add(btnSair, "cell 0 6 2 1,alignx center,aligny center");

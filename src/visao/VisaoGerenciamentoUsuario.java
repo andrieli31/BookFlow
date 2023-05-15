@@ -53,26 +53,26 @@ public class VisaoGerenciamentoUsuario extends JFrame {
 		contentPane.add(lblEscolherOpcao, "cell 5 1,alignx center,aligny center");
 		
 		JButton btnCadEList = new JButton("Cadastro e listagem");
-		btnCadEList.setBackground(new Color(64, 128, 128));
+		btnCadEList.setBackground(new Color(255, 255, 255));
 		btnCadEList.setForeground(new Color(64, 128, 128));
 		btnCadEList.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		contentPane.add(btnCadEList, "cell 5 3,alignx center,aligny center");
 		
 		JButton btnAlteraDados = new JButton("Alteração de dados");
-		btnAlteraDados.setBackground(new Color(64, 128, 128));
+		btnAlteraDados.setBackground(new Color(255, 255, 255));
 		btnAlteraDados.setForeground(new Color(64, 128, 128));
 		btnAlteraDados.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		contentPane.add(btnAlteraDados, "cell 5 4,alignx center,aligny center");
 		
 		JButton btnExcluiUsuario = new JButton("Excluir usuário");
-		btnExcluiUsuario.setBackground(new Color(64, 128, 128));
+		btnExcluiUsuario.setBackground(new Color(255, 255, 255));
 		btnExcluiUsuario.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		btnExcluiUsuario.setForeground(new Color(64, 128, 128));
 		contentPane.add(btnExcluiUsuario, "cell 5 5,alignx center,aligny center");
 		
 		JButton btnSair = new JButton("Voltar à tela inicial");
 		btnSair.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		btnSair.setBackground(new Color(64, 128, 128));
+		btnSair.setBackground(new Color(255, 255, 255));
 		btnSair.setForeground(new Color(128, 128, 128));
 		contentPane.add(btnSair, "cell 5 8,alignx center,aligny center");
 	}
