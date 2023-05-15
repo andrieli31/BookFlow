@@ -20,8 +20,14 @@ import javax.swing.table.DefaultTableModel;
 import controle.LivroDAO;
 import modelo.Livro;
 import java.awt.Font;
+
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.JComboBox;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.Box;
+import java.awt.Component;
 
 public class VisaoCadastroLivro extends JFrame {
 
@@ -106,8 +112,8 @@ public class VisaoCadastroLivro extends JFrame {
 		txtAno = new JTextField();
 		txtAno.setColumns(10);
 
-		JButton btnCadastro = new JButton("Cadastrar");
-		btnCadastro.setForeground(new Color(64, 128, 128));
+		JButton btnCadastro = new JButton("Cadastrar Livro");
+		btnCadastro.setForeground(new Color(0, 0, 0));
 		btnCadastro.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnCadastro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -139,9 +145,9 @@ public class VisaoCadastroLivro extends JFrame {
 
 		});
 
-		JButton btnListagem = new JButton("Listar");
+		JButton btnListagem = new JButton("Listar Livro");
 		btnListagem.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnListagem.setForeground(new Color(64, 128, 128));
+		btnListagem.setForeground(new Color(0, 0, 0));
 		btnListagem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				atualiza();
@@ -156,88 +162,139 @@ public class VisaoCadastroLivro extends JFrame {
 		scrollPane.setViewportView(table);
 		modelo = new DefaultTableModel();
 		table.setModel(modelo);
+		
+		JLabel lblNewLabel = new JLabel("Selecione um Livro:");
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		lblNewLabel.setForeground(new Color(255, 255, 255));
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setFont(new Font("Tahoma", Font.BOLD, 12));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] { "Op\u00E7\u00E3o 1", "Op\u00E7\u00E3o 2",
+				"Op\u00E7\u00E3o 3", "Op\u00E7\u00E3o 4", "Op\u00E7\u00E3o 5" }));
+		
+		JButton btnNewButton = new JButton("Excluir Livro");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
+		
+		JLabel lblNewLabel_1 = new JLabel("Dados dos Livros");
+		lblNewLabel_1.setBackground(new Color(0, 0, 128));
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		
+		Box verticalBox = Box.createVerticalBox();
+		verticalBox.setBackground(new Color(255, 0, 128));
+		
+		JButton btnNewButton_1 = new JButton("Voltar a Tela Inicial");
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 12));
+		
+		JButton btnNewButton_2 = new JButton("Alterar Livro");
+		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnNewButton_2.setBackground(new Color(255, 255, 255));
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
 		gl_panel_1.setHorizontalGroup(
 			gl_panel_1.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+					.addGap(10)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING)
+						.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 208, GroupLayout.PREFERRED_SIZE)
 						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(177)
-							.addComponent(lblTitulo)
-							.addGap(155)
-							.addComponent(txtTitulo, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(173)
-							.addComponent(lblEditora)
-							.addGap(150)
-							.addComponent(txtEditora, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(138)
-							.addComponent(lblNumEdicao)
-							.addGap(115)
-							.addComponent(txtNumEdicao, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(180)
-							.addComponent(lblISBN)
-							.addGap(158)
-							.addComponent(txtISBN, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(134)
-							.addComponent(lblAno)
-							.addGap(111)
-							.addComponent(txtAno, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(153)
-							.addComponent(btnCadastro)
-							.addGap(158)
-							.addComponent(btnListagem))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(69)
-							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 562, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(899, Short.MAX_VALUE))
+							.addGap(40)
+							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 236, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(verticalBox, GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_panel_1.createSequentialGroup()
+											.addGap(9)
+											.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+												.addComponent(lblTitulo)
+												.addComponent(lblISBN)
+												.addComponent(lblNumEdicao)
+												.addComponent(lblEditora)
+												.addComponent(lblAno)))
+										.addComponent(btnCadastro, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE))
+									.addGap(10)
+									.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+										.addComponent(btnListagem, GroupLayout.PREFERRED_SIZE, 123, GroupLayout.PREFERRED_SIZE)
+										.addComponent(txtEditora, GroupLayout.PREFERRED_SIZE, 245, GroupLayout.PREFERRED_SIZE)
+										.addComponent(txtTitulo, GroupLayout.PREFERRED_SIZE, 245, GroupLayout.PREFERRED_SIZE)
+										.addGroup(gl_panel_1.createSequentialGroup()
+											.addGap(140)
+											.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING, false)
+												.addComponent(txtISBN, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+												.addComponent(txtNumEdicao, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+												.addComponent(txtAno, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)))))
+								.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING, false)
+									.addComponent(comboBox, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 166, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addComponent(btnNewButton)
+									.addGap(28)
+									.addComponent(btnNewButton_2)))
+							.addGap(313)
+							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 558, GroupLayout.PREFERRED_SIZE)))
+					.addGap(227))
 		);
 		gl_panel_1.setVerticalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
+			gl_panel_1.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGap(49)
+					.addContainerGap(147, Short.MAX_VALUE)
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 487, GroupLayout.PREFERRED_SIZE)
 						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(1)
-							.addComponent(lblTitulo))
-						.addComponent(txtTitulo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(16)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(2)
-							.addComponent(lblEditora))
-						.addComponent(txtEditora, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(17)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(1)
-							.addComponent(lblNumEdicao))
-						.addComponent(txtNumEdicao, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(16)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(2)
-							.addComponent(lblISBN))
-						.addComponent(txtISBN, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(17)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(1)
-							.addComponent(lblAno))
-						.addComponent(txtAno, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(16)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnCadastro)
-						.addComponent(btnListagem))
-					.addGap(37)
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 436, GroupLayout.PREFERRED_SIZE)
-					.addGap(113))
+							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+								.addComponent(verticalBox, GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblNewLabel_1))
+							.addGap(32)
+							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addComponent(txtTitulo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addGap(16)
+									.addComponent(txtEditora, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addGap(17)
+									.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
+										.addComponent(txtNumEdicao, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(lblNumEdicao))
+									.addGap(16)
+									.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
+										.addComponent(txtISBN, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(lblISBN)))
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addComponent(lblTitulo)
+									.addGap(18)
+									.addComponent(lblEditora)))
+							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addGap(17)
+									.addComponent(txtAno, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(lblAno)))
+							.addGap(16)
+							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(btnListagem, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addComponent(btnCadastro, GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
+							.addGap(88)
+							.addComponent(lblNewLabel)
+							.addGap(16)
+							.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(17)
+							.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
+								.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
+								.addComponent(btnNewButton_2, GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+							.addGap(37)))
+					.addGap(32)
+					.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
+					.addGap(141))
 		);
 		panel_1.setLayout(gl_panel_1);
+		
+		Component horizontalStrut = Box.createHorizontalStrut(20);
+		horizontalStrut.setForeground(new Color(255, 0, 128));
+		horizontalStrut.setFont(null);
+		horizontalStrut.setBackground(new Color(255, 0, 128));
+		panel.add(horizontalStrut, BorderLayout.WEST);
 		modelo.addColumn("Título");
 		modelo.addColumn("Editora");
 		modelo.addColumn("Número da edição");
@@ -258,5 +315,4 @@ public class VisaoCadastroLivro extends JFrame {
 					new Object[] { p.getTitulo(), p.getEditora(), p.getNrEdicao(), p.getIsbn(), p.getAnoLancamento() });
 		}
 	}
-
 }
