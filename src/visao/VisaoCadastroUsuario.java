@@ -21,7 +21,7 @@ public class VisaoCadastroUsuario extends JFrame {
 	private JTextField txtNome;
 	private JTextField txtSobrenome;
 	private JTextField txtCpf;
-	private JTable modelo;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -83,34 +83,37 @@ public class VisaoCadastroUsuario extends JFrame {
 		btnListar.setForeground(new Color(0, 0, 0));
 		btnListar.setFont(new Font("Times New Roman", Font.BOLD, 12));
 		
-		modelo = new JTable();
+		table = new JTable();
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(79)
-					.addComponent(lblNome, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE)
-					.addGap(62)
-					.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(79)
-					.addComponent(lblSobrenome, GroupLayout.PREFERRED_SIZE, 139, GroupLayout.PREFERRED_SIZE)
-					.addGap(29)
-					.addComponent(txtSobrenome, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(79)
-					.addComponent(lblCpf, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
-					.addGap(83)
-					.addComponent(txtCpf, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(69)
-					.addComponent(btnCadastrar, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
-					.addGap(147)
-					.addComponent(btnListar))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(87)
-					.addComponent(modelo, GroupLayout.PREFERRED_SIZE, 348, GroupLayout.PREFERRED_SIZE))
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(79)
+							.addComponent(lblNome, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE)
+							.addGap(62)
+							.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(79)
+							.addComponent(lblSobrenome, GroupLayout.PREFERRED_SIZE, 139, GroupLayout.PREFERRED_SIZE)
+							.addGap(29)
+							.addComponent(txtSobrenome, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(79)
+							.addComponent(lblCpf, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
+							.addGap(83)
+							.addComponent(txtCpf, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(69)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(table, GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addComponent(btnCadastrar, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
+									.addGap(147)
+									.addComponent(btnListar)))))
+					.addGap(626))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -137,11 +140,11 @@ public class VisaoCadastroUsuario extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addComponent(btnCadastrar)
 						.addComponent(btnListar))
-					.addGap(78)
-					.addComponent(modelo, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE))
+					.addGap(41)
+					.addComponent(table, GroupLayout.PREFERRED_SIZE, 307, GroupLayout.PREFERRED_SIZE)
+					.addGap(366))
 		);
 		contentPane.setLayout(gl_contentPane);
 		
 	}
-
 }
