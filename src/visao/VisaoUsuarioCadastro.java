@@ -44,10 +44,6 @@ public class VisaoUsuarioCadastro extends JFrame {
 
 		setContentPane(contentPane);
 		
-		JLabel lblISBN = new JLabel("ISBN:");
-		lblISBN.setForeground(new Color(255, 255, 255));
-		lblISBN.setFont(new Font("Tahoma", Font.BOLD, 13));
-
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
