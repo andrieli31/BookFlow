@@ -41,7 +41,7 @@ public class VisaoTelaInicial extends JFrame {
 		setForeground(new Color(0, 0, 0));
 		setTitle("Tela inicial");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setExtendedState(MAXIMIZED_BOTH);
+		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

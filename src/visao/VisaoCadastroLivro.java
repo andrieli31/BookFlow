@@ -19,8 +19,9 @@ import javax.swing.table.DefaultTableModel;
 
 import controle.LivroDAO;
 import modelo.Livro;
-import net.miginfocom.swing.MigLayout;
 import java.awt.Font;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 
 public class VisaoCadastroLivro extends JFrame {
 
@@ -56,7 +57,7 @@ public class VisaoCadastroLivro extends JFrame {
 	public VisaoCadastroLivro() {
 		setTitle("Cadastro e listagem de livros");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setExtendedState(MAXIMIZED_BOTH);
+		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
 		setBounds(100, 100, 2000, 1050);
 		contentPane = new JPanel();
@@ -67,53 +68,42 @@ public class VisaoCadastroLivro extends JFrame {
 		panel.setLayout(new BorderLayout(0, 0));
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(64, 128, 128));
-		panel.add(panel_1, BorderLayout.CENTER);
-		panel_1.setLayout(new MigLayout("", "[20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow]", "[20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow][20px:n:50px,grow]"));
+		panel_1.setBackground(new Color(0, 0, 0));
+		panel.add(panel_1, BorderLayout.NORTH);
 
 		JLabel lblTitulo = new JLabel("Título:");
 		lblTitulo.setForeground(new Color(255, 255, 255));
 		lblTitulo.setFont(new Font("Tahoma", Font.BOLD, 13));
-		panel_1.add(lblTitulo, "cell 3 1,alignx center,aligny center");
 
 		txtTitulo = new JTextField();
-		panel_1.add(txtTitulo, "cell 6 1 2 1,growx");
 		txtTitulo.setColumns(10);
 
 		JLabel lblEditora = new JLabel("Editora:");
 		lblEditora.setForeground(new Color(255, 255, 255));
 		lblEditora.setFont(new Font("Tahoma", Font.BOLD, 13));
-		panel_1.add(lblEditora, "cell 3 2,alignx center,aligny center");
 
 		txtEditora = new JTextField();
-		panel_1.add(txtEditora, "cell 6 2 2 1,growx");
 		txtEditora.setColumns(10);
 
 		JLabel lblNumEdicao = new JLabel("Número da edição:");
 		lblNumEdicao.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNumEdicao.setForeground(new Color(255, 255, 255));
-		panel_1.add(lblNumEdicao, "cell 3 3,alignx center,aligny center");
 
 		txtNumEdicao = new JTextField();
-		panel_1.add(txtNumEdicao, "cell 6 3 2 1,growx");
 		txtNumEdicao.setColumns(10);
 
 		JLabel lblISBN = new JLabel("ISBN:");
 		lblISBN.setForeground(new Color(255, 255, 255));
 		lblISBN.setFont(new Font("Tahoma", Font.BOLD, 13));
-		panel_1.add(lblISBN, "cell 3 4,alignx center,aligny center");
 
 		txtISBN = new JTextField();
-		panel_1.add(txtISBN, "cell 6 4 2 1,growx");
 		txtISBN.setColumns(10);
 
 		JLabel lblAno = new JLabel("Ano de lançamento:");
 		lblAno.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblAno.setForeground(new Color(255, 255, 255));
-		panel_1.add(lblAno, "cell 3 5,alignx center,aligny center");
 
 		txtAno = new JTextField();
-		panel_1.add(txtAno, "cell 6 5 2 1,growx");
 		txtAno.setColumns(10);
 
 		JButton btnCadastro = new JButton("Cadastrar");
@@ -148,7 +138,6 @@ public class VisaoCadastroLivro extends JFrame {
 			}
 
 		});
-		panel_1.add(btnCadastro, "cell 3 6,alignx center,aligny center");
 
 		JButton btnListagem = new JButton("Listar");
 		btnListagem.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -159,17 +148,96 @@ public class VisaoCadastroLivro extends JFrame {
 
 			}
 		});
-		panel_1.add(btnListagem, "cell 6 6 2 1,alignx center,aligny center");
 
 		JScrollPane scrollPane = new JScrollPane();
-
-		panel_1.add(scrollPane, "cell 2 8 8 8,grow");
 		modelo = new DefaultTableModel();
 		table = new JTable();
 
 		scrollPane.setViewportView(table);
 		modelo = new DefaultTableModel();
 		table.setModel(modelo);
+		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
+		gl_panel_1.setHorizontalGroup(
+			gl_panel_1.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_1.createSequentialGroup()
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(177)
+							.addComponent(lblTitulo)
+							.addGap(155)
+							.addComponent(txtTitulo, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(173)
+							.addComponent(lblEditora)
+							.addGap(150)
+							.addComponent(txtEditora, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(138)
+							.addComponent(lblNumEdicao)
+							.addGap(115)
+							.addComponent(txtNumEdicao, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(180)
+							.addComponent(lblISBN)
+							.addGap(158)
+							.addComponent(txtISBN, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(134)
+							.addComponent(lblAno)
+							.addGap(111)
+							.addComponent(txtAno, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(153)
+							.addComponent(btnCadastro)
+							.addGap(158)
+							.addComponent(btnListagem))
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(69)
+							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 562, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(899, Short.MAX_VALUE))
+		);
+		gl_panel_1.setVerticalGroup(
+			gl_panel_1.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_1.createSequentialGroup()
+					.addGap(49)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(1)
+							.addComponent(lblTitulo))
+						.addComponent(txtTitulo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(16)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(2)
+							.addComponent(lblEditora))
+						.addComponent(txtEditora, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(17)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(1)
+							.addComponent(lblNumEdicao))
+						.addComponent(txtNumEdicao, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(16)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(2)
+							.addComponent(lblISBN))
+						.addComponent(txtISBN, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(17)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGap(1)
+							.addComponent(lblAno))
+						.addComponent(txtAno, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(16)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addComponent(btnCadastro)
+						.addComponent(btnListagem))
+					.addGap(37)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 436, GroupLayout.PREFERRED_SIZE)
+					.addGap(113))
+		);
+		panel_1.setLayout(gl_panel_1);
 		modelo.addColumn("Título");
 		modelo.addColumn("Editora");
 		modelo.addColumn("Número da edição");
