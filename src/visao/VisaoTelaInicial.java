@@ -50,30 +50,30 @@ public class VisaoTelaInicial extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(new MigLayout("", "[183px][183px][]", "[25px][][][][][][]"));
+		contentPane.setLayout(new MigLayout("", "[183px][4px][183px]", "[20px][25px][23px]"));
 		
 		JLabel lblEscolherOpcao = new JLabel("Escolha uma opção:");
 		lblEscolherOpcao.setForeground(new Color(255, 255, 255));
 		lblEscolherOpcao.setFont(new Font("Times New Roman", Font.BOLD, 16));
-		contentPane.add(lblEscolherOpcao, "cell 0 2 2 1,alignx center,aligny center");
+		contentPane.add(lblEscolherOpcao, "cell 0 0 3 1,alignx center,aligny top");
 		
 		JButton btnGerenciaLivro = new JButton("Gerenciamento de livros");
 		btnGerenciaLivro.setBackground(new Color(255, 255, 255));
 		btnGerenciaLivro.setForeground(new Color(64, 128, 128));
 		btnGerenciaLivro.setFont(new Font("Times New Roman", Font.BOLD, 14));
-		contentPane.add(btnGerenciaLivro, "cell 0 4,alignx left,aligny top");
+		contentPane.add(btnGerenciaLivro, "cell 0 1,alignx left,aligny top");
 		
 		JButton btnGerenciaUsuario = new JButton("Gerenciamento de livros");
 		btnGerenciaUsuario.setBackground(new Color(255, 255, 255));
 		btnGerenciaUsuario.setForeground(new Color(64, 128, 128));
 		btnGerenciaUsuario.setFont(new Font("Times New Roman", Font.BOLD, 14));
-		contentPane.add(btnGerenciaUsuario, "cell 1 4,alignx left,aligny top");
+		contentPane.add(btnGerenciaUsuario, "cell 2 1,alignx left,aligny top");
 		
 		JButton btnSair = new JButton("Finalizar");
 		btnSair.setBackground(new Color(255, 255, 255));
 		btnSair.setForeground(new Color(128, 128, 128));
 		btnSair.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		contentPane.add(btnSair, "cell 0 6 2 1,alignx center,aligny center");
+		contentPane.add(btnSair, "cell 0 2 3 1,alignx center,aligny top");
 	}
 
 }

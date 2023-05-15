@@ -51,47 +51,56 @@ public class VisaoCadastroUsuario extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(new MigLayout("", "[][][][grow][][grow]", "[][][][][][][][][grow]"));
+		contentPane.setLayout(null);
 		
 		JLabel lblNome = new JLabel("Nome:");
+		lblNome.setBounds(99, 43, 35, 16);
 		lblNome.setForeground(new Color(255, 255, 255));
 		lblNome.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		contentPane.add(lblNome, "cell 2 1,alignx center,aligny center");
+		contentPane.add(lblNome);
 		
 		txNome = new JTextField();
-		contentPane.add(txNome, "cell 4 1 2 1,growx");
+		txNome.setBounds(252, 41, 170, 20);
+		contentPane.add(txNome);
 		txNome.setColumns(10);
 		
 		JLabel lblSobrenome = new JLabel("Sobrenome:");
+		lblSobrenome.setBounds(84, 67, 65, 16);
 		lblSobrenome.setFont(new Font("Times New Roman", Font.BOLD, 13));
 		lblSobrenome.setForeground(new Color(255, 255, 255));
-		contentPane.add(lblSobrenome, "cell 2 2,alignx center,aligny center");
+		contentPane.add(lblSobrenome);
 		
 		txtSobrenome = new JTextField();
-		contentPane.add(txtSobrenome, "cell 4 2 2 1,growx");
+		txtSobrenome.setBounds(252, 65, 170, 20);
+		contentPane.add(txtSobrenome);
 		txtSobrenome.setColumns(10);
 		
 		JLabel lblCpf = new JLabel("Cpf:");
+		lblCpf.setBounds(105, 91, 23, 16);
 		lblCpf.setFont(new Font("Times New Roman", Font.BOLD, 13));
 		lblCpf.setForeground(new Color(255, 255, 255));
-		contentPane.add(lblCpf, "cell 2 3,alignx center,aligny center");
+		contentPane.add(lblCpf);
 		
 		txtCpf = new JTextField();
-		contentPane.add(txtCpf, "cell 4 3 2 1,growx");
+		txtCpf.setBounds(252, 89, 170, 20);
+		contentPane.add(txtCpf);
 		txtCpf.setColumns(10);
 		
 		JButton btnCadastrar = new JButton("Cadastrar");
+		btnCadastrar.setBounds(74, 142, 85, 23);
 		btnCadastrar.setFont(new Font("Times New Roman", Font.BOLD, 12));
 		btnCadastrar.setForeground(new Color(64, 128, 128));
-		contentPane.add(btnCadastrar, "cell 2 5,alignx center,aligny center");
+		contentPane.add(btnCadastrar);
 		
 		JButton btnListar = new JButton("Listar");
+		btnListar.setBounds(306, 142, 63, 23);
 		btnListar.setForeground(new Color(64, 128, 128));
 		btnListar.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		contentPane.add(btnListar, "cell 4 5 2 1,alignx center,aligny center");
+		contentPane.add(btnListar);
 		
 		table = new JTable();
-		contentPane.add(table, "cell 2 7 4 2,grow");
+		table.setBounds(74, 198, 348, 51);
+		contentPane.add(table);
 	}
 
 }

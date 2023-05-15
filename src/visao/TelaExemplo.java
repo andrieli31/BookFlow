@@ -3,6 +3,7 @@ package visao;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -20,9 +21,8 @@ import javax.swing.table.DefaultTableModel;
 import controle.LivroDAO;
 import modelo.Livro;
 import net.miginfocom.swing.MigLayout;
-import java.awt.Font;
 
-public class VisaoCadastroLivro extends JFrame {
+public class TelaExemplo extends JFrame {
 
 	private JPanel contentPane;
 	private final JPanel panel = new JPanel();
@@ -53,7 +53,7 @@ public class VisaoCadastroLivro extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VisaoCadastroLivro() {
+	public TelaExemplo() {
 		setTitle("Cadastro e listagem de livros");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setExtendedState(MAXIMIZED_BOTH);
@@ -116,40 +116,6 @@ public class VisaoCadastroLivro extends JFrame {
 		panel_1.add(txtAno, "cell 6 5 2 1,growx");
 		txtAno.setColumns(10);
 
-		JButton btnCadastro = new JButton("Cadastrar");
-		btnCadastro.setForeground(new Color(64, 128, 128));
-		btnCadastro.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnCadastro.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Livro livro = new Livro();
-
-				LivroDAO dao = LivroDAO.getInstancia();
-
-				String titulo = txtTitulo.getText();
-				String editora = txtEditora.getText();
-				int numeroEdicao = Integer.parseInt(txtNumEdicao.getText());
-				int anoLancamento = Integer.parseInt(txtAno.getText());
-				Long isbn = Long.parseLong(txtISBN.getText());
-
-				livro.setAnoLancamento(anoLancamento);
-				livro.setEditora(editora);
-				livro.setIsbn(isbn);
-				livro.setNrEdicao(numeroEdicao);
-				livro.setTitulo(titulo);
-
-				txtTitulo.setText(null);
-				txtEditora.setText(null);
-				txtAno.setText(null);
-				txtNumEdicao.setText(null);
-				txtISBN.setText(null);
-
-				dao.cadastrarLivro(livro);
-				
-			}
-
-		});
-		panel_1.add(btnCadastro, "cell 3 6,alignx center,aligny center");
-
 		JButton btnListagem = new JButton("Listar");
 		btnListagem.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnListagem.setForeground(new Color(64, 128, 128));
@@ -159,7 +125,19 @@ public class VisaoCadastroLivro extends JFrame {
 
 			}
 		});
+		
+		JButton btnGerenciaUsuario = new JButton("Gerenciamento de livros");
+		btnGerenciaUsuario.setForeground(new Color(64, 128, 128));
+		btnGerenciaUsuario.setFont(new Font("Times New Roman", Font.BOLD, 14));
+		btnGerenciaUsuario.setBackground(Color.WHITE);
+		panel_1.add(btnGerenciaUsuario, "cell 3 6");
 		panel_1.add(btnListagem, "cell 6 6 2 1,alignx center,aligny center");
+		
+		JButton btnSair = new JButton("Finalizar");
+		btnSair.setForeground(Color.GRAY);
+		btnSair.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		btnSair.setBackground(Color.WHITE);
+		panel_1.add(btnSair, "cell 4 7");
 
 		JScrollPane scrollPane = new JScrollPane();
 
