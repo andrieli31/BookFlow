@@ -29,7 +29,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.Box;
 import java.awt.Component;
 
-public class VisaoCadastroLivro extends JFrame {
+public class VisaoGerenciaLivro extends JFrame {
 
 	private JPanel contentPane;
 	private final JPanel panel = new JPanel();
@@ -48,7 +48,7 @@ public class VisaoCadastroLivro extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VisaoCadastroLivro frame = new VisaoCadastroLivro();
+					VisaoGerenciaLivro frame = new VisaoGerenciaLivro();
 					frame.setVisible(true);
 					frame.setExtendedState(MAXIMIZED_BOTH);
 				} catch (Exception e) {
@@ -61,7 +61,7 @@ public class VisaoCadastroLivro extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VisaoCadastroLivro() {
+	public VisaoGerenciaLivro() {
 		setTitle("Cadastro e listagem de livros");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -74,7 +74,8 @@ public class VisaoCadastroLivro extends JFrame {
 		panel.setLayout(new BorderLayout(0, 0));
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(0, 0, 0));
+		panel_1.setForeground(new Color(0, 64, 128));
+		panel_1.setBackground(new Color(0, 64, 128));
 		panel.add(panel_1, BorderLayout.NORTH);
 
 		JLabel lblTitulo = new JLabel("Título:");
@@ -113,7 +114,7 @@ public class VisaoCadastroLivro extends JFrame {
 		txtAno.setColumns(10);
 
 		JButton btnCadastro = new JButton("Cadastrar Livro");
-		btnCadastro.setForeground(new Color(0, 0, 0));
+		btnCadastro.setForeground(new Color(0, 64, 128));
 		btnCadastro.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnCadastro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -147,7 +148,7 @@ public class VisaoCadastroLivro extends JFrame {
 
 		JButton btnListagem = new JButton("Listar Livro");
 		btnListagem.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnListagem.setForeground(new Color(0, 0, 0));
+		btnListagem.setForeground(new Color(0, 64, 128));
 		btnListagem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				atualiza();
@@ -164,40 +165,43 @@ public class VisaoCadastroLivro extends JFrame {
 		table.setModel(modelo);
 		
 		JLabel lblNewLabel = new JLabel("Selecione um Livro:");
-		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		
 		JComboBox comboBox = new JComboBox();
+		comboBox.setForeground(new Color(0, 64, 128));
 		comboBox.setFont(new Font("Tahoma", Font.BOLD, 12));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] { "Op\u00E7\u00E3o 1", "Op\u00E7\u00E3o 2",
 				"Op\u00E7\u00E3o 3", "Op\u00E7\u00E3o 4", "Op\u00E7\u00E3o 5" }));
 		
 		JButton btnNewButton = new JButton("Excluir Livro");
+		btnNewButton.setForeground(new Color(0, 64, 128));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
 		
 		JLabel lblNewLabel_1 = new JLabel("Dados dos Livros");
 		lblNewLabel_1.setBackground(new Color(0, 0, 128));
 		lblNewLabel_1.setForeground(new Color(255, 255, 255));
-		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		
 		Box verticalBox = Box.createVerticalBox();
 		verticalBox.setBackground(new Color(255, 0, 128));
 		
 		JButton btnNewButton_1 = new JButton("Voltar a Tela Inicial");
+		btnNewButton_1.setForeground(new Color(0, 64, 128));
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 		
 		JButton btnNewButton_2 = new JButton("Alterar Livro");
+		btnNewButton_2.setForeground(new Color(0, 64, 128));
 		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnNewButton_2.setBackground(new Color(255, 255, 255));
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
 		gl_panel_1.setHorizontalGroup(
 			gl_panel_1.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGap(10)
+					.addGap(50)
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING)
 						.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 208, GroupLayout.PREFERRED_SIZE)
 						.addGroup(gl_panel_1.createSequentialGroup()
-							.addGap(40)
 							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
 								.addGroup(gl_panel_1.createSequentialGroup()
 									.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 236, GroupLayout.PREFERRED_SIZE)
@@ -225,13 +229,12 @@ public class VisaoCadastroLivro extends JFrame {
 												.addComponent(txtISBN, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
 												.addComponent(txtNumEdicao, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
 												.addComponent(txtAno, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE)))))
-								.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING, false)
-									.addComponent(comboBox, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-									.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 166, GroupLayout.PREFERRED_SIZE))
+								.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addGroup(gl_panel_1.createSequentialGroup()
 									.addComponent(btnNewButton)
 									.addGap(28)
-									.addComponent(btnNewButton_2)))
+									.addComponent(btnNewButton_2))
+								.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 257, GroupLayout.PREFERRED_SIZE))
 							.addGap(313)
 							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 558, GroupLayout.PREFERRED_SIZE)))
 					.addGap(227))
