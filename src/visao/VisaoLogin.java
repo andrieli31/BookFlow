@@ -109,7 +109,7 @@ public class VisaoLogin extends JFrame {
 		JLabel lblLogin = new JLabel("Bem-vindo novamente!");
 		lblLogin.setForeground(new Color(0, 64, 128));
 		lblLogin.setFont(new Font("Segoe UI", Font.BOLD, 35));
-		lblLogin.setBounds(47, 28, 395, 47);
+		lblLogin.setBounds(35, 44, 395, 47);
 		double x = 50;
 		double y = 50;
 
