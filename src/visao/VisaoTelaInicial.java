@@ -48,7 +48,7 @@ public class VisaoTelaInicial extends JFrame {
 		setTitle("TELA INICIAL");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		setBounds(100, 100, 1131, 1143);
+		setBounds(100, 100, 1576, 1455);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 64, 128));
 		contentPane.setForeground(new Color(255, 255, 255));
@@ -57,35 +57,35 @@ public class VisaoTelaInicial extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lblEscolherOpcao = new JLabel("Escolha uma opção:");
-		lblEscolherOpcao.setBounds(91, 107, 170, 24);
+		lblEscolherOpcao.setBounds(91, 107, 268, 24);
 		lblEscolherOpcao.setForeground(new Color(255, 255, 255));
-		lblEscolherOpcao.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblEscolherOpcao.setFont(new Font("Segoe UI", Font.BOLD, 20));
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(170, 229, 256, 256);
-		lblNewLabel_1.setIcon(new ImageIcon("img/user-interface.png"));
+		lblNewLabel_1.setBounds(388, 299, 256, 256);
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Aluno\\Pictures\\unnamed (1).png"));
 		
 		JButton btnNewButton = new JButton("Gerenciar Usuários");
-		btnNewButton.setBounds(170, 508, 256, 29);
+		btnNewButton.setBounds(388, 578, 256, 29);
 		btnNewButton.setBackground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 16));
 		btnNewButton.setForeground(new Color(0, 64, 128));
 		
-		JLabel lblNewLabel_2 = new JLabel("Bem Vindo!");
-		lblNewLabel_2.setBounds(81, 32, 417, 65);
-		lblNewLabel_2.setFont(new Font("Times New Roman", Font.BOLD, 56));
+		JLabel lblNewLabel_2 = new JLabel("Bem-Vindo ao BookFlow!");
+		lblNewLabel_2.setBounds(81, 32, 765, 65);
+		lblNewLabel_2.setFont(new Font("Segoe UI", Font.BOLD, 56));
 		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(681, 229, 256, 256);
-		lblNewLabel.setIcon(new ImageIcon("img/livro.png"));
+		lblNewLabel.setBounds(899, 299, 256, 256);
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Aluno\\Pictures\\unnamed.png"));
 		contentPane.add(lblNewLabel);
 		contentPane.add(btnNewButton);
 		contentPane.add(lblNewLabel_2);
 		
 		JButton btnNewButton_1 = new JButton("Gerenciar Livros");
-		btnNewButton_1.setBounds(708, 508, 222, 29);
+		btnNewButton_1.setBounds(926, 578, 222, 29);
 		btnNewButton_1.setBackground(new Color(255, 255, 255));
 		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 16));
 		btnNewButton_1.setForeground(new Color(0, 64, 128));
@@ -93,10 +93,10 @@ public class VisaoTelaInicial extends JFrame {
 		contentPane.add(lblEscolherOpcao);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_3 = new JLabel("Já possui uma conta?");
-		lblNewLabel_3.setBounds(1020, 10, 111, 15);
+		JLabel lblNewLabel_3 = new JLabel("Já possui uma conta? Clique aqui!");
+		lblNewLabel_3.setBounds(1348, 32, 202, 15);
 		lblNewLabel_3.setForeground(new Color(255, 255, 255));
-		lblNewLabel_3.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		lblNewLabel_3.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		contentPane.add(lblNewLabel_3);
 	}
 
