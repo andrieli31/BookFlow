@@ -22,12 +22,13 @@ import javax.swing.JTabbedPane;
 import javax.swing.JRadioButton;
 import javax.swing.JToggleButton;
 import javax.swing.JButton;
+import javax.swing.JPasswordField;
 
 public class VisaoLogin extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField txtPassword;
+	private JPasswordField passwordField;
 
 	/**
 	 * Launch the application.
@@ -63,8 +64,8 @@ public class VisaoLogin extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\PC\\Documents\\github\\estudo-de-caso-livraria\\img\\login.png"));
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("img/login.png"));
 		
 		JLabel lblNome = new JLabel("BookFlow+");
 		lblNome.setForeground(Color.WHITE);
@@ -78,16 +79,14 @@ public class VisaoLogin extends JFrame {
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addGap(143)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNome)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(lblSlogan1, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
-							.addGap(18)
-							.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 152, GroupLayout.PREFERRED_SIZE)
-							.addGap(188)
-							.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 457, GroupLayout.PREFERRED_SIZE)))
-					.addGap(1130))
+						.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 219, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblSlogan1, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNome))
+					.addGap(147)
+					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 457, GroupLayout.PREFERRED_SIZE)
+					.addGap(950))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
@@ -96,17 +95,14 @@ public class VisaoLogin extends JFrame {
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addContainerGap()
 							.addComponent(lblNome)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGap(18)
-									.addComponent(lblSlogan1))
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGap(139)
-									.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE))))
+							.addGap(32)
+							.addComponent(lblSlogan1)
+							.addGap(27)
+							.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE))
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(109)
+							.addGap(64)
 							.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 545, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(85, Short.MAX_VALUE))
+					.addContainerGap(239, Short.MAX_VALUE))
 		);
 		panel_1.setLayout(null);
 		
@@ -127,6 +123,7 @@ public class VisaoLogin extends JFrame {
 		panel_1.add(lblNewLabel);
 		
 		textField = new JTextField();
+		textField.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		textField.setBounds(35, 147, 395, 31);
 		textField.setForeground(new Color(0, 64, 128));
 		textField.setText("@email.com");
@@ -142,20 +139,24 @@ public class VisaoLogin extends JFrame {
 		lblSenha.setBounds(35, 220, 46, 14);
 		panel_1.add(lblSenha);
 		
-		txtPassword = new JTextField();
-		txtPassword.setText("password");
-		txtPassword.setBounds(35, 246, 395, 31);
-		txtPassword.setForeground(new Color(0, 64, 128));
-
-		panel_1.add(txtPassword);
-		txtPassword.setColumns(10);
-		
 		JButton btnNewButton = new JButton("Entrar");
 		btnNewButton.setBackground(new Color(0, 64, 128));
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 14));
-		btnNewButton.setBounds(113, 328, 89, 23);
+		btnNewButton.setBounds(145, 335, 147, 37);
 		panel_1.add(btnNewButton);
+		
+		passwordField = new JPasswordField();
+		passwordField.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		passwordField.setForeground(new Color(0, 64, 128));
+		passwordField.setBounds(35, 245, 395, 37);
+		panel_1.add(passwordField);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("Remember me");
+		rdbtnNewRadioButton.setForeground(new Color(0, 64, 128));
+		rdbtnNewRadioButton.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		rdbtnNewRadioButton.setBounds(35, 289, 109, 23);
+		panel_1.add(rdbtnNewRadioButton);
 		contentPane.setLayout(gl_contentPane);
 	}
 }

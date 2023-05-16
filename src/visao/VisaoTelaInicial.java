@@ -68,7 +68,7 @@ public class VisaoTelaInicial extends JFrame {
 		JButton btnNewButton = new JButton("Gerenciar Usuários");
 		btnNewButton.setBounds(388, 578, 256, 29);
 		btnNewButton.setBackground(new Color(255, 255, 255));
-		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
 		btnNewButton.setForeground(new Color(0, 64, 128));
 		
 		JLabel lblNewLabel_2 = new JLabel("Bem-Vindo ao BookFlow!");
@@ -87,7 +87,7 @@ public class VisaoTelaInicial extends JFrame {
 		JButton btnNewButton_1 = new JButton("Gerenciar Livros");
 		btnNewButton_1.setBounds(926, 578, 222, 29);
 		btnNewButton_1.setBackground(new Color(255, 255, 255));
-		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 16));
+		btnNewButton_1.setFont(new Font("Segoe UI", Font.BOLD, 16));
 		btnNewButton_1.setForeground(new Color(0, 64, 128));
 		contentPane.add(btnNewButton_1);
 		contentPane.add(lblEscolherOpcao);
