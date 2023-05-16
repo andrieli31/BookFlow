@@ -63,7 +63,7 @@ public class VisaoTelaInicial extends JFrame {
 		
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setBounds(170, 229, 256, 256);
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\mende\\Downloads\\user-interface (1).png"));
+		lblNewLabel_1.setIcon(new ImageIcon("img/user-interface.png"));
 		
 		JButton btnNewButton = new JButton("Gerenciar Usuários");
 		btnNewButton.setBounds(170, 508, 256, 29);
@@ -79,7 +79,7 @@ public class VisaoTelaInicial extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(681, 229, 256, 256);
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\mende\\Downloads\\livro.png"));
+		lblNewLabel.setIcon(new ImageIcon("img/livro.png"));
 		contentPane.add(lblNewLabel);
 		contentPane.add(btnNewButton);
 		contentPane.add(lblNewLabel_2);

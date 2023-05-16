@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.GroupLayout;
@@ -14,6 +15,9 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.Font;
+import java.awt.geom.RoundRectangle2D;
+import java.awt.image.BufferedImage;
+
 import javax.swing.JTabbedPane;
 import javax.swing.JRadioButton;
 import javax.swing.JToggleButton;
@@ -22,9 +26,8 @@ import javax.swing.JButton;
 public class VisaoLogin extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtNomeDeUsurio;
+	private JTextField textField;
 	private JTextField txtPassword;
-	private JLabel lblNewLabel_2;
 
 	/**
 	 * Launch the application.
@@ -56,88 +59,104 @@ public class VisaoLogin extends JFrame {
 
 		setContentPane(contentPane);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\mende\\Downloads\\login (3).png"));
+	
 		
-		JPanel panel = new JPanel();
-		panel.setBackground(new Color(85, 138, 210));
+		JPanel panel_1 = new JPanel();
 		
-		JLabel lblNewLabel_3 = new JLabel("Já possui uma conta? Entrar");
-		lblNewLabel_3.setForeground(new Color(85, 138, 210));
-		lblNewLabel_3.setFont(new Font("Times New Roman", Font.BOLD, 10));
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\PC\\Documents\\github\\estudo-de-caso-livraria\\img\\login.png"));
+		
+		JLabel lblNome = new JLabel("BookFlow+");
+		lblNome.setForeground(Color.WHITE);
+		lblNome.setFont(new Font("Segoe UI", Font.BOLD, 48));
+		
+		JLabel lblSlogan1 = new JLabel("<html><p style=\"width:120px\">"+"Gerencie sua biblioteca de forma fácil e inteligente com BookFlow: organize, explore e mergulhe no mundo dos livros."+"</p></html>");
+		lblSlogan1.setForeground(Color.WHITE);
+		lblSlogan1.setFont(new Font("Segoe UI", Font.PLAIN, 15));
+		
+		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblNome)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(lblSlogan1, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
+							.addGap(18)
+							.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 152, GroupLayout.PREFERRED_SIZE)
+							.addGap(188)
+							.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 457, GroupLayout.PREFERRED_SIZE)))
+					.addGap(1130))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(lblNome)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(18)
+									.addComponent(lblSlogan1))
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(139)
+									.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE))))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(109)
+							.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 545, GroupLayout.PREFERRED_SIZE)))
+					.addContainerGap(85, Short.MAX_VALUE))
+		);
+		panel_1.setLayout(null);
+		
+		JLabel lblLogin = new JLabel("Bem-vindo novamente!");
+		lblLogin.setForeground(new Color(0, 64, 128));
+		lblLogin.setFont(new Font("Segoe UI", Font.BOLD, 35));
+		lblLogin.setBounds(47, 28, 395, 47);
+		double x = 50;
+		double y = 50;
+
+		panel_1.add(lblLogin);
+		
+		JLabel lblNewLabel = new JLabel("Nome de usuário");
+		lblNewLabel.setFont(new Font("Segoe UI", Font.BOLD, 14));
+		lblNewLabel.setForeground(new Color(0, 64, 128));
+
+		lblNewLabel.setBounds(35, 117, 158, 14);
+		panel_1.add(lblNewLabel);
+		
+		textField = new JTextField();
+		textField.setBounds(35, 147, 395, 31);
+		textField.setForeground(new Color(0, 64, 128));
+		textField.setText("@email.com");
+		textField.setColumns(10);
+		
+		panel_1.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblSenha = new JLabel("Senha");
+		lblSenha.setFont(new Font("Segoe UI", Font.BOLD, 14));
+		lblSenha.setForeground(new Color(0, 64, 128));
+
+		lblSenha.setBounds(35, 220, 46, 14);
+		panel_1.add(lblSenha);
+		
+		txtPassword = new JTextField();
+		txtPassword.setText("password");
+		txtPassword.setBounds(35, 246, 395, 31);
+		txtPassword.setForeground(new Color(0, 64, 128));
+
+		panel_1.add(txtPassword);
+		txtPassword.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Entrar");
 		btnNewButton.setBackground(new Color(0, 64, 128));
 		btnNewButton.setForeground(new Color(255, 255, 255));
-		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 14));
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 133, GroupLayout.PREFERRED_SIZE))
-						.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-							.addGap(449)
-							.addComponent(lblNewLabel)
-							.addGap(56)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE)
-								.addComponent(panel, GroupLayout.PREFERRED_SIZE, 203, GroupLayout.PREFERRED_SIZE))))
-					.addContainerGap(200, Short.MAX_VALUE))
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(295)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNewLabel)
-						.addComponent(panel, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(lblNewLabel_3)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 19, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(360, Short.MAX_VALUE))
-		);
-		panel.setLayout(null);
-		
-		txtPassword = new JTextField();
-		txtPassword.setBounds(20, 82, 106, 21);
-		panel.add(txtPassword);
-		txtPassword.setForeground(new Color(0, 64, 128));
-		txtPassword.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		txtPassword.setText("password");
-		txtPassword.setColumns(10);
-		
-		lblNewLabel_2 = new JLabel("Password");
-		lblNewLabel_2.setBackground(new Color(0, 64, 128));
-		lblNewLabel_2.setBounds(20, 20, 58, 17);
-		panel.add(lblNewLabel_2);
-		lblNewLabel_2.setForeground(new Color(0, 64, 128));
-		lblNewLabel_2.setFont(new Font("Times New Roman", Font.BOLD, 14));
-		
-		txtNomeDeUsurio = new JTextField();
-		txtNomeDeUsurio.setBounds(20, 36, 106, 21);
-		panel.add(txtNomeDeUsurio);
-		txtNomeDeUsurio.setForeground(new Color(0, 64, 128));
-		txtNomeDeUsurio.setFont(new Font("Times New Roman", Font.BOLD, 12));
-		txtNomeDeUsurio.setText("@email.com");
-		txtNomeDeUsurio.setColumns(10);
-		
-		JLabel lblNewLabel_1 = new JLabel("Username");
-		lblNewLabel_1.setBackground(new Color(0, 64, 128));
-		lblNewLabel_1.setBounds(20, 67, 62, 17);
-		panel.add(lblNewLabel_1);
-		lblNewLabel_1.setForeground(new Color(0, 64, 128));
-		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 14));
-		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Remember-me");
-		rdbtnNewRadioButton.setBounds(23, 109, 103, 23);
-		panel.add(rdbtnNewRadioButton);
-		rdbtnNewRadioButton.setForeground(new Color(255, 255, 255));
-		rdbtnNewRadioButton.setBackground(new Color(85, 138, 210));
-		rdbtnNewRadioButton.setFont(new Font("Times New Roman", Font.BOLD, 12));
+		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 14));
+		btnNewButton.setBounds(113, 328, 89, 23);
+		panel_1.add(btnNewButton);
 		contentPane.setLayout(gl_contentPane);
 	}
 }
+
