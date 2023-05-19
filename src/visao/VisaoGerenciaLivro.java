@@ -171,12 +171,24 @@ public class VisaoGerenciaLivro extends JFrame {
 		JComboBox comboBox = new JComboBox();
 		comboBox.setForeground(new Color(0, 64, 128));
 		comboBox.setFont(new Font("Tahoma", Font.BOLD, 12));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] { "Op\u00E7\u00E3o 1", "Op\u00E7\u00E3o 2",
-				"Op\u00E7\u00E3o 3", "Op\u00E7\u00E3o 4", "Op\u00E7\u00E3o 5" }));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] { "Livro 1", "Livro 2",
+				"Livro 3", "Livro 4", "Livro 5" }));
 
-		JButton btnNewButton = new JButton("Excluir Livro");
-		btnNewButton.setForeground(new Color(0, 64, 128));
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
+		JButton btnExcluiLivro = new JButton("Excluir Livro");
+		btnExcluiLivro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnExcluiLivro.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {						
+					}
+					
+				});
+			}
+		});
+		btnExcluiLivro.setForeground(new Color(0, 64, 128));
+		
+		btnExcluiLivro.setFont(new Font("Tahoma", Font.BOLD, 12));
 
 		JLabel lblNewLabel_1 = new JLabel("Dados dos Livros");
 		lblNewLabel_1.setBackground(new Color(0, 0, 128));
@@ -256,7 +268,7 @@ public class VisaoGerenciaLivro extends JFrame {
 																				GroupLayout.PREFERRED_SIZE)))))
 										.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 												GroupLayout.PREFERRED_SIZE)
-										.addGroup(gl_panel_1.createSequentialGroup().addComponent(btnNewButton)
+										.addGroup(gl_panel_1.createSequentialGroup().addComponent(btnExcluiLivro)
 												.addGap(28).addComponent(btnAlteraLivro))
 										.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 257,
 												GroupLayout.PREFERRED_SIZE))
@@ -312,7 +324,7 @@ public class VisaoGerenciaLivro extends JFrame {
 												GroupLayout.PREFERRED_SIZE)
 										.addGap(17)
 										.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-												.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 29,
+												.addComponent(btnExcluiLivro, GroupLayout.PREFERRED_SIZE, 29,
 														GroupLayout.PREFERRED_SIZE)
 												.addComponent(btnAlteraLivro, GroupLayout.DEFAULT_SIZE, 28,
 														Short.MAX_VALUE))
