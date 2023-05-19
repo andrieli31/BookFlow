@@ -20,6 +20,8 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PopUpAlteraUsuario extends JFrame {
 
@@ -86,9 +88,16 @@ public class PopUpAlteraUsuario extends JFrame {
 		btnNewButton.setForeground(new Color(0, 64, 128));
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		
-		JButton btnNewButton_1 = new JButton("Cancelar");
-		btnNewButton_1.setForeground(new Color(0, 64, 128));
-		btnNewButton_1.setFont(new Font("Times New Roman", Font.BOLD, 14));
+		JButton btnCancela = new JButton("Cancelar");
+		btnCancela.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VisaoCadastroUsuario frame = new VisaoCadastroUsuario();
+				frame.setVisible(true);
+				dispose();
+			}
+		});
+		btnCancela.setForeground(new Color(0, 64, 128));
+		btnCancela.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -98,7 +107,7 @@ public class PopUpAlteraUsuario extends JFrame {
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(btnNewButton)
 							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addComponent(btnNewButton_1))
+							.addComponent(btnCancela))
 						.addComponent(lblNewLabel)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
@@ -134,7 +143,7 @@ public class PopUpAlteraUsuario extends JFrame {
 					.addGap(66)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnNewButton)
-						.addComponent(btnNewButton_1))
+						.addComponent(btnCancela))
 					.addContainerGap(112, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
