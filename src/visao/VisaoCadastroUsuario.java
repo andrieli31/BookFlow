@@ -114,7 +114,6 @@ public class VisaoCadastroUsuario extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new VisaoCadastroUsuario().dispose();;
 				VisaoTelaInicial frame = new VisaoTelaInicial();
 				 frame.setVisible(true);
 				 dispose();

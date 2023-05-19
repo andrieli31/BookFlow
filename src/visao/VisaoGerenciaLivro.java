@@ -187,7 +187,16 @@ public class VisaoGerenciaLivro extends JFrame {
 		verticalBox.setBackground(new Color(255, 0, 128));
 
 		JButton btnNewButton_1 = new JButton("Voltar a Tela Inicial");
+		btnNewButton_1.addActionListener(new ActionListener() {
 
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				VisaoTelaInicial frame = new VisaoTelaInicial();
+				frame.setVisible(true);
+				dispose();
+			}
+
+		});
 		btnNewButton_1.setForeground(new Color(0, 64, 128));
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 
