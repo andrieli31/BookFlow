@@ -105,9 +105,19 @@ public class VisaoCadastroUsuario extends JFrame {
 		btnNewButton_2.setForeground(new Color(0, 64, 128));
 		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 12));
 
-		JButton btnNewButton_3 = new JButton("Alterar Usuário");
-		btnNewButton_3.setForeground(new Color(0, 64, 128));
-		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 12));
+		JButton btnAlteraUser = new JButton("Alterar Usuário");
+		btnAlteraUser.setForeground(new Color(0, 64, 128));
+		btnAlteraUser.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				PopUpAlteraUsuario frame = new PopUpAlteraUsuario();
+				frame.setVisible(true);
+				dispose();
+			}
+			
+		});
+		btnAlteraUser.setFont(new Font("Tahoma", Font.BOLD, 12));
 
 		JButton btnNewButton_4 = new JButton("Voltar a Tela Inicial");
 		btnNewButton_4.addActionListener(new ActionListener() {
@@ -212,7 +222,7 @@ public class VisaoCadastroUsuario extends JFrame {
 																						.addComponent(passwordField,
 																								GroupLayout.DEFAULT_SIZE,
 																								194, Short.MAX_VALUE)))
-																		.addComponent(btnNewButton_3,
+																		.addComponent(btnAlteraUser,
 																				GroupLayout.PREFERRED_SIZE, 139,
 																				GroupLayout.PREFERRED_SIZE))
 																.addGap(197))
@@ -265,7 +275,7 @@ public class VisaoCadastroUsuario extends JFrame {
 										GroupLayout.PREFERRED_SIZE)
 								.addGap(29)
 								.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-										.addComponent(btnNewButton_2).addComponent(btnNewButton_3))
+										.addComponent(btnNewButton_2).addComponent(btnAlteraUser))
 								.addGap(75)))
 				.addGap(39).addComponent(btnNewButton_4, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
 				.addContainerGap(316, Short.MAX_VALUE)));

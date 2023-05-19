@@ -200,10 +200,18 @@ public class VisaoGerenciaLivro extends JFrame {
 		btnNewButton_1.setForeground(new Color(0, 64, 128));
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 12));
 
-		JButton btnNewButton_2 = new JButton("Alterar Livro");
-		btnNewButton_2.setForeground(new Color(0, 64, 128));
-		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnNewButton_2.setBackground(new Color(255, 255, 255));
+		JButton btnAlteraLivro = new JButton("Alterar Livro");
+		btnAlteraLivro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PopUpAlteraLivro frame = new PopUpAlteraLivro();
+				frame.setVisible(true);
+				dispose();
+				
+			}
+		});
+		btnAlteraLivro.setForeground(new Color(0, 64, 128));
+		btnAlteraLivro.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnAlteraLivro.setBackground(new Color(255, 255, 255));
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
 		gl_panel_1.setHorizontalGroup(gl_panel_1.createParallelGroup(Alignment.LEADING).addGroup(gl_panel_1
 				.createSequentialGroup().addGap(50)
@@ -249,7 +257,7 @@ public class VisaoGerenciaLivro extends JFrame {
 										.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 												GroupLayout.PREFERRED_SIZE)
 										.addGroup(gl_panel_1.createSequentialGroup().addComponent(btnNewButton)
-												.addGap(28).addComponent(btnNewButton_2))
+												.addGap(28).addComponent(btnAlteraLivro))
 										.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 257,
 												GroupLayout.PREFERRED_SIZE))
 								.addGap(313)
@@ -306,7 +314,7 @@ public class VisaoGerenciaLivro extends JFrame {
 										.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
 												.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 29,
 														GroupLayout.PREFERRED_SIZE)
-												.addComponent(btnNewButton_2, GroupLayout.DEFAULT_SIZE, 28,
+												.addComponent(btnAlteraLivro, GroupLayout.DEFAULT_SIZE, 28,
 														Short.MAX_VALUE))
 										.addGap(37)))
 						.addGap(32)
