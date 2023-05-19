@@ -62,7 +62,11 @@ public class LivroDAO implements ILivroDAO {
 
 	
 	public ArrayList<Livro> listarLivros() {
-		return this.tabelaLivros;
+		if(!tabelaLivros.isEmpty()) {
+			return this.tabelaLivros;
+			
+		}
+		return null;
 	}
 
 }

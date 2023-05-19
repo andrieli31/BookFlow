@@ -35,12 +35,14 @@ public class PessoaDAO implements IPessoaDAO {
 
 	/// alterando apenas o cpf do usuario, verificar para alteração dos outros dados
 	/// pendentes
-	public boolean alterarPessoa(Pessoa p, Long cpf, String nome, String sobrenome) {
+	public boolean alterarPessoa(Pessoa p, Long cpf, String nome, String sobrenome, String email, String senha) {
 		for (Pessoa pessoa : tabelaUsuarios) {
 			if (pessoa.getCpf().equals(cpf)) {
 				pessoa.setCpf(cpf);
 				pessoa.setNome(nome);
 				pessoa.setSobrenome(sobrenome);
+				pessoa.setEmail(email);
+				pessoa.setSenha(senha);
 				return true;
 			}
 		}
@@ -58,16 +60,12 @@ public class PessoaDAO implements IPessoaDAO {
 		return false;
 	}
 
-
-	
 	/// Pendente descobrir como usar listagem com interface grafica
 	public ArrayList<Pessoa> listarPessoas() {
 		if (!tabelaUsuarios.isEmpty()) {
-			for (Pessoa pessoa : tabelaUsuarios) {
-
-			}
+			return tabelaUsuarios;
 		}
-		return null;
+		return tabelaUsuarios;
 	}
 
 }
