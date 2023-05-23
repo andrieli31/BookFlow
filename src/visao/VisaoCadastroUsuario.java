@@ -167,19 +167,9 @@ public class VisaoCadastroUsuario extends JFrame {
 		btnNewButton_2.setForeground(new Color(0, 64, 128));
 		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 12));
 
-		JButton btnAlteraUser = new JButton("Alterar Usuário");
-		btnAlteraUser.setForeground(new Color(0, 64, 128));
-		btnAlteraUser.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				PopUpAlteraUsuario frame = new PopUpAlteraUsuario();
-				frame.setVisible(true);
-				dispose();
-			}
-			
-		});
-		btnAlteraUser.setFont(new Font("Tahoma", Font.BOLD, 12));
+		JButton btnNewButton_3 = new JButton("Alterar Usuário");
+		btnNewButton_3.setForeground(new Color(0, 64, 128));
+		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 12));
 
 		JButton btnNewButton_4 = new JButton("Voltar a Tela Inicial");
 		btnNewButton_4.addActionListener(new ActionListener() {
@@ -235,7 +225,6 @@ public class VisaoCadastroUsuario extends JFrame {
 																GroupLayout.PREFERRED_SIZE))
 												.addGroup(gl_contentPane.createSequentialGroup().addGroup(gl_contentPane
 														.createParallelGroup(Alignment.LEADING)
-<<<<<<< HEAD
 														.addGroup(gl_contentPane
 																.createParallelGroup(Alignment.LEADING, false)
 																.addComponent(lblNome, GroupLayout.DEFAULT_SIZE,
@@ -275,84 +264,6 @@ public class VisaoCadastroUsuario extends JFrame {
 												scrollPane, GroupLayout.PREFERRED_SIZE, 493,
 												GroupLayout.PREFERRED_SIZE)))
 								.addGap(28)))));
-=======
-														.addComponent(lblNewLabel_3, Alignment.TRAILING,
-																GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
-														.addGroup(Alignment.TRAILING, gl_contentPane
-																.createSequentialGroup()
-																.addGroup(gl_contentPane
-																		.createParallelGroup(Alignment.TRAILING)
-																		.addGroup(gl_contentPane.createSequentialGroup()
-																				.addComponent(btnNewButton)
-																				.addPreferredGap(
-																						ComponentPlacement.RELATED, 52,
-																						Short.MAX_VALUE)
-																				.addComponent(
-																						btnNewButton_1,
-																						GroupLayout.PREFERRED_SIZE, 141,
-																						GroupLayout.PREFERRED_SIZE))
-																		.addGroup(gl_contentPane
-																				.createSequentialGroup()
-																				.addGroup(gl_contentPane
-																						.createParallelGroup(
-																								Alignment.LEADING)
-																						.addGroup(gl_contentPane
-																								.createParallelGroup(
-																										Alignment.LEADING,
-																										false)
-																								.addComponent(
-																										lblNewLabel_1,
-																										GroupLayout.DEFAULT_SIZE,
-																										GroupLayout.DEFAULT_SIZE,
-																										Short.MAX_VALUE)
-																								.addComponent(
-																										lblNewLabel_2,
-																										Alignment.TRAILING,
-																										GroupLayout.DEFAULT_SIZE,
-																										122,
-																										Short.MAX_VALUE))
-																						.addComponent(lblNewLabel_6)
-																						.addComponent(lblNewLabel_5))
-																				.addGap(18)
-																				.addGroup(gl_contentPane
-																						.createParallelGroup(
-																								Alignment.LEADING)
-																						.addComponent(textField_1,
-																								GroupLayout.DEFAULT_SIZE,
-																								194, Short.MAX_VALUE)
-																						.addComponent(
-																								textField,
-																								Alignment.TRAILING,
-																								GroupLayout.DEFAULT_SIZE,
-																								194, Short.MAX_VALUE)
-																						.addComponent(
-																								textField_2,
-																								GroupLayout.DEFAULT_SIZE,
-																								194, Short.MAX_VALUE)
-																						.addComponent(
-																								textField_3,
-																								GroupLayout.DEFAULT_SIZE,
-																								194, Short.MAX_VALUE)
-																						.addComponent(passwordField,
-																								GroupLayout.DEFAULT_SIZE,
-																								194, Short.MAX_VALUE)))
-																		.addComponent(btnAlteraUser,
-																				GroupLayout.PREFERRED_SIZE, 139,
-																				GroupLayout.PREFERRED_SIZE))
-																.addGap(197))
-														.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, 111,
-																GroupLayout.PREFERRED_SIZE)
-														.addComponent(lblNewLabel_4, GroupLayout.PREFERRED_SIZE, 279,
-																GroupLayout.PREFERRED_SIZE))
-														.addPreferredGap(ComponentPlacement.RELATED)
-														.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-																.addComponent(table, GroupLayout.PREFERRED_SIZE, 531,
-																		GroupLayout.PREFERRED_SIZE)
-																.addComponent(btnNewButton_4,
-																		GroupLayout.PREFERRED_SIZE, 198,
-																		GroupLayout.PREFERRED_SIZE))
-														.addGap(163))))));
->>>>>>> master
 		gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane
 				.createSequentialGroup()
 				.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING).addGroup(gl_contentPane
@@ -378,7 +289,6 @@ public class VisaoCadastroUsuario extends JFrame {
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 								.addComponent(txtSenha, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
 								.addComponent(lblNewLabel_6))
 						.addGap(48)
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE).addComponent(btnNewButton)
@@ -393,14 +303,6 @@ public class VisaoCadastroUsuario extends JFrame {
 						.addComponent(btnNewButton_3))
 				.addGap(114).addComponent(btnNewButton_4, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
 				.addGap(317)));
-=======
-								.addGap(29)
-								.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-										.addComponent(btnNewButton_2).addComponent(btnAlteraUser))
-								.addGap(75)))
-				.addGap(39).addComponent(btnNewButton_4, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
-				.addContainerGap(316, Short.MAX_VALUE)));
->>>>>>> master
 		contentPane.setLayout(gl_contentPane);
 
 		modelo.addColumn("Nome");
