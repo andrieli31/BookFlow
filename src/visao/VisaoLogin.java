@@ -157,12 +157,20 @@ public class VisaoLogin extends JFrame {
 		lblSenha.setBounds(35, 220, 46, 14);
 		panel_1.add(lblSenha);
 		
-		JButton btnNewButton = new JButton("Entrar");
-		btnNewButton.setBackground(new Color(0, 64, 128));
-		btnNewButton.setForeground(new Color(255, 255, 255));
-		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 14));
-		btnNewButton.setBounds(145, 335, 147, 37);
-		panel_1.add(btnNewButton);
+		JButton btnEntrar = new JButton("Entrar");
+		btnEntrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VisaoTelaInicial frame = new VisaoTelaInicial();
+				frame.setVisible(true);
+				dispose();
+				
+			}
+		});
+		btnEntrar.setBackground(new Color(0, 64, 128));
+		btnEntrar.setForeground(new Color(255, 255, 255));
+		btnEntrar.setFont(new Font("Segoe UI", Font.BOLD, 14));
+		btnEntrar.setBounds(145, 335, 147, 37);
+		panel_1.add(btnEntrar);
 		
 		passwordField = new JPasswordField();
 		passwordField.setFont(new Font("Tahoma", Font.PLAIN, 15));
