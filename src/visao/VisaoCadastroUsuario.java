@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -11,6 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.MaskFormatter;
 
 import controle.LivroDAO;
 import controle.PessoaDAO;
@@ -26,6 +28,7 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.JTable;
 import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
@@ -83,7 +86,15 @@ public class VisaoCadastroUsuario extends JFrame {
 		txtSobrenome = new JTextField();
 		txtSobrenome.setColumns(10);
 
-		txtCpf = new JTextField();
+		MaskFormatter mascaraCpf = null;
+
+		try {
+			mascaraCpf = new MaskFormatter("###.###.###-##");
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		txtCpf = new JFormattedTextField(mascaraCpf);
 		txtCpf.setColumns(10);
 
 		JLabel lblNome = new JLabel("Nome: ");
@@ -164,6 +175,15 @@ public class VisaoCadastroUsuario extends JFrame {
 		lblNewLabel_4.setFont(new Font("Times New Roman", Font.BOLD, 20));
 
 		JButton btnNewButton_2 = new JButton("Excluir Usuário");
+		btnNewButton_2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+
+			}
+
+		});
 		btnNewButton_2.setForeground(new Color(0, 64, 128));
 		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 12));
 

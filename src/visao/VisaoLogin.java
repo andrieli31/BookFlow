@@ -6,7 +6,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
+
+import controle.PessoaDAO;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.ImageIcon;
@@ -162,6 +166,25 @@ public class VisaoLogin extends JFrame {
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 14));
 		btnNewButton.setBounds(145, 335, 147, 37);
+		
+		btnNewButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				
+				
+				PessoaDAO dao = PessoaDAO.getInstancia();
+		
+			
+				dao.listarPessoas();
+			
+				if(dao.listarPessoas().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Usuário não existente no sistema!");
+				}
+			}
+			
+		});
 		panel_1.add(btnNewButton);
 		
 		passwordField = new JPasswordField();
