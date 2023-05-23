@@ -15,6 +15,18 @@ public class PessoaDAO implements IPessoaDAO {
 
 	}
 
+	public Pessoa efetuarLogin(String login, String senha) {
+		Pessoa p = null;
+
+		for (Pessoa pessoa : tabelaUsuarios) {
+			if (pessoa.getSenha().equals(senha) && pessoa.getEmail().equals(login)) {
+				p = pessoa;
+			}
+		}
+
+		return p;
+	}
+
 	/// Instanciando PessoaDAO
 	public static PessoaDAO getInstancia() {
 		if (instancia == null) {
@@ -62,7 +74,7 @@ public class PessoaDAO implements IPessoaDAO {
 
 	/// Pendente descobrir como usar listagem com interface grafica
 	public ArrayList<Pessoa> listarPessoas() {
-			return tabelaUsuarios;
+		return tabelaUsuarios;
 
 	}
 
