@@ -19,6 +19,8 @@ import java.awt.Color;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.UIManager;
+
 import java.awt.Font;
 import java.awt.geom.RoundRectangle2D;
 import java.awt.image.BufferedImage;
@@ -48,7 +50,9 @@ public class VisaoLogin extends JFrame {
 					VisaoLogin frame = new VisaoLogin();
 					frame.setVisible(true);
 					frame.setExtendedState(MAXIMIZED_BOTH);
+					UIManager.setLookAndFeel(new FlatlightLaf(););  //tentanto aplicar um componente que facilitará o aprimoramento do design
 				} catch (Exception e) {
+					System.err.println("Failed to initialize Laf")
 					e.printStackTrace();
 				}
 			}
