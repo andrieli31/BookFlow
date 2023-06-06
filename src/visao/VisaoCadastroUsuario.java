@@ -110,7 +110,7 @@ public class VisaoCadastroUsuario extends JFrame {
 		lblCpf.setFont(new Font("Times New Roman", Font.BOLD, 16));
 		lblCpf.setForeground(new Color(255, 255, 255));
 
-		JButton btnNewButton = new JButton("Cadastrar");
+		JButton btnCadastrar = new JButton("Cadastrar");
 
 		btnCadastrar.addActionListener(new ActionListener() {
 			/// colocar anos de edição dos livros e diminuir 1
