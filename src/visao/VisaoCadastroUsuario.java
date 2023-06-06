@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
@@ -111,39 +112,50 @@ public class VisaoCadastroUsuario extends JFrame {
 
 		JButton btnNewButton = new JButton("Cadastrar");
 
-		btnNewButton.addActionListener(new ActionListener() {
+		btnCadastrar.addActionListener(new ActionListener() {
 			/// colocar anos de edição dos livros e diminuir 1
-//int ano= LocalDate.now().getYear();
+			//int ano= LocalDate.now().getYear();
 			// for(int i = 0; i<ano; i++) {
 			// cbNomes.addItem(String.valueOf(ano));
 			// }
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Pessoa pessoa = new Pessoa();
-				PessoaDAO dao = PessoaDAO.getInstancia();
+				
 
 				String nome = txtNome.getText();
 				String sobrenome = txtSobrenome.getText();
-				Long cpf = Long.parseLong(txtCpf.getText());
+				String cpfText = txtCpf.getText();
+				cpfText = cpfText.replaceAll("[.-]", ""); // Remove pontos e traço da máscara
+				Long cpf = Long.parseLong(cpfText);
+				String senha = String.valueOf(txtSenha.getPassword());
+				String email = txtEmail.getText();
 
 				pessoa.setNome(nome);
 				pessoa.setSobrenome(sobrenome);
 				pessoa.setCpf(cpf);
-				pessoa.setEmail(txtEmail.getText());
-				pessoa.setSenha(txtSenha.getText());
+				pessoa.setEmail(email);
+				pessoa.setSenha(senha);
 
 				txtNome.setText(null);
 				txtSobrenome.setText(null);
 				txtCpf.setText(null);
 				txtSenha.setText(null);
 				txtEmail.setText(null);
-				dao.cadastrarPessoa(pessoa);
+				
+				PessoaDAO dao = PessoaDAO.getInstancia();
+				Boolean cadastrar = dao.cadastrarPessoa(pessoa);
+				if(cadastrar) {
+					JOptionPane.showMessageDialog(btnCadastrar, "Usuario cadastrado");
+				} else {
+					JOptionPane.showMessageDialog(btnCadastrar, "Usuario não foi cadastrado");
+				}
+				
 			}
 
 		});
 
-		btnNewButton.setForeground(new Color(0, 64, 128));
+		btnCadastrar.setForeground(new Color(0, 64, 128));
 
 		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 14));
 
@@ -161,13 +173,24 @@ public class VisaoCadastroUsuario extends JFrame {
 		});
 		btnListaUsuario.setFont(new Font("Times New Roman", Font.BOLD, 14));
 
-		JButton btnNewButton_2 = new JButton("Excluir Usuário");
-		btnNewButton_2.addActionListener(new ActionListener() {
+		
+		
+		JButton btnExcluir = new JButton("Excluir Usuário");
+		btnExcluir.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-
+				int row = table.getSelectedRow();
+		        if (row != -1) { // Verifica se alguma linha foi selecionada
+		            Object valorRow = table.getValueAt(row, 2); // Índice 2 é a coluna do CPF
+		            Long cpf = Long.valueOf((String) valorRow); // Converte o valor do CPF para Long
+		            PessoaDAO pessoaDAO = PessoaDAO.getInstancia();
+		            pessoaDAO.deletarPessoa(null, cpf); // Exclui o usuário com o CPF correspondente
+		            DefaultTableModel model = (DefaultTableModel) table.getModel();
+		            model.removeRow(row); // Remove a linha selecionada da tabela
+		        } else {
+		            JOptionPane.showMessageDialog(btnExcluir, "Nenhuma linha selecionada");
+		        }
 			}
 
 		});
@@ -286,9 +309,10 @@ public class VisaoCadastroUsuario extends JFrame {
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 								.addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(lblNewLabel_5))
-							.addGap(25)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(txtSenha, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addGap(25)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(txtSenha, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
 								.addComponent(lblNewLabel_6))
 							.addGap(43)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
