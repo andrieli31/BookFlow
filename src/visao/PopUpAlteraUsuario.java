@@ -61,7 +61,7 @@ public class PopUpAlteraUsuario extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("Dados do Usuário");
 		lblNewLabel.setForeground(new Color(255, 255, 255));
-		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 20));
+		lblNewLabel.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		
 		JLabel lblNewLabel_1 = new JLabel("Nome:");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -76,12 +76,15 @@ public class PopUpAlteraUsuario extends JFrame {
 		lblNewLabel_3.setForeground(new Color(255, 255, 255));
 		
 		textField = new JTextField();
+		textField.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
+		textField_1.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 		textField_1.setColumns(10);
 		
 		textField_2 = new JTextField();
+		textField_2.setFont(new Font("Times New Roman", Font.PLAIN, 11));
 		textField_2.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Alterar Usuário");
@@ -103,32 +106,34 @@ public class PopUpAlteraUsuario extends JFrame {
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(53)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(btnNewButton)
-							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addComponent(btnCancela))
-						.addComponent(lblNewLabel)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(textField, GroupLayout.PREFERRED_SIZE, 169, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(textField_1))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)
-							.addGap(18)
-							.addComponent(textField_2)))
-					.addContainerGap(324, Short.MAX_VALUE))
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addComponent(lblNewLabel_3, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)
+								.addGap(18)
+								.addComponent(textField_2))
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+									.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE)
+									.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 64, GroupLayout.PREFERRED_SIZE))
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+									.addComponent(textField, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
+									.addComponent(textField_1))))
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+							.addGroup(gl_contentPane.createSequentialGroup()
+								.addComponent(btnNewButton)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(btnCancela, GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
+							.addComponent(lblNewLabel)))
+					.addGap(71))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(44)
 					.addComponent(lblNewLabel)
-					.addGap(18)
+					.addGap(34)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNewLabel_1)
 						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
@@ -140,11 +145,11 @@ public class PopUpAlteraUsuario extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNewLabel_3)
 						.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(66)
+					.addGap(50)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnNewButton)
 						.addComponent(btnCancela))
-					.addContainerGap(112, Short.MAX_VALUE))
+					.addContainerGap(91, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
 	}

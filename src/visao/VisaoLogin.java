@@ -50,9 +50,9 @@ public class VisaoLogin extends JFrame {
 					VisaoLogin frame = new VisaoLogin();
 					frame.setVisible(true);
 					frame.setExtendedState(MAXIMIZED_BOTH);
-					UIManager.setLookAndFeel(new FlatlightLaf(););  //tentanto aplicar um componente que facilitará o aprimoramento do design
+					UIManager.setLookAndFeel(new FlatlightLaf());  //tentanto aplicar um componente que facilitará o aprimoramento do design
 				} catch (Exception e) {
-					System.err.println("Failed to initialize Laf")
+					System.err.println("Failed to initialize Laf");
 					e.printStackTrace();
 				}
 			}
@@ -99,25 +99,37 @@ public class VisaoLogin extends JFrame {
 		btnVolta.setFont(new Font("Segoe UI", Font.BOLD, 16));
 
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane
-				.createSequentialGroup().addGap(143)
-				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
+				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+					.addGap(143)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 219, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblSlogan1, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblNome))
-				.addGap(147).addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 457, GroupLayout.PREFERRED_SIZE)
-				.addContainerGap(950, Short.MAX_VALUE))
-				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-						.addContainerGap(856, Short.MAX_VALUE).addComponent(btnVolta).addContainerGap()));
-		gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_contentPane.createSequentialGroup().addContainerGap().addComponent(lblNome)
-										.addGap(32).addComponent(lblSlogan1).addGap(27).addComponent(lblNewLabel_1,
-												GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE))
-								.addGroup(gl_contentPane.createSequentialGroup().addGap(64).addComponent(panel_1,
-										GroupLayout.PREFERRED_SIZE, 545, GroupLayout.PREFERRED_SIZE)))
-						.addPreferredGap(ComponentPlacement.RELATED, 208, Short.MAX_VALUE).addComponent(btnVolta)));
+					.addGap(147)
+					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 457, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(42, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addContainerGap(856, Short.MAX_VALUE)
+					.addComponent(btnVolta)
+					.addContainerGap())
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(64)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(lblNome)
+							.addGap(37)
+							.addComponent(lblSlogan1)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE))
+						.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 499, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED, 254, Short.MAX_VALUE)
+					.addComponent(btnVolta))
+		);
 		panel_1.setLayout(null);
 
 		JLabel lblLogin = new JLabel("Bem-vindo novamente!");
@@ -133,14 +145,13 @@ public class VisaoLogin extends JFrame {
 		lblEmail.setFont(new Font("Segoe UI", Font.BOLD, 14));
 		lblEmail.setForeground(new Color(0, 64, 128));
 
-		lblEmail.setBounds(35, 117, 158, 14);
+		lblEmail.setBounds(35, 136, 158, 14);
 		panel_1.add(lblEmail);
 
 		txtEmail = new JTextField();
 		txtEmail.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		txtEmail.setBounds(35, 147, 395, 31);
+		txtEmail.setBounds(35, 161, 395, 31);
 		txtEmail.setForeground(new Color(0, 64, 128));
-		txtEmail.setText("@email.com");
 		txtEmail.setColumns(10);
 
 		panel_1.add(txtEmail);
@@ -157,7 +168,7 @@ public class VisaoLogin extends JFrame {
 		btnNewButton.setBackground(new Color(0, 64, 128));
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 14));
-		btnNewButton.setBounds(145, 335, 147, 37);
+		btnNewButton.setBounds(146, 355, 147, 37);
 
 		btnNewButton.addActionListener(new ActionListener() {
 
@@ -198,10 +209,10 @@ public class VisaoLogin extends JFrame {
 		txtSenha.setBounds(35, 245, 395, 37);
 		panel_1.add(txtSenha);
 
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Remember me");
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("Lembre de mim");
 		rdbtnNewRadioButton.setForeground(new Color(0, 64, 128));
 		rdbtnNewRadioButton.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		rdbtnNewRadioButton.setBounds(35, 289, 109, 23);
+		rdbtnNewRadioButton.setBounds(35, 289, 123, 23);
 		panel_1.add(rdbtnNewRadioButton);
 		contentPane.setLayout(gl_contentPane);
 	}
