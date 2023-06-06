@@ -157,7 +157,7 @@ public class VisaoCadastroUsuario extends JFrame {
 
 		btnCadastrar.setForeground(new Color(0, 64, 128));
 
-		btnNewButton.setFont(new Font("Times New Roman", Font.BOLD, 14));
+		btnCadastrar.setFont(new Font("Times New Roman", Font.BOLD, 14));
 
 		JButton btnListaUsuario = new JButton("Listar");
 		btnListaUsuario.setForeground(new Color(0, 64, 128));
