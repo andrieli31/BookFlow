@@ -50,9 +50,9 @@ public class VisaoLogin extends JFrame {
 					VisaoLogin frame = new VisaoLogin();
 					frame.setVisible(true);
 					frame.setExtendedState(MAXIMIZED_BOTH);
-					UIManager.setLookAndFeel(new FlatlightLaf(););  //tentanto aplicar um componente que facilitará o aprimoramento do design
+					UIManager.setLookAndFeel(new FlatlightLaf());  //tentanto aplicar um componente que facilitará o aprimoramento do design
 				} catch (Exception e) {
-					System.err.println("Failed to initialize Laf")
+					System.err.println("Failed to initialize Laf");
 					e.printStackTrace();
 				}
 			}
