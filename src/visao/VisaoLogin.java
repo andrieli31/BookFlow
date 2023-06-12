@@ -51,7 +51,8 @@ public class VisaoLogin extends JFrame {
 					VisaoLogin frame = new VisaoLogin();
 					frame.setVisible(true);
 					frame.setExtendedState(MAXIMIZED_BOTH);
-					UIManager.setLookAndFeel(new FlatlightLaf());  //tentanto aplicar um componente que facilitará o aprimoramento do design
+					UIManager.setLookAndFeel(new FlatlightLaf()); // tentanto aplicar um componente que facilitará o
+																	// aprimoramento do design
 				} catch (Exception e) {
 					System.err.println("Failed to initialize Laf");
 					e.printStackTrace();
@@ -74,7 +75,8 @@ public class VisaoLogin extends JFrame {
 		setContentPane(contentPane);
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new CompoundBorder(UIManager.getBorder("CheckBoxMenuItem.border"), UIManager.getBorder("CheckBoxMenuItem.border")));
+		panel_1.setBorder(new CompoundBorder(UIManager.getBorder("CheckBoxMenuItem.border"),
+				UIManager.getBorder("CheckBoxMenuItem.border")));
 
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon("img/login.png"));
@@ -83,6 +85,8 @@ public class VisaoLogin extends JFrame {
 		lblNome.setForeground(Color.WHITE);
 		lblNome.setFont(new Font("Segoe UI", Font.BOLD, 48));
 
+		JButton btnVolta = new JButton("Voltar a Tela Inicial");
+
 		JLabel lblSlogan1 = new JLabel("<html><p style=\"width:120px\">"
 				+ "Gerencie sua biblioteca de forma fácil e inteligente com BookFlow: organize, explore e mergulhe no mundo dos livros."
 				+ "</p></html>");
@@ -90,72 +94,59 @@ public class VisaoLogin extends JFrame {
 		lblSlogan1.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-<<<<<<< Updated upstream
-			gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-					.addGap(143)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 219, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblSlogan1, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
+		gl_contentPane.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup().addGap(143)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 219,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblSlogan1, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblNome))
+						.addGap(147).addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 457, GroupLayout.PREFERRED_SIZE)
+						.addContainerGap(42, Short.MAX_VALUE))
+				.addGroup(gl_contentPane.createSequentialGroup().addContainerGap(856, Short.MAX_VALUE)
+						.addComponent(btnVolta).addContainerGap()));
+		gl_contentPane.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane.createSequentialGroup()
+				.addGap(143)
+				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup().addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(lblSlogan1, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE)
+								.addGap(117).addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 219,
+										GroupLayout.PREFERRED_SIZE))
 						.addComponent(lblNome))
-					.addGap(147)
-					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 457, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(42, Short.MAX_VALUE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap(856, Short.MAX_VALUE)
-					.addComponent(btnVolta)
-					.addContainerGap())
-=======
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(143)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(lblSlogan1, GroupLayout.PREFERRED_SIZE, 167, GroupLayout.PREFERRED_SIZE)
-							.addGap(117)
-							.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 219, GroupLayout.PREFERRED_SIZE))
-						.addComponent(lblNome))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 457, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(155, Short.MAX_VALUE))
->>>>>>> Stashed changes
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-<<<<<<< Updated upstream
-					.addGap(64)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(lblNome)
-							.addGap(37)
-							.addComponent(lblSlogan1)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE))
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 457, GroupLayout.PREFERRED_SIZE)
+				.addContainerGap(155, Short.MAX_VALUE));
+		gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane
+				.createSequentialGroup().addGap(64)
+				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup().addComponent(lblNome).addGap(37)
+								.addComponent(lblSlogan1).addPreferredGap(ComponentPlacement.RELATED).addComponent(
+										lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE))
 						.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 499, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED, 254, Short.MAX_VALUE)
-					.addComponent(btnVolta))
-=======
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(212)
-							.addComponent(lblNome)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGap(6)
-									.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE))
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGap(18)
-									.addComponent(lblSlogan1))))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(161)
-							.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 435, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(252, Short.MAX_VALUE))
->>>>>>> Stashed changes
-		);
+				.addPreferredGap(ComponentPlacement.RELATED, 254, Short.MAX_VALUE).addComponent(btnVolta))
+				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane
+						.createSequentialGroup().addGap(212).addComponent(lblNome)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(6).addComponent(lblNewLabel_1,
+										GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(18).addComponent(lblSlogan1))))
+						.addGroup(gl_contentPane.createSequentialGroup().addGap(161)
+								.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 435, GroupLayout.PREFERRED_SIZE)
+								.addContainerGap(252, Short.MAX_VALUE))));
 		panel_1.setLayout(null);
+
+		btnVolta.setBounds(35, 365, 179, 37);
+		panel_1.add(btnVolta);
+		btnVolta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VisaoTelaInicial frame = new VisaoTelaInicial();
+				frame.setVisible(true);
+				dispose();
+			}
+		});
+		btnVolta.setForeground(new Color(0, 64, 128));
+		btnVolta.setFont(new Font("Segoe UI", Font.BOLD, 16));
+		contentPane.setLayout(gl_contentPane);
 
 		JLabel lblLogin = new JLabel("Bem-vindo novamente!");
 		lblLogin.setForeground(new Color(0, 64, 128));
@@ -193,11 +184,8 @@ public class VisaoLogin extends JFrame {
 		btnNewButton.setBackground(new Color(0, 64, 128));
 		btnNewButton.setForeground(new Color(0, 64, 128));
 		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 14));
-<<<<<<< Updated upstream
 		btnNewButton.setBounds(146, 355, 147, 37);
-=======
 		btnNewButton.setBounds(274, 365, 147, 37);
->>>>>>> Stashed changes
 
 		btnNewButton.addActionListener(new ActionListener() {
 
@@ -208,7 +196,7 @@ public class VisaoLogin extends JFrame {
 
 				String email = txtEmail.getText();
 				String senha = txtSenha.getText();
-				
+
 				PessoaDAO dao = PessoaDAO.getInstancia();
 				Pessoa pessoa = dao.efetuarLogin(email, senha);
 
@@ -243,19 +231,6 @@ public class VisaoLogin extends JFrame {
 		rdbtnNewRadioButton.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		rdbtnNewRadioButton.setBounds(35, 289, 123, 23);
 		panel_1.add(rdbtnNewRadioButton);
-		
-				JButton btnVolta = new JButton("Voltar a Tela Inicial");
-				btnVolta.setBounds(35, 365, 179, 37);
-				panel_1.add(btnVolta);
-				btnVolta.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						VisaoTelaInicial frame = new VisaoTelaInicial();
-						frame.setVisible(true);
-						dispose();
-					}
-				});
-				btnVolta.setForeground(new Color(0, 64, 128));
-				btnVolta.setFont(new Font("Segoe UI", Font.BOLD, 16));
-		contentPane.setLayout(gl_contentPane);
+
 	}
 }

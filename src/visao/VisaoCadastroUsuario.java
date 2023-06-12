@@ -174,7 +174,9 @@ public class VisaoCadastroUsuario extends JFrame {
 		btnListaUsuario.setFont(new Font("Times New Roman", Font.BOLD, 14));
 
 		
-		
+		JButton btnNewButton_2 = new JButton("Teste");
+		JButton btnNewButton = new JButton("Teste");
+
 		JButton btnExcluir = new JButton("Excluir Usuário");
 		btnExcluir.addActionListener(new ActionListener() {
 
