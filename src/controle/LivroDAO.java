@@ -10,7 +10,7 @@ public class LivroDAO implements ILivroDAO {
 	private static ArrayList<Livro> tabelaLivros;
 	private static LivroDAO instancia;
 
-	private LivroDAO() {
+	public LivroDAO() {
 
 	}
 
@@ -67,6 +67,18 @@ public class LivroDAO implements ILivroDAO {
 			
 		}
 		return null;
+	}
+
+	@Override
+	public boolean alterarLivro(Livro l, Long isbn, String titulo, String editora, int nrEdicao, int anoLancamento,
+			String genero) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void deletarLivro(Livro livro) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

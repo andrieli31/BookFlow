@@ -183,6 +183,7 @@ public class VisaoCadastroUsuario extends JFrame {
 		btnNewButton.setForeground(new Color(0, 64, 128));
 		btnNewButton.setFont(new Font("Segoe UI Semibold", Font.BOLD, 12));
 
+		Pessoa pessoa = new Pessoa();
 				String nome = txtNome.getText();
 				String sobrenome = txtSobrenome.getText();
 				String cpfText = txtCpf.getText();
