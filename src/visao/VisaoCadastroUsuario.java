@@ -174,10 +174,48 @@ public class VisaoCadastroUsuario extends JFrame {
 		btnListaUsuario.setFont(new Font("Segoe UI Semibold", Font.BOLD, 12));
 
 		
-		JButton btnNewButton_2 = new JButton("Excluir Usuário");
-		JButton btnNewButton = new JButton("Cadastrar");
-		btnNewButton.setForeground(new Color(0, 64, 128));
-		btnNewButton.setFont(new Font("Segoe UI Semibold", Font.BOLD, 12));
+		JButton btnExclui = new JButton("Excluir User");
+		btnExclui.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		
+		JButton btnCadastro = new JButton("Cadastrar");
+		btnCadastro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+	Pessoa pessoa = new Pessoa();
+				
+
+				String nome = txtNome.getText();
+				String sobrenome = txtSobrenome.getText();
+				String cpfText = txtCpf.getText();
+				cpfText = cpfText.replaceAll("[.-]", ""); // Remove pontos e traço da máscara
+				Long cpf = Long.parseLong(cpfText);
+				String senha = String.valueOf(txtSenha.getPassword());
+				String email = txtEmail.getText();
+
+				pessoa.setNome(nome);
+				pessoa.setSobrenome(sobrenome);
+				pessoa.setCpf(cpf);
+				pessoa.setEmail(email);
+				pessoa.setSenha(senha);
+
+				txtNome.setText(null);
+				txtSobrenome.setText(null);
+				txtCpf.setText(null);
+				txtSenha.setText(null);
+				txtEmail.setText(null);
+				
+				PessoaDAO dao = PessoaDAO.getInstancia();
+				Boolean cadastrar = dao.cadastrarPessoa(pessoa);
+				if(cadastrar) {
+					JOptionPane.showMessageDialog(btnCadastrar, "Usuario cadastrado");
+				} else {
+					JOptionPane.showMessageDialog(btnCadastrar, "Usuario não foi cadastrado");
+				}
+				
+			}
+		});
 
 		JButton btnExcluir = new JButton("Excluir Usuário");
 		btnExcluir.addActionListener(new ActionListener() {
@@ -198,10 +236,14 @@ public class VisaoCadastroUsuario extends JFrame {
 			}
 
 		});
-		btnNewButton_2.setForeground(new Color(117, 0, 32));
-		btnNewButton_2.setFont(new Font("Segoe UI Semibold", Font.BOLD, 12));
+		btnExclui.setForeground(new Color(117, 0, 32));
+		btnExclui.setFont(new Font("Times New Roman", Font.BOLD, 14));
 
 		JButton btnNewButton_3 = new JButton("Alterar Usuário");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton_3.setForeground(new Color(0, 64, 0));
 		btnNewButton_3.setFont(new Font("Segoe UI Semibold", Font.BOLD, 12));
 
@@ -258,24 +300,12 @@ public class VisaoCadastroUsuario extends JFrame {
 									.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 178, GroupLayout.PREFERRED_SIZE))
 								.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
 									.addGroup(gl_contentPane.createSequentialGroup()
-										.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 168, GroupLayout.PREFERRED_SIZE)
+										.addComponent(btnCadastro, GroupLayout.PREFERRED_SIZE, 168, GroupLayout.PREFERRED_SIZE)
 										.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 										.addComponent(btnListaUsuario, GroupLayout.PREFERRED_SIZE, 182, GroupLayout.PREFERRED_SIZE))
-									.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-										.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-											.addComponent(lblNome, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE)
-											.addComponent(lblSobrenome, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-											.addComponent(lblCpf, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE)
-											.addComponent(lblNewLabel_6)
-											.addComponent(lblNewLabel_5))
-										.addGap(29)
-										.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-											.addComponent(txtNome)
-											.addComponent(txtSobrenome)
-											.addComponent(txtCpf)
-											.addComponent(txtSenha)
-											.addComponent(txtEmail, GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)))))
-							.addGap(178))
+									.addComponent(btnNewButton_3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+									.addComponent(btnExclui, GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)))
+							.addPreferredGap(ComponentPlacement.RELATED, 168, Short.MAX_VALUE))
 						.addComponent(lblControleDosUsurios, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 359, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
@@ -321,15 +351,15 @@ public class VisaoCadastroUsuario extends JFrame {
 								.addComponent(lblNewLabel_6))
 							.addGap(43)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnListaUsuario, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))
+								.addComponent(btnCadastro)
+								.addComponent(btnListaUsuario))
 							.addGap(85)
 							.addComponent(lblControleDosUsurios, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
 							.addGap(18)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(btnNewButton_2, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))))
-					.addGap(18)
+							.addComponent(btnExclui)
+							.addGap(18)
+							.addComponent(btnNewButton_3)))
+					.addGap(37)
 					.addComponent(btnNewButton_4, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
 					.addGap(302))
 		);
