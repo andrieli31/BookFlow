@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import net.miginfocom.swing.MigLayout;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
@@ -44,7 +45,7 @@ public class VisaoTelaInicial extends JFrame {
 	public VisaoTelaInicial() {
 		setBackground(new Color(0, 64, 128));
 		setForeground(new Color(0, 0, 0));
-		setTitle("Tela Inicial");
+		setTitle("TELA INICIAL");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		setBounds(100, 100, 1576, 1455);
@@ -56,12 +57,12 @@ public class VisaoTelaInicial extends JFrame {
 		setContentPane(contentPane);
 
 		JLabel lblEscolherOpcao = new JLabel("Escolha uma opção:");
-		lblEscolherOpcao.setBounds(124, 162, 268, 24);
-		lblEscolherOpcao.setForeground(new Color(255, 255, 255));
+		lblEscolherOpcao.setBounds(91, 358, 191, 24);
+		lblEscolherOpcao.setForeground(new Color(137, 27, 224));
 		lblEscolherOpcao.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(489, 299, 256, 256);
+		lblNewLabel_1.setBounds(93, 526, 256, 256);
 		lblNewLabel_1.setIcon(new ImageIcon("img/user-interface.png"));
 
 		JButton btnNewButton = new JButton("Gerenciar Usuários");
@@ -76,19 +77,19 @@ public class VisaoTelaInicial extends JFrame {
 			}
 
 		});
-		btnNewButton.setBounds(489, 631, 256, 40);
+		btnNewButton.setBounds(93, 802, 256, 29);
 		btnNewButton.setBackground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
 		btnNewButton.setForeground(new Color(0, 64, 128));
 
 		JLabel lblNewLabel_2 = new JLabel("Bem-Vindo ao BookFlow!");
-		lblNewLabel_2.setBounds(114, 89, 765, 65);
-		lblNewLabel_2.setFont(new Font("Segoe UI Black", Font.BOLD, 56));
-		lblNewLabel_2.setForeground(new Color(255, 255, 255));
+		lblNewLabel_2.setBounds(93, 282, 675, 65);
+		lblNewLabel_2.setFont(new Font("Segoe UI", Font.BOLD, 56));
+		lblNewLabel_2.setForeground(new Color(137, 27, 224));
 		contentPane.setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(1006, 299, 256, 256);
+		lblNewLabel.setBounds(537, 535, 256, 256);
 		lblNewLabel.setIcon(new ImageIcon("img/livro.png"));
 		contentPane.add(lblNewLabel);
 		contentPane.add(btnNewButton);
@@ -107,7 +108,7 @@ public class VisaoTelaInicial extends JFrame {
 			}
 			
 		});
-		btnNewButton_1.setBounds(1121, 655, 246, 40);
+		btnNewButton_1.setBounds(537, 802, 256, 29);
 		btnNewButton_1.setBackground(new Color(255, 255, 255));
 		btnNewButton_1.setFont(new Font("Segoe UI", Font.BOLD, 16));
 		btnNewButton_1.setForeground(new Color(0, 64, 128));
@@ -126,7 +127,7 @@ public class VisaoTelaInicial extends JFrame {
 		btnLogin.setForeground(new Color(255, 255, 255));
 		btnLogin.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnLogin.setBackground(new Color(137, 27, 224));
-		btnLogin.setBounds(91, 393, 256, 23);
+		btnLogin.setBounds(91, 393, 256, 35);
 		contentPane.add(btnLogin);
 	}
 }
