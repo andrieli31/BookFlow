@@ -50,7 +50,7 @@ public class VisaoTelaInicial extends JFrame {
 
 		setBounds(100, 100, 1576, 1455);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setBackground(new Color(0, 0, 128));
 		contentPane.setForeground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
