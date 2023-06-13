@@ -45,7 +45,7 @@ public class VisaoTelaInicial extends JFrame {
 	public VisaoTelaInicial() {
 		setBackground(new Color(0, 64, 128));
 		setForeground(new Color(0, 0, 0));
-		setTitle("TELA INICIAL");
+		setTitle("Tela Inicial");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		setBounds(100, 100, 1576, 1455);
@@ -108,7 +108,7 @@ public class VisaoTelaInicial extends JFrame {
 			}
 			
 		});
-		btnNewButton_1.setBounds(926, 578, 222, 29);
+		btnNewButton_1.setBounds(899, 578, 222, 29);
 		btnNewButton_1.setBackground(new Color(255, 255, 255));
 		btnNewButton_1.setFont(new Font("Segoe UI", Font.BOLD, 16));
 		btnNewButton_1.setForeground(new Color(0, 64, 128));
@@ -116,18 +116,5 @@ public class VisaoTelaInicial extends JFrame {
 		contentPane.add(lblEscolherOpcao);
 		contentPane.add(lblNewLabel_1);
 		
-		JButton btnLogin = new JButton("Já possui uma conta? Clique aqui!");
-		btnLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				VisaoLogin frame = new VisaoLogin();
-				frame.setVisible(true);
-				dispose();
-			}
-		});
-		btnLogin.setForeground(new Color(255, 255, 255));
-		btnLogin.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		btnLogin.setBackground(new Color(0, 64, 128));
-		btnLogin.setBounds(1294, 53, 256, 23);
-		contentPane.add(btnLogin);
 	}
 }

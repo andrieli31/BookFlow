@@ -39,14 +39,12 @@ import javax.swing.UIManager;
 public class VisaoGerenciaLivro extends JFrame {
 
 	private JPanel contentPane;
-	private final JPanel panel = new JPanel();
-	private JTextField txtTitulo;
-	private JTextField txtEditora;
-	private JTextField txtNumEdicao;
-	private JTextField txtISBN;
-	private JTextField txtAno;
-	private JTable table;
 	private static DefaultTableModel modelo;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
 
 	/**
 	 * Launch the application.
@@ -77,11 +75,10 @@ public class VisaoGerenciaLivro extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
-		contentPane.add(panel);
-		panel.setLayout(new BorderLayout(0, 0));
-
+		
 		JPanel panel_1 = new JPanel();
 		panel_1.setForeground(new Color(0, 64, 128));
+<<<<<<< Updated upstream
 		panel_1.setBackground(new Color(255, 255, 255));
 		panel.add(panel_1, BorderLayout.WEST);
 
@@ -114,9 +111,150 @@ public class VisaoGerenciaLivro extends JFrame {
 				});
 				btnNewButton_1.setForeground(new Color(0, 0, 0));
 				btnNewButton_1.setFont(new Font("Segoe UI", Font.BOLD, 12));
+=======
+		panel_1.setBackground(Color.WHITE);
+		contentPane.add(panel_1, BorderLayout.NORTH);
+		
+		JButton btnNewButton_1 = new JButton("Voltar a Tela Inicial");
+		btnNewButton_1.setForeground(new Color(0, 64, 128));
+		btnNewButton_1.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setLayout(null);
+		panel_2.setBorder(new LineBorder(new Color(192, 192, 192), 1, true));
+		panel_2.setBackground(Color.WHITE);
+		
+		JLabel lblNewLabel_1 = new JLabel("Dados dos Livros");
+		lblNewLabel_1.setForeground(new Color(0, 64, 128));
+		lblNewLabel_1.setFont(new Font("Segoe UI Black", Font.BOLD, 20));
+		lblNewLabel_1.setBackground(new Color(0, 0, 128));
+		lblNewLabel_1.setBounds(35, 11, 236, 28);
+		panel_2.add(lblNewLabel_1);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setLayout(null);
+		panel_3.setBackground(Color.WHITE);
+		panel_3.setBounds(35, 50, 349, 20);
+		panel_2.add(panel_3);
+		
+		JLabel lblTitulo = new JLabel("Título:");
+		lblTitulo.setForeground(Color.BLACK);
+		lblTitulo.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		lblTitulo.setBounds(0, 0, 124, 18);
+		panel_3.add(lblTitulo);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(144, 0, 205, 18);
+		panel_3.add(textField);
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setLayout(null);
+		panel_4.setBackground(Color.WHITE);
+		panel_4.setBounds(35, 85, 349, 20);
+		panel_2.add(panel_4);
+		
+		JLabel lblEditora = new JLabel("Editora:");
+		lblEditora.setForeground(Color.BLACK);
+		lblEditora.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		lblEditora.setBounds(0, 0, 124, 18);
+		panel_4.add(lblEditora);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(144, 0, 205, 20);
+		panel_4.add(textField_1);
+		
+		JPanel panel_5 = new JPanel();
+		panel_5.setLayout(null);
+		panel_5.setBackground(Color.WHITE);
+		panel_5.setBounds(35, 119, 349, 20);
+		panel_2.add(panel_5);
+		
+		JLabel lblNumEdicao = new JLabel("Número da edição:");
+		lblNumEdicao.setForeground(Color.BLACK);
+		lblNumEdicao.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		lblNumEdicao.setBounds(0, 0, 124, 18);
+		panel_5.add(lblNumEdicao);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(144, 0, 205, 20);
+		panel_5.add(textField_2);
+		
+		JPanel panel_6 = new JPanel();
+		panel_6.setLayout(null);
+		panel_6.setBackground(Color.WHITE);
+		panel_6.setBounds(35, 151, 349, 20);
+		panel_2.add(panel_6);
+		
+		JLabel lblISBN = new JLabel("ISBN:");
+		lblISBN.setForeground(Color.BLACK);
+		lblISBN.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		lblISBN.setBounds(0, 0, 124, 18);
+		panel_6.add(lblISBN);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(144, 0, 205, 20);
+		panel_6.add(textField_3);
+		
+		JPanel panel_7 = new JPanel();
+		panel_7.setLayout(null);
+		panel_7.setBackground(Color.WHITE);
+		panel_7.setBounds(35, 182, 349, 20);
+		panel_2.add(panel_7);
+		
+		JLabel lblAno = new JLabel("Ano de lançamento:");
+		lblAno.setForeground(Color.BLACK);
+		lblAno.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		lblAno.setBounds(0, 0, 124, 18);
+		panel_7.add(lblAno);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(144, 0, 205, 20);
+		panel_7.add(textField_4);
+		
+		JButton btnCadastro = new JButton("Cadastrar Livro");
+		btnCadastro.setForeground(new Color(0, 64, 128));
+		btnCadastro.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		btnCadastro.setBounds(25, 222, 174, 33);
+		panel_2.add(btnCadastro);
+		
+		JButton btnListagem = new JButton("Listar Livro");
+		btnListagem.setForeground(new Color(0, 64, 128));
+		btnListagem.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		btnListagem.setBounds(209, 222, 175, 33);
+		panel_2.add(btnListagem);
+		
+		JLabel lblNewLabel = new JLabel("Selecione um Livro:");
+		lblNewLabel.setForeground(new Color(0, 64, 128));
+		lblNewLabel.setFont(new Font("Segoe UI Black", Font.BOLD, 20));
+		lblNewLabel.setBounds(25, 289, 257, 28);
+		panel_2.add(lblNewLabel);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setForeground(new Color(0, 64, 128));
+		comboBox.setFont(new Font("Segoe UI Semibold", Font.BOLD, 12));
+		comboBox.setBounds(25, 328, 359, 28);
+		panel_2.add(comboBox);
+		
+		JButton btnExcluiLivro = new JButton("Excluir Livro");
+		btnExcluiLivro.setForeground(new Color(128, 0, 0));
+		btnExcluiLivro.setFont(new Font("Segoe UI Semibold", Font.BOLD, 12));
+		btnExcluiLivro.setBounds(209, 377, 174, 38);
+		panel_2.add(btnExcluiLivro);
+		
+		Box verticalBox = Box.createVerticalBox();
+		verticalBox.setBackground(new Color(255, 0, 128));
+		
+		JScrollPane scrollPane = new JScrollPane();
+>>>>>>> Stashed changes
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
 		gl_panel_1.setHorizontalGroup(
 			gl_panel_1.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 1914, Short.MAX_VALUE)
 				.addGroup(gl_panel_1.createSequentialGroup()
 					.addGap(38)
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
@@ -131,7 +269,9 @@ public class VisaoGerenciaLivro extends JFrame {
 		);
 		gl_panel_1.setVerticalGroup(
 			gl_panel_1.createParallelGroup(Alignment.TRAILING)
+				.addGap(0, 892, Short.MAX_VALUE)
 				.addGroup(gl_panel_1.createSequentialGroup()
+<<<<<<< Updated upstream
 					.addGap(20)
 					.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
@@ -339,24 +479,38 @@ public class VisaoGerenciaLivro extends JFrame {
 
 																										});
 		panel_1.setLayout(gl_panel_1);
+=======
+					.addContainerGap(147, Short.MAX_VALUE)
+					.addComponent(verticalBox, GroupLayout.PREFERRED_SIZE, 1, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 515, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
+							.addGap(174))
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 727, Short.MAX_VALUE)
+							.addContainerGap())))
+		);
+		
+		JButton btnAlterarLivro = new JButton("Alterar Livro");
+		btnAlterarLivro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnAlterarLivro.setForeground(new Color(0, 128, 0));
+		btnAlterarLivro.setFont(new Font("Segoe UI Semibold", Font.BOLD, 12));
+		btnAlterarLivro.setBounds(25, 377, 174, 38);
+		panel_2.add(btnAlterarLivro);
+		panel_1.setLayout(gl_panel_1);
+		modelo = new DefaultTableModel();
+		modelo = new DefaultTableModel();
+>>>>>>> Stashed changes
 		modelo.addColumn("Título");
 		modelo.addColumn("Editora");
 		modelo.addColumn("Número da edição");
 		modelo.addColumn("ISBN");
 		modelo.addColumn("Ano de lançamento");
-	}
-
-	public static void atualiza() {
-
-		LivroDAO dao = LivroDAO.getInstancia();
-		ArrayList<Livro> listaLivros = dao.listarLivros();
-
-		modelo.getDataVector().removeAllElements();
-
-		for (int i = 0; i < listaLivros.size(); i++) {
-			Livro p = listaLivros.get(i);
-			modelo.addRow(
-					new Object[] { p.getTitulo(), p.getEditora(), p.getNrEdicao(), p.getIsbn(), p.getAnoLancamento() });
-		}
 	}
 }
