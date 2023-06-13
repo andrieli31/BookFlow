@@ -57,12 +57,12 @@ public class VisaoTelaInicial extends JFrame {
 		setContentPane(contentPane);
 
 		JLabel lblEscolherOpcao = new JLabel("Escolha uma opção:");
-		lblEscolherOpcao.setBounds(91, 107, 268, 24);
+		lblEscolherOpcao.setBounds(124, 162, 268, 24);
 		lblEscolherOpcao.setForeground(new Color(255, 255, 255));
 		lblEscolherOpcao.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(388, 299, 256, 256);
+		lblNewLabel_1.setBounds(489, 299, 256, 256);
 		lblNewLabel_1.setIcon(new ImageIcon("img/user-interface.png"));
 
 		JButton btnNewButton = new JButton("Gerenciar Usuários");
@@ -77,19 +77,19 @@ public class VisaoTelaInicial extends JFrame {
 			}
 
 		});
-		btnNewButton.setBounds(388, 578, 256, 29);
+		btnNewButton.setBounds(489, 631, 256, 40);
 		btnNewButton.setBackground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
 		btnNewButton.setForeground(new Color(0, 64, 128));
 
 		JLabel lblNewLabel_2 = new JLabel("Bem-Vindo ao BookFlow!");
-		lblNewLabel_2.setBounds(81, 32, 765, 65);
-		lblNewLabel_2.setFont(new Font("Segoe UI", Font.BOLD, 56));
+		lblNewLabel_2.setBounds(114, 89, 765, 65);
+		lblNewLabel_2.setFont(new Font("Segoe UI Black", Font.BOLD, 56));
 		lblNewLabel_2.setForeground(new Color(255, 255, 255));
 		contentPane.setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(899, 299, 256, 256);
+		lblNewLabel.setBounds(1006, 299, 256, 256);
 		lblNewLabel.setIcon(new ImageIcon("img/livro.png"));
 		contentPane.add(lblNewLabel);
 		contentPane.add(btnNewButton);
@@ -108,7 +108,7 @@ public class VisaoTelaInicial extends JFrame {
 			}
 			
 		});
-		btnNewButton_1.setBounds(899, 578, 222, 29);
+		btnNewButton_1.setBounds(1121, 655, 246, 40);
 		btnNewButton_1.setBackground(new Color(255, 255, 255));
 		btnNewButton_1.setFont(new Font("Segoe UI", Font.BOLD, 16));
 		btnNewButton_1.setForeground(new Color(0, 64, 128));

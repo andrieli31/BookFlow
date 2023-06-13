@@ -175,6 +175,10 @@ public class VisaoCadastroUsuario extends JFrame {
 
 		
 		JButton btnNewButton_2 = new JButton("Excluir Usuário");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		JButton btnNewButton = new JButton("Cadastrar");
 		btnNewButton.setForeground(new Color(0, 64, 128));
 		btnNewButton.setFont(new Font("Segoe UI Semibold", Font.BOLD, 12));
@@ -202,6 +206,10 @@ public class VisaoCadastroUsuario extends JFrame {
 		btnNewButton_2.setFont(new Font("Segoe UI Semibold", Font.BOLD, 12));
 
 		JButton btnNewButton_3 = new JButton("Alterar Usuário");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton_3.setForeground(new Color(0, 64, 0));
 		btnNewButton_3.setFont(new Font("Segoe UI Semibold", Font.BOLD, 12));
 
