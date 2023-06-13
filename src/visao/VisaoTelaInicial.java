@@ -49,7 +49,7 @@ public class VisaoTelaInicial extends JFrame {
 
 		setBounds(100, 100, 1576, 1455);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setBackground(new Color(0, 0, 128));
 		contentPane.setForeground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -61,7 +61,7 @@ public class VisaoTelaInicial extends JFrame {
 		lblEscolherOpcao.setFont(new Font("Segoe UI", Font.BOLD, 20));
 
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(489, 299, 256, 256);
+		lblNewLabel_1.setBounds(508, 352, 256, 256);
 		lblNewLabel_1.setIcon(new ImageIcon("img/user-interface.png"));
 
 		JButton btnNewButton = new JButton("Gerenciar Usuários");
@@ -76,7 +76,7 @@ public class VisaoTelaInicial extends JFrame {
 			}
 
 		});
-		btnNewButton.setBounds(489, 631, 256, 40);
+		btnNewButton.setBounds(508, 655, 256, 40);
 		btnNewButton.setBackground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
 		btnNewButton.setForeground(new Color(0, 64, 128));
@@ -88,7 +88,7 @@ public class VisaoTelaInicial extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(1006, 299, 256, 256);
+		lblNewLabel.setBounds(1122, 352, 256, 256);
 		lblNewLabel.setIcon(new ImageIcon("img/livro.png"));
 		contentPane.add(lblNewLabel);
 		contentPane.add(btnNewButton);
@@ -114,19 +114,5 @@ public class VisaoTelaInicial extends JFrame {
 		contentPane.add(btnNewButton_1);
 		contentPane.add(lblEscolherOpcao);
 		contentPane.add(lblNewLabel_1);
-		
-		JButton btnLogin = new JButton("Já possui uma conta? Clique aqui!");
-		btnLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				VisaoLogin frame = new VisaoLogin();
-				frame.setVisible(true);
-				dispose();
-			}
-		});
-		btnLogin.setForeground(new Color(255, 255, 255));
-		btnLogin.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		btnLogin.setBackground(new Color(137, 27, 224));
-		btnLogin.setBounds(91, 393, 256, 23);
-		contentPane.add(btnLogin);
 	}
 }

@@ -210,9 +210,7 @@ public class VisaoCadastroUsuario extends JFrame {
 				} else {
 					JOptionPane.showMessageDialog(btnCadastrar, "Usuario não foi cadastrado");
 				}
-				
-			}
-		});
+
 
 		JButton btnExcluir = new JButton("Excluir Usuário");
 		btnExcluir.addActionListener(new ActionListener() {
@@ -233,8 +231,8 @@ public class VisaoCadastroUsuario extends JFrame {
 			}
 
 		});
-		btnExclui.setForeground(new Color(117, 0, 32));
-		btnExclui.setFont(new Font("Times New Roman", Font.BOLD, 14));
+		btnExcluir.setForeground(new Color(117, 0, 32));
+		btnExcluir.setFont(new Font("Times New Roman", Font.BOLD, 14));
 
 		JButton btnNewButton_3 = new JButton("Alterar Usuário");
 		btnNewButton_3.addActionListener(new ActionListener() {
@@ -297,11 +295,11 @@ public class VisaoCadastroUsuario extends JFrame {
 									.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 178, GroupLayout.PREFERRED_SIZE))
 								.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
 									.addGroup(gl_contentPane.createSequentialGroup()
-										.addComponent(btnCadastro, GroupLayout.PREFERRED_SIZE, 168, GroupLayout.PREFERRED_SIZE)
+										.addComponent(btnCadastrar, GroupLayout.PREFERRED_SIZE, 168, GroupLayout.PREFERRED_SIZE)
 										.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 										.addComponent(btnListaUsuario, GroupLayout.PREFERRED_SIZE, 182, GroupLayout.PREFERRED_SIZE))
 									.addComponent(btnNewButton_3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-									.addComponent(btnExclui, GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)))
+									.addComponent(btnExcluir, GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)))
 							.addPreferredGap(ComponentPlacement.RELATED, 168, Short.MAX_VALUE))
 						.addComponent(lblControleDosUsurios, GroupLayout.PREFERRED_SIZE, 268, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 359, GroupLayout.PREFERRED_SIZE))
@@ -348,12 +346,12 @@ public class VisaoCadastroUsuario extends JFrame {
 								.addComponent(lblNewLabel_6))
 							.addGap(43)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(btnCadastro)
+								.addComponent(btnCadastrar)
 								.addComponent(btnListaUsuario))
 							.addGap(85)
 							.addComponent(lblControleDosUsurios, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
 							.addGap(18)
-							.addComponent(btnExclui)
+							.addComponent(btnExcluir)
 							.addGap(18)
 							.addComponent(btnNewButton_3)))
 					.addGap(37)
