@@ -5,7 +5,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import net.miginfocom.swing.MigLayout;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
@@ -50,7 +49,7 @@ public class VisaoTelaInicial extends JFrame {
 
 		setBounds(100, 100, 1576, 1455);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(0, 64, 128));
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setForeground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -116,5 +115,18 @@ public class VisaoTelaInicial extends JFrame {
 		contentPane.add(lblEscolherOpcao);
 		contentPane.add(lblNewLabel_1);
 		
+		JButton btnLogin = new JButton("Já possui uma conta? Clique aqui!");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				VisaoLogin frame = new VisaoLogin();
+				frame.setVisible(true);
+				dispose();
+			}
+		});
+		btnLogin.setForeground(new Color(255, 255, 255));
+		btnLogin.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		btnLogin.setBackground(new Color(137, 27, 224));
+		btnLogin.setBounds(91, 393, 256, 23);
+		contentPane.add(btnLogin);
 	}
 }
