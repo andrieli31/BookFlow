@@ -50,8 +50,6 @@ public class VisaoLogin extends JFrame {
 					VisaoLogin frame = new VisaoLogin();
 					frame.setVisible(true);
 					frame.setExtendedState(MAXIMIZED_BOTH);
-					UIManager.setLookAndFeel(new FlatlightLaf()); // tentanto aplicar um componente que facilitará o
-																	// aprimoramento do design
 				} catch (Exception e) {
 					System.err.println("Failed to initialize Laf");
 					e.printStackTrace();
@@ -181,7 +179,7 @@ public class VisaoLogin extends JFrame {
 
 		JButton btnNewButton = new JButton("Entrar");
 		btnNewButton.setBackground(new Color(0, 64, 128));
-		btnNewButton.setForeground(new Color(0, 64, 128));
+		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 14));
 		btnNewButton.setBounds(146, 355, 147, 37);
 		btnNewButton.setBounds(274, 365, 147, 37);
@@ -191,29 +189,38 @@ public class VisaoLogin extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				String msgErro = "";
-
-				String email = txtEmail.getText();
-				String senha = txtSenha.getText();
-
-				PessoaDAO dao = PessoaDAO.getInstancia();
-				Pessoa pessoa = dao.efetuarLogin(email, senha);
-
-				if (pessoa == null) {
-					msgErro += "Usuário não existente no sistema!";
-				} else {
-					if (txtEmail.getText().isEmpty()) {
-						msgErro += "\nPor favor, insira o email!!";
-					}
-					if (txtSenha.getText().isEmpty()) {
-						msgErro += "Por favor, insira a senha!!";
-					}
-				}
-
-				if (!msgErro.isEmpty()) {
-					JOptionPane.showMessageDialog(null, msgErro);
-				}
-
+//				String msgErro = "";
+//
+//				String email = txtEmail.getText();
+//				String senha = txtSenha.getText();
+//
+//				if (txtEmail.getText().isEmpty()) {
+//				    msgErro += "Por favor, insira o email!\n";
+//				}
+//
+//				if (txtSenha.getText().isEmpty()) {
+//				    msgErro += "Por favor, insira a senha!\n";
+//				}
+//
+//				if (msgErro.isEmpty()) {
+//				    PessoaDAO dao = PessoaDAO.getInstancia();
+//				    Pessoa pessoa = dao.efetuarLogin(email, senha);
+//
+//				    if (pessoa == null) {
+//				        msgErro += "Usuário não existente no sistema!";
+//				    }
+//				}
+//
+//				if (!msgErro.isEmpty()) {
+//				    JOptionPane.showMessageDialog(null, msgErro);
+//				}
+//				
+//				
+				
+				new VisaoLogin().dispose();
+				VisaoTelaInicial frame = new VisaoTelaInicial();
+				frame.setVisible(true);
+				dispose();
 			}
 
 		});
@@ -230,6 +237,11 @@ public class VisaoLogin extends JFrame {
 		rdbtnNewRadioButton.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		rdbtnNewRadioButton.setBounds(35, 289, 123, 23);
 		panel_1.add(rdbtnNewRadioButton);
+		
+		JToggleButton btnSenha = new JToggleButton("");
+		btnSenha.setIcon(new ImageIcon("C:\\Users\\Aluno\\Documents\\github\\estudo-de-caso-livraria\\img\\16x16.png"));
+		btnSenha.setBounds(394, 293, 27, 23);
+		panel_1.add(btnSenha);
 
 	}
 }

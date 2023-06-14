@@ -11,16 +11,47 @@ public class PessoaDAO implements IPessoaDAO {
 	private static PessoaDAO instancia;
 
 	/// Construtor
-	private PessoaDAO() {
+	private PessoaDAO() {    
+	    tabelaUsuarios = new ArrayList<>(); // Inicializa a lista de usuários
+		criarUsuarioEstatico();
 
 	}
 
+	
+	
+	public boolean criarUsuarioEstatico() {
+	    Pessoa usuarioEstatico = new Pessoa();
+	    
+	    String numeroString = "1234567890";
+	    long numeroLong = Long.parseLong(numeroString);
+	    
+	    // Defina os atributos do usuário estático
+	    usuarioEstatico.setCpf(numeroLong);
+	    
+	    usuarioEstatico.setNome("Patricia");
+	    usuarioEstatico.setSobrenome("Cordeiro");
+	    usuarioEstatico.setEmail("patricia.master@gmail.com");
+	    usuarioEstatico.setSenha("welcome");
+
+	    
+	    // Adicione o usuário estático à tabela de usuários
+	    tabelaUsuarios.add(usuarioEstatico);
+
+	    return true;
+	}
+
+	
+	
+	
+	
 	public Pessoa efetuarLogin(String login, String senha) {
 		Pessoa p = null;
 
 		for (Pessoa pessoa : tabelaUsuarios) {
 			if (pessoa.getSenha().equals(senha) && pessoa.getEmail().equals(login)) {
 				p = pessoa;
+			
+			
 			}
 		}
 
