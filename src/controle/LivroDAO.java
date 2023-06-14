@@ -32,7 +32,7 @@ public class LivroDAO implements ILivroDAO {
 
 		return false;
 	}
-
+	
 	public boolean alterarLivro(Livro l, Long isbn, String titulo, String editora, int nrEdicao, int anoLancamento) {
 		for (Livro livro : tabelaLivros) {
 			if (livro.getIsbn() == isbn) {
@@ -48,6 +48,16 @@ public class LivroDAO implements ILivroDAO {
 
 		return false;
 	}
+	
+	public Livro buscarLivroPorIsbn(long isbn) {
+		for (Livro livro : tabelaLivros) {
+			if(livro.getIsbn() == isbn) {
+				return livro;
+			}
+		}
+		
+		return null;
+	}
 
 	public boolean deletarLivro(Livro l, Long isbn) {
 
@@ -60,25 +70,14 @@ public class LivroDAO implements ILivroDAO {
 		return false;
 	}
 
-	
 	public ArrayList<Livro> listarLivros() {
-		if(!tabelaLivros.isEmpty()) {
-			return this.tabelaLivros;
-			
-		}
-		return null;
+		return tabelaLivros;
 	}
 
 	@Override
 	public boolean alterarLivro(Livro l, Long isbn, String titulo, String editora, int nrEdicao, int anoLancamento,
 			String genero) {
-		// TODO Auto-generated method stub
 		return false;
-	}
-
-	public void deletarLivro(Livro livro) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

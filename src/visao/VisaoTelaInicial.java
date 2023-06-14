@@ -72,6 +72,7 @@ public class VisaoTelaInicial extends JFrame {
 
 				VisaoCadastroUsuario frame = new VisaoCadastroUsuario();
 				frame.setVisible(true);
+				frame.setExtendedState(MAXIMIZED_BOTH);
 				dispose();
 			}
 
@@ -102,6 +103,7 @@ public class VisaoTelaInicial extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				VisaoGerenciaLivro frame = new VisaoGerenciaLivro();
 				 frame.setVisible(true);
+				 frame.setExtendedState(MAXIMIZED_BOTH);
 				 dispose();
 				
 			}

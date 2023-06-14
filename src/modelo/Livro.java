@@ -9,18 +9,21 @@ public class Livro {
 	private String editora;
 	private int nrEdicao;
 	private int anoLancamento;
-	private ArrayList<Autor> autores;
+	private String autor;
 
-	public ArrayList<Autor> getAutores() {
-		return autores;
-	}
 
-	public void setAutores(ArrayList<Autor> autores) {
-		this.autores = autores;
-	}
+	
 
 	public Long getIsbn() {
 		return isbn;
+	}
+
+	public String getAutor() {
+		return autor;
+	}
+
+	public void setAutor(String autor) {
+		this.autor = autor;
 	}
 
 	public void setIsbn(Long isbn) {

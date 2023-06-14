@@ -130,19 +130,16 @@ public class VisaoCadastroUsuario extends JFrame {
 				cpfText = cpfText.replaceAll("[.-]", ""); // Remove pontos e traço da máscara
 				Long cpf = Long.parseLong(cpfText);
 				String senha = String.valueOf(txtSenha.getPassword());
-				String email = txtEmail.getText();
 
 				pessoa.setNome(nome);
 				pessoa.setSobrenome(sobrenome);
 				pessoa.setCpf(cpf);
-				pessoa.setEmail(email);
 				pessoa.setSenha(senha);
 
 				txtNome.setText(null);
 				txtSobrenome.setText(null);
 				txtCpf.setText(null);
 				txtSenha.setText(null);
-				txtEmail.setText(null);
 				
 				PessoaDAO dao = PessoaDAO.getInstancia();
 				Boolean cadastrar = dao.cadastrarPessoa(pessoa);

@@ -36,11 +36,13 @@ public class CategoriaDAO implements ICategoriaDAO {
 
 	@Override
 	public boolean alterarCategoria(Categoria c, int idCategoria, String nomeCategoria, String descricao,
-			Date dataCriacao) {
+			int dataMes, int dataAno, int dataDia) {
 		for (Categoria categoria : tabelaCategorias) {
 			if (categoria.getIdCategoria() == idCategoria) {
 				categoria.setNomeCategoria(nomeCategoria);
-				categoria.setDataCriacao(dataCriacao);
+				categoria.setDataDia(dataDia);
+				categoria.setDataDia(dataAno);
+				categoria.setDataMes(dataMes);
 				categoria.setDescricao(descricao);
 				categoria.setIdCategoria(idCategoria);
 

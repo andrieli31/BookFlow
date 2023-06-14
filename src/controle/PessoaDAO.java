@@ -30,7 +30,6 @@ public class PessoaDAO implements IPessoaDAO {
 	    
 	    usuarioEstatico.setNome("Patricia");
 	    usuarioEstatico.setSobrenome("Cordeiro");
-	    usuarioEstatico.setEmail("patricia.master@gmail.com");
 	    usuarioEstatico.setSenha("welcome");
 
 	    
@@ -48,9 +47,8 @@ public class PessoaDAO implements IPessoaDAO {
 		Pessoa p = null;
 
 		for (Pessoa pessoa : tabelaUsuarios) {
-			if (pessoa.getSenha().equals(senha) && pessoa.getEmail().equals(login)) {
-				p = pessoa;
-			
+			if (pessoa.getSenha().equals(senha) && pessoa.getCpf().equals(login)) {
+				p = pessoa;			
 			
 			}
 		}
@@ -84,7 +82,6 @@ public class PessoaDAO implements IPessoaDAO {
 				pessoa.setCpf(cpf);
 				pessoa.setNome(nome);
 				pessoa.setSobrenome(sobrenome);
-				pessoa.setEmail(email);
 				pessoa.setSenha(senha);
 				return true;
 			}

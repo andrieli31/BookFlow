@@ -6,7 +6,11 @@ public class Categoria {
 	private int idCategoria;
 	private String nomeCategoria;
 	private String descricao;
-	private Date dataCriacao;
+	private int dataDia;
+	private int dataMes;
+	private int dataAno;
+	
+	
 	public int getIdCategoria() {
 		return idCategoria;
 	}
@@ -25,12 +29,25 @@ public class Categoria {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public Date getDataCriacao() {
-		return dataCriacao;
+	public int getDataDia() {
+		return dataDia;
 	}
-	public void setDataCriacao(Date dataCriacao) {
-		this.dataCriacao = dataCriacao;
+	public void setDataDia(int dataDia) {
+		this.dataDia = dataDia;
 	}
+	public int getDataMes() {
+		return dataMes;
+	}
+	public void setDataMes(int dataMes) {
+		this.dataMes = dataMes;
+	}
+	public int getDataAno() {
+		return dataAno;
+	}
+	public void setDataAno(int dataAno) {
+		this.dataAno = dataAno;
+	}
+	
 
 
 }

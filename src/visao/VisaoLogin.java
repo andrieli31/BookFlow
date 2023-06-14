@@ -154,12 +154,12 @@ public class VisaoLogin extends JFrame {
 
 		panel_1.add(lblLogin);
 
-		JLabel lblEmail = new JLabel("Email");
-		lblEmail.setFont(new Font("Segoe UI", Font.BOLD, 14));
-		lblEmail.setForeground(new Color(0, 64, 128));
+		JLabel lblCpf = new JLabel("CPF:");
+		lblCpf.setFont(new Font("Segoe UI", Font.BOLD, 14));
+		lblCpf.setForeground(new Color(0, 64, 128));
 
-		lblEmail.setBounds(35, 136, 158, 14);
-		panel_1.add(lblEmail);
+		lblCpf.setBounds(35, 136, 158, 14);
+		panel_1.add(lblCpf);
 
 		txtEmail = new JTextField();
 		txtEmail.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -184,31 +184,35 @@ public class VisaoLogin extends JFrame {
 		btnNewButton.setBounds(146, 355, 147, 37);
 		btnNewButton.setBounds(274, 365, 147, 37);
 
-		btnNewButton.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
+//		btnNewButton.addActionListener(new ActionListener() {
+//
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//
 //				String msgErro = "";
 //
 //				String email = txtEmail.getText();
 //				String senha = txtSenha.getText();
 //
 //				if (txtEmail.getText().isEmpty()) {
-//				    msgErro += "Por favor, insira o email!\n";
+//					JOptionPane.showMessageDialog(btnNewButton, "COLOQUE O EMAIL");
+//					txtEmail.requestFocus();
 //				}
 //
 //				if (txtSenha.getText().isEmpty()) {
-//				    msgErro += "Por favor, insira a senha!\n";
+//				    JOptionPane.showMessageDialog(btnNewButton, "COLOQUE A SENHA");
+//				    txtSenha.requestFocus();
 //				}
+//				
+//				PessoaDAO dao = PessoaDAO.getInstancia();
+//				Boolean efetuarPessoa = dao.efetuarLogin(ps);
+//			    Pessoa efetuarPessoa = dao.efetuarLogin(email, senha);
 //
-//				if (msgErro.isEmpty()) {
-//				    PessoaDAO dao = PessoaDAO.getInstancia();
-//				    Pessoa pessoa = dao.efetuarLogin(email, senha);
-//
-//				    if (pessoa == null) {
-//				        msgErro += "Usuário não existente no sistema!";
-//				    }
+//				if(efetuarPessoa == true) {
+//					VisaoTelaInicial frame = new VisaoTelaInicial();
+//					frame.setVisible(true);
+//					frame.setExtendedState(MAXIMIZED_BOTH);
+//					dispose();
 //				}
 //
 //				if (!msgErro.isEmpty()) {
@@ -216,15 +220,11 @@ public class VisaoLogin extends JFrame {
 //				}
 //				
 //				
-				
-				new VisaoLogin().dispose();
-				VisaoTelaInicial frame = new VisaoTelaInicial();
-				frame.setVisible(true);
-				frame.setExtendedState(MAXIMIZED_BOTH);
-				dispose();
-			}
-
-		});
+//
+//				
+//			}
+//
+//		});
 		panel_1.add(btnNewButton);
 
 		txtSenha = new JPasswordField();
