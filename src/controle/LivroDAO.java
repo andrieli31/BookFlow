@@ -32,30 +32,28 @@ public class LivroDAO implements ILivroDAO {
 
 		return false;
 	}
-	
-	public boolean alterarLivro(Livro l, Long isbn, String titulo, String editora, int nrEdicao, int anoLancamento) {
-		for (Livro livro : tabelaLivros) {
-			if (livro.getIsbn() == isbn) {
-				livro.setIsbn(isbn);
-				livro.setEditora(editora);
-				livro.setNrEdicao(nrEdicao);
-				livro.setTitulo(titulo);
-				livro.setAnoLancamento(anoLancamento);
 
+	public boolean alterarLivro(Livro l) {
+		for (Livro livro : tabelaLivros) {
+			if (livro.getIsbn() == l.getIsbn()) {
+				livro.setEditora(l.getEditora());
+				livro.setNrEdicao(l.getNrEdicao());
+				livro.setTitulo(l.getTitulo());
+				livro.setAnoLancamento(l.getAnoLancamento());
 				return true;
 			}
 		}
 
 		return false;
 	}
-	
+
 	public Livro buscarLivroPorIsbn(long isbn) {
 		for (Livro livro : tabelaLivros) {
-			if(livro.getIsbn() == isbn) {
+			if (livro.getIsbn() == isbn) {
 				return livro;
 			}
 		}
-		
+
 		return null;
 	}
 
@@ -72,12 +70,6 @@ public class LivroDAO implements ILivroDAO {
 
 	public ArrayList<Livro> listarLivros() {
 		return tabelaLivros;
-	}
-
-	@Override
-	public boolean alterarLivro(Livro l, Long isbn, String titulo, String editora, int nrEdicao, int anoLancamento,
-			String genero) {
-		return false;
 	}
 
 }

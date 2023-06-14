@@ -6,7 +6,7 @@ public interface ILivroDAO {
 
 	public boolean cadastrarLivro(Livro l);
 
-	public boolean alterarLivro(Livro l, Long isbn, String titulo, String editora, int nrEdicao, int anoLancamento, String genero);
+	public boolean alterarLivro(Livro l);
 
 	public boolean deletarLivro(Livro l, Long isbn);
 

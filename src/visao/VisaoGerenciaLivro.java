@@ -6,6 +6,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.Box;
@@ -24,7 +25,10 @@ import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
 import controle.LivroDAO;
+import controle.PessoaDAO;
 import modelo.Livro;
+import modelo.Pessoa;
+
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
@@ -39,6 +43,7 @@ public class VisaoGerenciaLivro extends JFrame {
 	private JTextField txtEditora;
 	private JTable table;
 	private JTextField txtNrEdicao;
+	private static Livro livroEditar;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -283,7 +288,7 @@ public class VisaoGerenciaLivro extends JFrame {
 		JButton btnAltera = new JButton(" Alterar");
 		btnAltera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				int LinhaSelect = table.getSelectedRow();
 				if (LinhaSelect == -1) {
 					JOptionPane.showMessageDialog(null, "Por favor, selecione uma linha");
@@ -291,15 +296,15 @@ public class VisaoGerenciaLivro extends JFrame {
 					long valorIsbn = (long) table.getValueAt(LinhaSelect, 2);
 					LivroDAO dao = LivroDAO.getInstancia();
 
-					Livro livroEditar = dao.buscarLivroPorIsbn(valorIsbn);
-					System.out.println(livroEditar.getAnoLancamento());
+					livroEditar = dao.buscarLivroPorIsbn(valorIsbn);
 					txtTitulo.setText(livroEditar.getTitulo());
 					txtAutor.setText(livroEditar.getAutor());
 					txtIsbn.setText(String.valueOf(livroEditar.getIsbn()));
 					txtAno.setText(String.valueOf(livroEditar.getAnoLancamento()));
 					txtEditora.setText(livroEditar.getEditora());
 					txtNrEdicao.setText(String.valueOf(livroEditar.getNrEdicao()));
-					
+
+					txtIsbn.setEnabled(false);
 				}
 
 			}
@@ -310,7 +315,7 @@ public class VisaoGerenciaLivro extends JFrame {
 		btnAltera.setBackground(new Color(255, 255, 255));
 		btnAltera.setBounds(615, 50, 160, 38);
 		panel_2.add(btnAltera);
-		
+
 		JButton btnSalvaUpdate = new JButton("Salvar Alterações");
 		btnSalvaUpdate.setBackground(new Color(255, 255, 255));
 		btnSalvaUpdate.setForeground(new Color(0, 0, 160));
@@ -318,10 +323,21 @@ public class VisaoGerenciaLivro extends JFrame {
 		btnSalvaUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LivroDAO dao = LivroDAO.getInstancia();
-				
-				dao.alterarLivro(null, null, getWarningString(), getName(), ALLBITS, ABORT);
-				
-				
+
+				String titulo = txtTitulo.getText();
+				String autor = txtAutor.getText();
+				String isbn = txtIsbn.getText();
+				String ano = txtAno.getText();
+				String editora = txtEditora.getText();
+				String nrEdicao = txtNrEdicao.getText();
+
+				// completar
+				livroEditar.setAnoLancamento(Integer.valueOf(ano));
+				livroEditar.setAutor(autor);
+				dao.alterarLivro(livroEditar);
+				atualiza();
+				txtIsbn.setEnabled(true);
+
 			}
 		});
 		btnSalvaUpdate.setBounds(615, 109, 160, 38);
@@ -344,5 +360,19 @@ public class VisaoGerenciaLivro extends JFrame {
 				new String[] { "Título", "Autor", "ISBN", "Número da edição", "Editora", "Ano lançamento" });
 		table.setModel(modelo);
 		scrollPane.setViewportView(table);
+	}
+
+	public static void atualiza() {
+
+		LivroDAO dao = LivroDAO.getInstancia();
+		ArrayList<Livro> livros = dao.listarLivros();
+
+		modelo.getDataVector().removeAllElements();
+
+		for (int i = 0; i < livros.size(); i++) {
+			Livro livro = livros.get(i);
+			modelo.addRow(new Object[] { livro.getTitulo(), livro.getAutor(), livro.getIsbn(), livro.getNrEdicao(),
+					livro.getEditora(), livro.getAnoLancamento() });
+		}
 	}
 }
