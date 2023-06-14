@@ -220,6 +220,7 @@ public class VisaoLogin extends JFrame {
 				new VisaoLogin().dispose();
 				VisaoTelaInicial frame = new VisaoTelaInicial();
 				frame.setVisible(true);
+				frame.setExtendedState(MAXIMIZED_BOTH);
 				dispose();
 			}
 
@@ -239,7 +240,7 @@ public class VisaoLogin extends JFrame {
 		panel_1.add(rdbtnNewRadioButton);
 		
 		JToggleButton btnSenha = new JToggleButton("");
-		btnSenha.setIcon(new ImageIcon("C:\\Users\\Aluno\\Documents\\github\\estudo-de-caso-livraria\\img\\16x16.png"));
+		btnSenha.setIcon(new ImageIcon("img/olhocerto.png"));
 		btnSenha.setBounds(394, 293, 27, 23);
 		panel_1.add(btnSenha);
 
