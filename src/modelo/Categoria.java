@@ -7,7 +7,6 @@ public class Categoria {
 	private String nomeCategoria;
 	private String descricao;
 	private Date dataCriacao;
-	private Date dataUltimaUpdate;
 	public int getIdCategoria() {
 		return idCategoria;
 	}
@@ -32,11 +31,6 @@ public class Categoria {
 	public void setDataCriacao(Date dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
-	public Date getDataUltimaUpdate() {
-		return dataUltimaUpdate;
-	}
-	public void setDataUltimaUpdate(Date dataUltimaUpdate) {
-		this.dataUltimaUpdate = dataUltimaUpdate;
-	}
+
 
 }
