@@ -266,6 +266,7 @@ public class VisaoGerenciaLivro extends JFrame {
 					DefaultTableModel tabelaLivro = 
 							(DefaultTableModel)table.getModel();
 					tabelaLivro.removeRow(LinhaSelect);
+					JOptionPane.showMessageDialog(null,"Livro excluído com sucesso");
 					
 				}
 			}
