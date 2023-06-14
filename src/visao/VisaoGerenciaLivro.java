@@ -27,6 +27,7 @@ import controle.LivroDAO;
 import modelo.Autor;
 import modelo.Livro;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 public class VisaoGerenciaLivro extends JFrame {
 
@@ -219,11 +220,11 @@ public class VisaoGerenciaLivro extends JFrame {
 		    }
 		});
 
-		btnCadastro.setForeground(Color.WHITE);
+		btnCadastro.setForeground(new Color(255, 255, 255));
 		btnCadastro.setFont(new Font("Segoe UI", Font.BOLD, 13));
 		btnCadastro.setBorder(new LineBorder(new Color(0, 64, 128)));
 		btnCadastro.setBackground(new Color(0, 64, 128));
-		btnCadastro.setBounds(94, 251, 103, 23);
+		btnCadastro.setBounds(224, 232, 160, 38);
 		panel_2.add(btnCadastro);
 
 		JButton btnNewButton = new JButton("Limpar");
@@ -238,11 +239,11 @@ public class VisaoGerenciaLivro extends JFrame {
 		});
 		
 		
-		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.setForeground(new Color(0, 64, 128));
 		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 13));
 		btnNewButton.setBorder(new LineBorder(new Color(0, 64, 128)));
-		btnNewButton.setBackground(new Color(0, 64, 128));
-		btnNewButton.setBounds(207, 251, 103, 23);
+		btnNewButton.setBackground(new Color(255, 255, 255));
+		btnNewButton.setBounds(35, 232, 160, 38);
 		panel_2.add(btnNewButton);
 		
 		JLabel lblNrEdicao = new JLabel("Número Edição:");
@@ -271,20 +272,23 @@ public class VisaoGerenciaLivro extends JFrame {
 				}
 			}
 		});
-		btnExcluir.setForeground(Color.WHITE);
+		btnExcluir.setForeground(new Color(0, 64, 128));
 		btnExcluir.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnExcluir.setBorder(new LineBorder(new Color(0, 64, 128)));
-		btnExcluir.setBackground(new Color(0, 64, 128));
-		btnExcluir.setBounds(471, 50, 103, 23);
+		btnExcluir.setBorder(UIManager.getBorder("Button.border"));
+		btnExcluir.setBackground(new Color(255, 255, 255));
+		btnExcluir.setBounds(439, 50, 160, 38);
 		panel_2.add(btnExcluir);
 		
-		JButton btnAltera = new JButton(" Alterar ");
-		btnAltera.setHorizontalAlignment(SwingConstants.LEADING);
-		btnAltera.setForeground(Color.WHITE);
+		JButton btnAltera = new JButton(" Alterar");
+		btnAltera.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnAltera.setForeground(new Color(0, 64, 128));
 		btnAltera.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnAltera.setBorder(new LineBorder(new Color(0, 64, 128)));
-		btnAltera.setBackground(new Color(0, 64, 128));
-		btnAltera.setBounds(471, 96, 103, 23);
+		btnAltera.setBorder(UIManager.getBorder("Button.border"));
+		btnAltera.setBackground(new Color(255, 255, 255));
+		btnAltera.setBounds(609, 50, 160, 38);
 		panel_2.add(btnAltera);
 
 		JPanel tableLivro = new JPanel();
