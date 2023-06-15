@@ -252,10 +252,10 @@ public class VisaoCadastroUsuario extends JFrame {
 		modelo = new DefaultTableModel();
 		table.setModel(modelo);
 
-		JButton btnSalvaUpdate = new JButton("Salvar alterações");
+		JButton btnSalvaUpdate = new JButton("Salvar alterações"); //nao ta salvendano essa bomba
 		btnSalvaUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				PessoaDAO dao = new PessoaDAO();
+				PessoaDAO dao = PessoaDAO.getInstancia();
 
 				String nome = txtNome.getText();
 				String sobrenome = txtSobrenome.getText();
