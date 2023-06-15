@@ -109,6 +109,7 @@ public class PessoaDAO implements IPessoaDAO {
 	public Pessoa buscarPessoaCpf (long cpf) {
 		for (Pessoa pessoa : tabelaUsuarios) {
 			if(pessoa.getCpf() == cpf) {
+				System.out.println(pessoa.getCpf());
 				return pessoa;
 			}
 		}

@@ -259,9 +259,14 @@ public class VisaoCadastroUsuario extends JFrame {
 
 				String nome = txtNome.getText();
 				String sobrenome = txtSobrenome.getText();
+				
 				String cpf = txtCpf.getText();
+				cpf = cpf.replaceAll("[.-]", ""); // Remove pontos e traço da máscara
+				pessoaEditar.setCpf(Long.parseLong(cpf));
+				
 				String senha = txtSenha.getText();
 
+				
 				pessoaEditar.setNome(nome);
 				pessoaEditar.setSobrenome(sobrenome);
 				pessoaEditar.setCpf(Long.parseLong(cpf));
