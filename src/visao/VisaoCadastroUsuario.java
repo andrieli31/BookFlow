@@ -44,6 +44,7 @@ public class VisaoCadastroUsuario extends JFrame {
 	private JPasswordField txtSenha;
 	private static DefaultTableModel modelo;
 	private JTable table;
+	private static Pessoa pessoaEditar;
 
 	/**
 	 * Launch the application.
@@ -115,14 +116,13 @@ public class VisaoCadastroUsuario extends JFrame {
 
 		btnCadastrar.addActionListener(new ActionListener() {
 			/// colocar anos de edição dos livros e diminuir 1
-			//int ano= LocalDate.now().getYear();
+			// int ano= LocalDate.now().getYear();
 			// for(int i = 0; i<ano; i++) {
 			// cbNomes.addItem(String.valueOf(ano));
 			// }
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Pessoa pessoa = new Pessoa();
-				
 
 				String nome = txtNome.getText();
 				String sobrenome = txtSobrenome.getText();
@@ -140,15 +140,15 @@ public class VisaoCadastroUsuario extends JFrame {
 				txtSobrenome.setText(null);
 				txtCpf.setText(null);
 				txtSenha.setText(null);
-				
+
 				PessoaDAO dao = PessoaDAO.getInstancia();
 				Boolean cadastrar = dao.cadastrarPessoa(pessoa);
-				if(cadastrar) {
+				if (cadastrar) {
 					JOptionPane.showMessageDialog(btnCadastrar, "Usuario cadastrado");
 				} else {
 					JOptionPane.showMessageDialog(btnCadastrar, "Usuario não foi cadastrado");
 				}
-				
+
 			}
 
 		});
@@ -171,8 +171,6 @@ public class VisaoCadastroUsuario extends JFrame {
 		});
 		btnListaUsuario.setFont(new Font("Tahoma", Font.BOLD, 12));
 
-		
-		
 		JButton btnExcluir = new JButton("Excluir Usuário");
 		btnExcluir.addActionListener(new ActionListener() {
 
@@ -181,19 +179,39 @@ public class VisaoCadastroUsuario extends JFrame {
 				int linhaSelect = table.getSelectedRow();
 				if (linhaSelect == -1) {
 					JOptionPane.showMessageDialog(null, "Por favor, selecione uma linha");
-				}else {
-					DefaultTableModel tabelapessoa = 
-							(DefaultTableModel)table.getModel();
+				} else {
+					DefaultTableModel tabelapessoa = (DefaultTableModel) table.getModel();
 					tabelapessoa.removeRow(linhaSelect);
 				}
 			}
-				
 
 		});
 		btnExcluir.setForeground(new Color(0, 64, 128));
 		btnExcluir.setFont(new Font("Tahoma", Font.BOLD, 12));
 
 		JButton btnNewButton_3 = new JButton("Alterar Usuário");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int LinhaSelect = table.getSelectedRow();
+				if (LinhaSelect == -1) {
+					JOptionPane.showMessageDialog(null, "Por favor, selecione uma linha");
+				} else {
+					long valorCpf = (long) table.getValueAt(LinhaSelect, 2); // seleciona linha estatica
+					PessoaDAO dao = PessoaDAO.getInstancia();
+
+					pessoaEditar = dao.buscarPessoaCpf(valorCpf);
+
+					txtNome.setText(pessoaEditar.getNome());
+					txtSobrenome.setText(pessoaEditar.getSobrenome());
+					txtCpf.setText(String.valueOf(pessoaEditar.getCpf()));
+					txtSenha.setText(pessoaEditar.getSenha());
+
+					txtCpf.setEnabled(false);
+
+				}
+
+			}
+		});
 		btnNewButton_3.setBackground(new Color(0, 64, 128));
 		btnNewButton_3.setForeground(new Color(255, 255, 255));
 		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -205,6 +223,7 @@ public class VisaoCadastroUsuario extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				VisaoTelaInicial frame = new VisaoTelaInicial();
 				frame.setVisible(true);
+				frame.setExtendedState(MAXIMIZED_BOTH);
 				dispose();
 			}
 
@@ -233,95 +252,142 @@ public class VisaoCadastroUsuario extends JFrame {
 		modelo = new DefaultTableModel();
 		table.setModel(modelo);
 
+		JButton btnSalvaUpdate = new JButton("Salvar alterações");
+		btnSalvaUpdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PessoaDAO dao = new PessoaDAO();
+
+				String nome = txtNome.getText();
+				String sobrenome = txtSobrenome.getText();
+				String cpf = txtCpf.getText();
+				String senha = txtSenha.getText();
+
+				pessoaEditar.setNome(nome);
+				pessoaEditar.setSobrenome(sobrenome);
+				pessoaEditar.setCpf(Long.parseLong(cpf));
+				pessoaEditar.setSenha(senha);
+
+				dao.alterarPessoa(pessoaEditar);
+				atualiza();
+				txtCpf.setEnabled(true);
+
+			}
+		});
+
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 1271, GroupLayout.PREFERRED_SIZE)
-							.addContainerGap())
+		gl_contentPane.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup().addContainerGap()
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-							.addGroup(gl_contentPane.createSequentialGroup()
-								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-									.addGroup(gl_contentPane.createSequentialGroup()
-										.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-											.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-												.addComponent(lblNome, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(lblSobrenome, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 122, GroupLayout.PREFERRED_SIZE))
-											.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
-												.addComponent(lblCpf, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(lblNewLabel_5, Alignment.LEADING))
-											.addComponent(lblNewLabel_6))
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-											.addComponent(txtSobrenome, GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
-											.addComponent(txtCpf, GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
-											.addComponent(txtEmail, GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
-											.addComponent(txtSenha, GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
-											.addComponent(btnCadastrar, GroupLayout.PREFERRED_SIZE, 175, GroupLayout.PREFERRED_SIZE)
-											.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, 253, GroupLayout.PREFERRED_SIZE)))
-									.addGroup(gl_contentPane.createSequentialGroup()
-										.addComponent(btnListaUsuario, GroupLayout.PREFERRED_SIZE, 181, GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.RELATED, 198, GroupLayout.PREFERRED_SIZE)))
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-									.addGroup(gl_contentPane.createSequentialGroup()
-										.addComponent(btnNewButton_4, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_contentPane
+										.createSequentialGroup()
+										.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 1271,
+												GroupLayout.PREFERRED_SIZE)
 										.addContainerGap())
-									.addGroup(gl_contentPane.createSequentialGroup()
-										.addGap(446)
-										.addComponent(btnExcluir, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addGap(18)
-										.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 139, GroupLayout.PREFERRED_SIZE)
-										.addGap(1552))))
-							.addGroup(gl_contentPane.createSequentialGroup()
-								.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 284, GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(997, Short.MAX_VALUE)))))
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(btnNewButton_4, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-							.addGap(46)
-							.addComponent(lblNewLabel)
-							.addGap(18)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblNome)
-								.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addGap(20)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(lblSobrenome)
-								.addComponent(txtSobrenome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addGap(21)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(lblCpf)
-								.addComponent(txtCpf, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addGap(24)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-								.addComponent(lblNewLabel_5)
-								.addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addGap(25)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(txtSenha, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane
+										.createSequentialGroup()
+										.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+												.addGroup(gl_contentPane.createSequentialGroup().addGroup(gl_contentPane
+														.createParallelGroup(Alignment.LEADING)
+														.addGroup(gl_contentPane
+																.createParallelGroup(Alignment.LEADING, false)
+																.addComponent(lblNome, GroupLayout.DEFAULT_SIZE,
+																		GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																.addComponent(lblSobrenome, Alignment.TRAILING,
+																		GroupLayout.PREFERRED_SIZE, 122,
+																		GroupLayout.PREFERRED_SIZE))
+														.addGroup(gl_contentPane
+																.createParallelGroup(Alignment.TRAILING, false)
+																.addComponent(lblCpf, Alignment.LEADING,
+																		GroupLayout.DEFAULT_SIZE,
+																		GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+																.addComponent(lblNewLabel_5, Alignment.LEADING))
+														.addComponent(lblNewLabel_6))
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+																.addComponent(txtSobrenome, GroupLayout.DEFAULT_SIZE,
+																		253, Short.MAX_VALUE)
+																.addComponent(txtCpf, GroupLayout.DEFAULT_SIZE, 253,
+																		Short.MAX_VALUE)
+																.addComponent(txtEmail, GroupLayout.DEFAULT_SIZE, 253,
+																		Short.MAX_VALUE)
+																.addComponent(txtSenha, GroupLayout.DEFAULT_SIZE, 253,
+																		Short.MAX_VALUE)
+																.addComponent(btnCadastrar, GroupLayout.PREFERRED_SIZE,
+																		175, GroupLayout.PREFERRED_SIZE)
+																.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, 253,
+																		GroupLayout.PREFERRED_SIZE)))
+												.addGroup(gl_contentPane.createSequentialGroup()
+														.addComponent(btnListaUsuario, GroupLayout.PREFERRED_SIZE, 181,
+																GroupLayout.PREFERRED_SIZE)
+														.addPreferredGap(ComponentPlacement.RELATED, 198,
+																GroupLayout.PREFERRED_SIZE)))
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+												.addGroup(gl_contentPane
+														.createSequentialGroup()
+														.addComponent(btnNewButton_4, GroupLayout.PREFERRED_SIZE, 198,
+																GroupLayout.PREFERRED_SIZE)
+														.addContainerGap())
+												.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+														.addGap(446)
+														.addComponent(btnExcluir, GroupLayout.DEFAULT_SIZE,
+																GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+														.addGap(18)
+														.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+																.addComponent(btnSalvaUpdate,
+																		GroupLayout.PREFERRED_SIZE, 131,
+																		GroupLayout.PREFERRED_SIZE)
+																.addComponent(btnNewButton_3,
+																		GroupLayout.PREFERRED_SIZE, 139,
+																		GroupLayout.PREFERRED_SIZE))
+														.addGap(1552))))
+										.addGroup(gl_contentPane.createSequentialGroup()
+												.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 284,
+														GroupLayout.PREFERRED_SIZE)
+												.addContainerGap(999, Short.MAX_VALUE))))));
+		gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane
+				.createSequentialGroup()
+				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane
+						.createSequentialGroup().addContainerGap()
+						.addComponent(btnNewButton_4, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+						.addGap(46).addComponent(lblNewLabel).addGap(18)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addComponent(lblNome)
+								.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE))
+						.addGap(20)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE).addComponent(lblSobrenome)
+								.addComponent(txtSobrenome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE))
+						.addGap(21)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE).addComponent(lblCpf)
+								.addComponent(txtCpf, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE))
+						.addGap(24)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING).addComponent(lblNewLabel_5)
+								.addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE))
+						.addGap(25)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(txtSenha, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
 								.addComponent(lblNewLabel_6))
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(btnListaUsuario, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnCadastrar, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(128)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnExcluir, GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))))
-					.addGap(90)
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 403, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
-		);
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(btnListaUsuario, GroupLayout.PREFERRED_SIZE, 30,
+										GroupLayout.PREFERRED_SIZE)
+								.addComponent(btnCadastrar, GroupLayout.PREFERRED_SIZE, 32,
+										GroupLayout.PREFERRED_SIZE)))
+						.addGroup(gl_contentPane.createSequentialGroup().addGap(128)
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+										.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 32,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(btnExcluir, GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+								.addGap(18)
+								.addComponent(btnSalvaUpdate, GroupLayout.PREFERRED_SIZE, 30,
+										GroupLayout.PREFERRED_SIZE)
+								.addGap(150)))
+				.addGap(90).addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 403, GroupLayout.PREFERRED_SIZE)
+				.addContainerGap()));
 		contentPane.setLayout(gl_contentPane);
 
 		modelo.addColumn("Nome");

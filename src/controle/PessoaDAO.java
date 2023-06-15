@@ -11,7 +11,7 @@ public class PessoaDAO implements IPessoaDAO {
 	private static PessoaDAO instancia;
 
 	/// Construtor
-	private PessoaDAO() {    
+	public PessoaDAO() {    
 	    tabelaUsuarios = new ArrayList<>(); // Inicializa a lista de usuários
 		criarUsuarioEstatico();
 
@@ -76,13 +76,13 @@ public class PessoaDAO implements IPessoaDAO {
 
 	/// alterando apenas o cpf do usuario, verificar para alteração dos outros dados
 	/// pendentes
-	public boolean alterarPessoa(Pessoa p, Long cpf, String nome, String sobrenome, String email, String senha) {
+	public boolean alterarPessoa(Pessoa p) {
 		for (Pessoa pessoa : tabelaUsuarios) {
-			if (pessoa.getCpf().equals(cpf)) {
-				pessoa.setCpf(cpf);
-				pessoa.setNome(nome);
-				pessoa.setSobrenome(sobrenome);
-				pessoa.setSenha(senha);
+			if (pessoa.getCpf()== p.getCpf()) {
+				pessoa.setCpf(p.getCpf());
+				pessoa.setNome(p.getNome());
+				pessoa.setSobrenome(p.getSobrenome());
+				pessoa.setSenha(p.getSenha());
 				return true;
 			}
 		}
@@ -104,6 +104,23 @@ public class PessoaDAO implements IPessoaDAO {
 	public ArrayList<Pessoa> listarPessoas() {
 		return tabelaUsuarios;
 
+	}
+	
+	public Pessoa buscarPessoaCpf (long cpf) {
+		for (Pessoa pessoa : tabelaUsuarios) {
+			if(pessoa.getCpf() == cpf) {
+				return pessoa;
+			}
+		}
+		return null;
+	}
+
+
+
+	@Override //ver essa bomba
+	public boolean alterarPessoa(Pessoa p, Long cpf, String nome, String sobrenome, String email, String senha) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

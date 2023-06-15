@@ -243,6 +243,7 @@ public class VisaoGerenciaLivro extends JFrame {
 				txtIsbn.setText("");
 				txtAno.setText("");
 				txtEditora.setText("");
+				txtNrEdicao.setText("");
 			}
 		});
 
@@ -331,9 +332,14 @@ public class VisaoGerenciaLivro extends JFrame {
 				String editora = txtEditora.getText();
 				String nrEdicao = txtNrEdicao.getText();
 
-				// completar
+				// completar - pronto
 				livroEditar.setAnoLancamento(Integer.valueOf(ano));
 				livroEditar.setAutor(autor);
+				livroEditar.setEditora(editora);
+				livroEditar.setIsbn(Long.parseLong(isbn));
+				livroEditar.setNrEdicao(Integer.valueOf(nrEdicao));
+				livroEditar.setTitulo(titulo);
+				
 				dao.alterarLivro(livroEditar);
 				atualiza();
 				txtIsbn.setEnabled(true);
