@@ -11,9 +11,7 @@ public interface IPessoaDAO {
 	public boolean deletarPessoa(Pessoa p, Long cpf);
 	
 	public ArrayList<Pessoa> listarPessoas();
-	
-	public Pessoa buscarPessoaCpf (long cpf);
-	
+		
 	public boolean criarUsuarioEstatico();
 
 }
