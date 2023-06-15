@@ -117,10 +117,6 @@ public class PessoaDAO implements IPessoaDAO {
 
 
 
-	@Override //ver essa bomba
-	public boolean alterarPessoa(Pessoa p, Long cpf, String nome, String sobrenome, String email, String senha) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 
 }
