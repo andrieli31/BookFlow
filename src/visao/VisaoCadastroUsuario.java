@@ -405,7 +405,7 @@ public class VisaoCadastroUsuario extends JFrame {
 
 		for (int i = 0; i < listaPessoas.size(); i++) {
 			Pessoa p = listaPessoas.get(i);
-			modelo.addRow(new Object[] { p.getNome(), p.getSobrenome(), p.getCpf() });
+			modelo.addRow(new Object[] { p.getNome(), p.getSobrenome(), p.getCpf(), p.getSenha() });
 		}
 	}
 }
