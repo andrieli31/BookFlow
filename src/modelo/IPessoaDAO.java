@@ -13,5 +13,7 @@ public interface IPessoaDAO {
 	public ArrayList<Pessoa> listarPessoas();
 		
 	public boolean criarUsuarioEstatico();
+	
+	public Pessoa buscarPessoaCpf(long cpf);
 
 }

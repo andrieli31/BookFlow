@@ -11,5 +11,7 @@ public interface ILivroDAO {
 	public boolean deletarLivro(Livro l, Long isbn);
 
 	public ArrayList<Livro> listarLivros();
+	
+	public Livro buscarLivroPorIsbn(long isbn);
 
 }

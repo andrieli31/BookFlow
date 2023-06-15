@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import modelo.Categoria;
 import modelo.ICategoriaDAO;
+import modelo.Livro;
 
 public class CategoriaDAO implements ICategoriaDAO {
 
@@ -35,17 +36,14 @@ public class CategoriaDAO implements ICategoriaDAO {
 	}
 
 	@Override
-	public boolean alterarCategoria(Categoria c, int idCategoria, String nomeCategoria, String descricao,
-			int dataMes, int dataAno, int dataDia) {
+	public boolean alterarCategoria(Categoria c) {
 		for (Categoria categoria : tabelaCategorias) {
-			if (categoria.getIdCategoria() == idCategoria) {
-				categoria.setNomeCategoria(nomeCategoria);
-				categoria.setDataDia(dataDia);
-				categoria.setDataDia(dataAno);
-				categoria.setDataMes(dataMes);
-				categoria.setDescricao(descricao);
-				categoria.setIdCategoria(idCategoria);
+			if (categoria.getIdCategoria() == c.getIdCategoria()) {
 
+				categoria.setNomeCategoria(c.getNomeCategoria());
+				categoria.setGenero(c.getGenero());
+				categoria.setQuantPaginas(c.getQuantPaginas());
+				categoria.setIdioma(c.getIdioma());
 				return true;
 			}
 		}
@@ -72,5 +70,16 @@ public class CategoriaDAO implements ICategoriaDAO {
 		}
 		return null;
 	}
+	
+	public Categoria buscarCategoriaPorID(int id) {
+		for (Categoria categoria : tabelaCategorias) {
+			if (categoria.getIdCategoria() == id) {
+				return categoria;
+			}
+		}
+
+		return null;
+	}
+
 
 }

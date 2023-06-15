@@ -7,7 +7,7 @@ public interface ICategoriaDAO {
 
 	public boolean cadastarCategoria(Categoria c);
 
-	public boolean alterarCategoria(Categoria c,int idCategoria, String nomeCategoria, String descricao, int dataMes, int dataAno, int dataDia);
+	public boolean alterarCategoria(Categoria c);
 	
 	public boolean deletarCategoria(Categoria  c, int idCategoria);
 	
