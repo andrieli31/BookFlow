@@ -77,10 +77,6 @@ public class VisaoCadastroCategoria extends JFrame {
 		contentPane.add(panel_1, BorderLayout.NORTH);
 
 		JButton btnVoltaTI = new JButton("Voltar a Tela Inicial");
-		btnVoltaTI.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnVoltaTI.setForeground(new Color(0, 64, 128));
 		btnVoltaTI.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnVoltaTI.addActionListener(new ActionListener() {
@@ -90,6 +86,7 @@ public class VisaoCadastroCategoria extends JFrame {
 				new VisaoGerenciaLivro().dispose();
 				VisaoTelaInicial frame = new VisaoTelaInicial();
 				frame.setVisible(true);
+				frame.setExtendedState(MAXIMIZED_BOTH);
 				dispose();
 			}
 
