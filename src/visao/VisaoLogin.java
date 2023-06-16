@@ -37,7 +37,7 @@ import javax.swing.border.CompoundBorder;
 public class VisaoLogin extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtEmail;
+	private JTextField txtCpf;
 	private JPasswordField txtSenha;
 
 	/**
@@ -161,14 +161,14 @@ public class VisaoLogin extends JFrame {
 		lblCpf.setBounds(35, 136, 158, 14);
 		panel_1.add(lblCpf);
 
-		txtEmail = new JTextField();
-		txtEmail.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		txtEmail.setBounds(35, 161, 395, 31);
-		txtEmail.setForeground(new Color(0, 64, 128));
-		txtEmail.setColumns(10);
+		txtCpf = new JTextField();
+		txtCpf.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		txtCpf.setBounds(35, 161, 395, 31);
+		txtCpf.setForeground(new Color(0, 64, 128));
+		txtCpf.setColumns(10);
 
-		panel_1.add(txtEmail);
-		txtEmail.setColumns(10);
+		panel_1.add(txtCpf);
+		txtCpf.setColumns(10);
 
 		JLabel lblSenha = new JLabel("Senha");
 		lblSenha.setFont(new Font("Segoe UI", Font.BOLD, 14));
@@ -184,47 +184,59 @@ public class VisaoLogin extends JFrame {
 		btnNewButton.setBounds(146, 355, 147, 37);
 		btnNewButton.setBounds(274, 365, 147, 37);
 
-//		btnNewButton.addActionListener(new ActionListener() {
-//
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//
-//				String msgErro = "";
-//
-//				String email = txtEmail.getText();
-//				String senha = txtSenha.getText();
-//
-//				if (txtEmail.getText().isEmpty()) {
-//					JOptionPane.showMessageDialog(btnNewButton, "COLOQUE O EMAIL");
-//					txtEmail.requestFocus();
-//				}
-//
-//				if (txtSenha.getText().isEmpty()) {
-//				    JOptionPane.showMessageDialog(btnNewButton, "COLOQUE A SENHA");
-//				    txtSenha.requestFocus();
-//				}
-//				
-//				PessoaDAO dao = PessoaDAO.getInstancia();
-//				Boolean efetuarPessoa = dao.efetuarLogin(ps);
-//			    Pessoa efetuarPessoa = dao.efetuarLogin(email, senha);
-//
-//				if(efetuarPessoa == true) {
-//					VisaoTelaInicial frame = new VisaoTelaInicial();
-//					frame.setVisible(true);
-//					frame.setExtendedState(MAXIMIZED_BOTH);
-//					dispose();
-//				}
-//
-//				if (!msgErro.isEmpty()) {
-//				    JOptionPane.showMessageDialog(null, msgErro);
-//				}
-//				
-//				
-//
-//				
-//			}
-//
-//		});
+		btnNewButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				 String msgErro = "";
+
+				    long cpf = 0;
+				    try {
+				        cpf = Long.parseLong(txtCpf.getText());
+				    } catch (NumberFormatException ex) {
+				        msgErro = "CPF inválido.";
+				    }
+
+				    String senha = new String(txtSenha.getPassword());
+
+				    if (msgErro.isEmpty()) {
+				        if (txtCpf.getText().isEmpty()) {
+				            msgErro = "Insira o CPF.";
+				            txtCpf.requestFocus();
+				        } else if (txtSenha.getPassword().length == 0) {
+				            msgErro = "Insira a senha.";
+				            txtSenha.requestFocus();
+				        } else {
+				            PessoaDAO dao = PessoaDAO.getInstancia();
+				            String cpfStr = String.valueOf(cpf);
+				            Pessoa efetuarPessoa = dao.efetuarLogin(cpf, senha);
+
+				            
+				            
+				            
+				            if (efetuarPessoa != null) {
+				            	
+				            	
+				                // Login válido
+				                VisaoTelaInicial frame = new VisaoTelaInicial();
+				                frame.setVisible(true);
+				                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+				                dispose();
+				            } else {
+				                // Login inválido
+				                msgErro = "CPF ou senha inválidos.";
+				            }
+				        }
+				    }
+
+				    if (!msgErro.isEmpty()) {
+				        JOptionPane.showMessageDialog(null, msgErro);
+				    }
+	            }
+	        });
+	    
+
+		
 		panel_1.add(btnNewButton);
 
 		txtSenha = new JPasswordField();
@@ -238,7 +250,7 @@ public class VisaoLogin extends JFrame {
 		rdbtnNewRadioButton.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		rdbtnNewRadioButton.setBounds(35, 289, 123, 23);
 		panel_1.add(rdbtnNewRadioButton);
-		
+
 		JToggleButton btnSenha = new JToggleButton("");
 		btnSenha.setIcon(new ImageIcon("img/olhocerto.png"));
 		btnSenha.setBounds(394, 293, 27, 23);

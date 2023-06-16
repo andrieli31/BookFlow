@@ -2,6 +2,8 @@ package controle;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import modelo.IPessoaDAO;
 import modelo.Pessoa;
 
@@ -17,10 +19,24 @@ public class PessoaDAO implements IPessoaDAO {
 
 	}
 
-	
+	/// Instanciando PessoaDAO
+	public static PessoaDAO getInstancia() {
+		if (instancia == null) {
+			instancia = new PessoaDAO();
+			tabelaUsuarios = new ArrayList<>();
+		}
+		return instancia;
+	}
+
 	
 	public boolean criarUsuarioEstatico() {
-	    Pessoa usuarioEstatico = new Pessoa();
+	  
+		  if (tabelaUsuarios == null) {
+		        tabelaUsuarios = new ArrayList<>(); // Inicializa a lista de usuários
+		    }
+		    
+		    Pessoa usuarioEstatico = new Pessoa();
+		    
 	    
 	    String numeroString = "1234567890";
 	    long numeroLong = Long.parseLong(numeroString);
@@ -36,33 +52,24 @@ public class PessoaDAO implements IPessoaDAO {
 	    // Adicione o usuário estático à tabela de usuários
 	    tabelaUsuarios.add(usuarioEstatico);
 
+	    System.out.println(tabelaUsuarios);
+	    
 	    return true;
 	}
 
 	
-	
-	
-	
-	public Pessoa efetuarLogin(String login, String senha) {
-		Pessoa p = null;
+	public Pessoa efetuarLogin(long cpf, String senha) {
+	    Pessoa p = null;
 
-		for (Pessoa pessoa : tabelaUsuarios) {
-			if (pessoa.getSenha().equals(senha) && pessoa.getCpf().equals(login)) {
-				p = pessoa;			
-			
-			}
-		}
+	    for (Pessoa pessoa : tabelaUsuarios) {
+	         
+	        if (pessoa.getSenha().equals(senha) && pessoa.getCpf() == cpf) {
+	            p = pessoa;
+	            break;
+	        }
+	    }
 
-		return p;
-	}
-
-	/// Instanciando PessoaDAO
-	public static PessoaDAO getInstancia() {
-		if (instancia == null) {
-			instancia = new PessoaDAO();
-			tabelaUsuarios = new ArrayList<>();
-		}
-		return instancia;
+	    return p;
 	}
 
 	/// Cadastro de novo usuario no sistema

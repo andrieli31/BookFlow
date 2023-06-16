@@ -15,5 +15,6 @@ public interface IPessoaDAO {
 	public boolean criarUsuarioEstatico();
 	
 	public Pessoa buscarPessoaCpf(long cpf);
-
+	
+	public Pessoa efetuarLogin(long cpf, String senha);
 }
