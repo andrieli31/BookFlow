@@ -40,7 +40,6 @@ public class CategoriaDAO implements ICategoriaDAO {
 		for (Categoria categoria : tabelaCategorias) {
 			if (categoria.getIdCategoria() == c.getIdCategoria()) {
 
-				categoria.setNomeCategoria(c.getNomeCategoria());
 				categoria.setGenero(c.getGenero());
 				categoria.setQuantPaginas(c.getQuantPaginas());
 				categoria.setIdioma(c.getIdioma());

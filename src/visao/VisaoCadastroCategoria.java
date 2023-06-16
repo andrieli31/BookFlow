@@ -31,7 +31,6 @@ public class VisaoCadastroCategoria extends JFrame {
 
 	private JPanel contentPane;
 	private static DefaultTableModel modelo;
-	private JTextField txtTitulo;
 	private JTextField txtIdioma;
 	private JTextField txtQuantPaginas;
 	private JTextField txtGenero;
@@ -39,6 +38,7 @@ public class VisaoCadastroCategoria extends JFrame {
 	private JTable table;
 	private JTextField txtNrEdicao;
 	private static Categoria categoriaEditar;
+	private JTextField txtIdCategoria;
 
 	/**
 	 * Launch the application.
@@ -114,18 +114,17 @@ public class VisaoCadastroCategoria extends JFrame {
 		panel_3.setBounds(35, 50, 349, 20);
 		panel_2.add(panel_3);
 		panel_3.setLayout(null);
-
-		JLabel lblTitulo = new JLabel("Titulo:");
-		lblTitulo.setForeground(Color.BLACK);
-		lblTitulo.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		lblTitulo.setBounds(0, 0, 124, 18);
-		panel_3.add(lblTitulo);
-
-		txtTitulo = new JTextField();
-		txtTitulo.setForeground(new Color(0, 0, 0));
-		txtTitulo.setBounds(144, 0, 205, 20);
-		panel_3.add(txtTitulo);
-		txtTitulo.setColumns(10);
+		
+				txtGenero = new JTextField();
+				txtGenero.setBounds(144, 0, 205, 20);
+				panel_3.add(txtGenero);
+				txtGenero.setColumns(10);
+				
+						JLabel lblGenero = new JLabel("Gênero");
+						lblGenero.setBounds(0, 0, 124, 18);
+						panel_3.add(lblGenero);
+						lblGenero.setForeground(Color.BLACK);
+						lblGenero.setFont(new Font("Segoe UI", Font.BOLD, 13));
 
 		JPanel panel_4 = new JPanel();
 		panel_4.setBackground(Color.WHITE);
@@ -161,26 +160,9 @@ public class VisaoCadastroCategoria extends JFrame {
 		panel_5.add(txtQuantPaginas);
 		txtQuantPaginas.setColumns(10);
 
-		JPanel panel_6 = new JPanel();
-		panel_6.setBackground(Color.WHITE);
-		panel_6.setBounds(35, 143, 349, 20);
-		panel_2.add(panel_6);
-		panel_6.setLayout(null);
-
-		JLabel lblGenero = new JLabel("Gênero");
-		lblGenero.setForeground(Color.BLACK);
-		lblGenero.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		lblGenero.setBounds(0, 0, 124, 18);
-		panel_6.add(lblGenero);
-
-		txtGenero = new JTextField();
-		txtGenero.setBounds(144, 0, 205, 20);
-		panel_6.add(txtGenero);
-		txtGenero.setColumns(10);
-
 		JPanel panel_7 = new JPanel();
 		panel_7.setBackground(Color.WHITE);
-		panel_7.setBounds(35, 174, 349, 20);
+		panel_7.setBounds(35, 202, 349, 20);
 		panel_2.add(panel_7);
 		panel_7.setLayout(null);
 
@@ -191,25 +173,25 @@ public class VisaoCadastroCategoria extends JFrame {
 
 				CategoriaDAO dao = CategoriaDAO.getInstancia();
 
-				String titulo = txtTitulo.getText();
 				String idioma = txtIdioma.getText();
 				String qntPag = txtQuantPaginas.getText();
 				String genero = txtGenero.getText();
+				String id = txtIdCategoria.getText();
 
-				categoria.setNomeCategoria(titulo);
 				categoria.setIdioma(idioma);
 				categoria.setQuantPaginas(Integer.valueOf(qntPag));
 				categoria.setGenero(genero);
+				categoria.setIdCategoria(Integer.valueOf(id));
 
 				dao.cadastarCategoria(categoria);
 
-				modelo.addRow(new Object[] { categoria.getNomeCategoria(), categoria.getGenero(),
-						categoria.getQuantPaginas(), categoria.getIdioma() });
+				modelo.addRow(new Object[] { categoria.getGenero(),
+						categoria.getQuantPaginas(), categoria.getIdioma(), categoria.getIdCategoria() });
 
-				txtTitulo.setText("");
 				txtIdioma.setText("");
 				txtQuantPaginas.setText("");
 				txtGenero.setText("");
+				txtIdCategoria.setText("");
 
 			}
 		});
@@ -224,7 +206,6 @@ public class VisaoCadastroCategoria extends JFrame {
 		JButton btnNewButton = new JButton("Limpar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				txtTitulo.setText("");
 				txtIdioma.setText("");
 				txtQuantPaginas.setText("");
 				txtGenero.setText("");
@@ -268,25 +249,18 @@ public class VisaoCadastroCategoria extends JFrame {
 					JOptionPane.showMessageDialog(null, "Por favor, selecione uma linha");
 				} else {
 
-					int valorId = (int) table.getValueAt(LinhaSelect, 2);
+					int valorId = (int) table.getValueAt(LinhaSelect, 4);
 					// validar se esse DAO ta certo
 					CategoriaDAO dao = CategoriaDAO.getInstancia();
 
 					categoriaEditar = dao.buscarCategoriaPorID(valorId);
-					txtTitulo.setText(categoriaEditar.getNomeCategoria());
 					txtIdioma.setText(categoriaEditar.getIdioma());
 					txtQuantPaginas.setText(String.valueOf(categoriaEditar.getQuantPaginas()));
 					txtGenero.setText(categoriaEditar.getGenero());
-
+					txtIdCategoria.setText(String.valueOf(categoriaEditar.getIdCategoria()));
 					
-					//txtTitulo.setText(livroEditar.getTitulo());
-//					txtIdioma.setText(livroEditar.getAutor());
-//					txtQuantPaginas.setText(String.valueOf(livroEditar.getIsbn()));
-//					txtGenero.setText(String.valueOf(livroEditar.getAnoLancamento()));
-//					txtEditora.setText(livroEditar.getEditora());
-//					txtNrEdicao.setText(String.valueOf(livroEditar.getNrEdicao()));
 
-					//txtQuantPaginas.setEnabled(false);
+					txtIdCategoria.setEnabled(false);
 				}
 
 			}
@@ -307,20 +281,19 @@ public class VisaoCadastroCategoria extends JFrame {
 				CategoriaDAO dao = CategoriaDAO.getInstancia();
 
 
-				String titulo = txtTitulo.getText();
 				String idioma = txtIdioma.getText();
 				String quantPaginas = txtQuantPaginas.getText();
 				String genero = txtGenero.getText();
+				String id = txtIdCategoria.getText();
 		
-				categoriaEditar.setNomeCategoria(titulo);
 				categoriaEditar.setIdioma(idioma);
 				categoriaEditar.setQuantPaginas(Integer.parseInt(quantPaginas));
 				categoriaEditar.setGenero(genero);
+				categoriaEditar.setIdCategoria(Integer.parseInt(id));
 
 				dao.alterarCategoria(categoriaEditar);
-
 				atualiza();
-				txtQuantPaginas.setEnabled(true);
+				txtIdCategoria.setEnabled(true);
 
 			}
 		});
@@ -328,6 +301,18 @@ public class VisaoCadastroCategoria extends JFrame {
 		btnSalvaUpdate.setBorder(UIManager.getBorder("Button.border"));
 
 		panel_2.add(btnSalvaUpdate);
+		
+		txtIdCategoria = new JTextField();
+		txtIdCategoria.setForeground(Color.BLACK);
+		txtIdCategoria.setColumns(10);
+		txtIdCategoria.setBounds(179, 143, 205, 20);
+		panel_2.add(txtIdCategoria);
+		
+		JLabel lblIdCategoria = new JLabel("IdCategoria:");
+		lblIdCategoria.setForeground(Color.BLACK);
+		lblIdCategoria.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		lblIdCategoria.setBounds(35, 143, 124, 18);
+		panel_2.add(lblIdCategoria);
 
 		JPanel tableCategoria = new JPanel();
 		tableCategoria.setBorder(new TitledBorder(null, "Lista de Categorias", TitledBorder.LEADING, TitledBorder.TOP,
@@ -342,7 +327,7 @@ public class VisaoCadastroCategoria extends JFrame {
 
 		table = new JTable();
 		modelo = new DefaultTableModel(new Object[][] {},
-				new String[] { "Nome", "Idioma", "Quant. Páginas", "Gênero" });
+				new String[] { "Gênero", "Idioma", "Quant. Páginas", "Id Categoria" });
 		table.setModel(modelo);
 		scrollPane.setViewportView(table);
 	}
@@ -356,7 +341,7 @@ public class VisaoCadastroCategoria extends JFrame {
 
 		for (int i = 0; i < categorias.size(); i++) {
 			Categoria categoria = categorias.get(i);
-			modelo.addRow(new Object[] { categoria.getNomeCategoria(), categoria.getGenero(), categoria.getIdioma(),
+			modelo.addRow(new Object[] {  categoria.getGenero(), categoria.getIdioma(),
 					categoria.getQuantPaginas() });
 		}
 	}
