@@ -3,7 +3,7 @@
     O sistema de livraria proposto no estudo de caso possui as seguintes funcionalidades e suas respectivas descrições:
     1. Cadastro de usuário, a qual é realizado obtendo informações como nome, email e senha.
     2. Cadastro de livro, a qual é realizado obtendo informações como o ISBN do livro, seu título, ano de publicação e seu(s) autor(es).
-    3. Cadastro de categoria, o qual é realizado obtendo informações como nome da categoria.
+    3. Cadastro de categoria, o qual é realizado obtendo informações como gênero, quantidade de páginas e idioma.
     4. Consulta de livros, que é feita, no sistema, no gerenciamento de livros e mostra todos os registros de livros cadastrados.
     5. Consulta de usuários, que é feita, no sistema, no gerenciamento de usuários e mostra todos os registros de usuários cadastrados.
     6. Consulta de categoria, que é feita, no sistema, no gerenciamento de categorias e mostra todos os registros de categorias cadastrados.
