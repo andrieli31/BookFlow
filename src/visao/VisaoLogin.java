@@ -209,6 +209,7 @@ public class VisaoLogin extends JFrame {
 				        } else {
 				            PessoaDAO dao = PessoaDAO.getInstancia();
 				            String cpfStr = String.valueOf(cpf);
+				            
 				            Pessoa efetuarPessoa = dao.efetuarLogin(cpf, senha);
 
 				            
