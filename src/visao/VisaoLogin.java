@@ -71,8 +71,8 @@ public class VisaoLogin extends JFrame {
 
 		setContentPane(contentPane);
 
-		JPanel panel_1 = new JPanel();
-		panel_1.setBorder(new CompoundBorder(UIManager.getBorder("CheckBoxMenuItem.border"),
+		visao.RoundedPanel painelLogin = new visao.RoundedPanel(100, Color.WHITE);
+		painelLogin.setBorder(new CompoundBorder(UIManager.getBorder("CheckBoxMenuItem.border"),
 				UIManager.getBorder("CheckBoxMenuItem.border")));
 
 		JLabel lblNewLabel_1 = new JLabel("");
@@ -98,7 +98,7 @@ public class VisaoLogin extends JFrame {
 										GroupLayout.PREFERRED_SIZE)
 								.addComponent(lblSlogan1, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE)
 								.addComponent(lblNome))
-						.addGap(147).addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 457, GroupLayout.PREFERRED_SIZE)
+						.addGap(147).addComponent(painelLogin, GroupLayout.PREFERRED_SIZE, 457, GroupLayout.PREFERRED_SIZE)
 						.addContainerGap(42, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup().addContainerGap(856, Short.MAX_VALUE)
 						.addComponent(btnVolta).addContainerGap()));
@@ -111,7 +111,7 @@ public class VisaoLogin extends JFrame {
 										GroupLayout.PREFERRED_SIZE))
 						.addComponent(lblNome))
 				.addPreferredGap(ComponentPlacement.RELATED)
-				.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 457, GroupLayout.PREFERRED_SIZE)
+				.addComponent(painelLogin, GroupLayout.PREFERRED_SIZE, 457, GroupLayout.PREFERRED_SIZE)
 				.addContainerGap(155, Short.MAX_VALUE));
 		gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane
 				.createSequentialGroup().addGap(64)
@@ -119,7 +119,7 @@ public class VisaoLogin extends JFrame {
 						.addGroup(gl_contentPane.createSequentialGroup().addComponent(lblNome).addGap(37)
 								.addComponent(lblSlogan1).addPreferredGap(ComponentPlacement.RELATED).addComponent(
 										lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE))
-						.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 499, GroupLayout.PREFERRED_SIZE))
+						.addComponent(painelLogin, GroupLayout.PREFERRED_SIZE, 499, GroupLayout.PREFERRED_SIZE))
 				.addPreferredGap(ComponentPlacement.RELATED, 254, Short.MAX_VALUE).addComponent(btnVolta))
 				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane
 						.createSequentialGroup().addGap(212).addComponent(lblNome)
@@ -128,12 +128,12 @@ public class VisaoLogin extends JFrame {
 										GroupLayout.PREFERRED_SIZE, 165, GroupLayout.PREFERRED_SIZE))
 								.addGroup(gl_contentPane.createSequentialGroup().addGap(18).addComponent(lblSlogan1))))
 						.addGroup(gl_contentPane.createSequentialGroup().addGap(161)
-								.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 435, GroupLayout.PREFERRED_SIZE)
+								.addComponent(painelLogin, GroupLayout.PREFERRED_SIZE, 435, GroupLayout.PREFERRED_SIZE)
 								.addContainerGap(252, Short.MAX_VALUE))));
-		panel_1.setLayout(null);
+		painelLogin.setLayout(null);
 
 		btnVolta.setBounds(35, 365, 179, 37);
-		panel_1.add(btnVolta);
+		painelLogin.add(btnVolta);
 		btnVolta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				VisaoTelaInicial frame = new VisaoTelaInicial();
@@ -152,14 +152,14 @@ public class VisaoLogin extends JFrame {
 		double x = 50;
 		double y = 50;
 
-		panel_1.add(lblLogin);
+		painelLogin.add(lblLogin);
 
 		JLabel lblCpf = new JLabel("CPF:");
 		lblCpf.setFont(new Font("Segoe UI", Font.BOLD, 14));
 		lblCpf.setForeground(new Color(0, 64, 128));
 
 		lblCpf.setBounds(35, 136, 158, 14);
-		panel_1.add(lblCpf);
+		painelLogin.add(lblCpf);
 
 		txtCpf = new JTextField();
 		txtCpf.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -167,7 +167,7 @@ public class VisaoLogin extends JFrame {
 		txtCpf.setForeground(new Color(0, 64, 128));
 		txtCpf.setColumns(10);
 
-		panel_1.add(txtCpf);
+		painelLogin.add(txtCpf);
 		txtCpf.setColumns(10);
 
 		JLabel lblSenha = new JLabel("Senha");
@@ -175,7 +175,7 @@ public class VisaoLogin extends JFrame {
 		lblSenha.setForeground(new Color(0, 64, 128));
 
 		lblSenha.setBounds(35, 220, 46, 14);
-		panel_1.add(lblSenha);
+		painelLogin.add(lblSenha);
 
 		JButton btnNewButton = new JButton("Entrar");
 		btnNewButton.setBackground(new Color(0, 64, 128));
@@ -238,24 +238,24 @@ public class VisaoLogin extends JFrame {
 	    
 
 		
-		panel_1.add(btnNewButton);
+		painelLogin.add(btnNewButton);
 
 		txtSenha = new JPasswordField();
 		txtSenha.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		txtSenha.setForeground(new Color(0, 64, 128));
 		txtSenha.setBounds(35, 245, 395, 37);
-		panel_1.add(txtSenha);
+		painelLogin.add(txtSenha);
 
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Lembre de mim");
 		rdbtnNewRadioButton.setForeground(new Color(0, 64, 128));
 		rdbtnNewRadioButton.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		rdbtnNewRadioButton.setBounds(35, 289, 123, 23);
-		panel_1.add(rdbtnNewRadioButton);
+		painelLogin.add(rdbtnNewRadioButton);
 
 		JToggleButton btnSenha = new JToggleButton("");
 		btnSenha.setIcon(new ImageIcon("img/olhocerto.png"));
 		btnSenha.setBounds(394, 293, 27, 23);
-		panel_1.add(btnSenha);
+		painelLogin.add(btnSenha);
 
 	}
 }
