@@ -140,7 +140,16 @@ public class VisaoCadastroUsuario extends JFrame {
 								Short.MAX_VALUE))));
 		panel_6.setLayout(null);
 
-		btnVoltaTI = new JButton("Voltar a Tela Inicial");
+		RoundedButton btnVoltaTI = new RoundedButton("Voltar a Tela Inicial");
+		btnVoltaTI.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new VisaoGerenciaLivro().dispose();
+				VisaoTelaInicial frame = new VisaoTelaInicial();
+				frame.setVisible(true);
+				frame.setExtendedState(MAXIMIZED_BOTH);
+				dispose();				
+			}
+		});
 		btnVoltaTI.setBounds(23, 11, 147, 36);
 		panel_6.add(btnVoltaTI);
 		btnVoltaTI.setForeground(new Color(137, 27, 224));
@@ -227,7 +236,7 @@ public class VisaoCadastroUsuario extends JFrame {
 		txtSenha.setBounds(10, 28, 326, 26);
 		panel_4.add(txtSenha);
 
-		JButton btnListaUsuario = new JButton("Listar Usuários");
+		RoundedButton btnListaUsuario = new RoundedButton("Limpar");
 		btnListaUsuario.setBounds(21, 375, 167, 38);
 		painelCadastro.add(btnListaUsuario);
 		btnListaUsuario.setForeground(new Color(137, 27, 224));
@@ -236,14 +245,16 @@ public class VisaoCadastroUsuario extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				atualiza();
+				txtNome.setText("");
+				txtSobrenome.setText("");
+				txtSenha.setText("");
+				txtCpf.setText("");
 			}
 
 		});
 		btnListaUsuario.setFont(new Font("Tahoma", Font.BOLD, 12));
 
-		JButton btnCadastrar = new JButton("Cadastrar Usuário");
+		RoundedButton btnCadastrar = new RoundedButton("Cadastrar Usuário");
 		btnCadastrar.setBounds(198, 374, 168, 39);
 		painelCadastro.add(btnCadastrar);
 		btnCadastrar.setBackground(new Color(137, 27, 224));
@@ -282,6 +293,7 @@ public class VisaoCadastroUsuario extends JFrame {
 				} else {
 					JOptionPane.showMessageDialog(btnCadastrar, "Usuario não foi cadastrado");
 				}
+				atualiza();
 
 			}
 
@@ -313,7 +325,7 @@ public class VisaoCadastroUsuario extends JFrame {
 		btnExcluir.setForeground(new Color(247, 9, 68));
 		btnExcluir.setFont(new Font("Tahoma", Font.BOLD, 12));
 
-		JButton btnNewButton_3 = new JButton("Alterar Usuário");
+		RoundedButton btnNewButton_3 = new RoundedButton("Alterar Usuário");
 		btnNewButton_3.setBounds(411, 81, 155, 32);
 		panel.add(btnNewButton_3);
 		btnNewButton_3.addActionListener(new ActionListener() {
@@ -342,7 +354,7 @@ public class VisaoCadastroUsuario extends JFrame {
 		btnNewButton_3.setForeground(new Color(224, 169, 27));
 		btnNewButton_3.setFont(new Font("Segoe UI", Font.BOLD, 12));
 
-		JButton btnSalvaUpdate = new JButton("Salvar alterações"); // nao ta salvendano essa bomba
+		RoundedButton btnSalvaUpdate = new RoundedButton("Salvar alterações"); // nao ta salvendano essa bomba
 		btnSalvaUpdate.setBackground(new Color(255, 255, 255));
 		btnSalvaUpdate.setBounds(411, 136, 155, 30);
 		panel.add(btnSalvaUpdate);

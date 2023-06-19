@@ -72,10 +72,10 @@ public class VisaoTelaInicial extends JFrame {
 			}
 
 		});
-		btnGerenciarUsuarios.setBounds(210, 629, 256, 29);
+		btnGerenciarUsuarios.setBounds(210, 629, 256, 48);
 		btnGerenciarUsuarios.setBackground(new Color(255, 255, 255));
 		btnGerenciarUsuarios.setFont(new Font("Segoe UI", Font.BOLD, 16));
-		btnGerenciarUsuarios.setForeground(new Color(0, 64, 128));
+		btnGerenciarUsuarios.setForeground(new Color(128, 0, 255));
 
 		JLabel lblNewLabel_2 = new JLabel("Bem-Vindo ao BookFlow!");
 		lblNewLabel_2.setBackground(new Color(255, 255, 255));
@@ -105,18 +105,50 @@ public class VisaoTelaInicial extends JFrame {
 			}
 			
 		});
-		btnGerenciarLivros.setBounds(654, 629, 256, 29);
+		btnGerenciarLivros.setBounds(654, 629, 256, 48);
 		btnGerenciarLivros.setBackground(new Color(255, 255, 255));
 		btnGerenciarLivros.setFont(new Font("Segoe UI", Font.BOLD, 16));
-		btnGerenciarLivros.setForeground(new Color(0, 64, 128));
+		btnGerenciarLivros.setForeground(new Color(128, 0, 255));
 		contentPane.add(btnGerenciarLivros);
 		contentPane.add(lblNewLabel_1);
 		
 		RoundedButton btnGerenciarCategoria = new RoundedButton("Gerenciar Categoria");
+		btnGerenciarCategoria.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new VisaoCadastroCategoria().dispose();
+				VisaoCadastroCategoria frame = new VisaoCadastroCategoria();
+				frame.setVisible(true);
+				frame.setExtendedState(MAXIMIZED_BOTH);
+				dispose();
+				
+			}
+		});
 		btnGerenciarCategoria.setBackground(new Color(255, 255, 255));
-		btnGerenciarCategoria.setForeground(new Color(0, 64, 128));
+		btnGerenciarCategoria.setForeground(new Color(128, 0, 255));
 		btnGerenciarCategoria.setFont(new Font("Segoe UI", Font.BOLD, 16));
-		btnGerenciarCategoria.setBounds(1099, 629, 256, 29);
+		btnGerenciarCategoria.setBounds(1099, 629, 256, 48);
 		contentPane.add(btnGerenciarCategoria);
+		
+		JLabel lblporFavorSelecione = new JLabel("<html><p style=\"width:120px\">Por favor, selecione abaixo a opção que deseja prosseguir.</p></html>");
+		lblporFavorSelecione.setForeground(Color.WHITE);
+		lblporFavorSelecione.setFont(new Font("Segoe UI", Font.PLAIN, 16));
+		lblporFavorSelecione.setBounds(73, 141, 256, 128);
+		contentPane.add(lblporFavorSelecione);
+		
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setIcon(new ImageIcon("img/categoria (2).png"));
+		lblNewLabel_3.setBounds(1099, 371, 275, 215);
+		contentPane.add(lblNewLabel_3);
+		
+		RoundedButton btnLogin = new RoundedButton("Tela de Login? Clique aqui!");
+		btnLogin.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		btnLogin.setForeground(new Color(64, 0, 128));
+		btnLogin.setBackground(new Color(234, 234, 234));
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnLogin.setBounds(73, 731, 176, 25);
+		contentPane.add(btnLogin);
 	}
 }

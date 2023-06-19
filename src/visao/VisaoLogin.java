@@ -176,14 +176,14 @@ public class VisaoLogin extends JFrame {
 		painelLogin.add(txtCpf);
 		txtCpf.setColumns(10);
 
-		JLabel lblSenha = new JLabel("Senha");
+		JLabel lblSenha = new JLabel("Senha:");
 		lblSenha.setFont(new Font("Segoe UI", Font.BOLD, 14));
 		lblSenha.setForeground(new Color(0, 0, 0));
 
 		lblSenha.setBounds(35, 220, 46, 14);
 		painelLogin.add(lblSenha);
 
-		JButton btnNewButton = new JButton("Entrar");
+		RoundedButton btnNewButton = new RoundedButton("Entrar");
 		btnNewButton.setBackground(new Color(137, 27, 224));
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 14));
@@ -257,19 +257,16 @@ public class VisaoLogin extends JFrame {
 		rdbtnNewRadioButton.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		rdbtnNewRadioButton.setBounds(35, 289, 123, 23);
 		painelLogin.add(rdbtnNewRadioButton);
-
-		JToggleButton btnSenha = new JToggleButton("");
-		btnSenha.setBackground(new Color(192, 192, 192));
-		btnSenha.setForeground(new Color(255, 255, 255));
-		btnSenha.setIcon(new ImageIcon("img/olhocerto.png"));
-		btnSenha.setBounds(394, 293, 27, 23);
-		painelLogin.add(btnSenha);
 		
-		JButton btnLogin = new JButton("Já possui uma conta? Clique aqui!");
+		RoundedButton btnLogin = new RoundedButton("Já possui uma conta? Clique aqui!");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnLogin.setForeground(Color.WHITE);
 		btnLogin.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnLogin.setBackground(new Color(67, 1, 108));
-		btnLogin.setBounds(35, 365, 172, 35);
+		btnLogin.setBounds(28, 365, 199, 37);
 		painelLogin.add(btnLogin);
 
 	}
