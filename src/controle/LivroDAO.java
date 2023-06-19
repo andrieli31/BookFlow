@@ -10,7 +10,7 @@ public class LivroDAO implements ILivroDAO {
 	private static ArrayList<Livro> tabelaLivros;
 	private static LivroDAO instancia;
 
-	public LivroDAO() {
+	private LivroDAO() {
 
 	}
 

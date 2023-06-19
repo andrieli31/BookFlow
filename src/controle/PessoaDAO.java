@@ -2,8 +2,6 @@ package controle;
 
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
-
 import modelo.IPessoaDAO;
 import modelo.Pessoa;
 
@@ -14,25 +12,21 @@ public class PessoaDAO implements IPessoaDAO {
 
 	/// Construtor
 
-	public PessoaDAO() {
-		tabelaUsuarios = new ArrayList<>(); // Inicializa a lista de usuários
-		
+	private PessoaDAO() {
 	}
 
 	/// Instanciando PessoaDAO
 	public static PessoaDAO getInstancia() {
+
 		if (instancia == null) {
 			instancia = new PessoaDAO();
 			tabelaUsuarios = new ArrayList<>();
+			criarUsuarioEstatico();
 		}
 		return instancia;
 	}
 
-	public boolean criarUsuarioEstatico() {
-
-		if (tabelaUsuarios == null) {
-			tabelaUsuarios = new ArrayList<>(); // Inicializa a lista de usuários
-		}
+	public static void criarUsuarioEstatico() {
 
 		Pessoa usuarioEstatico = new Pessoa();
 
@@ -49,15 +43,11 @@ public class PessoaDAO implements IPessoaDAO {
 		// Adicione o usuário estático à tabela de usuários
 		tabelaUsuarios.add(usuarioEstatico);
 
-
-		return true;
 	}
 
 	public Pessoa efetuarLogin(long cpf, String senha) {
 		Pessoa p = null;
-		
-		criarUsuarioEstatico();
-		
+
 		for (Pessoa pessoa : tabelaUsuarios) {
 			System.out.println("senha");
 			System.out.println(pessoa.getSenha());
@@ -78,7 +68,6 @@ public class PessoaDAO implements IPessoaDAO {
 		}
 		return false;
 	}
-
 
 	public boolean alterarPessoa(Pessoa p) {
 		for (Pessoa pessoa : tabelaUsuarios) {

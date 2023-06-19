@@ -276,6 +276,10 @@ public class VisaoCadastroUsuario extends JFrame {
 		});
 		
 		JButton btnNewButton_4 = new JButton("Voltar a Tela Inicial");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton_4.setForeground(new Color(137, 27, 224));
 		btnNewButton_4.setFont(new Font("Tahoma", Font.BOLD, 12));
 

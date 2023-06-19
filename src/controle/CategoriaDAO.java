@@ -1,18 +1,16 @@
 package controle;
 
-import java.sql.Date;
 import java.util.ArrayList;
 
 import modelo.Categoria;
 import modelo.ICategoriaDAO;
-import modelo.Livro;
 
 public class CategoriaDAO implements ICategoriaDAO {
 
 	private static ArrayList<Categoria> tabelaCategorias;
 	private static CategoriaDAO instancia;
 
-	public CategoriaDAO() {
+	private CategoriaDAO() {
 
 	}
 

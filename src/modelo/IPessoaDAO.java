@@ -9,12 +9,10 @@ public interface IPessoaDAO {
 	public boolean alterarPessoa(Pessoa p);
 
 	public boolean deletarPessoa(Pessoa p, Long cpf);
-	
+
 	public ArrayList<Pessoa> listarPessoas();
-		
-	public boolean criarUsuarioEstatico();
-	
+
 	public Pessoa buscarPessoaCpf(long cpf);
-	
+
 	public Pessoa efetuarLogin(long cpf, String senha);
 }

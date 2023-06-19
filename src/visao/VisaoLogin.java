@@ -72,7 +72,7 @@ public class VisaoLogin extends JFrame {
 
 		setContentPane(contentPane);
 
-		visao.RoundedPanel painelLogin = new visao.RoundedPanel(100, Color.WHITE);
+		visao.RoundedPanel painelLogin = new visao.RoundedPanel(100, Color.WHITE); //adiciona borda
 		painelLogin.setBackground(new Color(67, 1, 108));
 		painelLogin.setBorder(new CompoundBorder(UIManager.getBorder("CheckBoxMenuItem.border"),
 				UIManager.getBorder("CheckBoxMenuItem.border")));
