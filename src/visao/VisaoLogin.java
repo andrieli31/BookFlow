@@ -259,8 +259,13 @@ public class VisaoLogin extends JFrame {
 		painelLogin.add(rdbtnNewRadioButton);
 		
 		RoundedButton btnLogin = new RoundedButton("Já possui uma conta? Clique aqui!");
+		btnLogin.setText("Não possui uma conta? Clique aqui!");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				VisaoTelaInicial telaInicial = new VisaoTelaInicial();
+				telaInicial.setVisible(true);
+				telaInicial.setExtendedState(MAXIMIZED_BOTH);
+				dispose();
 			}
 		});
 		btnLogin.setForeground(Color.WHITE);

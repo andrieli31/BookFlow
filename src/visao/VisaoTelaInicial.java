@@ -146,6 +146,11 @@ public class VisaoTelaInicial extends JFrame {
 		btnLogin.setBackground(new Color(234, 234, 234));
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				VisaoLogin telaInicial = new VisaoLogin();
+				telaInicial.setVisible(true);
+				telaInicial.setExtendedState(MAXIMIZED_BOTH);
+				dispose();
 			}
 		});
 		btnLogin.setBounds(73, 731, 176, 25);
