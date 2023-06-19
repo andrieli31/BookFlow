@@ -12,7 +12,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
 
@@ -29,7 +28,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
-import javax.swing.SwingConstants;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -51,6 +49,7 @@ public class VisaoCadastroUsuario extends JFrame {
 	private static DefaultTableModel modelo;
 	private JTable table;
 	private static Pessoa pessoaEditar;
+	private JButton btnVoltaTI;
 
 	/**
 	 * Launch the application.
@@ -103,10 +102,6 @@ public class VisaoCadastroUsuario extends JFrame {
 		table.setRowHeight(25);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		table.setGridColor(Color.WHITE);
-		
-		DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
-        table.setDefaultRenderer(Object.class, centerRenderer);
 
 		scrollPane.setViewportView(table);
 		modelo = new DefaultTableModel();
@@ -126,49 +121,33 @@ public class VisaoCadastroUsuario extends JFrame {
 		panel_6.setBackground(new Color(67, 1, 108));
 
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(panel, GroupLayout.PREFERRED_SIZE, 573, GroupLayout.PREFERRED_SIZE)
-						.addComponent(panel_6, GroupLayout.PREFERRED_SIZE, 573, GroupLayout.PREFERRED_SIZE))
-					.addGap(18)
-					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 682, Short.MAX_VALUE)
-					.addContainerGap())
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 815, Short.MAX_VALUE)
+		gl_contentPane.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup().addContainerGap()
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+								.addComponent(panel, GroupLayout.PREFERRED_SIZE, 573, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panel_6, GroupLayout.PREFERRED_SIZE, 573, GroupLayout.PREFERRED_SIZE))
+						.addGap(18).addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
+						.addContainerGap()));
+		gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane
+				.createSequentialGroup().addContainerGap()
+				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(panel_6, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(panel, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap())
-		);
+								.addComponent(panel_6, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.UNRELATED)
+								.addComponent(panel, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
+								.addContainerGap(445, Short.MAX_VALUE))
+						.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 1040,
+								Short.MAX_VALUE))));
 		panel_6.setLayout(null);
 
-		RoundedButton btnNewButton_41 = new RoundedButton("Voltar a Tela Inicial");
-		btnNewButton_41.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				VisaoTelaInicial telaInicial = new VisaoTelaInicial();
-				telaInicial.setVisible(true);
-				telaInicial.setExtendedState(MAXIMIZED_BOTH);
-				dispose();
-				
-			}
-		});
-		btnNewButton_41.setBounds(23, 11, 147, 36);
-		panel_6.add(btnNewButton_41);
-		btnNewButton_41.setForeground(new Color(137, 27, 224));
-		btnNewButton_41.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnVoltaTI = new JButton("Voltar a Tela Inicial");
+		btnVoltaTI.setBounds(23, 11, 147, 36);
+		panel_6.add(btnVoltaTI);
+		btnVoltaTI.setForeground(new Color(137, 27, 224));
+		btnVoltaTI.setFont(new Font("Tahoma", Font.BOLD, 12));
 		panel.setLayout(null);
 
-		RoundedPanel painelCadastro = new RoundedPanel(100, Color.WHITE);
+		visao.RoundedPanel painelCadastro = new visao.RoundedPanel(100, Color.WHITE);
 		// JPanel painelCadastro = new JPanel();
 		painelCadastro.setBackground(new Color(67, 1, 108));
 		painelCadastro.setBounds(10, 11, 377, 492);
@@ -194,7 +173,7 @@ public class VisaoCadastroUsuario extends JFrame {
 		lblNome.setForeground(new Color(0, 0, 0));
 
 		txtNome = new JTextField();
-		txtNome.setBounds(0, 29, 346, 26);
+		txtNome.setBounds(10, 29, 336, 26);
 		panel_3.add(txtNome);
 		txtNome.setColumns(10);
 
@@ -211,7 +190,7 @@ public class VisaoCadastroUsuario extends JFrame {
 		lblSobrenome.setForeground(new Color(0, 0, 0));
 
 		txtSobrenome = new JTextField();
-		txtSobrenome.setBounds(0, 29, 346, 26);
+		txtSobrenome.setBounds(10, 29, 336, 26);
 		panel_2.add(txtSobrenome);
 		txtSobrenome.setColumns(10);
 
@@ -228,7 +207,7 @@ public class VisaoCadastroUsuario extends JFrame {
 		lblCpf.setForeground(new Color(0, 0, 0));
 
 		txtCpf = new JFormattedTextField(mascaraCpf);
-		txtCpf.setBounds(0, 28, 346, 26);
+		txtCpf.setBounds(10, 28, 336, 26);
 		panel_1.add(txtCpf);
 		txtCpf.setColumns(10);
 
@@ -245,10 +224,10 @@ public class VisaoCadastroUsuario extends JFrame {
 		lblNewLabel_6.setForeground(new Color(0, 0, 0));
 
 		txtSenha = new JPasswordField();
-		txtSenha.setBounds(0, 28, 336, 26);
+		txtSenha.setBounds(10, 28, 326, 26);
 		panel_4.add(txtSenha);
 
-		RoundedButton btnListaUsuario = new RoundedButton("Listar Usuários");
+		JButton btnListaUsuario = new JButton("Listar Usuários");
 		btnListaUsuario.setBounds(21, 375, 167, 38);
 		painelCadastro.add(btnListaUsuario);
 		btnListaUsuario.setForeground(new Color(137, 27, 224));
@@ -264,7 +243,7 @@ public class VisaoCadastroUsuario extends JFrame {
 		});
 		btnListaUsuario.setFont(new Font("Tahoma", Font.BOLD, 12));
 
-		RoundedButton btnCadastrar = new RoundedButton("Cadastrar Usuário");
+		JButton btnCadastrar = new JButton("Cadastrar Usuário");
 		btnCadastrar.setBounds(198, 374, 168, 39);
 		painelCadastro.add(btnCadastrar);
 		btnCadastrar.setBackground(new Color(137, 27, 224));
@@ -334,11 +313,10 @@ public class VisaoCadastroUsuario extends JFrame {
 		btnExcluir.setForeground(new Color(247, 9, 68));
 		btnExcluir.setFont(new Font("Tahoma", Font.BOLD, 12));
 
-		RoundedButton btnAltera = new RoundedButton("Alterar Usuário"); // arredonda bordas do botão
-		btnAltera.setBounds(411, 81, 155, 32);
-		panel.add(btnAltera);
-		
-		btnAltera.addActionListener(new ActionListener() {
+		JButton btnNewButton_3 = new JButton("Alterar Usuário");
+		btnNewButton_3.setBounds(411, 81, 155, 32);
+		panel.add(btnNewButton_3);
+		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int LinhaSelect = table.getSelectedRow();
 				if (LinhaSelect == -1) {
@@ -360,11 +338,11 @@ public class VisaoCadastroUsuario extends JFrame {
 
 			}
 		});
-		btnAltera.setBackground(new Color(255, 255, 255));
-		btnAltera.setForeground(new Color(224, 169, 27));
-		btnAltera.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		btnNewButton_3.setBackground(new Color(255, 255, 255));
+		btnNewButton_3.setForeground(new Color(224, 169, 27));
+		btnNewButton_3.setFont(new Font("Segoe UI", Font.BOLD, 12));
 
-		RoundedButton btnSalvaUpdate = new RoundedButton("Salvar alterações"); // nao ta salvendano essa bomba
+		JButton btnSalvaUpdate = new JButton("Salvar alterações"); // nao ta salvendano essa bomba
 		btnSalvaUpdate.setBackground(new Color(255, 255, 255));
 		btnSalvaUpdate.setBounds(411, 136, 155, 30);
 		panel.add(btnSalvaUpdate);

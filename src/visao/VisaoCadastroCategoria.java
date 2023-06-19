@@ -28,19 +28,22 @@ import controle.LivroDAO;
 import modelo.Categoria;
 import modelo.Livro;
 import javax.swing.border.BevelBorder;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class VisaoCadastroCategoria extends JFrame {
 
 	private JPanel contentPane;
 	private static DefaultTableModel modelo;
 	private JTextField txtIdioma;
-	private JTextField txtQuantPaginas;
 	private JTextField txtGenero;
 	private JTextField txtEditora;
 	private JTable table;
 	private JTextField txtNrEdicao;
 	private static Categoria categoriaEditar;
 	private JTextField txtIdCategoria;
+	private JTextField txtQuantPaginas;
 
 	/**
 	 * Launch the application.
@@ -69,262 +72,21 @@ public class VisaoCadastroCategoria extends JFrame {
 
 		setBounds(100, 100, 2000, 1050);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(56, 0, 113));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new BorderLayout(0, 0));
-
-		JPanel panel_1 = new JPanel();
-		panel_1.setForeground(new Color(0, 64, 128));
-		panel_1.setBackground(Color.WHITE);
-		contentPane.add(panel_1, BorderLayout.NORTH);
-
-		JButton btnVoltaTI = new JButton("Voltar a Tela Inicial");
-		btnVoltaTI.setBackground(new Color(255, 255, 255));
-		btnVoltaTI.setForeground(new Color(137, 27, 224));
-		btnVoltaTI.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		btnVoltaTI.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				new VisaoGerenciaLivro().dispose();
-				VisaoTelaInicial frame = new VisaoTelaInicial();
-				frame.setVisible(true);
-				frame.setExtendedState(MAXIMIZED_BOTH);
-				dispose();
-			}
-
-		});
-		panel_1.add(btnVoltaTI);
-
-		JPanel panel_2 = new JPanel();
-		panel_2.setBorder(new TitledBorder(null, "Dados das categorias", TitledBorder.LEADING, TitledBorder.TOP, null,
-				new Color(137, 27, 224)));
-		panel_2.setBackground(Color.WHITE);
-		contentPane.add(panel_2, BorderLayout.CENTER);
-		panel_2.setLayout(null);
-
-		JLabel lblNewLabel_1 = new JLabel("Dados das categorias");
-		lblNewLabel_1.setForeground(new Color(137, 27, 224));
-		lblNewLabel_1.setFont(new Font("Segoe UI Black", Font.BOLD, 20));
-		lblNewLabel_1.setBounds(35, 11, 236, 28);
-		panel_2.add(lblNewLabel_1);
-
-		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(Color.WHITE);
-		panel_3.setBounds(35, 50, 349, 20);
-		panel_2.add(panel_3);
-		panel_3.setLayout(null);
-		
-				txtGenero = new JTextField();
-				txtGenero.setBounds(144, 0, 205, 20);
-				panel_3.add(txtGenero);
-				txtGenero.setColumns(10);
-				
-						JLabel lblGenero = new JLabel("Gênero");
-						lblGenero.setBounds(0, 0, 124, 18);
-						panel_3.add(lblGenero);
-						lblGenero.setForeground(Color.BLACK);
-						lblGenero.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-
-		JPanel panel_4 = new JPanel();
-		panel_4.setBackground(Color.WHITE);
-		panel_4.setBounds(35, 81, 349, 20);
-		panel_2.add(panel_4);
-		panel_4.setLayout(null);
-
-		JLabel lbldioma = new JLabel("Idioma");
-		lbldioma.setForeground(Color.BLACK);
-		lbldioma.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		lbldioma.setBounds(0, 0, 124, 18);
-		panel_4.add(lbldioma);
-
-		txtIdioma = new JTextField();
-		txtIdioma.setBounds(144, 0, 205, 20);
-		panel_4.add(txtIdioma);
-		txtIdioma.setColumns(10);
-
-		JPanel panel_5 = new JPanel();
-		panel_5.setBackground(Color.WHITE);
-		panel_5.setBounds(35, 112, 349, 20);
-		panel_2.add(panel_5);
-		panel_5.setLayout(null);
-
-		JLabel lblquantPaginas = new JLabel("Quant. Paginas");
-		lblquantPaginas.setForeground(Color.BLACK);
-		lblquantPaginas.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		lblquantPaginas.setBounds(0, 0, 124, 18);
-		panel_5.add(lblquantPaginas);
-
-		txtQuantPaginas = new JTextField();
-		txtQuantPaginas.setBounds(144, 0, 205, 20);
-		panel_5.add(txtQuantPaginas);
-		txtQuantPaginas.setColumns(10);
-
-		JPanel panel_7 = new JPanel();
-		panel_7.setBackground(Color.WHITE);
-		panel_7.setBounds(35, 202, 349, 20);
-		panel_2.add(panel_7);
-		panel_7.setLayout(null);
-
-		JButton btnCadastro = new JButton("Cadastrar");
-		btnCadastro.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Categoria categoria = new Categoria();
-
-				CategoriaDAO dao = CategoriaDAO.getInstancia();
-
-				String idioma = txtIdioma.getText();
-				String qntPag = txtQuantPaginas.getText();
-				String genero = txtGenero.getText();
-				String id = txtIdCategoria.getText();
-
-				categoria.setIdioma(idioma);
-				categoria.setQuantPaginas(Integer.valueOf(qntPag));
-				categoria.setGenero(genero);
-				categoria.setIdCategoria(Integer.valueOf(id));
-
-				dao.cadastarCategoria(categoria);
-
-				modelo.addRow(new Object[] { categoria.getGenero(),
-						categoria.getQuantPaginas(), categoria.getIdioma(), categoria.getIdCategoria() });
-
-				txtIdioma.setText("");
-				txtQuantPaginas.setText("");
-				txtGenero.setText("");
-				txtIdCategoria.setText("");
-
-			}
-		});
-
-		btnCadastro.setForeground(new Color(137, 27, 224));
-		btnCadastro.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnCadastro.setBorder(new LineBorder(new Color(137, 27, 224)));
-		btnCadastro.setBackground(new Color(255, 255, 255));
-		btnCadastro.setBounds(439, 112, 160, 38);
-		panel_2.add(btnCadastro);
-
-		JButton btnNewButton = new JButton("Limpar");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				txtIdioma.setText("");
-				txtQuantPaginas.setText("");
-				txtGenero.setText("");
-			}
-		});
-
-		btnNewButton.setForeground(new Color(137, 27, 224));
-		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnNewButton.setBorder(new LineBorder(new Color(137, 27, 224)));
-		btnNewButton.setBackground(new Color(255, 255, 255));
-		btnNewButton.setBounds(811, 81, 160, 38);
-		panel_2.add(btnNewButton);
-
-		JButton btnExcluir = new JButton("Excluir ");
-		btnExcluir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				int LinhaSelect = table.getSelectedRow();
-				if (LinhaSelect == -1) {
-					JOptionPane.showMessageDialog(null, "Por favor, selecione uma linha");
-				} else {
-					DefaultTableModel tabelaCategoria = (DefaultTableModel) table.getModel();
-					tabelaCategoria.removeRow(LinhaSelect);
-					JOptionPane.showMessageDialog(null, "Categoria excluída com sucesso");
-
-				}
-			}
-		});
-		btnExcluir.setForeground(new Color(247, 9, 68));
-		btnExcluir.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnExcluir.setBorder(new BevelBorder(BevelBorder.LOWERED, new Color(247, 9, 68), new Color(247, 9, 68), new Color(247, 9, 68), new Color(247, 9, 68)));
-		btnExcluir.setBackground(new Color(255, 255, 255));
-		btnExcluir.setBounds(439, 50, 160, 38);
-		panel_2.add(btnExcluir);
-
-		JButton btnAltera = new JButton(" Alterar");
-		btnAltera.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-
-				int LinhaSelect = table.getSelectedRow();
-				if (LinhaSelect == -1) {
-					JOptionPane.showMessageDialog(null, "Por favor, selecione uma linha");
-				} else {
-
-					int valorId = (int) table.getValueAt(LinhaSelect, 4);
-					// validar se esse DAO ta certo
-					CategoriaDAO dao = CategoriaDAO.getInstancia();
-
-					categoriaEditar = dao.buscarCategoriaPorID(valorId);
-					txtIdioma.setText(categoriaEditar.getIdioma());
-					txtQuantPaginas.setText(String.valueOf(categoriaEditar.getQuantPaginas()));
-					txtGenero.setText(categoriaEditar.getGenero());
-					txtIdCategoria.setText(String.valueOf(categoriaEditar.getIdCategoria()));
-					
-
-					txtIdCategoria.setEnabled(false);
-				}
-
-			}
-		});
-		btnAltera.setForeground(new Color(224, 169, 27));
-		btnAltera.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnAltera.setBorder(new BevelBorder(BevelBorder.LOWERED, new Color(224, 169, 27), new Color(224, 169, 27), new Color(224, 169, 27), new Color(224, 169, 27)));
-		btnAltera.setBackground(new Color(255, 255, 255));
-		btnAltera.setBounds(615, 50, 160, 38);
-		panel_2.add(btnAltera);
-
-		JButton btnSalvaUpdate = new JButton("Salvar Alterações");
-		btnSalvaUpdate.setBackground(new Color(137, 27, 224));
-		btnSalvaUpdate.setForeground(new Color(255, 255, 255));
-		btnSalvaUpdate.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnSalvaUpdate.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				CategoriaDAO dao = CategoriaDAO.getInstancia();
-
-
-				String idioma = txtIdioma.getText();
-				String quantPaginas = txtQuantPaginas.getText();
-				String genero = txtGenero.getText();
-				String id = txtIdCategoria.getText();
-		
-				categoriaEditar.setIdioma(idioma);
-				categoriaEditar.setQuantPaginas(Integer.parseInt(quantPaginas));
-				categoriaEditar.setGenero(genero);
-				categoriaEditar.setIdCategoria(Integer.parseInt(id));
-
-				dao.alterarCategoria(categoriaEditar);
-				atualiza();
-				txtIdCategoria.setEnabled(true);
-
-			}
-		});
-		btnSalvaUpdate.setBounds(615, 112, 160, 38);
-		btnSalvaUpdate.setBorder(UIManager.getBorder("Button.border"));
-
-		panel_2.add(btnSalvaUpdate);
-		
-		txtIdCategoria = new JTextField();
-		txtIdCategoria.setForeground(Color.BLACK);
-		txtIdCategoria.setColumns(10);
-		txtIdCategoria.setBounds(179, 143, 205, 20);
-		panel_2.add(txtIdCategoria);
-		
-		JLabel lblIdCategoria = new JLabel("IdCategoria:");
-		lblIdCategoria.setForeground(Color.BLACK);
-		lblIdCategoria.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		lblIdCategoria.setBounds(35, 143, 124, 18);
-		panel_2.add(lblIdCategoria);
 
 		JPanel tableCategoria = new JPanel();
 		tableCategoria.setBorder(new TitledBorder(null, "Lista de Categorias", TitledBorder.LEADING, TitledBorder.TOP,
 				null, new Color(137, 27, 224)));
 		tableCategoria.setBackground(Color.WHITE);
-		contentPane.add(tableCategoria, BorderLayout.SOUTH);
 		tableCategoria.setLayout(new BorderLayout(0, 0));
 
 		JScrollPane scrollPane = new JScrollPane();
 		tableCategoria.add(scrollPane, BorderLayout.CENTER);
 
 		table = new JTable();
+		table.setForeground(new Color(255, 0, 128));
 		modelo = new DefaultTableModel(new Object[][] {},
 				new String[] { "Gênero", "Idioma", "Quant. Páginas", "Id Categoria" });
 		table.setModel(modelo);
@@ -335,6 +97,275 @@ public class VisaoCadastroCategoria extends JFrame {
         table.setRowHeight(25);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         table.setGridColor(Color.LIGHT_GRAY);
+        
+        		RoundedButton btnAltera = new RoundedButton(" Alterar");
+        		btnAltera.addActionListener(new ActionListener() {
+        			public void actionPerformed(ActionEvent e) {
+
+        				int LinhaSelect = table.getSelectedRow();
+        				if (LinhaSelect == -1) {
+        					JOptionPane.showMessageDialog(null, "Por favor, selecione uma linha");
+        				} else {
+
+        					int valorId = (int) table.getValueAt(LinhaSelect, 3);
+        					// validar se esse DAO ta certo
+        					CategoriaDAO dao = CategoriaDAO.getInstancia();
+
+        					categoriaEditar = dao.buscarCategoriaPorID(valorId);
+        					txtIdioma.setText(categoriaEditar.getIdioma());
+        					txtQuantPaginas.setText(String.valueOf(categoriaEditar.getQuantPaginas()));
+        					txtGenero.setText(categoriaEditar.getGenero());
+        					txtIdCategoria.setText(String.valueOf(categoriaEditar.getIdCategoria()));
+        					
+
+        					txtIdCategoria.setEnabled(false);
+        				}
+
+        			}
+        		});
+        		btnAltera.setForeground(new Color(224, 169, 27));
+        		btnAltera.setFont(new Font("Segoe UI", Font.BOLD, 13));
+        		btnAltera.setBorder(new BevelBorder(BevelBorder.LOWERED, new Color(224, 169, 27), new Color(224, 169, 27), new Color(224, 169, 27), new Color(224, 169, 27)));
+        		btnAltera.setBackground(new Color(255, 255, 255));
+        
+        		RoundedButton btnExcluir = new RoundedButton("Excluir ");
+        		btnExcluir.addActionListener(new ActionListener() {
+        			public void actionPerformed(ActionEvent e) {
+        				int LinhaSelect = table.getSelectedRow();
+        				if (LinhaSelect == -1) {
+        					JOptionPane.showMessageDialog(null, "Por favor, selecione uma linha");
+        				} else {
+        					DefaultTableModel tabelaCategoria = (DefaultTableModel) table.getModel();
+        					tabelaCategoria.removeRow(LinhaSelect);
+        					JOptionPane.showMessageDialog(null, "Categoria excluída com sucesso");
+
+        				}
+        			}
+        		});
+        		btnExcluir.setForeground(new Color(247, 9, 68));
+        		btnExcluir.setFont(new Font("Segoe UI", Font.BOLD, 13));
+        		btnExcluir.setBorder(new BevelBorder(BevelBorder.LOWERED, new Color(247, 9, 68), new Color(247, 9, 68), new Color(247, 9, 68), new Color(247, 9, 68)));
+        		btnExcluir.setBackground(new Color(255, 255, 255));
+        
+        		RoundedButton btnSalvaUpdate = new RoundedButton("Salvar Alterações");
+        		btnSalvaUpdate.setBackground(new Color(128, 0, 255));
+        		btnSalvaUpdate.setForeground(new Color(255, 255, 255));
+        		btnSalvaUpdate.setFont(new Font("Segoe UI", Font.BOLD, 13));
+        		btnSalvaUpdate.addActionListener(new ActionListener() {
+        			public void actionPerformed(ActionEvent e) {
+        				CategoriaDAO dao = CategoriaDAO.getInstancia();
+
+
+        				String idioma = txtIdioma.getText();
+        				String quantPaginas = txtQuantPaginas.getText();
+        				String genero = txtGenero.getText();
+        				String id = txtIdCategoria.getText();
+        		
+        				categoriaEditar.setIdioma(idioma);
+        				categoriaEditar.setQuantPaginas(Integer.parseInt(quantPaginas));
+        				categoriaEditar.setGenero(genero);
+        				categoriaEditar.setIdCategoria(Integer.parseInt(id));
+
+        				dao.alterarCategoria(categoriaEditar);
+        				atualiza();
+        				txtIdCategoria.setEnabled(true);
+
+        			}
+        		});
+        		btnSalvaUpdate.setBorder(UIManager.getBorder("Button.border"));
+        
+        RoundedPanel panel = new RoundedPanel(50, Color.WHITE);
+        panel.setForeground(new Color(255, 255, 255));
+        panel.setBackground(new Color(64, 0, 128));
+        
+        		RoundedButton btnVoltaTI = new RoundedButton("Voltar a Tela Inicial");
+        		btnVoltaTI.setBackground(new Color(255, 255, 255));
+        		btnVoltaTI.setForeground(new Color(137, 27, 224));
+        		btnVoltaTI.setFont(new Font("Segoe UI", Font.BOLD, 12));
+        		btnVoltaTI.addActionListener(new ActionListener() {
+
+        			@Override
+        			public void actionPerformed(ActionEvent e) {
+        				new VisaoGerenciaLivro().dispose();
+        				VisaoTelaInicial frame = new VisaoTelaInicial();
+        				frame.setVisible(true);
+        				frame.setExtendedState(MAXIMIZED_BOTH);
+        				dispose();
+        			}
+
+        		});
+        GroupLayout gl_contentPane = new GroupLayout(contentPane);
+        gl_contentPane.setHorizontalGroup(
+        	gl_contentPane.createParallelGroup(Alignment.LEADING)
+        		.addGroup(gl_contentPane.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+        				.addGroup(gl_contentPane.createSequentialGroup()
+        					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 426, Short.MAX_VALUE)
+        					.addPreferredGap(ComponentPlacement.RELATED)
+        					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+        						.addComponent(btnSalvaUpdate, GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+        						.addComponent(btnAltera, GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+        						.addComponent(btnExcluir, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE))
+        					.addGap(18))
+        				.addGroup(gl_contentPane.createSequentialGroup()
+        					.addComponent(btnVoltaTI, GroupLayout.PREFERRED_SIZE, 153, GroupLayout.PREFERRED_SIZE)
+        					.addPreferredGap(ComponentPlacement.RELATED)))
+        			.addComponent(tableCategoria, GroupLayout.PREFERRED_SIZE, 907, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap())
+        );
+        gl_contentPane.setVerticalGroup(
+        	gl_contentPane.createParallelGroup(Alignment.LEADING)
+        		.addGroup(gl_contentPane.createSequentialGroup()
+        			.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+        				.addGroup(gl_contentPane.createSequentialGroup()
+        					.addGap(179)
+        					.addComponent(btnExcluir, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+        					.addGap(18)
+        					.addComponent(btnAltera, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+        					.addGap(18)
+        					.addComponent(btnSalvaUpdate, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE))
+        				.addGroup(gl_contentPane.createSequentialGroup()
+        					.addGap(25)
+        					.addComponent(btnVoltaTI, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+        					.addGap(18)
+        					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 494, GroupLayout.PREFERRED_SIZE))
+        				.addComponent(tableCategoria, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 831, GroupLayout.PREFERRED_SIZE))
+        			.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        
+        		RoundedButton btnCadastro = new RoundedButton("Cadastrar");
+        		btnCadastro.addActionListener(new ActionListener() {
+        			public void actionPerformed(ActionEvent e) {
+        				Categoria categoria = new Categoria();
+
+        				CategoriaDAO dao = CategoriaDAO.getInstancia();
+
+        				String idioma = txtIdioma.getText();
+        				String qntPag = txtQuantPaginas.getText();
+        				String genero = txtGenero.getText();
+        				String id = txtIdCategoria.getText();
+
+        				categoria.setIdioma(idioma);
+        				categoria.setQuantPaginas(Integer.valueOf(qntPag));
+        				categoria.setGenero(genero);
+        				categoria.setIdCategoria(Integer.valueOf(id));
+
+        				dao.cadastarCategoria(categoria);
+
+        				modelo.addRow(new Object[] { categoria.getGenero(),
+        						categoria.getQuantPaginas(), categoria.getIdioma(), categoria.getIdCategoria() });
+
+        				txtIdioma.setText("");
+        				txtQuantPaginas.setText("");
+        				txtGenero.setText("");
+        				txtIdCategoria.setText("");
+
+        			}
+        		});
+        		
+        				btnCadastro.setForeground(new Color(255, 255, 255));
+        				btnCadastro.setFont(new Font("Segoe UI", Font.BOLD, 13));
+        				btnCadastro.setBorder(new LineBorder(new Color(137, 27, 224)));
+        				btnCadastro.setBackground(new Color(128, 0, 255));
+        				
+        						RoundedButton btnNewButton = new RoundedButton("Limpar");
+        						btnNewButton.addActionListener(new ActionListener() {
+        							public void actionPerformed(ActionEvent e) {
+        								txtIdioma.setText("");
+        								txtQuantPaginas.setText("");
+        								txtGenero.setText("");
+        							}
+        						});
+        						
+        								btnNewButton.setForeground(new Color(128, 0, 255));
+        								btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 13));
+        								btnNewButton.setBorder(new LineBorder(new Color(137, 27, 224)));
+        								btnNewButton.setBackground(new Color(224, 224, 224));
+        				
+        						JLabel lblGenero = new JLabel("Gênero:");
+        						lblGenero.setForeground(Color.BLACK);
+        						lblGenero.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        				
+        						txtGenero = new JTextField();
+        						txtGenero.setColumns(10);
+        				
+        						JLabel lbldioma = new JLabel("Idioma:");
+        						lbldioma.setForeground(Color.BLACK);
+        						lbldioma.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        				
+        						txtIdioma = new JTextField();
+        						txtIdioma.setColumns(10);
+        				
+        						JLabel lblquantPaginas = new JLabel("Quant. Paginas:");
+        						lblquantPaginas.setForeground(Color.BLACK);
+        						lblquantPaginas.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        				
+        				JLabel lblIdCategoria = new JLabel("IdCategoria:");
+        				lblIdCategoria.setForeground(Color.BLACK);
+        				lblIdCategoria.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        				
+        				txtIdCategoria = new JTextField();
+        				txtIdCategoria.setForeground(Color.BLACK);
+        				txtIdCategoria.setColumns(10);
+        				
+        						JLabel lblNewLabel_1 = new JLabel("Dados das categorias");
+        						lblNewLabel_1.setForeground(new Color(137, 27, 224));
+        						lblNewLabel_1.setFont(new Font("Segoe UI Black", Font.BOLD, 30));
+        				
+        				txtQuantPaginas = new JTextField();
+        				txtQuantPaginas.setColumns(10);
+        				GroupLayout gl_panel = new GroupLayout(panel);
+        				gl_panel.setHorizontalGroup(
+        					gl_panel.createParallelGroup(Alignment.LEADING)
+        						.addGroup(gl_panel.createSequentialGroup()
+        							.addGap(28)
+        							.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+        								.addComponent(lblGenero, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE)
+        								.addComponent(txtGenero, GroupLayout.PREFERRED_SIZE, 162, GroupLayout.PREFERRED_SIZE)
+        								.addComponent(lbldioma, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE)
+        								.addComponent(lblquantPaginas, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE)
+        								.addComponent(lblIdCategoria, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE)
+        								.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 466, GroupLayout.PREFERRED_SIZE)
+        								.addGroup(gl_panel.createSequentialGroup()
+        									.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 176, GroupLayout.PREFERRED_SIZE)
+        									.addGap(18)
+        									.addComponent(btnCadastro, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE))
+        								.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING, false)
+        									.addComponent(txtIdCategoria, Alignment.LEADING)
+        									.addComponent(txtQuantPaginas, Alignment.LEADING)
+        									.addComponent(txtIdioma, Alignment.LEADING, 162, 162, Short.MAX_VALUE)))
+        							.addContainerGap())
+        				);
+        				gl_panel.setVerticalGroup(
+        					gl_panel.createParallelGroup(Alignment.TRAILING)
+        						.addGroup(gl_panel.createSequentialGroup()
+        							.addGap(40)
+        							.addComponent(lblNewLabel_1)
+        							.addGap(28)
+        							.addComponent(lblGenero, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(txtGenero, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(lbldioma, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(txtIdioma, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        							.addGap(25)
+        							.addComponent(lblquantPaginas, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.UNRELATED)
+        							.addComponent(txtQuantPaginas, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        							.addGap(18)
+        							.addComponent(lblIdCategoria, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
+        							.addPreferredGap(ComponentPlacement.RELATED)
+        							.addComponent(txtIdCategoria, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+        							.addGap(39)
+        							.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING, false)
+        								.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        								.addComponent(btnCadastro, GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE))
+        							.addGap(68))
+        				);
+        				panel.setLayout(gl_panel);
+        contentPane.setLayout(gl_contentPane);
 	}
 
 	public static void atualiza() {

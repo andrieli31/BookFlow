@@ -290,7 +290,7 @@ public class VisaoGerenciaLivro extends JFrame {
 				
 						JLabel lblNewLabel_1 = new JLabel("Dados Livros");
 						lblNewLabel_1.setBackground(new Color(67, 1, 108));
-						lblNewLabel_1.setBounds(14, 36, 236, 28);
+						lblNewLabel_1.setBounds(21, 44, 236, 28);
 						panelCadastro.add(lblNewLabel_1);
 						lblNewLabel_1.setForeground(new Color(67, 1, 108));
 						lblNewLabel_1.setFont(new Font("Segoe UI Black", Font.BOLD, 30));
