@@ -56,11 +56,11 @@ public class VisaoTelaInicial extends JFrame {
 		setContentPane(contentPane);
 
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(357, 380, 256, 256);
+		lblNewLabel_1.setBounds(210, 330, 256, 256);
 		lblNewLabel_1.setIcon(new ImageIcon("img/user-interface.png"));
 
-		JButton btnNewButton = new JButton("Gerenciar Usuários");
-		btnNewButton.addActionListener(new ActionListener() {
+		RoundedButton btnGerenciarUsuarios = new RoundedButton("Gerenciar Usuários");
+		btnGerenciarUsuarios.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -72,10 +72,10 @@ public class VisaoTelaInicial extends JFrame {
 			}
 
 		});
-		btnNewButton.setBounds(357, 679, 256, 29);
-		btnNewButton.setBackground(new Color(255, 255, 255));
-		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
-		btnNewButton.setForeground(new Color(0, 64, 128));
+		btnGerenciarUsuarios.setBounds(210, 629, 256, 29);
+		btnGerenciarUsuarios.setBackground(new Color(255, 255, 255));
+		btnGerenciarUsuarios.setFont(new Font("Segoe UI", Font.BOLD, 16));
+		btnGerenciarUsuarios.setForeground(new Color(0, 64, 128));
 
 		JLabel lblNewLabel_2 = new JLabel("Bem-Vindo ao BookFlow!");
 		lblNewLabel_2.setBackground(new Color(255, 255, 255));
@@ -85,15 +85,15 @@ public class VisaoTelaInicial extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(801, 380, 256, 256);
+		lblNewLabel.setBounds(654, 330, 256, 256);
 		lblNewLabel.setIcon(new ImageIcon("img/livro.png"));
 		contentPane.add(lblNewLabel);
-		contentPane.add(btnNewButton);
+		contentPane.add(btnGerenciarUsuarios);
 		contentPane.add(lblNewLabel_2);
 
-		JButton btnNewButton_1 = new JButton("Gerenciar Livros");
+		RoundedButton btnGerenciarLivros = new RoundedButton("Gerenciar Livros");
 		
-		btnNewButton_1.addActionListener(new ActionListener() {
+		btnGerenciarLivros.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -105,18 +105,18 @@ public class VisaoTelaInicial extends JFrame {
 			}
 			
 		});
-		btnNewButton_1.setBounds(801, 679, 256, 29);
-		btnNewButton_1.setBackground(new Color(255, 255, 255));
-		btnNewButton_1.setFont(new Font("Segoe UI", Font.BOLD, 16));
-		btnNewButton_1.setForeground(new Color(0, 64, 128));
-		contentPane.add(btnNewButton_1);
+		btnGerenciarLivros.setBounds(654, 629, 256, 29);
+		btnGerenciarLivros.setBackground(new Color(255, 255, 255));
+		btnGerenciarLivros.setFont(new Font("Segoe UI", Font.BOLD, 16));
+		btnGerenciarLivros.setForeground(new Color(0, 64, 128));
+		contentPane.add(btnGerenciarLivros);
 		contentPane.add(lblNewLabel_1);
 		
-		JButton btnNewButton_2 = new JButton("Gerenciar Categoria");
-		btnNewButton_2.setBackground(new Color(255, 255, 255));
-		btnNewButton_2.setForeground(new Color(0, 64, 128));
-		btnNewButton_2.setFont(new Font("Segoe UI", Font.BOLD, 16));
-		btnNewButton_2.setBounds(1246, 679, 256, 29);
-		contentPane.add(btnNewButton_2);
+		RoundedButton btnGerenciarCategoria = new RoundedButton("Gerenciar Categoria");
+		btnGerenciarCategoria.setBackground(new Color(255, 255, 255));
+		btnGerenciarCategoria.setForeground(new Color(0, 64, 128));
+		btnGerenciarCategoria.setFont(new Font("Segoe UI", Font.BOLD, 16));
+		btnGerenciarCategoria.setBounds(1099, 629, 256, 29);
+		contentPane.add(btnGerenciarCategoria);
 	}
 }
