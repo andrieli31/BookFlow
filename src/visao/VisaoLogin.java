@@ -67,12 +67,13 @@ public class VisaoLogin extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1071, 897);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setBackground(new Color(67, 1, 108));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 
 		visao.RoundedPanel painelLogin = new visao.RoundedPanel(100, Color.WHITE);
+		painelLogin.setBackground(new Color(67, 1, 108));
 		painelLogin.setBorder(new CompoundBorder(UIManager.getBorder("CheckBoxMenuItem.border"),
 				UIManager.getBorder("CheckBoxMenuItem.border")));
 
@@ -84,7 +85,7 @@ public class VisaoLogin extends JFrame {
 		
 
 		JLabel lblNome = new JLabel("BookFlow+");
-		lblNome.setForeground(new Color(128, 0, 255));
+		lblNome.setForeground(new Color(255, 255, 255));
 		lblNome.setFont(new Font("Segoe UI", Font.BOLD, 48));
 
 		JButton btnVolta = new JButton("Voltar a Tela Inicial");
@@ -92,7 +93,7 @@ public class VisaoLogin extends JFrame {
 		JLabel lblSlogan1 = new JLabel("<html><p style=\"width:120px\">"
 				+ "Gerencie sua biblioteca de forma fácil e inteligente com BookFlow: organize, explore e mergulhe no mundo dos livros."
 				+ "</p></html>");
-		lblSlogan1.setForeground(Color.WHITE);
+		lblSlogan1.setForeground(new Color(255, 255, 255));
 		lblSlogan1.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -151,7 +152,7 @@ public class VisaoLogin extends JFrame {
 		contentPane.setLayout(gl_contentPane);
 
 		JLabel lblLogin = new JLabel("Bem-vindo novamente!");
-		lblLogin.setForeground(new Color(0, 64, 128));
+		lblLogin.setForeground(new Color(137, 27, 224));
 		lblLogin.setFont(new Font("Segoe UI", Font.BOLD, 35));
 		lblLogin.setBounds(35, 44, 395, 47);
 		double x = 50;
@@ -161,7 +162,7 @@ public class VisaoLogin extends JFrame {
 
 		JLabel lblCpf = new JLabel("CPF:");
 		lblCpf.setFont(new Font("Segoe UI", Font.BOLD, 14));
-		lblCpf.setForeground(new Color(0, 64, 128));
+		lblCpf.setForeground(new Color(0, 0, 0));
 
 		lblCpf.setBounds(35, 136, 158, 14);
 		painelLogin.add(lblCpf);
@@ -169,7 +170,7 @@ public class VisaoLogin extends JFrame {
 		txtCpf = new JTextField();
 		txtCpf.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		txtCpf.setBounds(35, 161, 395, 31);
-		txtCpf.setForeground(new Color(0, 64, 128));
+		txtCpf.setForeground(new Color(0, 0, 0));
 		txtCpf.setColumns(10);
 
 		painelLogin.add(txtCpf);
@@ -177,13 +178,13 @@ public class VisaoLogin extends JFrame {
 
 		JLabel lblSenha = new JLabel("Senha");
 		lblSenha.setFont(new Font("Segoe UI", Font.BOLD, 14));
-		lblSenha.setForeground(new Color(0, 64, 128));
+		lblSenha.setForeground(new Color(0, 0, 0));
 
 		lblSenha.setBounds(35, 220, 46, 14);
 		painelLogin.add(lblSenha);
 
 		JButton btnNewButton = new JButton("Entrar");
-		btnNewButton.setBackground(new Color(0, 64, 128));
+		btnNewButton.setBackground(new Color(137, 27, 224));
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 14));
 		btnNewButton.setBounds(146, 355, 147, 37);
@@ -247,17 +248,19 @@ public class VisaoLogin extends JFrame {
 
 		txtSenha = new JPasswordField();
 		txtSenha.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		txtSenha.setForeground(new Color(0, 64, 128));
+		txtSenha.setForeground(new Color(0, 0, 0));
 		txtSenha.setBounds(35, 245, 395, 37);
 		painelLogin.add(txtSenha);
 
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Lembre de mim");
-		rdbtnNewRadioButton.setForeground(new Color(0, 64, 128));
+		rdbtnNewRadioButton.setForeground(new Color(137, 27, 224));
 		rdbtnNewRadioButton.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		rdbtnNewRadioButton.setBounds(35, 289, 123, 23);
 		painelLogin.add(rdbtnNewRadioButton);
 
 		JToggleButton btnSenha = new JToggleButton("");
+		btnSenha.setBackground(new Color(192, 192, 192));
+		btnSenha.setForeground(new Color(255, 255, 255));
 		btnSenha.setIcon(new ImageIcon("img/olhocerto.png"));
 		btnSenha.setBounds(394, 293, 27, 23);
 		painelLogin.add(btnSenha);

@@ -113,7 +113,7 @@ public class VisaoGerenciaLivro extends JFrame {
 
 		JLabel lblNewLabel_1 = new JLabel("Dados dos Livros");
 		lblNewLabel_1.setBounds(35, 11, 236, 28);
-		lblNewLabel_1.setForeground(new Color(137, 27, 224));
+		lblNewLabel_1.setForeground(new Color(67, 1, 108));
 		lblNewLabel_1.setFont(new Font("Segoe UI Black", Font.BOLD, 20));
 		panel_2.add(lblNewLabel_1);
 		
@@ -134,7 +134,7 @@ public class VisaoGerenciaLivro extends JFrame {
 		JLabel lblTitulo = new JLabel("Título:");
 		lblTitulo.setForeground(Color.BLACK);
 		lblTitulo.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		lblTitulo.setBounds(0, 0, 124, 18);
+		lblTitulo.setBounds(0, 0, 62, 18);
 		panel_3.add(lblTitulo);
 
 		txtTitulo = new JTextField();
