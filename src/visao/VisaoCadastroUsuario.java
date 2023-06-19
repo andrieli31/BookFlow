@@ -145,11 +145,11 @@ public class VisaoCadastroUsuario extends JFrame {
 		);
 		panel_6.setLayout(null);
 		
-		JButton btnNewButton_4 = new JButton("Voltar a Tela Inicial");
-		btnNewButton_4.setBounds(23, 11, 147, 36);
-		panel_6.add(btnNewButton_4);
-		btnNewButton_4.setForeground(new Color(137, 27, 224));
-		btnNewButton_4.setFont(new Font("Tahoma", Font.BOLD, 12));
+		JButton btnNewButton_41 = new JButton("Voltar a Tela Inicial");
+		btnNewButton_41.setBounds(23, 11, 147, 36);
+		panel_6.add(btnNewButton_41);
+		btnNewButton_41.setForeground(new Color(137, 27, 224));
+		btnNewButton_41.setFont(new Font("Tahoma", Font.BOLD, 12));
 		panel.setLayout(null);
 				
 				visao.RoundedPanel painelCadastro = new visao.RoundedPanel(100, Color.WHITE);
