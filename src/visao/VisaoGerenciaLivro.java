@@ -2,6 +2,7 @@ package visao;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -19,9 +20,11 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 import controle.LivroDAO;
@@ -34,6 +37,7 @@ import javax.swing.UIManager;
 import javax.swing.border.EtchedBorder;
 import java.awt.FlowLayout;
 import javax.swing.border.BevelBorder;
+import java.awt.event.ActionEvent;
 
 public class VisaoGerenciaLivro extends JFrame {
 
@@ -368,7 +372,7 @@ public class VisaoGerenciaLivro extends JFrame {
 
 			}
 		});
-		btnSalvaUpdate.setBorder(UIManager.getBorder("Button.border"));
+		btnSalvaUpdate.setBorder(new BevelBorder(BevelBorder.LOWERED, new Color(137, 27, 224), new Color(137, 27, 224), new Color(137, 27, 224), new Color(137, 27, 224)));
 
 		panel_2.add(btnSalvaUpdate);
 
@@ -386,7 +390,15 @@ public class VisaoGerenciaLivro extends JFrame {
 		modelo = new DefaultTableModel(new Object[][] {},
 				new String[] { "Título", "Autor", "ISBN", "Número da edição", "Editora", "Ano lançamento" });
 		table.setModel(modelo);
+		table.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
+		table.getTableHeader().setBackground(new Color(67, 1, 100));
 		scrollPane.setViewportView(table);
+		table.getTableHeader().setForeground(Color.WHITE);
+        table.setRowHeight(25);
+        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        table.setGridColor(Color.LIGHT_GRAY);
+        
+            
 	}
 
 	public static void atualiza() {

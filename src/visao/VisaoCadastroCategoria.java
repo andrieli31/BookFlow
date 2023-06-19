@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
@@ -26,6 +27,7 @@ import controle.CategoriaDAO;
 import controle.LivroDAO;
 import modelo.Categoria;
 import modelo.Livro;
+import javax.swing.border.BevelBorder;
 
 public class VisaoCadastroCategoria extends JFrame {
 
@@ -77,7 +79,8 @@ public class VisaoCadastroCategoria extends JFrame {
 		contentPane.add(panel_1, BorderLayout.NORTH);
 
 		JButton btnVoltaTI = new JButton("Voltar a Tela Inicial");
-		btnVoltaTI.setForeground(new Color(0, 64, 128));
+		btnVoltaTI.setBackground(new Color(255, 255, 255));
+		btnVoltaTI.setForeground(new Color(137, 27, 224));
 		btnVoltaTI.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnVoltaTI.addActionListener(new ActionListener() {
 
@@ -95,13 +98,13 @@ public class VisaoCadastroCategoria extends JFrame {
 
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new TitledBorder(null, "Dados das categorias", TitledBorder.LEADING, TitledBorder.TOP, null,
-				new Color(0, 64, 128)));
+				new Color(137, 27, 224)));
 		panel_2.setBackground(Color.WHITE);
 		contentPane.add(panel_2, BorderLayout.CENTER);
 		panel_2.setLayout(null);
 
 		JLabel lblNewLabel_1 = new JLabel("Dados das categorias");
-		lblNewLabel_1.setForeground(new Color(0, 64, 128));
+		lblNewLabel_1.setForeground(new Color(137, 27, 224));
 		lblNewLabel_1.setFont(new Font("Segoe UI Black", Font.BOLD, 20));
 		lblNewLabel_1.setBounds(35, 11, 236, 28);
 		panel_2.add(lblNewLabel_1);
@@ -121,7 +124,7 @@ public class VisaoCadastroCategoria extends JFrame {
 						lblGenero.setBounds(0, 0, 124, 18);
 						panel_3.add(lblGenero);
 						lblGenero.setForeground(Color.BLACK);
-						lblGenero.setFont(new Font("Segoe UI", Font.BOLD, 13));
+						lblGenero.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 
 		JPanel panel_4 = new JPanel();
 		panel_4.setBackground(Color.WHITE);
@@ -131,7 +134,7 @@ public class VisaoCadastroCategoria extends JFrame {
 
 		JLabel lbldioma = new JLabel("Idioma");
 		lbldioma.setForeground(Color.BLACK);
-		lbldioma.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		lbldioma.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		lbldioma.setBounds(0, 0, 124, 18);
 		panel_4.add(lbldioma);
 
@@ -148,7 +151,7 @@ public class VisaoCadastroCategoria extends JFrame {
 
 		JLabel lblquantPaginas = new JLabel("Quant. Paginas");
 		lblquantPaginas.setForeground(Color.BLACK);
-		lblquantPaginas.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		lblquantPaginas.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		lblquantPaginas.setBounds(0, 0, 124, 18);
 		panel_5.add(lblquantPaginas);
 
@@ -193,10 +196,10 @@ public class VisaoCadastroCategoria extends JFrame {
 			}
 		});
 
-		btnCadastro.setForeground(new Color(255, 255, 255));
+		btnCadastro.setForeground(new Color(137, 27, 224));
 		btnCadastro.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnCadastro.setBorder(new LineBorder(new Color(0, 64, 128)));
-		btnCadastro.setBackground(new Color(0, 64, 128));
+		btnCadastro.setBorder(new LineBorder(new Color(137, 27, 224)));
+		btnCadastro.setBackground(new Color(255, 255, 255));
 		btnCadastro.setBounds(439, 112, 160, 38);
 		panel_2.add(btnCadastro);
 
@@ -209,9 +212,9 @@ public class VisaoCadastroCategoria extends JFrame {
 			}
 		});
 
-		btnNewButton.setForeground(new Color(0, 64, 128));
+		btnNewButton.setForeground(new Color(137, 27, 224));
 		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnNewButton.setBorder(new LineBorder(new Color(0, 64, 128)));
+		btnNewButton.setBorder(new LineBorder(new Color(137, 27, 224)));
 		btnNewButton.setBackground(new Color(255, 255, 255));
 		btnNewButton.setBounds(811, 81, 160, 38);
 		panel_2.add(btnNewButton);
@@ -230,9 +233,9 @@ public class VisaoCadastroCategoria extends JFrame {
 				}
 			}
 		});
-		btnExcluir.setForeground(new Color(0, 64, 128));
+		btnExcluir.setForeground(new Color(247, 9, 68));
 		btnExcluir.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnExcluir.setBorder(UIManager.getBorder("Button.border"));
+		btnExcluir.setBorder(new BevelBorder(BevelBorder.LOWERED, new Color(247, 9, 68), new Color(247, 9, 68), new Color(247, 9, 68), new Color(247, 9, 68)));
 		btnExcluir.setBackground(new Color(255, 255, 255));
 		btnExcluir.setBounds(439, 50, 160, 38);
 		panel_2.add(btnExcluir);
@@ -262,16 +265,16 @@ public class VisaoCadastroCategoria extends JFrame {
 
 			}
 		});
-		btnAltera.setForeground(new Color(0, 64, 128));
+		btnAltera.setForeground(new Color(224, 169, 27));
 		btnAltera.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnAltera.setBorder(UIManager.getBorder("Button.border"));
+		btnAltera.setBorder(new BevelBorder(BevelBorder.LOWERED, new Color(224, 169, 27), new Color(224, 169, 27), new Color(224, 169, 27), new Color(224, 169, 27)));
 		btnAltera.setBackground(new Color(255, 255, 255));
 		btnAltera.setBounds(615, 50, 160, 38);
 		panel_2.add(btnAltera);
 
 		JButton btnSalvaUpdate = new JButton("Salvar Alterações");
-		btnSalvaUpdate.setBackground(new Color(255, 255, 255));
-		btnSalvaUpdate.setForeground(new Color(0, 0, 160));
+		btnSalvaUpdate.setBackground(new Color(137, 27, 224));
+		btnSalvaUpdate.setForeground(new Color(255, 255, 255));
 		btnSalvaUpdate.setFont(new Font("Segoe UI", Font.BOLD, 13));
 		btnSalvaUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -294,7 +297,7 @@ public class VisaoCadastroCategoria extends JFrame {
 
 			}
 		});
-		btnSalvaUpdate.setBounds(615, 109, 160, 38);
+		btnSalvaUpdate.setBounds(615, 112, 160, 38);
 		btnSalvaUpdate.setBorder(UIManager.getBorder("Button.border"));
 
 		panel_2.add(btnSalvaUpdate);
@@ -307,14 +310,13 @@ public class VisaoCadastroCategoria extends JFrame {
 		
 		JLabel lblIdCategoria = new JLabel("IdCategoria:");
 		lblIdCategoria.setForeground(Color.BLACK);
-		lblIdCategoria.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		lblIdCategoria.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		lblIdCategoria.setBounds(35, 143, 124, 18);
 		panel_2.add(lblIdCategoria);
 
 		JPanel tableCategoria = new JPanel();
 		tableCategoria.setBorder(new TitledBorder(null, "Lista de Categorias", TitledBorder.LEADING, TitledBorder.TOP,
-				null, new Color(0, 64, 128)));
-
+				null, new Color(137, 27, 224)));
 		tableCategoria.setBackground(Color.WHITE);
 		contentPane.add(tableCategoria, BorderLayout.SOUTH);
 		tableCategoria.setLayout(new BorderLayout(0, 0));
@@ -326,7 +328,13 @@ public class VisaoCadastroCategoria extends JFrame {
 		modelo = new DefaultTableModel(new Object[][] {},
 				new String[] { "Gênero", "Idioma", "Quant. Páginas", "Id Categoria" });
 		table.setModel(modelo);
+		table.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
+		table.getTableHeader().setBackground(new Color(67, 1, 100));
 		scrollPane.setViewportView(table);
+		table.getTableHeader().setForeground(Color.WHITE);
+        table.setRowHeight(25);
+        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        table.setGridColor(Color.LIGHT_GRAY);
 	}
 
 	public static void atualiza() {

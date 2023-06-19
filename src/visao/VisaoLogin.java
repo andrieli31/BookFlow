@@ -2,6 +2,7 @@ package visao;
 
 import java.awt.EventQueue;
 
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
@@ -66,7 +67,7 @@ public class VisaoLogin extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1071, 897);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(0, 64, 128));
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -77,9 +78,13 @@ public class VisaoLogin extends JFrame {
 
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon("img/login.png"));
+		
+		JLabel lblNewLabel_teste = new JLabel("");
+		lblNewLabel_teste.setIcon(new ImageIcon("img/Im g"));
+		
 
 		JLabel lblNome = new JLabel("BookFlow+");
-		lblNome.setForeground(Color.WHITE);
+		lblNome.setForeground(new Color(128, 0, 255));
 		lblNome.setFont(new Font("Segoe UI", Font.BOLD, 48));
 
 		JButton btnVolta = new JButton("Voltar a Tela Inicial");
