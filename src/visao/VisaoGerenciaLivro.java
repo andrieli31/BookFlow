@@ -72,6 +72,7 @@ public class VisaoGerenciaLivro extends JFrame {
 
 		setBounds(100, 100, 2000, 1050);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(67, 1, 108));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -79,7 +80,7 @@ public class VisaoGerenciaLivro extends JFrame {
 		JPanel panel_1 = new JPanel();
 		panel_1.setForeground(new Color(0, 64, 128));
 		panel_1.setBackground(Color.WHITE);
-		contentPane.add(panel_1, BorderLayout.NORTH);
+		contentPane.add(panel_1, BorderLayout.WEST);
 
 		JButton btnVoltaTI = new JButton("Voltar a Tela Inicial");
 		btnVoltaTI.setBackground(new Color(137, 27, 224));

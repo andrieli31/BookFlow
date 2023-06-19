@@ -20,6 +20,7 @@ import controle.PessoaDAO;
 import modelo.Livro;
 import modelo.Pessoa;
 
+import javax.swing.BorderFactory;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 
@@ -34,6 +35,9 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JTable;
 import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
 
 public class VisaoCadastroUsuario extends JFrame {
 
@@ -41,7 +45,6 @@ public class VisaoCadastroUsuario extends JFrame {
 	private JTextField txtNome;
 	private JTextField txtSobrenome;
 	private JTextField txtCpf;
-	private JTextField txtEmail;
 	private JPasswordField txtSenha;
 	private static DefaultTableModel modelo;
 	private JTable table;
@@ -72,22 +75,12 @@ public class VisaoCadastroUsuario extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1317, 1144);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setBackground(new Color(67, 1, 108));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 
-		txtNome = new JTextField();
-		txtNome.setColumns(10);
-
 		PessoaDAO daoPessoa = PessoaDAO.getInstancia();
-
-		JLabel lblNewLabel = new JLabel("Dados dos Usuários");
-		lblNewLabel.setForeground(new Color(67, 1, 108));
-		lblNewLabel.setFont(new Font("Segoe UI Black", Font.BOLD, 20));
-
-		txtSobrenome = new JTextField();
-		txtSobrenome.setColumns(10);
 
 		MaskFormatter mascaraCpf = null;
 
@@ -97,183 +90,21 @@ public class VisaoCadastroUsuario extends JFrame {
 			e.printStackTrace();
 		}
 
-		txtCpf = new JFormattedTextField(mascaraCpf);
-		txtCpf.setColumns(10);
-
-		JLabel lblNome = new JLabel("Nome: ");
-		lblNome.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		lblNome.setForeground(new Color(0, 0, 0));
-		lblNome.setBounds(0, 0, 62, 18);
-
-		JLabel lblSobrenome = new JLabel("Sobrenome:");
-		lblSobrenome.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		lblSobrenome.setForeground(new Color(0, 0, 0));
-
-		JLabel lblCpf = new JLabel("CPF:");
-		lblCpf.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		lblCpf.setForeground(new Color(0, 0, 0));
-
-		JButton btnCadastrar = new JButton("Cadastrar Usuário");
-		btnCadastrar.setBackground(new Color(137, 27, 224));
-
-		btnCadastrar.addActionListener(new ActionListener() {
-			/// colocar anos de edição dos livros e diminuir 1
-			// int ano= LocalDate.now().getYear();
-			// for(int i = 0; i<ano; i++) {
-			// cbNomes.addItem(String.valueOf(ano));
-			// }
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				Pessoa pessoa = new Pessoa();
-
-				String nome = txtNome.getText();
-				String sobrenome = txtSobrenome.getText();
-				String cpfText = txtCpf.getText();
-				cpfText = cpfText.replaceAll("[.-]", ""); // Remove pontos e traço da máscara
-				Long cpf = Long.parseLong(cpfText);
-				String senha = String.valueOf(txtSenha.getPassword());
-
-				pessoa.setNome(nome);
-				pessoa.setSobrenome(sobrenome);
-				pessoa.setCpf(cpf);
-				pessoa.setSenha(senha);
-
-				txtNome.setText(null);
-				txtSobrenome.setText(null);
-				txtCpf.setText(null);
-				txtSenha.setText(null);
-
-				PessoaDAO dao = PessoaDAO.getInstancia();
-				Boolean cadastrar = dao.cadastrarPessoa(pessoa);
-				if (cadastrar) {
-					JOptionPane.showMessageDialog(btnCadastrar, "Usuario cadastrado");
-				} else {
-					JOptionPane.showMessageDialog(btnCadastrar, "Usuario não foi cadastrado");
-				}
-
-			}
-
-		});
-
-		btnCadastrar.setForeground(new Color(255, 255, 255));
-
-		btnCadastrar.setFont(new Font("Tahoma", Font.BOLD, 12));
-
-		JButton btnListaUsuario = new JButton("Listar Usuários");
-		btnListaUsuario.setForeground(new Color(137, 27, 224));
-
-		btnListaUsuario.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				atualiza();
-			}
-
-		});
-		btnListaUsuario.setFont(new Font("Tahoma", Font.BOLD, 12));
-
-		JButton btnExcluir = new JButton("Excluir Usuário");
-		btnExcluir.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				int linhaSelect = table.getSelectedRow();
-				if (linhaSelect == -1) {
-					JOptionPane.showMessageDialog(null, "Por favor, selecione uma linha");
-				} else {
-					DefaultTableModel tabelapessoa = (DefaultTableModel) table.getModel();
-					tabelapessoa.removeRow(linhaSelect);
-				}
-			}
-
-		});
-		btnExcluir.setForeground(new Color(137, 27, 224));
-		btnExcluir.setFont(new Font("Tahoma", Font.BOLD, 12));
-
-		JButton btnNewButton_3 = new JButton("Alterar Usuário");
-		btnNewButton_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				int LinhaSelect = table.getSelectedRow();
-				if (LinhaSelect == -1) {
-					JOptionPane.showMessageDialog(null, "Por favor, selecione uma linha");
-				} else {
-					long valorCpf = (long) table.getValueAt(LinhaSelect, 2); // seleciona linha estatica
-					PessoaDAO dao = PessoaDAO.getInstancia();
-
-					pessoaEditar = dao.buscarPessoaCpf(valorCpf);
-
-					txtNome.setText(pessoaEditar.getNome());
-					txtSobrenome.setText(pessoaEditar.getSobrenome());
-					txtCpf.setText(String.valueOf(pessoaEditar.getCpf()));
-					txtSenha.setText(pessoaEditar.getSenha());
-
-					txtCpf.setEnabled(false);
-
-				}
-
-			}
-		});
-		btnNewButton_3.setBackground(new Color(137, 27, 224));
-		btnNewButton_3.setForeground(new Color(255, 255, 255));
-		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 12));
-
-		JLabel lblNewLabel_5 = new JLabel("Email:");
-		lblNewLabel_5.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		lblNewLabel_5.setForeground(new Color(0, 0, 0));
-
-		JLabel lblNewLabel_6 = new JLabel("Senha:");
-		lblNewLabel_6.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-		lblNewLabel_6.setForeground(new Color(0, 0, 0));
-
-		txtEmail = new JTextField();
-		txtEmail.setColumns(10);
-
-		txtSenha = new JPasswordField();
-
 		JScrollPane scrollPane = new JScrollPane();
 		modelo = new DefaultTableModel();
 		table = new JTable();
 		table.setModel(modelo);
 		table.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
-		table.getTableHeader().setBackground(new Color(67, 1, 100));
+		table.getTableHeader().setBackground(new Color(251, 245, 255));
 		scrollPane.setViewportView(table);
-		table.getTableHeader().setForeground(Color.WHITE);
+		table.getTableHeader().setForeground(Color.BLACK);
         table.setRowHeight(25);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        table.setGridColor(Color.LIGHT_GRAY);
+        table.setGridColor(Color.WHITE);
 
 		scrollPane.setViewportView(table);
 		modelo = new DefaultTableModel();
 		table.setModel(modelo);
-
-		JButton btnSalvaUpdate = new JButton("Salvar alterações"); //nao ta salvendano essa bomba
-		btnSalvaUpdate.setForeground(new Color(137, 27, 224));
-		btnSalvaUpdate.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				PessoaDAO dao = PessoaDAO.getInstancia();
-
-				String nome = txtNome.getText();
-				String sobrenome = txtSobrenome.getText();
-				
-				String cpf = txtCpf.getText();
-				cpf = cpf.replaceAll("[.-]", ""); // Remove pontos e traço da máscara
-				pessoaEditar.setCpf(Long.parseLong(cpf));
-				
-				String senha = txtSenha.getText();
-
-				
-				pessoaEditar.setNome(nome);
-				pessoaEditar.setSobrenome(sobrenome);
-				pessoaEditar.setCpf(Long.parseLong(cpf));
-				pessoaEditar.setSenha(senha);
-
-				dao.alterarPessoa(pessoaEditar);
-				atualiza();
-				txtCpf.setEnabled(true);
-
-			}
-		});
 		
 		JButton btnNewButton_4 = new JButton("Voltar a Tela Inicial");
 		btnNewButton_4.addActionListener(new ActionListener() {
@@ -282,99 +113,273 @@ public class VisaoCadastroUsuario extends JFrame {
 		});
 		btnNewButton_4.setForeground(new Color(137, 27, 224));
 		btnNewButton_4.setFont(new Font("Tahoma", Font.BOLD, 12));
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(67, 1, 108));
+		
+		JPanel panel_6 = new JPanel();
+		panel_6.setBackground(new Color(67, 1, 108));
 
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 1271, Short.MAX_VALUE)
-							.addGap(1345))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addPreferredGap(ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
-									.addComponent(btnCadastrar, GroupLayout.PREFERRED_SIZE, 175, GroupLayout.PREFERRED_SIZE))
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
-										.addComponent(lblCpf, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(lblSobrenome, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-										.addComponent(lblNome, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE))
-									.addPreferredGap(ComponentPlacement.RELATED)
-									.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-										.addComponent(txtCpf, GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
-										.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
-											.addComponent(txtSobrenome)
-											.addComponent(txtNome, GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE))
-										.addComponent(txtEmail, GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
-										.addComponent(txtSenha, GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)))
-								.addComponent(btnListaUsuario, GroupLayout.PREFERRED_SIZE, 153, GroupLayout.PREFERRED_SIZE))
-							.addGap(446)
-							.addComponent(btnExcluir, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addGap(18)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(btnSalvaUpdate, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 139, GroupLayout.PREFERRED_SIZE))
-							.addGap(1552))
-						.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 284, GroupLayout.PREFERRED_SIZE)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(lblNewLabel_5)
-							.addContainerGap(1249, Short.MAX_VALUE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(lblNewLabel_6)
-							.addContainerGap(1246, Short.MAX_VALUE))))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(669)
-					.addComponent(btnNewButton_4, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(1759, Short.MAX_VALUE))
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+						.addComponent(panel, GroupLayout.PREFERRED_SIZE, 573, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel_6, GroupLayout.PREFERRED_SIZE, 573, GroupLayout.PREFERRED_SIZE))
+					.addGap(18)
+					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
+					.addContainerGap())
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
+					.addContainerGap()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(93)
-							.addComponent(lblNewLabel)
+							.addComponent(panel_6, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblNome))
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(lblSobrenome)
-								.addComponent(txtSobrenome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(lblCpf)
-								.addComponent(txtCpf, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addGap(18)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(lblNewLabel_5)
-								.addComponent(txtEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addGap(18)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblNewLabel_6)
-								.addComponent(txtSenha, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-							.addGap(70)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(btnListaUsuario, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnCadastrar, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(btnNewButton_4, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-							.addGap(81)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
-								.addComponent(btnExcluir, GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
-							.addGap(18)
-							.addComponent(btnSalvaUpdate, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-							.addGap(150)))
-					.addGap(90)
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 403, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
+							.addComponent(panel, GroupLayout.PREFERRED_SIZE, 528, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap(445, Short.MAX_VALUE))
+						.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 1040, Short.MAX_VALUE)))
 		);
+		panel_6.setLayout(null);
+		
+		JButton btnNewButton_4 = new JButton("Voltar a Tela Inicial");
+		btnNewButton_4.setBounds(23, 11, 147, 36);
+		panel_6.add(btnNewButton_4);
+		btnNewButton_4.setForeground(new Color(137, 27, 224));
+		btnNewButton_4.setFont(new Font("Tahoma", Font.BOLD, 12));
+		panel.setLayout(null);
+				
+				visao.RoundedPanel painelCadastro = new visao.RoundedPanel(100, Color.WHITE);
+				//JPanel painelCadastro = new JPanel();
+				painelCadastro.setBackground(new Color(67, 1, 108));
+				painelCadastro.setBounds(10, 11, 377, 492);
+				panel.add(painelCadastro);
+				painelCadastro.setLayout(null);
+		
+				JLabel lblNewLabel = new JLabel("Dados Usuário");
+				lblNewLabel.setBounds(21, 34, 284, 28);
+				painelCadastro.add(lblNewLabel);
+				lblNewLabel.setForeground(new Color(67, 1, 108));
+				lblNewLabel.setFont(new Font("Segoe UI Black", Font.BOLD, 20));
+						
+						JPanel panel_3 = new JPanel();
+						panel_3.setBounds(21, 73, 346, 55);
+						painelCadastro.add(panel_3);
+						panel_3.setBackground(new Color(255, 255, 255));
+						panel_3.setLayout(null);
+				
+						JLabel lblNome = new JLabel("Nome: ");
+						lblNome.setBounds(0, 2, 83, 16);
+						panel_3.add(lblNome);
+						lblNome.setFont(new Font("Segoe UI", Font.BOLD, 12));
+						lblNome.setForeground(new Color(0, 0, 0));
+						
+								txtNome = new JTextField();
+								txtNome.setBounds(0, 29, 346, 26);
+								panel_3.add(txtNome);
+								txtNome.setColumns(10);
+										
+										JPanel panel_2 = new JPanel();
+										panel_2.setBounds(21, 139, 346, 62);
+										painelCadastro.add(panel_2);
+										panel_2.setBackground(new Color(255, 255, 255));
+										panel_2.setLayout(null);
+								
+										JLabel lblSobrenome = new JLabel("Sobrenome:");
+										lblSobrenome.setBounds(0, 2, 83, 16);
+										panel_2.add(lblSobrenome);
+										lblSobrenome.setFont(new Font("Segoe UI", Font.BOLD, 12));
+										lblSobrenome.setForeground(new Color(0, 0, 0));
+										
+												txtSobrenome = new JTextField();
+												txtSobrenome.setBounds(0, 29, 346, 26);
+												panel_2.add(txtSobrenome);
+												txtSobrenome.setColumns(10);
+												
+												JPanel panel_1 = new JPanel();
+												panel_1.setBounds(21, 212, 346, 62);
+												painelCadastro.add(panel_1);
+												panel_1.setBackground(new Color(255, 255, 255));
+												panel_1.setLayout(null);
+												
+														JLabel lblCpf = new JLabel("CPF:");
+														lblCpf.setBounds(0, 1, 83, 16);
+														panel_1.add(lblCpf);
+														lblCpf.setFont(new Font("Segoe UI", Font.BOLD, 12));
+														lblCpf.setForeground(new Color(0, 0, 0));
+														
+																txtCpf = new JFormattedTextField(mascaraCpf);
+																txtCpf.setBounds(0, 28, 346, 26);
+																panel_1.add(txtCpf);
+																txtCpf.setColumns(10);
+																
+																JPanel panel_4 = new JPanel();
+																panel_4.setBounds(21, 284, 346, 55);
+																painelCadastro.add(panel_4);
+																panel_4.setBackground(new Color(255, 255, 255));
+																panel_4.setLayout(null);
+																
+																		JLabel lblNewLabel_6 = new JLabel("Senha:");
+																		lblNewLabel_6.setBounds(0, 1, 81, 16);
+																		panel_4.add(lblNewLabel_6);
+																		lblNewLabel_6.setFont(new Font("Segoe UI", Font.BOLD, 12));
+																		lblNewLabel_6.setForeground(new Color(0, 0, 0));
+																		
+																				txtSenha = new JPasswordField();
+																				txtSenha.setBounds(0, 28, 336, 26);
+																				panel_4.add(txtSenha);
+																				
+																						JButton btnListaUsuario = new JButton("Listar Usuários");
+																						btnListaUsuario.setBounds(21, 375, 167, 38);
+																						painelCadastro.add(btnListaUsuario);
+																						btnListaUsuario.setForeground(new Color(137, 27, 224));
+																						
+																								btnListaUsuario.addActionListener(new ActionListener() {
+																						
+																									@Override
+																									public void actionPerformed(ActionEvent e) {
+																										// TODO Auto-generated method stub
+																										atualiza();
+																									}
+																						
+																								});
+																								btnListaUsuario.setFont(new Font("Tahoma", Font.BOLD, 12));
+																								
+																										JButton btnCadastrar = new JButton("Cadastrar Usuário");
+																										btnCadastrar.setBounds(198, 374, 168, 39);
+																										painelCadastro.add(btnCadastrar);
+																										btnCadastrar.setBackground(new Color(137, 27, 224));
+																										
+																												btnCadastrar.addActionListener(new ActionListener() {
+																													/// colocar anos de edição dos livros e diminuir 1
+																													// int ano= LocalDate.now().getYear();
+																													// for(int i = 0; i<ano; i++) {
+																													// cbNomes.addItem(String.valueOf(ano));
+																													// }
+																													@Override
+																													public void actionPerformed(ActionEvent e) {
+																														Pessoa pessoa = new Pessoa();
+																										
+																														String nome = txtNome.getText();
+																														String sobrenome = txtSobrenome.getText();
+																														String cpfText = txtCpf.getText();
+																														cpfText = cpfText.replaceAll("[.-]", ""); // Remove pontos e traço da máscara
+																														Long cpf = Long.parseLong(cpfText);
+																														String senha = String.valueOf(txtSenha.getPassword());
+																										
+																														pessoa.setNome(nome);
+																														pessoa.setSobrenome(sobrenome);
+																														pessoa.setCpf(cpf);
+																														pessoa.setSenha(senha);
+																										
+																														txtNome.setText(null);
+																														txtSobrenome.setText(null);
+																														txtCpf.setText(null);
+																														txtSenha.setText(null);
+																										
+																														PessoaDAO dao = PessoaDAO.getInstancia();
+																														Boolean cadastrar = dao.cadastrarPessoa(pessoa);
+																														if (cadastrar) {
+																															JOptionPane.showMessageDialog(btnCadastrar, "Usuario cadastrado");
+																														} else {
+																															JOptionPane.showMessageDialog(btnCadastrar, "Usuario não foi cadastrado");
+																														}
+																										
+																													}
+																										
+																												});
+																												
+																														btnCadastrar.setForeground(new Color(255, 255, 255));
+																														
+																																btnCadastrar.setFont(new Font("Tahoma", Font.BOLD, 12));
+												
+														RoundedButton btnExcluir = new RoundedButton("Excluir Usuário"); //arredonda bordas do botão
+							
+														
+														
+														btnExcluir.setBounds(411, 32, 155, 35);
+														panel.add(btnExcluir);
+														btnExcluir.setBackground(Color.WHITE);
+														btnExcluir.addActionListener(new ActionListener() {
+
+															@Override
+															public void actionPerformed(ActionEvent e) {
+																int linhaSelect = table.getSelectedRow();
+																if (linhaSelect == -1) {
+																	JOptionPane.showMessageDialog(null, "Por favor, selecione uma linha");
+																} else {
+																	DefaultTableModel tabelapessoa = (DefaultTableModel) table.getModel();
+																	tabelapessoa.removeRow(linhaSelect);
+																}
+															}
+
+														});
+														btnExcluir.setForeground(new Color(247, 9, 68));
+														btnExcluir.setFont(new Font("Tahoma", Font.BOLD, 12));
+														
+																JButton btnNewButton_3 = new JButton("Alterar Usuário");
+																btnNewButton_3.setBounds(411, 81, 155, 32);
+																panel.add(btnNewButton_3);
+																btnNewButton_3.addActionListener(new ActionListener() {
+																	public void actionPerformed(ActionEvent e) {
+																		int LinhaSelect = table.getSelectedRow();
+																		if (LinhaSelect == -1) {
+																			JOptionPane.showMessageDialog(null, "Por favor, selecione uma linha");
+																		} else {
+																			long valorCpf = (long) table.getValueAt(LinhaSelect, 2); // seleciona linha estatica
+																			PessoaDAO dao = PessoaDAO.getInstancia();
+
+																			pessoaEditar = dao.buscarPessoaCpf(valorCpf);
+
+																			txtNome.setText(pessoaEditar.getNome());
+																			txtSobrenome.setText(pessoaEditar.getSobrenome());
+																			txtCpf.setText(String.valueOf(pessoaEditar.getCpf()));
+																			txtSenha.setText(pessoaEditar.getSenha());
+
+																			txtCpf.setEnabled(false);
+
+																		}
+
+																	}
+																});
+																btnNewButton_3.setBackground(new Color(255, 255, 255));
+																btnNewButton_3.setForeground(new Color(224, 169, 27));
+																btnNewButton_3.setFont(new Font("Segoe UI", Font.BOLD, 12));
+																
+																		JButton btnSalvaUpdate = new JButton("Salvar alterações"); //nao ta salvendano essa bomba
+																		btnSalvaUpdate.setBackground(new Color(255, 255, 255));
+																		btnSalvaUpdate.setBounds(411, 136, 155, 30);
+																		panel.add(btnSalvaUpdate);
+																		btnSalvaUpdate.setFont(new Font("Segoe UI", Font.BOLD, 12));
+																		btnSalvaUpdate.setForeground(new Color(0, 128, 128));
+																		btnSalvaUpdate.addActionListener(new ActionListener() {
+																			public void actionPerformed(ActionEvent e) {
+																				PessoaDAO dao = PessoaDAO.getInstancia();
+
+																				String nome = txtNome.getText();
+																				String sobrenome = txtSobrenome.getText();
+																				
+																				String cpf = txtCpf.getText();
+																				cpf = cpf.replaceAll("[.-]", ""); // Remove pontos e traço da máscara
+																				pessoaEditar.setCpf(Long.parseLong(cpf));
+																				
+																				String senha = txtSenha.getText();
+
+																				
+																				pessoaEditar.setNome(nome);
+																				pessoaEditar.setSobrenome(sobrenome);
+																				pessoaEditar.setCpf(Long.parseLong(cpf));
+																				pessoaEditar.setSenha(senha);
+
+																				dao.alterarPessoa(pessoaEditar);
+																				atualiza();
+																				txtCpf.setEnabled(true);
+
+																			}
+																		});
 		contentPane.setLayout(gl_contentPane);
 
 		modelo.addColumn("Nome");

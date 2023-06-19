@@ -187,7 +187,7 @@ public class VisaoLogin extends JFrame {
 		btnNewButton.setBackground(new Color(137, 27, 224));
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 14));
-		btnNewButton.setBounds(146, 355, 147, 37);
+		btnNewButton.setBounds(230, 365, 191, 37);
 		btnNewButton.setBounds(274, 365, 147, 37);
 
 		btnNewButton.addActionListener(new ActionListener() {
@@ -264,6 +264,13 @@ public class VisaoLogin extends JFrame {
 		btnSenha.setIcon(new ImageIcon("img/olhocerto.png"));
 		btnSenha.setBounds(394, 293, 27, 23);
 		painelLogin.add(btnSenha);
+		
+		JButton btnLogin = new JButton("Já possui uma conta? Clique aqui!");
+		btnLogin.setForeground(Color.WHITE);
+		btnLogin.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		btnLogin.setBackground(new Color(67, 1, 108));
+		btnLogin.setBounds(35, 365, 172, 35);
+		painelLogin.add(btnLogin);
 
 	}
 }
