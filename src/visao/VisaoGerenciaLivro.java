@@ -75,20 +75,26 @@ public class VisaoGerenciaLivro extends JFrame {
 		contentPane.setBackground(new Color(67, 1, 108));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new BorderLayout(0, 0));
+		contentPane.setLayout(null);
 
 		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(10, 25, 412, 63);
 		panel_1.setForeground(new Color(0, 64, 128));
-		panel_1.setBackground(Color.WHITE);
-		contentPane.add(panel_1, BorderLayout.WEST);
+		panel_1.setBackground(new Color(67, 1, 108));
+		contentPane.add(panel_1);
 
-		JButton btnVoltaTI = new JButton("Voltar a Tela Inicial");
-		btnVoltaTI.setBackground(new Color(137, 27, 224));
+		RoundedButton btnVoltaTI = new RoundedButton("Voltar a Tela Inicial");
+		btnVoltaTI.setBounds(23, 11, 147, 36);
+		btnVoltaTI.setBackground(new Color(255, 255, 255));
 		btnVoltaTI.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				VisaoTelaInicial telaInicial = new VisaoTelaInicial();
+				telaInicial.setVisible(true);
+				telaInicial.setExtendedState(MAXIMIZED_BOTH);
+				dispose();
 			}
 		});
-		btnVoltaTI.setForeground(new Color(255, 255, 255));
+		btnVoltaTI.setForeground(new Color(137, 27, 224));
 		btnVoltaTI.setFont(new Font("Segoe UI", Font.BOLD, 12));
 		btnVoltaTI.addActionListener(new ActionListener() {
 
@@ -101,34 +107,25 @@ public class VisaoGerenciaLivro extends JFrame {
 			}
 
 		});
-		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		panel_1.setLayout(null);
 		panel_1.add(btnVoltaTI);
 
 		JPanel panel_2 = new JPanel();
+		panel_2.setBounds(10, 90, 741, 699);
 		panel_2.setForeground(new Color(137, 27, 224));
-		panel_2.setBorder(new TitledBorder(null, "Dados dos Livros", TitledBorder.LEADING, TitledBorder.TOP, null,
-				new Color(137, 27, 224)));
-		panel_2.setBackground(Color.WHITE);
-		contentPane.add(panel_2, BorderLayout.CENTER);
+		panel_2.setBackground(new Color(67, 1, 108));
+		contentPane.add(panel_2);
 		panel_2.setLayout(null);
-
-		JLabel lblNewLabel_1 = new JLabel("Dados dos Livros");
-		lblNewLabel_1.setBounds(35, 11, 236, 28);
-		lblNewLabel_1.setForeground(new Color(67, 1, 108));
-		lblNewLabel_1.setFont(new Font("Segoe UI Black", Font.BOLD, 20));
-		panel_2.add(lblNewLabel_1);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(35, 38, 470, 218);
-		panel.setForeground(new Color(255, 255, 255));
-		panel.setBackground(new Color(255, 255, 255));
-		panel.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_2.add(panel);
-		panel.setLayout(null);
+		RoundedPanel panelCadastro = new RoundedPanel(100, Color.WHITE);
+		panelCadastro.setBounds(10, 21, 470, 534);
+		panelCadastro.setBackground(new Color(67, 1, 108));
+		panel_2.add(panelCadastro);
+		panelCadastro.setLayout(null);
 
 		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(6, 11, 415, 20);
-		panel.add(panel_3);
+		panel_3.setBounds(14, 114, 440, 50);
+		panelCadastro.add(panel_3);
 		panel_3.setBackground(Color.WHITE);
 		panel_3.setLayout(null);
 
@@ -137,16 +134,16 @@ public class VisaoGerenciaLivro extends JFrame {
 		lblTitulo.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		lblTitulo.setBounds(0, 0, 62, 18);
 		panel_3.add(lblTitulo);
-
-		txtTitulo = new JTextField();
-		txtTitulo.setForeground(new Color(0, 0, 0));
-		txtTitulo.setBounds(116, 0, 299, 20);
-		panel_3.add(txtTitulo);
-		txtTitulo.setColumns(10);
+		
+				txtTitulo = new JTextField();
+				txtTitulo.setBounds(0, 23, 440, 27);
+				panel_3.add(txtTitulo);
+				txtTitulo.setForeground(new Color(0, 0, 0));
+				txtTitulo.setColumns(10);
 
 		JPanel panel_4 = new JPanel();
-		panel_4.setBounds(6, 42, 415, 20);
-		panel.add(panel_4);
+		panel_4.setBounds(14, 174, 440, 46);
+		panelCadastro.add(panel_4);
 		panel_4.setBackground(Color.WHITE);
 		panel_4.setLayout(null);
 
@@ -155,15 +152,15 @@ public class VisaoGerenciaLivro extends JFrame {
 		lblAutor.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		lblAutor.setBounds(0, 0, 124, 18);
 		panel_4.add(lblAutor);
-
-		txtAutor = new JTextField();
-		txtAutor.setBounds(115, 0, 300, 20);
-		panel_4.add(txtAutor);
-		txtAutor.setColumns(10);
+		
+				txtAutor = new JTextField();
+				txtAutor.setBounds(0, 20, 440, 26);
+				panel_4.add(txtAutor);
+				txtAutor.setColumns(10);
 
 		JPanel panel_5 = new JPanel();
-		panel_5.setBounds(246, 140, 175, 20);
-		panel.add(panel_5);
+		panel_5.setBounds(239, 351, 215, 55);
+		panelCadastro.add(panel_5);
 		panel_5.setBackground(Color.WHITE);
 		panel_5.setLayout(null);
 
@@ -172,15 +169,15 @@ public class VisaoGerenciaLivro extends JFrame {
 		lblNewLabel_2.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		lblNewLabel_2.setBounds(0, 0, 29, 18);
 		panel_5.add(lblNewLabel_2);
-
-		txtIsbn = new JTextField();
-		txtIsbn.setBounds(39, 0, 136, 20);
-		panel_5.add(txtIsbn);
-		txtIsbn.setColumns(10);
+		
+				txtIsbn = new JTextField();
+				txtIsbn.setBounds(0, 28, 215, 27);
+				panel_5.add(txtIsbn);
+				txtIsbn.setColumns(10);
 
 		JPanel panel_6 = new JPanel();
-		panel_6.setBounds(6, 104, 415, 20);
-		panel.add(panel_6);
+		panel_6.setBounds(14, 290, 440, 44);
+		panelCadastro.add(panel_6);
 		panel_6.setBackground(Color.WHITE);
 		panel_6.setLayout(null);
 
@@ -189,15 +186,15 @@ public class VisaoGerenciaLivro extends JFrame {
 		lblAno.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		lblAno.setBounds(0, 0, 29, 18);
 		panel_6.add(lblAno);
-
-		txtAno = new JTextField();
-		txtAno.setBounds(116, 0, 299, 20);
-		panel_6.add(txtAno);
-		txtAno.setColumns(10);
+		
+				txtAno = new JTextField();
+				txtAno.setBounds(0, 21, 440, 23);
+				panel_6.add(txtAno);
+				txtAno.setColumns(10);
 
 		JPanel panel_7 = new JPanel();
-		panel_7.setBounds(6, 73, 415, 20);
-		panel.add(panel_7);
+		panel_7.setBounds(14, 230, 440, 50);
+		panelCadastro.add(panel_7);
 		panel_7.setBackground(Color.WHITE);
 		panel_7.setLayout(null);
 
@@ -206,15 +203,15 @@ public class VisaoGerenciaLivro extends JFrame {
 		lblEditora.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		lblEditora.setBounds(0, 0, 124, 18);
 		panel_7.add(lblEditora);
+		
+				txtEditora = new JTextField();
+				txtEditora.setBounds(0, 24, 440, 26);
+				panel_7.add(txtEditora);
+				txtEditora.setColumns(10);
 
-		txtEditora = new JTextField();
-		txtEditora.setBounds(115, 0, 300, 20);
-		panel_7.add(txtEditora);
-		txtEditora.setColumns(10);
-
-		JButton btnCadastro = new JButton("Cadastrar");
-		btnCadastro.setBounds(236, 171, 185, 38);
-		panel.add(btnCadastro);
+		RoundedButton btnCadastro = new RoundedButton("Cadastrar");
+		btnCadastro.setBounds(253, 441, 201, 38);
+		panelCadastro.add(btnCadastro);
 		btnCadastro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Livro livro = new Livro();
@@ -254,10 +251,10 @@ public class VisaoGerenciaLivro extends JFrame {
 		btnCadastro.setBorder(new LineBorder(new Color(0, 64, 128)));
 		btnCadastro.setBackground(new Color(137, 27, 224));
 
-		JButton btnNewButton = new JButton("Limpar");
-		btnNewButton.setBounds(10, 169, 205, 38);
-		panel.add(btnNewButton);
-		btnNewButton.addActionListener(new ActionListener() {
+		RoundedButton btnLimpar = new RoundedButton("Limpar");
+		btnLimpar.setBounds(10, 441, 205, 38);
+		panelCadastro.add(btnLimpar);
+		btnLimpar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				txtTitulo.setText("");
 				txtAutor.setText("");
@@ -268,31 +265,38 @@ public class VisaoGerenciaLivro extends JFrame {
 			}
 		});
 
-		btnNewButton.setForeground(new Color(137, 27, 224));
-		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 13));
-		btnNewButton.setBorder(new LineBorder(new Color(137, 27, 224)));
-		btnNewButton.setBackground(new Color(255, 255, 255));
+		btnLimpar.setForeground(new Color(137, 27, 224));
+		btnLimpar.setFont(new Font("Segoe UI", Font.BOLD, 13));
+		btnLimpar.setBorder(new LineBorder(new Color(137, 27, 224)));
+		btnLimpar.setBackground(new Color(240, 240, 240));
 				
 				JPanel panel_8 = new JPanel();
 				panel_8.setForeground(new Color(255, 255, 255));
 				panel_8.setBackground(new Color(255, 255, 255));
-				panel_8.setBounds(10, 140, 226, 20);
-				panel.add(panel_8);
+				panel_8.setBounds(14, 351, 201, 55);
+				panelCadastro.add(panel_8);
 				panel_8.setLayout(null);
+				
+						JLabel lblNrEdicao = new JLabel("Número Edição:");
+						lblNrEdicao.setBounds(0, 0, 103, 18);
+						panel_8.add(lblNrEdicao);
+						lblNrEdicao.setForeground(Color.BLACK);
+						lblNrEdicao.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		
 				txtNrEdicao = new JTextField();
-				txtNrEdicao.setBounds(113, 0, 113, 20);
+				txtNrEdicao.setBounds(0, 28, 201, 27);
 				panel_8.add(txtNrEdicao);
 				txtNrEdicao.setColumns(10);
+				
+						JLabel lblNewLabel_1 = new JLabel("Dados Livros");
+						lblNewLabel_1.setBackground(new Color(67, 1, 108));
+						lblNewLabel_1.setBounds(14, 36, 236, 28);
+						panelCadastro.add(lblNewLabel_1);
+						lblNewLabel_1.setForeground(new Color(67, 1, 108));
+						lblNewLabel_1.setFont(new Font("Segoe UI Black", Font.BOLD, 30));
 
-		JLabel lblNrEdicao = new JLabel("Número Edição:");
-		lblNrEdicao.setBounds(0, 2, 103, 18);
-		panel_8.add(lblNrEdicao);
-		lblNrEdicao.setForeground(Color.BLACK);
-		lblNrEdicao.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-
-		JButton btnExcluir = new JButton("Excluir ");
-		btnExcluir.setBounds(748, 41, 207, 38);
+		RoundedButton btnExcluir = new RoundedButton("Excluir ");
+		btnExcluir.setBounds(508, 44, 207, 38);
 		btnExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int LinhaSelect = table.getSelectedRow();
@@ -309,11 +313,11 @@ public class VisaoGerenciaLivro extends JFrame {
 		btnExcluir.setForeground(new Color(247, 9, 68));
 		btnExcluir.setFont(new Font("Segoe UI", Font.BOLD, 13));
 		btnExcluir.setBorder(new BevelBorder(BevelBorder.LOWERED, new Color(247, 9, 68), new Color(247, 9, 68), new Color(247, 9, 68), new Color(247, 9, 68)));
-		btnExcluir.setBackground(new Color(255, 255, 255));
+		btnExcluir.setBackground(new Color(240, 240, 240));
 		panel_2.add(btnExcluir);
 
-		JButton btnAltera = new JButton(" Alterar");
-		btnAltera.setBounds(748, 90, 207, 38);
+		RoundedButton btnAltera = new RoundedButton(" Alterar");
+		btnAltera.setBounds(508, 101, 207, 38);
 		btnAltera.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -340,11 +344,11 @@ public class VisaoGerenciaLivro extends JFrame {
 		btnAltera.setForeground(new Color(224, 169, 27));
 		btnAltera.setFont(new Font("Segoe UI", Font.BOLD, 13));
 		btnAltera.setBorder(new BevelBorder(BevelBorder.LOWERED, new Color(224, 169, 27), new Color(224, 169, 27), new Color(224, 169, 27), new Color(224, 169, 27)));
-		btnAltera.setBackground(new Color(255, 255, 255));
+		btnAltera.setBackground(new Color(240, 240, 240));
 		panel_2.add(btnAltera);
 
-		JButton btnSalvaUpdate = new JButton("Salvar Alterações");
-		btnSalvaUpdate.setBounds(748, 139, 207, 38);
+		RoundedButton btnSalvaUpdate = new RoundedButton("Salvar Alterações");
+		btnSalvaUpdate.setBounds(508, 160, 207, 38);
 		btnSalvaUpdate.setBackground(new Color(137, 27, 224));
 		btnSalvaUpdate.setForeground(new Color(255, 255, 255));
 		btnSalvaUpdate.setFont(new Font("Segoe UI", Font.BOLD, 13));
@@ -378,14 +382,13 @@ public class VisaoGerenciaLivro extends JFrame {
 		panel_2.add(btnSalvaUpdate);
 
 		JPanel tableLivro = new JPanel();
-		tableLivro.setBorder(new TitledBorder(null, "Lista de Livros", TitledBorder.LEADING, TitledBorder.TOP, null,
-				new Color(137, 27, 224)));
-		tableLivro.setBackground(Color.WHITE);
-		contentPane.add(tableLivro, BorderLayout.SOUTH);
+		tableLivro.setBounds(761, 10, 769, 825);
+		tableLivro.setBackground(new Color(67, 1, 108));
+		contentPane.add(tableLivro);
 		tableLivro.setLayout(new BorderLayout(0, 0));
 
 		JScrollPane scrollPane = new JScrollPane();
-		tableLivro.add(scrollPane, BorderLayout.SOUTH);
+		tableLivro.add(scrollPane, BorderLayout.CENTER);
 
 		table = new JTable();
 		modelo = new DefaultTableModel(new Object[][] {},
@@ -398,6 +401,10 @@ public class VisaoGerenciaLivro extends JFrame {
         table.setRowHeight(25);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         table.setGridColor(Color.LIGHT_GRAY);
+        
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(SwingConstants.CENTER);
+        table.setDefaultRenderer(Object.class, centerRenderer);
         
             
 	}
