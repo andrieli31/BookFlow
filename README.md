@@ -18,8 +18,9 @@
 
 
 > **DIAGRAMA DE CASOS DE USO**
+![Uploading Diagrama sem nome.jpg…]()
 
-  ![Diagrama de casos de uso](https://github.com/andrieli31/estudo-de-caso-livraria/assets/95760996/15aeb789-5efc-4e98-a0b2-1af9a00bd078)
+
 
 > **DESCRIÇÃO DO FLUXO DE TELAS DO SISTEMA**
 
