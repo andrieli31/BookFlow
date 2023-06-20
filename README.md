@@ -1,20 +1,41 @@
-> **DESCRIÇÃO DAS FUNCIONALIDADES DO SISTEMA**
+![Texto Alternativo](/bookflow.png)
 
-    O sistema de livraria proposto no estudo de caso possui as seguintes funcionalidades e suas respectivas descrições:
-    1. Cadastro de conta, que é feita no início do sistema e obtém dados do novo usuário como CPF e senha, registrando-o no sistema.
-    2. Realização de login no sistema, que é realizada no início do sistema, quando então o usuário valida suas informações de login e senha e obtém o acesso a tela inicial do sistema.
-    3. Cadastro de usuário, a qual é realizado obtendo informações como nome, email e senha.
-    4. Cadastro de livro, a qual é realizado obtendo informações como o ISBN do livro, seu título, ano de publicação e seu(s) autor(es).
-    5. Cadastro de categoria, o qual é realizado obtendo informações como gênero, quantidade de páginas e idioma.
-    6. Consulta de livros, que é feita, no sistema, no gerenciamento de livros e mostra todos os registros de livros cadastrados.
-    7. Consulta de usuários, que é feita, no sistema, no gerenciamento de usuários e mostra todos os registros de usuários cadastrados.
-    8. Consulta de categoria, que é feita, no sistema, no gerenciamento de categorias e mostra todos os registros de categorias cadastrados.
-    9. Excluir usuário, a qual é realizada, no sistema, no gerenciamento de usuários na opção de exclusão e exclui o registro selecionado do sistema.
-    10. Excluir livro, a qual é realizada, no sistema, no gerenciamento de livros na opção de exclusão e exclui o registro selecionado do sistema.
-    11. Excluir categoria, a qual é realizada, no sistema, no gerenciamento de categorias na opção de exclusão e exclui o registro selecionado do sistema.
-    12. Alteração de dados de livro, que é realizada, no sistema, no gerenciamento de livros na opção de atualização de dados de livro, a qual preenche os campos com os dados já cadastrados para a inserção de novos dados no cadastro já existente.
-    13. Alteração de dados de usuário, que é realizada, no sistema, no gerenciamento de usuários na opção de alteração de dados de usuário, a qual preenche os campos com os dados já cadastrados para a inserção de novos dados no cadastro já existente.
-    14. Alteração de dados de categoria, que é realizada, no sistema, no gerenciamento de categorias na opção de atualização de dados de categoria, a qual preenche os campos com os dados já cadastrados para a inserção de novos dados no cadastro já existente.
+![Status](https://img.shields.io/badge/Status-Concluído-brightgreen.svg) ![Versão](https://img.shields.io/badge/Versão-1.0-brightgreen.svg) ![Licença](https://img.shields.io/badge/License-MIT-blue.svg)
+
+
+
+
+DESCRIÇÃO DAS FUNCIONALIDADES DO SISTEMA
+
+O sistema de livraria proposto no estudo de caso possui as seguintes funcionalidades e suas respectivas descrições:
+
+Cadastro de conta: é feito no início do sistema e obtém dados do novo usuário como CPF e senha, registrando-o no sistema.
+
+Realização de login no sistema: é realizada no início do sistema, quando o usuário valida suas informações de login e senha e obtém acesso à tela inicial do sistema.
+
+Cadastro de usuário: é realizado obtendo informações como nome, email e senha.
+
+Cadastro de livro: é realizado obtendo informações como o ISBN do livro, seu título, ano de publicação e seu(s) autor(es).
+
+Cadastro de categoria: é realizado obtendo informações como gênero, quantidade de páginas e idioma.
+
+Consulta de livros: é feita no sistema, no gerenciamento de livros, e mostra todos os registros de livros cadastrados.
+
+Consulta de usuários: é feita no sistema, no gerenciamento de usuários, e mostra todos os registros de usuários cadastrados.
+
+Consulta de categoria: é feita no sistema, no gerenciamento de categorias, e mostra todos os registros de categorias cadastrados.
+
+Excluir usuário: é realizada no sistema, no gerenciamento de usuários na opção de exclusão, e exclui o registro selecionado do sistema.
+
+Excluir livro: é realizada no sistema, no gerenciamento de livros na opção de exclusão, e exclui o registro selecionado do sistema.
+
+Excluir categoria: é realizada no sistema, no gerenciamento de categorias na opção de exclusão, e exclui o registro selecionado do sistema.
+
+Alteração de dados de livro: é realizada no sistema, no gerenciamento de livros na opção de atualização de dados de livro, preenchendo os campos com os dados já cadastrados para a inserção de novos dados no cadastro existente.
+
+Alteração de dados de usuário: é realizada no sistema, no gerenciamento de usuários na opção de alteração de dados de usuário, preenchendo os campos com os dados já cadastrados para a inserção de novos dados no cadastro existente.
+
+Alteração de dados de categoria: é realizada no sistema, no gerenciamento de categorias na opção de atualização de dados de categoria, preenchendo os campos com os dados já cadastrados para a inserção de novos dados no cadastro existente.
 
 
 > **DIAGRAMA DE CASOS DE USO**
