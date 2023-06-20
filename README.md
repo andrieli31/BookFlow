@@ -58,4 +58,5 @@ Alteração de dados de categoria: é realizada no sistema, no gerenciamento de 
 
 > **DIAGRAMA DE CLASSES**
 
-  ![Diagrama de classes](https://github.com/andrieli31/estudo-de-caso-livraria/assets/95760996/2c142d2b-b1fe-4d16-9826-7f6c40d1c0d5)
+  ![diagramaDeClasses](https://github.com/andrieli31/BookFlow/assets/84353670/440c7332-e29d-4344-9bfd-d7c71ee94fdd)
+
