@@ -1,5 +1,9 @@
 package controle;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import modelo.Categoria;
@@ -11,28 +15,87 @@ public class CategoriaDAO implements ICategoriaDAO {
 	private static CategoriaDAO instancia;
 
 	private CategoriaDAO() {
-
 	}
 
-	public static CategoriaDAO getInstancia() {
-		if (instancia == null) {
-			instancia = new CategoriaDAO();
-			tabelaCategorias = new ArrayList<>();
+	// inserir no banco
+	public boolean inserir(Categoria e) {
+
+		// instancia a classe conexao
+		Conexao c = Conexao.getInstancia();
+		// abre a conexao com o banco
+		Connection con = c.conectar();
+
+		String query = "INSERT INTO categoria (idCategoria, ididioma, quantPaginas, genero) VALUES (?, ?, ?, ?);";
+
+		try {
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setLong(1, e.getIdCategoria());
+			ps.setString(2, e.getIdioma());
+			ps.setLong(3, e.getQuantPaginas());
+			ps.setString(4, e.getGenero());
+
+			ps.executeUpdate();
+
+			c.fecharConexao();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+			// retorna false se der errado
+			return false;
 		}
-		return instancia;
-
+		// retorna true se der certo
+		return true;
 	}
 
-	@Override
-	public boolean cadastarCategoria(Categoria c) {
-		if (c != null) {
-			tabelaCategorias.add(c);
+	// public static CategoriaDAO getInstancia() {
+	// if (instancia == null) {
+	// instancia = new CategoriaDAO();
+	// tabelaCategorias = new ArrayList<>();
+	// }
+	// return instancia;
+
+	// }
+
+	// @Override
+	// public boolean cadastarCategoria(Categoria c) {
+	// if (c != null) {
+	// tabelaCategorias.add(c);
+	// return true;
+	// }
+
+	// return false;
+	// }
+
+	
+	// alterar
+	public boolean atualizar(Categoria f) {
+
+		Conexao c = Conexao.getInstancia();
+		Connection con = c.conectar();
+		
+		String query = "UPDATE categoria SET "
+				+ "idioma = ?, quantPaginas = ?, genero = ? WHERE idCategoria = ?";
+
+		try {
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setString(1, f.getIdioma());
+			ps.setInt(2, f.getQuantPaginas());
+			ps.setString(3, f.getGenero());
+			ps.setInt(4, f.getIdCategoria());
+			
+			ps.executeUpdate();
+			
+			c.fecharConexao();
 			return true;
+		}catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			c.fecharConexao();
 		}
-
+		
 		return false;
 	}
-
+	
+	
 	@Override
 	public boolean alterarCategoria(Categoria c) {
 		for (Categoria categoria : tabelaCategorias) {
@@ -60,14 +123,50 @@ public class CategoriaDAO implements ICategoriaDAO {
 		return false;
 	}
 
-	@Override
-	public ArrayList<Categoria> listarCategorias() {
-		if (!tabelaCategorias.isEmpty()) {
-			return this.tabelaCategorias;
+	// listar
+	public ArrayList<Categoria> listar() {
+
+		Conexao c = Conexao.getInstancia();
+		Connection con = c.conectar();
+
+		ArrayList<Categoria> categoria = new ArrayList<>();
+
+		String query = "SELECT * FROM categoria";
+
+		try {
+			PreparedStatement ps = con.prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				int IdCategoria = rs.getInt("idCategoria");
+				String Idioma = rs.getString("idioma");
+				int QuantPaginas = rs.getInt("quantPaginas");
+				String Genero = rs.getString("genero");
+
+				Categoria cat = new Categoria();
+				cat.setIdCategoria(IdCategoria);
+				cat.setIdioma(Idioma);
+				cat.setQuantPaginas(QuantPaginas);
+				cat.setGenero(Genero);
+
+				categoria.add(cat);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			c.fecharConexao();
 		}
-		return null;
+		return categoria;
 	}
-	
+
+	//@Override
+	//public ArrayList<Categoria> listarCategorias() {
+	//	if (!tabelaCategorias.isEmpty()) {
+	//		return this.tabelaCategorias;
+		//}
+		//return null;
+	//}
+
 	public Categoria buscarCategoriaPorID(int id) {
 		for (Categoria categoria : tabelaCategorias) {
 			if (categoria.getIdCategoria() == id) {
@@ -77,6 +176,5 @@ public class CategoriaDAO implements ICategoriaDAO {
 
 		return null;
 	}
-
 
 }
