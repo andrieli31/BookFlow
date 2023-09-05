@@ -65,15 +65,13 @@ public class CategoriaDAO  {
 	// return false;
 	// }
 
-	
 	// alterar
 	public boolean atualizar(Categoria f) {
 
 		Conexao c = Conexao.getInstancia();
 		Connection con = c.conectar();
-		
-		String query = "UPDATE categoria SET "
-				+ "idioma = ?, quantPaginas = ?, genero = ? WHERE idCategoria = ?";
+
+		String query = "UPDATE categoria SET " + "idioma = ?, quantPaginas = ?, genero = ? WHERE idCategoria = ?";
 
 		try {
 			PreparedStatement ps = con.prepareStatement(query);
@@ -81,45 +79,73 @@ public class CategoriaDAO  {
 			ps.setInt(2, f.getQuantPaginas());
 			ps.setString(3, f.getGenero());
 			ps.setInt(4, f.getIdCategoria());
-			
+
 			ps.executeUpdate();
-			
+
 			c.fecharConexao();
-			return true;
-		}catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
+			return false;
 		} finally {
 			c.fecharConexao();
 		}
-		
-		return false;
-	}
-	
-	
-	public boolean alterarCategoria(Categoria c) {
-		for (Categoria categoria : tabelaCategorias) {
-			if (categoria.getIdCategoria() == c.getIdCategoria()) {
 
-				categoria.setGenero(c.getGenero());
-				categoria.setQuantPaginas(c.getQuantPaginas());
-				categoria.setIdioma(c.getIdioma());
+		return true;
+	}
+
+	// @Override
+	// public boolean alterarCategoria(Categoria c) {
+	// for (Categoria categoria : tabelaCategorias) {
+	// if (categoria.getIdCategoria() == c.getIdCategoria()) {
+
+	// categoria.setGenero(c.getGenero());
+	// categoria.setQuantPaginas(c.getQuantPaginas());
+	// categoria.setIdioma(c.getIdioma());
+	// return true;
+	// }
+	// }
+
+	// return false;
+	// }
+
+	// excluir
+	public boolean excluir(Categoria e) {
+		Conexao c = Conexao.getInstancia();
+		Connection con = c.conectar();
+
+		String query = "DELETE FROM categoria WHERE idCategoria = ?";
+
+		try {
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setInt(1, e.getIdCategoria());
+
+			int rowsAffected = ps.executeUpdate();
+
+			if (rowsAffected > 0) {
+				c.fecharConexao();
 				return true;
 			}
-		}
+		} catch (SQLException e1) {
+			 e1.printStackTrace();
+	    } finally {
+	        c.fecharConexao();
+	    }
 
 		return false;
+
 	}
 
-	public boolean deletarCategoria(Categoria c, int idCategoria) {
+	// @Override
+	// public boolean deletarCategoria(Categoria c, int idCategoria) {
 
-		for (Categoria categoria : tabelaCategorias) {
-			if (categoria.getIdCategoria() == idCategoria) {
-				tabelaCategorias.remove(categoria);
-				return true;
-			}
-		}
-		return false;
-	}
+	// for (Categoria categoria : tabelaCategorias) {
+	// if (categoria.getIdCategoria() == idCategoria) {
+	// tabelaCategorias.remove(categoria);
+	// return true;
+	// }
+	// }
+	// return false;
+	// }
 
 	// listar
 	public ArrayList<Categoria> listar() {
@@ -157,13 +183,13 @@ public class CategoriaDAO  {
 		return categoria;
 	}
 
-	//@Override
-	//public ArrayList<Categoria> listarCategorias() {
-	//	if (!tabelaCategorias.isEmpty()) {
-	//		return this.tabelaCategorias;
-		//}
-		//return null;
-	//}
+	// @Override
+	// public ArrayList<Categoria> listarCategorias() {
+	// if (!tabelaCategorias.isEmpty()) {
+	// return this.tabelaCategorias;
+	// }
+	// return null;
+	// }
 
 	public Categoria buscarCategoriaPorID(int id) {
 		for (Categoria categoria : tabelaCategorias) {
