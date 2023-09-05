@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import modelo.Categoria;
 import modelo.ICategoriaDAO;
 
-public class CategoriaDAO implements ICategoriaDAO {
+public class CategoriaDAO  {
 
 	private static ArrayList<Categoria> tabelaCategorias;
 	private static CategoriaDAO instancia;
@@ -96,7 +96,6 @@ public class CategoriaDAO implements ICategoriaDAO {
 	}
 	
 	
-	@Override
 	public boolean alterarCategoria(Categoria c) {
 		for (Categoria categoria : tabelaCategorias) {
 			if (categoria.getIdCategoria() == c.getIdCategoria()) {
@@ -111,7 +110,6 @@ public class CategoriaDAO implements ICategoriaDAO {
 		return false;
 	}
 
-	@Override
 	public boolean deletarCategoria(Categoria c, int idCategoria) {
 
 		for (Categoria categoria : tabelaCategorias) {
