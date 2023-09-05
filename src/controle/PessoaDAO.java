@@ -1,5 +1,9 @@
 package controle;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 import java.util.ArrayList;
 
 import modelo.IPessoaDAO;
@@ -12,7 +16,37 @@ public class PessoaDAO implements IPessoaDAO {
 
 	/// Construtor
 
-	private PessoaDAO() {
+	//Inserindo pessoa no código:
+	private boolean inserir(Pessoa p) throws SQLException {
+		
+		//Instanciando a classe
+		Conexao c = Conexao.getInstancia();
+		
+		//Abrindo a conexão com o bd
+		Connection con = c.conectar();
+		
+		String query = "INSERT INTO pessoa (cpf, nome, sobrenome, senha) VALUES (?,?,?,?);";
+		
+		try {
+			//Criando um objeto
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setLong(1, p.getCpf());
+			ps.setString(2, p.getNome());
+			ps.setString(3, p.getSobrenome());
+			ps.setString(4, p.getSenha());
+			
+			//Realizando os comandos no banco
+			ps.executeUpdate();
+			
+			c.fecharConexao();
+			
+		} catch (SQLException e1) {
+			//Todo Auto-generated catch block
+			throw e1;
+		}
+		
+		return true; //True caso inserção
+		
 	}
 
 	/// Instanciando PessoaDAO
