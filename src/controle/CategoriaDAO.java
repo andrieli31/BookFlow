@@ -12,9 +12,8 @@ import modelo.ICategoriaDAO;
 public class CategoriaDAO  {
 
 	private static ArrayList<Categoria> tabelaCategorias;
-	private static CategoriaDAO instancia;
 
-	private CategoriaDAO() {
+	public CategoriaDAO() {
 	}
 
 	// inserir no banco
@@ -71,7 +70,7 @@ public class CategoriaDAO  {
 		Conexao c = Conexao.getInstancia();
 		Connection con = c.conectar();
 
-		String query = "UPDATE categoria SET " + "idioma = ?, quantPaginas = ?, genero = ? WHERE idCategoria = ?";
+		String query = "UPDATE categoria SET idioma = ?, quantPaginas = ?, genero = ? WHERE idCategoria = ?";
 
 		try {
 			PreparedStatement ps = con.prepareStatement(query);

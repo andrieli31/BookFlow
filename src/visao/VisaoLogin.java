@@ -213,17 +213,12 @@ public class VisaoLogin extends JFrame {
 				            msgErro = "Insira a senha.";
 				            txtSenha.requestFocus();
 				        } else {
-				            PessoaDAO dao = PessoaDAO.getInstancia();
+				            PessoaDAO dao = new PessoaDAO();
 				            String cpfStr = String.valueOf(cpf);
 				            
 				            Pessoa efetuarPessoa = dao.efetuarLogin(cpf, senha);
-
-				            
-				            
-				            
-				            if (efetuarPessoa != null) {
-				            	
-				            	
+		            
+				            if (efetuarPessoa != null) {			            	
 				                // Login válido
 				                VisaoTelaInicial frame = new VisaoTelaInicial();
 				                frame.setVisible(true);

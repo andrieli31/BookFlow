@@ -81,7 +81,7 @@ public class VisaoCadastroUsuario extends JFrame {
 
 		setContentPane(contentPane);
 
-		PessoaDAO daoPessoa = PessoaDAO.getInstancia();
+		PessoaDAO dao = new PessoaDAO();
 
 		MaskFormatter mascaraCpf = null;
 
@@ -268,6 +268,7 @@ public class VisaoCadastroUsuario extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Pessoa pessoa = new Pessoa();
+				PessoaDAO dao = new PessoaDAO();
 
 				String nome = txtNome.getText();
 				String sobrenome = txtSobrenome.getText();
@@ -286,13 +287,7 @@ public class VisaoCadastroUsuario extends JFrame {
 				txtCpf.setText(null);
 				txtSenha.setText(null);
 
-				PessoaDAO dao = PessoaDAO.getInstancia();
-				Boolean cadastrar = dao.cadastrarPessoa(pessoa);
-				if (cadastrar) {
-					JOptionPane.showMessageDialog(btnCadastrar, "Usuario cadastrado");
-				} else {
-					JOptionPane.showMessageDialog(btnCadastrar, "Usuario não foi cadastrado");
-				}
+				dao.inserir(pessoa);
 				atualiza();
 
 			}
@@ -312,6 +307,7 @@ public class VisaoCadastroUsuario extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				PessoaDAO dao = new PessoaDAO();
 				int linhaSelect = table.getSelectedRow();
 				if (linhaSelect == -1) {
 					JOptionPane.showMessageDialog(null, "Por favor, selecione uma linha");
@@ -335,17 +331,21 @@ public class VisaoCadastroUsuario extends JFrame {
 					JOptionPane.showMessageDialog(null, "Por favor, selecione uma linha");
 				} else {
 					long valorCpf = (long) table.getValueAt(LinhaSelect, 2); // seleciona linha estatica
-					PessoaDAO dao = PessoaDAO.getInstancia();
+					PessoaDAO dao = new PessoaDAO();
 
 					pessoaEditar = dao.buscarPessoaCpf(valorCpf);
 
+					if(pessoaEditar != null) {
 					txtNome.setText(pessoaEditar.getNome());
 					txtSobrenome.setText(pessoaEditar.getSobrenome());
 					txtCpf.setText(String.valueOf(pessoaEditar.getCpf()));
 					txtSenha.setText(pessoaEditar.getSenha());
 
 					txtCpf.setEnabled(false);
+					}else {
+				        JOptionPane.showMessageDialog(null, "Livro não encontrado para o ISBN selecionado");
 
+					}
 				}
 
 			}
@@ -362,11 +362,10 @@ public class VisaoCadastroUsuario extends JFrame {
 		btnSalvaUpdate.setForeground(new Color(0, 128, 128));
 		btnSalvaUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				PessoaDAO dao = PessoaDAO.getInstancia();
+				PessoaDAO dao = new PessoaDAO();
 
 				String nome = txtNome.getText();
 				String sobrenome = txtSobrenome.getText();
-
 				String cpf = txtCpf.getText();
 				cpf = cpf.replaceAll("[.-]", ""); // Remove pontos e traço da máscara
 				pessoaEditar.setCpf(Long.parseLong(cpf));
@@ -378,7 +377,7 @@ public class VisaoCadastroUsuario extends JFrame {
 				pessoaEditar.setCpf(Long.parseLong(cpf));
 				pessoaEditar.setSenha(senha);
 
-				dao.alterarPessoa(pessoaEditar);
+				dao.atualizar(pessoaEditar);
 				atualiza();
 				txtCpf.setEnabled(true);
 
@@ -394,7 +393,7 @@ public class VisaoCadastroUsuario extends JFrame {
 
 	public static void atualiza() {
 
-		PessoaDAO dao = PessoaDAO.getInstancia();
+		PessoaDAO dao = new PessoaDAO();
 		ArrayList<Pessoa> listaPessoas = dao.listarPessoas();
 
 		modelo.getDataVector().removeAllElements();

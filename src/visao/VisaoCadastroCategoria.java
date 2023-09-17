@@ -109,9 +109,10 @@ public class VisaoCadastroCategoria extends JFrame {
 
         					int valorId = (int) table.getValueAt(LinhaSelect, 3);
         					// validar se esse DAO ta certo
-        					CategoriaDAO dao = CategoriaDAO.getInstancia();
+        					CategoriaDAO dao = new CategoriaDAO();
 
         					categoriaEditar = dao.buscarCategoriaPorID(valorId);
+        					
         					txtIdioma.setText(categoriaEditar.getIdioma());
         					txtQuantPaginas.setText(String.valueOf(categoriaEditar.getQuantPaginas()));
         					txtGenero.setText(categoriaEditar.getGenero());
@@ -153,7 +154,7 @@ public class VisaoCadastroCategoria extends JFrame {
         		btnSalvaUpdate.setFont(new Font("Segoe UI", Font.BOLD, 13));
         		btnSalvaUpdate.addActionListener(new ActionListener() {
         			public void actionPerformed(ActionEvent e) {
-        				CategoriaDAO dao = CategoriaDAO.getInstancia();
+        				CategoriaDAO dao = new CategoriaDAO();
 
 
         				String idioma = txtIdioma.getText();
@@ -166,7 +167,7 @@ public class VisaoCadastroCategoria extends JFrame {
         				categoriaEditar.setGenero(genero);
         				categoriaEditar.setIdCategoria(Integer.parseInt(id));
 
-        				dao.alterarCategoria(categoriaEditar);
+        				dao.atualizar(categoriaEditar);
         				atualiza();
         				txtIdCategoria.setEnabled(true);
 
@@ -239,7 +240,7 @@ public class VisaoCadastroCategoria extends JFrame {
         			public void actionPerformed(ActionEvent e) {
         				Categoria categoria = new Categoria();
 
-        				CategoriaDAO dao = CategoriaDAO.getInstancia();
+        				CategoriaDAO dao = new CategoriaDAO();
 
         				String idioma = txtIdioma.getText();
         				String qntPag = txtQuantPaginas.getText();
@@ -251,7 +252,7 @@ public class VisaoCadastroCategoria extends JFrame {
         				categoria.setGenero(genero);
         				categoria.setIdCategoria(Integer.valueOf(id));
 
-        				dao.cadastarCategoria(categoria);
+        				dao.inserir(categoria);
 
         				modelo.addRow(new Object[] { categoria.getGenero(),
         						categoria.getQuantPaginas(), categoria.getIdioma(), categoria.getIdCategoria() });
@@ -370,8 +371,8 @@ public class VisaoCadastroCategoria extends JFrame {
 
 	public static void atualiza() {
 
-		CategoriaDAO dao = CategoriaDAO.getInstancia();
-		ArrayList<Categoria> categorias = dao.listarCategorias();
+		CategoriaDAO dao = new CategoriaDAO();
+		ArrayList<Categoria> categorias = dao.listar();
 
 		modelo.getDataVector().removeAllElements();
 

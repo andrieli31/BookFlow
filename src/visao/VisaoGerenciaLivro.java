@@ -216,7 +216,7 @@ public class VisaoGerenciaLivro extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Livro livro = new Livro();
 
-				LivroDAO dao = LivroDAO.getInstancia();
+				LivroDAO dao = new LivroDAO();
 
 				String titulo = txtTitulo.getText();
 				String editora = txtEditora.getText();
@@ -232,7 +232,7 @@ public class VisaoGerenciaLivro extends JFrame {
 				livro.setNrEdicao(numeroEdicao);
 				livro.setTitulo(titulo);
 
-				dao.cadastrarLivro(livro);
+				dao.inserir(livro);
 
 				modelo.addRow(new Object[] { livro.getTitulo(), livro.getAutor(), livro.getIsbn(), livro.getNrEdicao(),
 						livro.getEditora(), livro.getAnoLancamento() });
@@ -326,9 +326,11 @@ public class VisaoGerenciaLivro extends JFrame {
 					JOptionPane.showMessageDialog(null, "Por favor, selecione uma linha");
 				} else {
 					long valorIsbn = (long) table.getValueAt(LinhaSelect, 2);
-					LivroDAO dao = LivroDAO.getInstancia();
+					LivroDAO dao = new LivroDAO();
 
 					livroEditar = dao.buscarLivroPorIsbn(valorIsbn);
+					
+					if(livroEditar != null) {
 					txtTitulo.setText(livroEditar.getTitulo());
 					txtAutor.setText(livroEditar.getAutor());
 					txtIsbn.setText(String.valueOf(livroEditar.getIsbn()));
@@ -337,6 +339,10 @@ public class VisaoGerenciaLivro extends JFrame {
 					txtNrEdicao.setText(String.valueOf(livroEditar.getNrEdicao()));
 
 					txtIsbn.setEnabled(false);
+					}else {
+				        JOptionPane.showMessageDialog(null, "Livro não encontrado para o ISBN selecionado");
+
+					}
 				}
 
 			}
@@ -354,7 +360,7 @@ public class VisaoGerenciaLivro extends JFrame {
 		btnSalvaUpdate.setFont(new Font("Segoe UI", Font.BOLD, 13));
 		btnSalvaUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				LivroDAO dao = LivroDAO.getInstancia();
+				LivroDAO dao = new LivroDAO();
 
 				String titulo = txtTitulo.getText();
 				String autor = txtAutor.getText();
@@ -371,7 +377,7 @@ public class VisaoGerenciaLivro extends JFrame {
 				livroEditar.setNrEdicao(Integer.valueOf(nrEdicao));
 				livroEditar.setTitulo(titulo);
 				
-				dao.alterarLivro(livroEditar);
+				dao.atualizar(livroEditar);
 				atualiza();
 				txtIsbn.setEnabled(true);
 
@@ -411,8 +417,8 @@ public class VisaoGerenciaLivro extends JFrame {
 
 	public static void atualiza() {
 
-		LivroDAO dao = LivroDAO.getInstancia();
-		ArrayList<Livro> livros = dao.listarLivros();
+		LivroDAO dao = new LivroDAO();
+		ArrayList<Livro> livros = dao.listar();
 
 		modelo.getDataVector().removeAllElements();
 
