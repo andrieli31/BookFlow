@@ -100,7 +100,6 @@ public class VisaoCadastroUsuario extends JFrame {
 
 		JScrollPane scrollPane = new JScrollPane();
 		table = new JTable();
-		modelo = new DefaultTableModel();
 
 		table.setModel(modelo);
 		table.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
@@ -114,7 +113,7 @@ public class VisaoCadastroUsuario extends JFrame {
 		scrollPane.setViewportView(table);
 		modelo = new DefaultTableModel();
 		table.setModel(modelo);
-		//atualiza();
+		atualiza();
 
 		JButton btnNewButton_4 = new JButton("Voltar a Tela Inicial");
 		btnNewButton_4.addActionListener(new ActionListener() {
