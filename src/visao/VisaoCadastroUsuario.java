@@ -12,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
 
@@ -35,9 +37,6 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JTable;
 import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.Border;
-import javax.swing.border.CompoundBorder;
 
 public class VisaoCadastroUsuario extends JFrame {
 
@@ -46,10 +45,11 @@ public class VisaoCadastroUsuario extends JFrame {
 	private JTextField txtSobrenome;
 	private JTextField txtCpf;
 	private JPasswordField txtSenha;
-	private static DefaultTableModel modelo;
+	private static DefaultTableModel modelo = new DefaultTableModel();
 	private JTable table;
 	private static Pessoa pessoaEditar;
 	private JButton btnVoltaTI;
+
 	/**
 	 * Launch the application.
 	 */
@@ -60,20 +60,16 @@ public class VisaoCadastroUsuario extends JFrame {
 				try {
 					VisaoCadastroUsuario frame = new VisaoCadastroUsuario();
 
-					
 					frame.setVisible(true);
 					frame.setExtendedState(MAXIMIZED_BOTH);
-				
-					} catch (Exception e) {
+
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
 	}
 
-
-
-	
 	/**
 	 * Create the frame.
 	 */
@@ -85,7 +81,6 @@ public class VisaoCadastroUsuario extends JFrame {
 		contentPane.setBackground(new Color(67, 1, 108));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-		
 		setContentPane(contentPane);
 
 		PessoaDAO dao = new PessoaDAO();
@@ -111,9 +106,6 @@ public class VisaoCadastroUsuario extends JFrame {
 		table.setGridColor(Color.WHITE);
 
 		scrollPane.setViewportView(table);
-		modelo = new DefaultTableModel();
-		table.setModel(modelo);
-		atualiza();
 
 		JButton btnNewButton_4 = new JButton("Voltar a Tela Inicial");
 		btnNewButton_4.addActionListener(new ActionListener() {
@@ -155,7 +147,7 @@ public class VisaoCadastroUsuario extends JFrame {
 				VisaoTelaInicial frame = new VisaoTelaInicial();
 				frame.setVisible(true);
 				frame.setExtendedState(MAXIMIZED_BOTH);
-				dispose();				
+				dispose();
 			}
 		});
 		btnVoltaTI.setBounds(23, 11, 147, 36);
@@ -263,39 +255,62 @@ public class VisaoCadastroUsuario extends JFrame {
 		btnListaUsuario.setFont(new Font("Tahoma", Font.BOLD, 12));
 
 		RoundedButton btnCadastrar = new RoundedButton("Cadastrar Usuário");
+
 		btnCadastrar.setBounds(198, 374, 168, 39);
 		painelCadastro.add(btnCadastrar);
 		btnCadastrar.setBackground(new Color(137, 27, 224));
 
 		btnCadastrar.addActionListener(new ActionListener() {
-			/// colocar anos de edição dos livros e diminuir 1
-			// int ano= LocalDate.now().getYear();
-			// for(int i = 0; i<ano; i++) {
-			// cbNomes.addItem(String.valueOf(ano));
-			// }
+
 			public void actionPerformed(ActionEvent e) {
-				Pessoa pessoa = new Pessoa();
-				PessoaDAO dao = new PessoaDAO();
 
-				String nome = txtNome.getText();
-				String sobrenome = txtSobrenome.getText();
-				String cpfText = txtCpf.getText();
-				cpfText = cpfText.replaceAll("[.-]", ""); // Remove pontos e traço da máscara
-				Long cpf = Long.parseLong(cpfText);
-				String senha = String.valueOf(txtSenha.getPassword());
 
-				pessoa.setNome(nome);
-				pessoa.setSobrenome(sobrenome);
-				pessoa.setCpf(cpf);
-				pessoa.setSenha(senha);
+				//Faz uma verificação para saber se o label do botão é "CAdastrar Usuário" ou 
+				// "Alterar Ususário", e dependendo de qual seja o label faz a função especifica
+				
+				if (btnCadastrar.getText().equals("Cadastrar Usuário")) {
 
-				txtNome.setText(null);
-				txtSobrenome.setText(null);
-				txtCpf.setText(null);
-				txtSenha.setText(null);
+					Pessoa pessoa = new Pessoa();
+					PessoaDAO dao = new PessoaDAO();
 
-				dao.inserir(pessoa);
-				atualiza();
+					String nome = txtNome.getText();
+					String sobrenome = txtSobrenome.getText();
+					String cpfText = txtCpf.getText();
+					cpfText = cpfText.replaceAll("[.-]", ""); // Remove pontos e traço da máscara
+					Long cpf = Long.parseLong(cpfText);
+					String senha = String.valueOf(txtSenha.getPassword());
+
+					pessoa.setNome(nome);
+					pessoa.setSobrenome(sobrenome);
+					pessoa.setCpf(cpf);
+					pessoa.setSenha(senha);
+
+					txtNome.setText(null);
+					txtSobrenome.setText(null);
+					txtCpf.setText(null);
+					txtSenha.setText(null);
+
+					dao.inserir(pessoa);
+					atualiza();
+
+				} else if (btnCadastrar.getText().equals("Alterar Usuário")) {
+
+					PessoaDAO dao = new PessoaDAO();
+
+					String nome = txtNome.getText();
+					String sobrenome = txtSobrenome.getText();
+					String senha = txtSenha.getText();
+					String cpf = txtCpf.getText();
+					pessoaEditar.setNome(nome);
+					pessoaEditar.setSobrenome(sobrenome);
+					pessoaEditar.setSenha(senha);
+					pessoaEditar.setCpf(Long.parseLong(cpf));
+
+					txtCpf.setEditable(false);
+					dao.atualizar(pessoaEditar);
+					atualiza();
+
+				}
 
 			}
 
@@ -331,6 +346,7 @@ public class VisaoCadastroUsuario extends JFrame {
 		RoundedButton btnNewButton_3 = new RoundedButton("Alterar Usuário");
 		btnNewButton_3.setBounds(411, 81, 155, 32);
 		panel.add(btnNewButton_3);
+
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int LinhaSelect = table.getSelectedRow();
@@ -339,51 +355,43 @@ public class VisaoCadastroUsuario extends JFrame {
 				} else {
 					long valorCpf = (long) table.getValueAt(LinhaSelect, 2); // seleciona linha estatica
 					PessoaDAO dao = new PessoaDAO();
-
 					String cpf = String.valueOf(valorCpf);
-					
+
 					pessoaEditar = dao.buscarPessoaCpf(cpf);
 
-					if(pessoaEditar != null) {
-					txtNome.setText(pessoaEditar.getNome());
-					txtSobrenome.setText(pessoaEditar.getSobrenome());
-					txtSenha.setText(pessoaEditar.getSenha());
+					if (pessoaEditar != null) {
+						txtNome.setText(pessoaEditar.getNome());
+						txtSobrenome.setText(pessoaEditar.getSobrenome());
+						txtSenha.setText(pessoaEditar.getSenha());
 
-					txtCpf.setEnabled(false);
-					}else {
-				        JOptionPane.showMessageDialog(null, "Pessoa não encontrada por cpf selecionado!");
+						txtCpf.setEnabled(false);
 
+						//Verifica se o texto do botão é "Alterar Usuário" e caso seja muda para "Salvar Alterações"
+				
+						if (btnNewButton_3.getText().equals("Alterar Usuário")) {
+							btnCadastrar.setText("Alterar Usuário");
+							btnNewButton_3.setText("Cancelar");
+						} else if (btnNewButton_3.getText().equals("Cancelar")) {
+						
+							txtCpf.setEnabled(true);
+							txtNome.setText("");
+							txtSobrenome.setText("");
+							txtSenha.setText("");
+							btnCadastrar.setText("Cadastrar Usuário");
+							btnNewButton_3.setText("Alterar Usuário");
+						}
+					} else {
+						JOptionPane.showMessageDialog(null, "Pessoa não encontrada por cpf selecionado!");
 					}
 				}
-
 			}
 		});
+
 		btnNewButton_3.setBackground(new Color(255, 255, 255));
 		btnNewButton_3.setForeground(new Color(224, 169, 27));
 		btnNewButton_3.setFont(new Font("Segoe UI", Font.BOLD, 12));
 
-		RoundedButton btnSalvaUpdate = new RoundedButton("Salvar alterações"); // nao ta salvendano essa bomba
-		btnSalvaUpdate.setBackground(new Color(255, 255, 255));
-		btnSalvaUpdate.setBounds(411, 136, 155, 30);
-		panel.add(btnSalvaUpdate);
-		btnSalvaUpdate.setFont(new Font("Segoe UI", Font.BOLD, 12));
-		btnSalvaUpdate.setForeground(new Color(0, 128, 128));
-		btnSalvaUpdate.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent e) {
-		        PessoaDAO dao = new PessoaDAO();
-
-		        String nome = txtNome.getText();
-		        String sobrenome = txtSobrenome.getText();
-		        String senha = txtSenha.getText();
-
-		        pessoaEditar.setNome(nome);
-		        pessoaEditar.setSobrenome(sobrenome);
-		        pessoaEditar.setSenha(senha);
-
-		        dao.atualizar(pessoaEditar);
-		        atualiza();
-		    }
-		});
+	
 
 		contentPane.setLayout(gl_contentPane);
 
@@ -394,15 +402,15 @@ public class VisaoCadastroUsuario extends JFrame {
 	}
 
 	public static void atualiza() {
-	    PessoaDAO dao = new PessoaDAO();
-	    ArrayList<Pessoa> listaPessoas = dao.listar();
+		PessoaDAO dao = new PessoaDAO();
+		ArrayList<Pessoa> listaPessoas = dao.listar();
 
-	    modelo.setRowCount(0); // Limpa todas as linhas existentes na tabela
+		modelo.setRowCount(0); // Limpa todas as linhas existentes na tabela
 
-	    for (int i = 0; i < listaPessoas.size(); i++) {
-	        Pessoa p = listaPessoas.get(i);
-	        modelo.addRow(new Object[] { p.getNome(), p.getSobrenome(), p.getCpf(), p.getSenha() });
-	    }
+		for (int i = 0; i < listaPessoas.size(); i++) {
+			Pessoa p = listaPessoas.get(i);
+			modelo.addRow(new Object[] { p.getNome(), p.getSobrenome(), p.getCpf(), p.getSenha() });
+		}
 	}
 
 }
