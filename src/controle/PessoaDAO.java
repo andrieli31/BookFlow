@@ -4,208 +4,179 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import java.util.ArrayList;
 
-import modelo.IPessoaDAO;
 import modelo.Pessoa;
 
 public class PessoaDAO {
 
-	private static ArrayList<Pessoa> tabelaUsuarios;
-	public PessoaDAO() {
-		
-	}
-	
-	public ArrayList<Pessoa> listar(){
-		Conexao c = Conexao.getInstancia();
-		Connection con = c.conectar();
-		
-		String query = "SELECT * FROM pessoa";
-		ArrayList<Pessoa> pessoas = new ArrayList<>();
-		
-		try {
-			PreparedStatement ps = con.prepareStatement(query);
-			
-			ResultSet rs = ps.executeQuery();
-			
-			while (rs.next()) {
-				Pessoa p = new Pessoa();
-				p.setCpf(rs.getLong("cpf"));
-				p.setNome(rs.getString("nome"));
-				p.setSobrenome(rs.getString("sobrenome"));
-				p.setSenha(rs.getString("senha"));
-				
-				pessoas.add(p);
-			}
-		}catch (SQLException e) {
-			e.printStackTrace();
-		}finally {
-			c.fecharConexao();
-		}
-		return pessoas;
-	}
-	
-	
-	//Inserindo pessoa no código:
-	public  boolean inserir(Pessoa p){
-		
-		//Instanciando a classe
-		Conexao c = Conexao.getInstancia();
-		//Abrindo a conexão com o bd
-		Connection con = c.conectar();
-		
-		String query = "INSERT INTO pessoa (cpf, nome, sobrenome, senha) VALUES (?,?,?,?);";
-		
-		try {
-			//Criando um objeto
-			PreparedStatement ps = con.prepareStatement(query);
-			ps.setLong(1, p.getCpf());
-			ps.setString(2, p.getNome());
-			ps.setString(3, p.getSobrenome());
-			ps.setString(4, p.getSenha());
-			
-			//Realizando os comandos no banco
-			ps.executeUpdate();
-			c.fecharConexao();
-			
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-			return false;
-		}		
-		return true; //True caso inserção
-	}
+    public ArrayList<Pessoa> listar() {
+        Conexao c = Conexao.getInstancia();
+        Connection con = c.conectar();
 
-//	/// Instanciando PessoaDAO
-//	public static PessoaDAO getInstancia() {
-//
-//		if (instancia == null) {
-//			instancia = new PessoaDAO();
-//			tabelaUsuarios = new ArrayList<>();
-//			criarUsuarioEstatico();
-//		}
-//		return instancia;
-//	}
+        String query = "SELECT * FROM pessoa";
+        ArrayList<Pessoa> pessoas = new ArrayList<>();
 
-	public static void criarUsuarioEstatico() {
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
 
-		Pessoa usuarioEstatico = new Pessoa();
+            ResultSet rs = ps.executeQuery();
 
-		String numeroString = "1234567890";
-		long numeroLong = Long.parseLong(numeroString);
+            while (rs.next()) {
+                Pessoa p = new Pessoa();
+                p.setCpf(rs.getLong("cpf"));
+                p.setNome(rs.getString("nome"));
+                p.setSobrenome(rs.getString("sobrenome"));
+                p.setSenha(rs.getString("senha"));
 
-		// Defina os atributos do usuário estático
-		usuarioEstatico.setCpf(numeroLong);
+                pessoas.add(p);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            c.fecharConexao();
+        }
+        return pessoas;
+    }
 
-		usuarioEstatico.setNome("Patricia");
-		usuarioEstatico.setSobrenome("Cordeiro");
-		usuarioEstatico.setSenha("welcome");
+    
+    
+    // Inserindo pessoa no código:
+    public boolean inserir(Pessoa p) {
+        // Instanciando a classe
+        Conexao c = Conexao.getInstancia();
+        // Abrindo a conexão com o bd
+        Connection con = c.conectar();
 
-		// Adicione o usuário estático à tabela de usuários
-		tabelaUsuarios.add(usuarioEstatico);
+        String query = "INSERT INTO pessoa (cpf, nome, sobrenome, senha) VALUES (?,?,?,?);";
 
-	}
+        try {
+            // Criando um objeto
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setLong(1, p.getCpf());
+            ps.setString(2, p.getNome());
+            ps.setString(3, p.getSobrenome());
+            ps.setString(4, p.getSenha());
 
-	public Pessoa efetuarLogin(long cpf, String senha) {
-		Pessoa p = null;
+            // Realizando os comandos no banco
+            ps.executeUpdate();
+            c.fecharConexao();
 
-		for (Pessoa pessoa : tabelaUsuarios) {
-			System.out.println("senha");
-			System.out.println(pessoa.getSenha());
-			if (pessoa.getSenha().equals(senha) && pessoa.getCpf() == cpf) {
-				p = pessoa;
-				break;
-			}
-		}
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+            return false;
+        }
+        return true; // True caso inserção
+    }
 
-		return p;
-	}
+    public boolean fazerLogin(long cpf, String senha) {
+        String selectQuery = "SELECT * FROM login WHERE cpf = ? AND senha= ?";
+        
+        
+        try (Connection connection = Conexao.getInstancia().conectar();
+             PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
+            preparedStatement.setLong(1, cpf);
+            preparedStatement.setString(2, senha);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                return resultSet.next();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
-	/// Cadastro de novo usuario no sistema
-//	public boolean cadastrarPessoa(Pessoa p) {
-//		if (p != null) {
-//			tabelaUsuarios.add(p);
-//			return true;
-//		}
-//		return false;
-//	}
-	
-	
+    public boolean atualizar(Pessoa p) {
+        Conexao c = Conexao.getInstancia();
+        Connection con = c.conectar();
 
-	public boolean atualizar(Pessoa p) {
-		Conexao c = Conexao.getInstancia();
-		Connection con = c.conectar();
-		
-		String query = "UPDATE pessoa SET nome = ?, "
-				+ "sobrenome = ?, senha = ? WHERE cpf = ?";
-		
-		try {
-			PreparedStatement preparedStatement = con.prepareStatement(query);
-			preparedStatement.setString(1, p.getNome());
-			preparedStatement.setString(2, p.getSobrenome());
-			preparedStatement.setString(3, p.getSenha());
-			preparedStatement.setLong(4, p.getCpf());
-			
-	int rowsUpdate = preparedStatement.executeUpdate();
-			
-			
-			if(rowsUpdate > 0) {
-				//dadods atualizados
-				return true;
-			}else {
-				//nenhum dado atualizado (isbn pode n existir)
-				return false;
-			}
-		}catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}finally {
-			c.fecharConexao();
-		}
-	}
-		
+        String query = "UPDATE pessoa SET nome = ?, sobrenome = ?, senha = ? WHERE cpf = ?";
 
-	/// Deletar pessoa com base no cpf digitado
-	public boolean excluir(Pessoa p) {
-		
-		Conexao c = Conexao.getInstancia();
-		Connection con = c.conectar();
-		
-		String query = "DELETE FROM pessoa WHERE cpf = ?";
-		
-		try {
-			PreparedStatement ps = con.prepareStatement(query);
-			ps.setLong(1, p.getCpf());
-			
-			int rowsAffected = ps.executeUpdate();
-			
-			if(rowsAffected >0 ) {
-				c.fecharConexao();
-				return true; //se exclusao bem sucessida
-			}
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}finally {
-		c.fecharConexao();	
-		}
-		return false; //se falha na exclusao
-		
-	}
+        try {
+            PreparedStatement preparedStatement = con.prepareStatement(query);
+            preparedStatement.setString(1, p.getNome());
+            preparedStatement.setString(2, p.getSobrenome());
+            preparedStatement.setString(3, p.getSenha());
+            preparedStatement.setLong(4, p.getCpf()); // CPF não é atualizado
 
-	/// Pendente descobrir como usar listagem com interface grafica
-	public ArrayList<Pessoa> listarPessoas() {
-		return tabelaUsuarios;
+            int rowsUpdate = preparedStatement.executeUpdate();
 
-	}
+            if (rowsUpdate > 0) {
+                // Dados atualizados
+                return true;
+            } else {
+                // Nenhum dado atualizado (CPF pode não existir)
+                return false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            c.fecharConexao();
+        }
+    }
 
-	public Pessoa buscarPessoaCpf(long cpf) {
-		for (Pessoa pessoa : tabelaUsuarios) {
-			if (pessoa.getCpf() == cpf) {
-				System.out.println(pessoa.getCpf());
-				return pessoa;
-			}
-		}
-		return null;
-	}
+    
+    // MÉTODO OK
+
+    public boolean excluir(Pessoa p) {
+        Conexao c = Conexao.getInstancia();
+        Connection con = c.conectar();
+
+        String query = "DELETE FROM pessoa WHERE cpf = ?";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setLong(1, p.getCpf());
+
+            int rowsAffected = ps.executeUpdate();
+
+            if (rowsAffected > 0) {
+                c.fecharConexao();
+                return true; // se exclusao bem sucessida
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            c.fecharConexao();
+        }
+        return false; // se falha na exclusao
+    }
+
+ 
+    public Pessoa buscarPessoaCpf(String cpf) {
+        Conexao c = Conexao.getInstancia();
+
+        Connection con = c.conectar();
+        Pessoa p = new Pessoa();
+
+        try {
+
+
+            // Consulta SQL para buscar a pessoa com base no CPF
+            String query = "SELECT * FROM pessoa WHERE cpf = ?"; // Supondo que sua tabela se chama "pessoa"
+
+            PreparedStatement ps = con.prepareStatement(query);
+
+
+            ps.setString(1, cpf);
+
+            var rs = ps.executeQuery();
+
+            if (rs.next()) {
+                p.setNome(rs.getString("nome"));
+                p.setSobrenome(rs.getString("sobrenome"));
+                p.setCpf(rs.getLong("cpf"));
+                p.setSenha(rs.getString("senha"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+
+            c.fecharConexao();
+        }
+
+        return p; // Retorna a pessoa encontrada ou null se não encontrada
+    }
 
 }

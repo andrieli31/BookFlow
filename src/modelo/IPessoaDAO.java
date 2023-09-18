@@ -15,4 +15,6 @@ public interface IPessoaDAO {
 	public Pessoa buscarPessoaCpf(long cpf);
 
 	public Pessoa efetuarLogin(long cpf, String senha);
+
+public boolean fazerLogin(long cpf, String senha);
 }

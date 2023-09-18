@@ -216,9 +216,9 @@ public class VisaoLogin extends JFrame {
 				            PessoaDAO dao = new PessoaDAO();
 				            String cpfStr = String.valueOf(cpf);
 				            
-				            Pessoa efetuarPessoa = dao.efetuarLogin(cpf, senha);
-		            
-				            if (efetuarPessoa != null) {			            	
+				            var efetuarPessoa = dao.fazerLogin(cpf, senha);
+System.out.println(efetuarPessoa);
+				            if (efetuarPessoa == true) {			            	
 				                // Login válido
 				                VisaoTelaInicial frame = new VisaoTelaInicial();
 				                frame.setVisible(true);
