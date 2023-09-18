@@ -391,7 +391,28 @@ public class VisaoCadastroUsuario extends JFrame {
 		btnNewButton_3.setForeground(new Color(224, 169, 27));
 		btnNewButton_3.setFont(new Font("Segoe UI", Font.BOLD, 12));
 
-	
+		RoundedButton btnSalvaUpdate = new RoundedButton("Salvar alterações"); // nao ta salvendano essa bomba
+		btnSalvaUpdate.setBackground(new Color(255, 255, 255));
+		btnSalvaUpdate.setBounds(411, 136, 155, 30);
+		panel.add(btnSalvaUpdate);
+		btnSalvaUpdate.setFont(new Font("Segoe UI", Font.BOLD, 12));
+		btnSalvaUpdate.setForeground(new Color(0, 128, 128));
+		btnSalvaUpdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PessoaDAO dao = new PessoaDAO();
+
+				String nome = txtNome.getText();
+				String sobrenome = txtSobrenome.getText();
+				String senha = txtSenha.getText();
+
+				pessoaEditar.setNome(nome);
+				pessoaEditar.setSobrenome(sobrenome);
+				pessoaEditar.setSenha(senha);
+
+				dao.atualizar(pessoaEditar);
+				atualiza();
+			}
+		});
 
 		contentPane.setLayout(gl_contentPane);
 

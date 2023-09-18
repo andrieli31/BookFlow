@@ -214,11 +214,10 @@ public class VisaoLogin extends JFrame {
 				            txtSenha.requestFocus();
 				        } else {
 				            PessoaDAO dao = new PessoaDAO();
-				            String cpfStr = String.valueOf(cpf);
 				            
-				            var efetuarPessoa = dao.fazerLogin(cpf, senha);
-System.out.println(efetuarPessoa);
-				            if (efetuarPessoa == true) {			            	
+				            boolean efetuarPessoa = dao.fazerLogin(cpf, senha);
+		            
+				            if (efetuarPessoa) {			            	
 				                // Login válido
 				                VisaoTelaInicial frame = new VisaoTelaInicial();
 				                frame.setVisible(true);
